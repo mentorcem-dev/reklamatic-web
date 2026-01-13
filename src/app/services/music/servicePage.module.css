@@ -1,0 +1,71 @@
+.pageWrapper {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.backBtn {
+    position: fixed;
+    top: 100px;
+    left: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    z-index: 100;
+}
+
+.backBtn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: var(--primary);
+    transform: translateX(-5px);
+}
+
+.iconContainer {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
+}
+
+.goalBox {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    border-radius: 50px;
+    fontWeight: bold;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.ctaButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+    .backBtn {
+        top: 80px;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .pageWrapper {
+        padding-top: 80px;
+    }
+}

@@ -1,66 +1,156 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import Lenis from 'lenis';
+import { useLanguage } from '../context/LanguageContext';
+
+// Components
+import Header from '../components/Header';
+import PurpleNeuralField from '../components/PurpleNeuralField';
+import CustomCursor from '../components/CustomCursor';
+import ServiceGrid from '../components/ServiceGrid';
+import AutomationFlow from '../components/AutomationFlow';
+import ReelGallery from '../components/ReelGallery';
+import UseCases from '../components/UseCases';
+import ProofMetrics from '../components/ProofMetrics';
+import ProcessTimeline from '../components/ProcessTimeline';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
+  const heroRef = useRef(null);
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    // Initialize Lenis Smooth Scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Hero Animations
+    const tl = gsap.timeline({ delay: 0.5 });
+
+    // Split text reveal simulation (lines)
+    const lines = heroRef.current.querySelectorAll('.hero-line-inner');
+
+    tl.fromTo(lines,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, ease: "power4.out", stagger: 0.1 }
+    );
+
+    // Fade in subline and chips
+    tl.fromTo('.hero-sub',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
+      "-=0.8"
+    );
+
+    // Buttons
+    tl.fromTo('.hero-cta',
+      { opacity: 0, scale: 0.9 },
+      { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.7)' },
+      "-=0.6"
+    );
+
+    // Hero Interaction (Parallax)
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const xPos = (clientX / window.innerWidth - 0.5) * 20; // range -10 to 10
+      const yPos = (clientY / window.innerHeight - 0.5) * 20;
+
+      gsap.to('.hero-content', {
+        x: xPos,
+        y: yPos,
+        duration: 1,
+        ease: 'power2.out'
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      lenis.destroy();
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="main-wrapper font-sans text-white overflow-x-hidden selection:bg-purple-500/30">
+      <CustomCursor />
+      <PurpleNeuralField />
+      <Header />
+
+      <main>
+        {/* HERO SECTION */}
+        <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24">
+          <div className="hero-content max-w-5xl z-10">
+            {/* Chips */}
+            <div className="flex flex-wrap gap-3 mb-8 hero-sub opacity-0">
+              {t.hero.chips.map((tag, i) => (
+                <span key={i} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-purple-300 font-mono tracking-wide backdrop-blur-md">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Headline with Masking wrapper */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-8 tracking-tight">
+              <div className="overflow-hidden hero-line"><div className="hero-line-inner">{t.hero.line1}</div></div>
+              <div className="overflow-hidden hero-line"><div className="hero-line-inner text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 animate-gradient">{t.hero.line2}</div></div>
+            </h1>
+
+            {/* Subline */}
+            <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mb-10 hero-sub opacity-0 leading-relaxed">
+              {t.hero.sub}
+            </p>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-6 hero-cta opacity-0">
+              <button className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-purple-50 hover:scale-105 transition-all duration-300">
+                {t.hero.cta1}
+              </button>
+              <button className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
+                {t.hero.cta2}
+              </button>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2">
+              <div className="w-1 h-2 bg-white rounded-full" />
+            </div>
+          </div>
+        </section>
+
+        <ServiceGrid />
+        <AutomationFlow />
+
+        {/* Horizontal Reel Container (needs full width) */}
+        <div id="ai-showcase" className="reel">
+          <ReelGallery />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <UseCases />
+        <ProofMetrics />
+        <ProcessTimeline />
+        <ContactSection />
       </main>
+
+      <Footer />
     </div>
   );
 }

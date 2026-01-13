@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reklamatic.ai | Future of Content</title>
+    <style>
+        :root {
+            --bg: #000;
+            --text: #fff;
+            --primary: #8b5cf6;
+            --secondary: #ec4899;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('images/hero_bg.jpg') no-repeat center center/cover;
+            opacity: 0.4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .process-steps {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        .process-steps strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .process-steps ol {
+            padding-left: 20px;
+            margin: 0;
+            color: #aaa;
+        }
+
+        .process-steps li {
+            margin-bottom: 3px;
+        }
+
+        .nav-link {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            color: #ccc;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        .contact-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+        }
+
+        button {
+            padding: 15px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .contact-info-small {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Scoped Animation Classes */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        <body><div class="container"><div class="hero-bg"></div><header><h2 class="gradient-text" style="font-size: 1.8rem;">REKLAMATIC.AI</h2><nav><a href="#services" class="nav-link">Services</a><a href="#automation" class="nav-link">Automation</a><a href="#faq" class="nav-link">FAQ</a><a href="#contact" class="nav-link">Contact</a></nav></header><section class="hero"><h1>Future of <span class="gradient-text">Automation</span></h1><p>Hyper-realistic video generation,
+        viral content automation,
+        and AI-powered client acquisition.</p></section><section id="services" class="section"><h2 style="text-align:center; font-size: 2.5rem;">Content Creation</h2><div class="grid"><div class="card fade-up"><img src="images/music.jpg" alt="Music Video Production" class="card-image"><h3>Music Videos</h3><p>Professional rendering and editing for high-impact music clips. We synchronize visuals with beat drops using advanced AI processing.</p><div class="process-steps"><strong>Process:</strong><ol><li>Upload Audio</li><li>AI Scene Generation</li><li>Beat Sync</li><li>4K Rendering</li></ol></div></div><div class="card fade-up"><img src="images/real_estate.jpg" alt="Real Estate Video" class="card-image"><h3>Real Estate</h3><p>Hyper-realistic 3D walkthroughs and location-based video generation. Input your blueprints and get a cinematic tour instantly.</p><div class="process-steps"><strong>Process:</strong><ol><li>Upload Floorplan</li><li>3D Modeling</li><li>Texture Mapping</li><li>Virtual Tour</li></ol></div></div><div class="card fade-up"><img src="images/commercial.jpg" alt="Commercial Ads" class="card-image"><h3>Commercial Ads</h3><p>High-conversion advertising videos tailored for your business niche. From concept to final render in record time.</p><div class="process-steps"><strong>Process:</strong><ol><li>Select Niche</li><li>AI Scripting</li><li>Video Generation</li><li>Branding & Logo</li></ol></div></div></div></section><section id="automation" class="section"><h2 style="text-align:center; font-size: 2.5rem;">AI Automation</h2><div class="grid"><div class="card fade-up"><img src="images/viral.jpg" alt="Viral Automation" class="card-image"><h3>Viral Engine</h3><p>Trend analysis and auto-posting for maximum reach. Detects high-performing hooks and generates content that algorithms love.</p><div class="process-steps"><strong>Process:</strong><ol><li>Trend Analysis</li><li>Hook Generation</li><li>Video Creation</li><li>Auto-Post</li></ol></div></div><div class="card fade-up"><img src="images/maps.jpg" alt="Customer Finder" class="card-image"><h3>Customer Finder</h3><p>Scrapes Google Maps for targeted leads (e.g., specific niches like Bijouterie) and initiates automated,
+        personalized WhatsApp outreach.</p><div class="process-steps"><strong>Process:</strong><ol><li>Map Scraping</li><li>Lead Filtering</li><li>WhatsApp Outreach</li><li>Conversion</li></ol></div></div><div class="card fade-up"><img src="images/booking.jpg" alt="Smart Booking" class="card-image"><h3>Smart Booking</h3><p>AI Chatbot that manages appointments,
+        syncs with Google Calendar/excel,
+        and handles client negotiation seamlessly.</p><div class="process-steps"><strong>Process:</strong><ol><li>Chat Inquiry</li><li>Intent Detection</li><li>Calendar Sync</li><li>Confirmation</li></ol></div></div></div></section><section id="faq" class="section"><h2 style="text-align:center; font-size: 2.5rem; margin-bottom: 40px;">Q & A</h2><div class="faq-container"><div class="faq-item fade-up"><div class="faq-question">How does the Viral Engine work? <span class="toggle">+</span></div><div class="faq-answer"><p>Our Viral Engine analyzes current social media trends and generates video scripts or fully rendered content optimized for engagement. It can also manage auto-posting schedules.</p></div></div><div class="faq-item fade-up"><div class="faq-question">Can I target specific industries? <span class="toggle">+</span></div><div class="faq-answer"><p>Yes. Our Customer Finder automation uses Google Maps data to precisely target industries (like jewelry wholesalers, construction firms) and initiates contact via WhatsApp.</p></div></div><div class="faq-item fade-up"><div class="faq-question">Is the appointment bot human-like? <span class="toggle">+</span></div><div class="faq-answer"><p>Absolutely. The bot is trained on natural language (Turkish/English),
+        understands context,
+        handles scheduling conflicts,
+        and syncs directly with your Excel or Google Calendar.</p></div></div></div></section><section id="contact" class="section"><div class="contact-wrapper fade-up"><h2 style="text-align:center; font-size: 2.5rem; margin-bottom: 20px;">Contact Us</h2><p style="text-align:center; color:#aaa; margin-bottom: 40px;">Ready to automate your future? Reach out today.</p><form class="contact-form"><div class="input-group"><input type="text" placeholder="Full Name" required><input type="email" placeholder="Email Address" required></div><input type="text" placeholder="Subject" required><textarea rows="5" placeholder="Tell us about your project..." required></textarea><button type="submit">Send Message</button><div class="contact-info-small"><p>info@reklamatic.ai | 0530 231 29 47</p></div></form></div></section></div><script type="module" src="script.js"></script></body></html>
