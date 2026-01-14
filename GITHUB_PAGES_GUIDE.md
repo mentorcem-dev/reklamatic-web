@@ -73,6 +73,13 @@ Now, let's point `reklamatic.ai` to your new GitHub site.
    - Type: `CNAME` | Name: `www` | Points to: `YOUR_USERNAME.github.io` | TTL: 3600
    *(Replace YOUR_USERNAME with your GitHub username)*
 
+### Step C: Verification (Crucial Step)
+GitHub requires you to verify ownership. Add this **TXT Record** in Hostinger:
+- **Type:** `TXT`
+- **Name:** `_github-pages-challenge-mentorcem-dev` (Hostinger might only show/require `_github-pages-challenge-mentorcem-dev`, usually omitting `.reklamatic.ai`)
+- **Value:** `f9ba03778c9a5c9e890a006c97be20`
+- **TTL:** `300` (or default 14400)
+
 ---
 
 ## 5. Finalize

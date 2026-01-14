@@ -5,23 +5,11 @@ import { translations } from '../i18n/translations';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en');
-    const t = translations[language];
+    // Force English
+    const language = 'en';
+    const t = translations['en'];
 
-    // Optional: Load from localStorage if present
-    useEffect(() => {
-        const savedLang = localStorage.getItem('app-language');
-        if (savedLang && translations[savedLang]) {
-            setLanguage(savedLang);
-        }
-    }, []);
-
-    const changeLanguage = (lang) => {
-        if (translations[lang]) {
-            setLanguage(lang);
-            localStorage.setItem('app-language', lang);
-        }
-    };
+    const changeLanguage = () => { }; // No-op
 
     return (
         <LanguageContext.Provider value={{ language, changeLanguage, t }}>

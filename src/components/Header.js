@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
     const headerRef = useRef(null);
-    const { t, changeLanguage, language } = useLanguage();
+    const { t } = useLanguage();
 
     useEffect(() => {
         const header = headerRef.current;
@@ -33,13 +33,8 @@ const Header = () => {
         if (el) el.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const languages = [
-        { code: 'en', label: 'EN' },
-        { code: 'tr', label: 'TR' },
-        { code: 'es', label: 'ES' },
-        { code: 'it', label: 'IT' },
-        { code: 'fr', label: 'FR' }
-    ];
+    // Language switcher removed
+
 
     return (
         <header
@@ -73,33 +68,11 @@ const Header = () => {
                     {t.nav.contact}
                 </button>
 
-                {/* Language Switcher */}
-                <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-2">
-                    {languages.map(lang => (
-                        <button
-                            key={lang.code}
-                            onClick={() => changeLanguage(lang.code)}
-                            className={`text-xs font-bold transition-colors uppercase ${language === lang.code ? 'text-purple-400' : 'text-gray-500 hover:text-white'}`}
-                        >
-                            {lang.label}
-                        </button>
-                    ))}
-                </div>
+                {/* Language Switcher Removed */}
             </nav>
 
             {/* Mobile Menu Icon (Placeholder functionality) */}
             <div className="md:hidden text-white flex gap-4">
-                <div className="flex items-center gap-2">
-                    {languages.map(lang => (
-                        <button
-                            key={lang.code}
-                            onClick={() => changeLanguage(lang.code)}
-                            className={`text-[10px] font-bold transition-colors uppercase ${language === lang.code ? 'text-purple-400' : 'text-gray-500'}`}
-                        >
-                            {lang.label}
-                        </button>
-                    ))}
-                </div>
                 <button className="p-2">Menu</button>
             </div>
         </header>
