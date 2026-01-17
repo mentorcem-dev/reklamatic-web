@@ -5,6 +5,7 @@ export const translations = {
             automations: "Automations",
             aiVideos: "AI Videos",
             process: "Process",
+            leadFinder: "Lead Finder",
             contact: "Contact"
         },
         hero: {

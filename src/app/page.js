@@ -21,6 +21,25 @@ export default function Home() {
   const heroRef = useRef(null);
   const { t } = useLanguage();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Reklamatic.ai',
+    url: 'https://reklamatic.ai',
+    logo: 'https://reklamatic.ai/images/logo.jpg', // Ensure this exists
+    description: 'Advanced AI Automation & Content Creation Agency',
+    sameAs: [
+      'https://www.instagram.com/reklamatic.ai',
+      'https://www.linkedin.com/company/reklamatic'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+90-530-231-2947',
+      contactType: 'customer service',
+      email: 'info@reklamatic.ai'
+    }
+  };
+
   useEffect(() => {
     // Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
@@ -89,6 +108,10 @@ export default function Home() {
 
   return (
     <div className="main-wrapper font-sans text-white overflow-x-hidden selection:bg-purple-500/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <CustomCursor />
       <PurpleNeuralField />
       <Header />
