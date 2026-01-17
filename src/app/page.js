@@ -162,11 +162,6 @@ export default function Home() {
         <ServiceGrid />
         <AutomationFlow />
 
-        {/* Horizontal Reel Container (needs full width) */}
-        <div id="ai-showcase" className="reel">
-          <ReelGallery />
-        </div>
-
         <UseCases />
         <ProofMetrics />
         <ProcessTimeline />

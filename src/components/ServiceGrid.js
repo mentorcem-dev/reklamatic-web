@@ -24,20 +24,22 @@ const ServiceGrid = () => {
     useEffect(() => {
         const cards = gridRef.current.querySelectorAll('.service-card');
 
-        cards.forEach(card => {
+        cards.forEach((card, index) => {
+            const details = card.querySelector('.card-details');
+
+            // Mouse interaction (desktop)
             card.onmousemove = (e) => {
                 const r = card.getBoundingClientRect();
                 const px = (e.clientX - r.left) / r.width - 0.5;
                 const py = (e.clientY - r.top) / r.height - 0.5;
 
                 gsap.to(card, {
-                    rotationY: px * 12, // 6deg max * 2 for impact
+                    rotationY: px * 12,
                     rotationX: -py * 12,
                     ease: 'power2.out',
                     duration: 0.5
                 });
 
-                // Inner glow follow
                 const glow = card.querySelector('.glow-effect');
                 if (glow) {
                     gsap.to(glow, {
@@ -57,9 +59,48 @@ const ServiceGrid = () => {
                     duration: 0.5
                 });
             };
+
+            // Auto-expand on scroll (mobile & desktop)
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 75%',
+                end: 'bottom 25%',
+                onEnter: () => {
+                    gsap.to(details, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    });
+                },
+                onLeave: () => {
+                    gsap.to(details, {
+                        opacity: 0,
+                        y: 16,
+                        duration: 0.4,
+                        ease: 'power2.in'
+                    });
+                },
+                onEnterBack: () => {
+                    gsap.to(details, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.to(details, {
+                        opacity: 0,
+                        y: 16,
+                        duration: 0.4,
+                        ease: 'power2.in'
+                    });
+                }
+            });
         });
 
-        // Reveal animation
+        // Initial reveal animation
         gsap.from(cards, {
             y: 50,
             opacity: 0,
@@ -99,7 +140,7 @@ const ServiceGrid = () => {
                                     </div>
                                 </div>
 
-                                <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                                <div className="card-details opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                                     <ul className="space-y-2 text-sm text-gray-400">
                                         {s.list.map((item, idx) => (
                                             <li key={idx}>• {item}</li>
