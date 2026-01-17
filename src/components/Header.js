@@ -41,6 +41,8 @@ const Header = () => {
         }
     };
 
+    if (pathname?.startsWith('/yoga')) return <header ref={headerRef} className="hidden" />;
+
     return (
         <header
             ref={headerRef}

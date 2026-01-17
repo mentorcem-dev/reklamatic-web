@@ -333,23 +333,168 @@ export default function YogaPage() {
                 </div>
             </section>
 
-            {/* Footer / Contact */}
-            <section id="contact" className="py-24 px-6 md:px-12 bg-[#FDFBF7]">
-                <div className="max-w-7xl mx-auto border-t border-black pt-12 flex flex-col md:flex-row justify-between gap-12">
-                    <div>
-                        <h2 className="text-[10vw] leading-[0.8] font-bold tracking-tighter mb-8">CONTACT.</h2>
-                        <div className="space-y-4 text-lg">
-                            <p>Alsancak, İzmir</p>
-                            <a href="mailto:hello@reklamaticyoga.com" className="block hover:italic decoration-wavy underline">hello@reklamaticyoga.com</a>
-                        </div>
+            {/* Contact Form Section */}
+            <section id="contact" className="py-32 px-6 md:px-12 bg-gradient-to-b from-[#FDFBF7] to-[#F1F1F0] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="grid md:grid-cols-2 gap-16 items-start">
+                        {/* Left: Contact Info */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
+                                Let's<br />
+                                <span className="italic text-[#D4C5B8]">Connect.</span>
+                            </h2>
+                            <p className="text-xl text-[#5A5A5A] mb-12 leading-relaxed">
+                                Ready to start your wellness journey? Reach out to us and we'll help you find the perfect class for your needs.
+                            </p>
+
+                            <div className="space-y-8">
+                                {/* Email */}
+                                <div className="group">
+                                    <div className="flex items-center gap-4 mb-2">
+                                        <div className="w-12 h-12 rounded-full bg-[#D4C5B8]/20 flex items-center justify-center group-hover:bg-[#D4C5B8] transition-colors">
+                                            <svg className="w-6 h-6 text-[#1C1C1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs uppercase tracking-widest text-[#5A5A5A] mb-1">Email</p>
+                                            <a href="mailto:info@reklamatic.ai" className="text-2xl font-bold hover:text-[#D4C5B8] transition-colors">
+                                                info@reklamatic.ai
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Phone */}
+                                <div className="group">
+                                    <div className="flex items-center gap-4 mb-2">
+                                        <div className="w-12 h-12 rounded-full bg-[#D4C5B8]/20 flex items-center justify-center group-hover:bg-[#D4C5B8] transition-colors">
+                                            <svg className="w-6 h-6 text-[#1C1C1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs uppercase tracking-widest text-[#5A5A5A] mb-1">Phone</p>
+                                            <a href="tel:+905302312947" className="text-2xl font-bold hover:text-[#D4C5B8] transition-colors">
+                                                +90 530 231 29 47
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Location */}
+                                <div className="group">
+                                    <div className="flex items-center gap-4 mb-2">
+                                        <div className="w-12 h-12 rounded-full bg-[#D4C5B8]/20 flex items-center justify-center group-hover:bg-[#D4C5B8] transition-colors">
+                                            <svg className="w-6 h-6 text-[#1C1C1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-xs uppercase tracking-widest text-[#5A5A5A] mb-1">Location</p>
+                                            <p className="text-2xl font-bold">Alsancak, İzmir</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Social Links */}
+                            <div className="mt-12 pt-8 border-t border-black/10">
+                                <p className="text-sm uppercase tracking-widest text-[#5A5A5A] mb-4">Follow Us</p>
+                                <div className="flex gap-4">
+                                    {['Instagram', 'Facebook', 'Twitter'].map(social => (
+                                        <a key={social} href="#" className="w-12 h-12 border-2 border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all hover:scale-110 font-bold text-sm">
+                                            {social[0]}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Right: Contact Form */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100"
+                        >
+                            <h3 className="text-3xl font-bold mb-2">Book a Free Trial</h3>
+                            <p className="text-[#5A5A5A] mb-8">Fill out the form and we'll get back to you within 24 hours.</p>
+
+                            <form className="space-y-6">
+                                <div>
+                                    <label className="block text-sm font-bold uppercase tracking-wider text-[#1C1C1C] mb-2">Name</label>
+                                    <input
+                                        type="text"
+                                        className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-[#D4C5B8] focus:outline-none transition-colors bg-[#FDFBF7]"
+                                        placeholder="Your full name"
+                                        required
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold uppercase tracking-wider text-[#1C1C1C] mb-2">Email</label>
+                                    <input
+                                        type="email"
+                                        className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-[#D4C5B8] focus:outline-none transition-colors bg-[#FDFBF7]"
+                                        placeholder="your@email.com"
+                                        required
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold uppercase tracking-wider text-[#1C1C1C] mb-2">Phone</label>
+                                    <input
+                                        type="tel"
+                                        className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-[#D4C5B8] focus:outline-none transition-colors bg-[#FDFBF7]"
+                                        placeholder="+90 5XX XXX XX XX"
+                                        required
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold uppercase tracking-wider text-[#1C1C1C] mb-2">Interested In</label>
+                                    <select className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-[#D4C5B8] focus:outline-none transition-colors bg-[#FDFBF7] appearance-none cursor-pointer">
+                                        <option>Reformer Core</option>
+                                        <option>Hot Vinyasa</option>
+                                        <option>Deep Stretch</option>
+                                        <option>Barre & Tone</option>
+                                        <option>Aerial Yoga</option>
+                                        <option>Morning Meditation</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-bold uppercase tracking-wider text-[#1C1C1C] mb-2">Message</label>
+                                    <textarea
+                                        rows="4"
+                                        className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-[#D4C5B8] focus:outline-none transition-colors bg-[#FDFBF7] resize-none"
+                                        placeholder="Tell us about your wellness goals..."
+                                    ></textarea>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    className="w-full py-5 bg-[#1C1C1C] text-white font-bold text-lg rounded-xl hover:bg-[#D4C5B8] hover:text-[#1C1C1C] transition-all transform hover:scale-[1.02] active:scale-95 shadow-lg uppercase tracking-wider"
+                                >
+                                    Submit Request
+                                </button>
+                            </form>
+                        </motion.div>
                     </div>
-                    <div className="flex flex-col justify-end">
-                        <div className="flex gap-4 mb-4">
-                            {['Instagram', 'Spotify', 'Twitter'].map(social => (
-                                <a key={social} href="#" className="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors">{social[0]}</a>
-                            ))}
-                        </div>
-                        <p className="text-xs uppercase tracking-widest text-gray-400">© 2024 Reklamatic Yoga</p>
+
+                    {/* Footer */}
+                    <div className="mt-24 pt-12 border-t border-black/10 text-center">
+                        <p className="text-xs uppercase tracking-widest text-gray-400">© 2024 Reklamatic Yoga • Powered by reklamatic.ai</p>
                     </div>
                 </div>
             </section>
