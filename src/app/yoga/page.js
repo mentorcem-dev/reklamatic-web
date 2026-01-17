@@ -47,12 +47,12 @@ export default function YogaPage() {
         <div className="min-h-screen bg-[#FDFBF7] text-[#1C1C1C] font-sans selection:bg-[#D4C5B8] selection:text-white overflow-x-hidden">
 
             {/* Navigation */}
-            <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference text-white">
-                <Link href="/yoga" className="text-2xl font-bold tracking-tighter uppercase z-50 hover:opacity-80 transition-opacity">
+            <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center md:mix-blend-difference text-black md:text-white bg-black md:bg-transparent">
+                <Link href="/yoga" className="text-2xl font-bold tracking-tighter uppercase z-50 hover:opacity-80 transition-opacity text-white">
                     Reklamatic Yoga
                 </Link>
 
-                <button onClick={toggleMenu} className="z-50 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity flex items-center gap-2 group cursor-pointer">
+                <button onClick={toggleMenu} className="z-50 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity flex items-center gap-2 group cursor-pointer text-white">
                     <span className="hidden md:inline group-hover:-translate-x-1 transition-transform">Menu</span>
                     <div className="flex flex-col gap-1.5 items-end">
                         <span className={`w-8 h-[2px] bg-white transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
@@ -183,9 +183,9 @@ export default function YogaPage() {
                             desc: "Sculpt and strengthen with precision."
                         },
                         {
-                            title: "Hot Vinyasa",
-                            image: "https://images.unsplash.com/photo-1544367563-12123d815074?q=80&w=800&auto=format&fit=crop",
-                            desc: "Flow, sweat, and detoxify in 38°C heat."
+                            title: "Power Yoga",
+                            image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=800&auto=format&fit=crop",
+                            desc: "Build strength and endurance with dynamic flows."
                         },
                         {
                             title: "Deep Stretch",
@@ -465,7 +465,7 @@ export default function YogaPage() {
                                     <label className="block text-sm font-bold uppercase tracking-wider text-[#1C1C1C] mb-2">Interested In</label>
                                     <select className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-[#D4C5B8] focus:outline-none transition-colors bg-[#FDFBF7] appearance-none cursor-pointer">
                                         <option>Reformer Core</option>
-                                        <option>Hot Vinyasa</option>
+                                        <option>Power Yoga</option>
                                         <option>Deep Stretch</option>
                                         <option>Barre & Tone</option>
                                         <option>Aerial Yoga</option>

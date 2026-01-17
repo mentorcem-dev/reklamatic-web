@@ -142,7 +142,10 @@ export default function ClientPage() {
                     <div className="relative w-8 h-8">
                         <svg viewBox="0 0 24 24" fill="none" className="w-full h-full"><circle cx="12" cy="12" r="10" stroke="#4285F4" strokeWidth="3" /><path d="M12 7v5l3 3" stroke="#DB4437" strokeWidth="3" strokeLinecap="round" /></svg>
                     </div>
-                    <span className="text-xl font-bold tracking-tight text-[#5f6368] font-heading">BULUR</span>
+                    <div className="flex flex-col leading-tight">
+                        <span className="text-xl font-bold tracking-tight text-[#5f6368] font-heading">bulur</span>
+                        <span className="text-[10px] font-medium text-[#5f6368] opacity-60">by reklamatic.ai</span>
+                    </div>
                 </div>
                 <div className="hidden md:flex gap-8 text-sm font-medium text-[#5f6368]">
                     <Link href="/" className="hover:text-[#1a73e8] transition-colors">Ana Sayfa</Link>
