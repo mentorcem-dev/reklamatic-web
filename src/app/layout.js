@@ -52,6 +52,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (() => {
+            if (sessionStorage.getItem('reklamatic-clean-v1')) return;
+            sessionStorage.setItem('reklamatic-clean-v1', '1');
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(items => items.forEach(item => item.unregister()));
+            }
+            if ('caches' in window) {
+              caches.keys().then(keys => keys.forEach(key => caches.delete(key)));
+            }
+          })();
+        ` }} />
         <Providers>
           {children}
         </Providers>
