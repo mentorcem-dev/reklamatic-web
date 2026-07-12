@@ -67,10 +67,7 @@ const Header = () => {
                         {t.nav.automations}
                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
                     </button>
-                    <button onClick={() => scrollTo('ai-showcase')} className="hover:text-white transition-colors relative group">
-                        {t.nav.aiVideos}
-                        <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
-                    </button>
+
                     <button onClick={() => scrollTo('process')} className="hover:text-white transition-colors relative group">
                         {t.nav.process}
                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
@@ -104,7 +101,7 @@ const Header = () => {
                 <nav className="flex flex-col items-center gap-8 text-2xl font-bold text-white">
                     <button onClick={() => scrollTo('services')} className="hover:text-purple-400 transition-colors">{t.nav.services}</button>
                     <button onClick={() => scrollTo('automations')} className="hover:text-purple-400 transition-colors">{t.nav.automations}</button>
-                    <button onClick={() => scrollTo('ai-showcase')} className="hover:text-purple-400 transition-colors">{t.nav.aiVideos}</button>
+
                     <button onClick={() => scrollTo('process')} className="hover:text-purple-400 transition-colors">{t.nav.process}</button>
 
                     <Link href="/lead-finder" onClick={() => setIsMenuOpen(false)} className="hover:text-purple-400 transition-colors text-purple-500 font-bold text-3xl md:text-2xl mt-4 md:mt-0">

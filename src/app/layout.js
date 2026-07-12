@@ -1,16 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   metadataBase: new URL('https://reklamatic.ai'),
@@ -18,7 +7,7 @@ export const metadata = {
     default: 'Reklamatic.ai | AI Video Ads & Automation',
     template: '%s | Reklamatic.ai'
   },
-  description: 'Scale your business with AI-driven video commercials and n8n automation systems. We turn chaos into consistent growth.',
+  description: 'AI product videos, sponsored distribution across a 26-channel owned media network, and practical content automation systems.',
   keywords: ['AI Video', 'n8n Automation', 'Video Production', 'Content Creation', 'Digital Marketing', 'Business Automation', 'Reklamatic'],
   authors: [{ name: 'Reklamatic Team' }],
   creator: 'Reklamatic.ai',
@@ -36,25 +25,23 @@ export const metadata = {
   },
   openGraph: {
     title: 'Reklamatic.ai | AI Video Ads & Automation',
-    description: 'Scale your business with AI-driven video commercials and n8n automation systems.',
+    description: '152M+ verified views. AI product videos, sponsored distribution and content systems built by the team operating them.',
     url: 'https://reklamatic.ai',
     siteName: 'Reklamatic.ai',
-    images: [
-      {
-        url: '/images/og-image.jpg', // Ensure this image exists or use a placeholder
-        width: 1200,
-        height: 630,
-        alt: 'Reklamatic.ai Preview',
-      },
-    ],
+    images: [{
+      url: '/og.png',
+      width: 1200,
+      height: 630,
+      alt: 'Reklamatic.ai — Create the content. Own the distribution.',
+    }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Reklamatic.ai',
-    description: 'Scale your business with AI-driven video commercials and n8n automation systems.',
-    images: ['/images/og-image.jpg'],
+    description: '152M+ verified views. AI product videos, sponsored distribution and practical content automation.',
+    images: ['/og.png'],
   },
   alternates: {
     canonical: 'https://reklamatic.ai',
@@ -64,7 +51,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Providers>
           {children}
         </Providers>

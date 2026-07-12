@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,8 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 const ContactSection = () => {
     const { t } = useLanguage();
     const sectionRef = useRef(null);
-    const formRef = useRef(null);
-    const [status, setStatus] = useState('idle'); // idle, loading, success
 
     useEffect(() => {
         const el = sectionRef.current;
@@ -30,22 +28,6 @@ const ContactSection = () => {
             }
         );
     }, []);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus('loading');
-
-        // Simulate API call
-        await new Promise(r => setTimeout(r, 1500));
-
-        setStatus('success');
-
-        // Reset to idle after delay
-        setTimeout(() => {
-            setStatus('idle');
-            formRef.current?.reset();
-        }, 3000);
-    };
 
     return (
         <section id="contact" ref={sectionRef} className="py-24 px-4 bg-[#070712] relative overflow-hidden">
@@ -74,7 +56,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">{t.contactSection.phone}</h3>
-                                <a href="tel:+905302312947" className="text-2xl font-bold text-white hover:text-purple-400 transition-colors">
+                                <a href="tel:+905302312947" className="text-xl sm:text-2xl font-bold text-white hover:text-purple-400 transition-colors break-words">
                                     +90 530 231 29 47
                                 </a>
                             </div>
@@ -89,7 +71,7 @@ const ContactSection = () => {
                             </div>
                             <div>
                                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">{t.contactSection.emailLabel}</h3>
-                                <a href="mailto:info@reklamatic.ai" className="text-2xl font-bold text-white hover:text-purple-400 transition-colors">
+                                <a href="mailto:info@reklamatic.ai" className="text-xl sm:text-2xl font-bold text-white hover:text-purple-400 transition-colors break-all">
                                     info@reklamatic.ai
                                 </a>
                             </div>
@@ -97,50 +79,20 @@ const ContactSection = () => {
                     </div>
                 </div>
 
-                {/* Right: Form */}
+                {/* Right: direct contact options */}
                 <div className="lg:w-1/2 fade-up delay-100">
-                    <form
-                        ref={formRef}
-                        onSubmit={handleSubmit}
-                        className={`submission-card ${status === 'success' ? 'success' : ''}`}
-                    >
-                        <div className="space-y-6 relative z-10">
-                            <div className="field">
-                                <span className="glowline"></span>
-                                <input
-                                    type="text"
-                                    className="contact-input"
-                                    placeholder={t.contactSection.name}
-                                    required
-                                />
+                    <div className="submission-card relative z-10">
+                        <div className="relative z-10">
+                            <p className="text-purple-300 font-mono text-sm uppercase tracking-widest mb-4">Start with one clear brief</p>
+                            <h3 className="text-3xl font-bold mb-4">Tell us what you sell and who should see it.</h3>
+                            <p className="text-gray-400 leading-relaxed mb-8">We will reply with the most suitable accounts, content format, delivery plan and commercial package. No vague discovery form and no fake automated confirmation.</p>
+                            <div className="grid gap-3">
+                                <a href="mailto:info@reklamatic.ai?subject=Project%20Brief&body=Hi%20Reklamatic%2C%0A%0ACompany%3A%0AProduct%20or%20service%3A%0ATarget%20market%3A%0AGoal%3A%0ATimeline%3A" className="submit-btn text-center">Send a project brief</a>
+                                <a href="https://wa.me/905302312947?text=Hi%20Reklamatic%2C%20I%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer" className="w-full py-4 rounded-full border border-white/15 text-center font-bold hover:bg-white/5 transition-colors">Talk on WhatsApp</a>
                             </div>
-                            <div className="field">
-                                <span className="glowline"></span>
-                                <input
-                                    type="email"
-                                    className="contact-input"
-                                    placeholder={t.contactSection.email}
-                                    required
-                                />
-                            </div>
-                            <div className="field">
-                                <span className="glowline"></span>
-                                <textarea
-                                    rows="4"
-                                    className="contact-textarea"
-                                    placeholder={t.contactSection.message}
-                                    required
-                                />
-                            </div>
-                            <button
-                                type="submit"
-                                className="submit-btn"
-                                disabled={status === 'loading'}
-                            >
-                                {status === 'loading' ? 'Submitting...' : status === 'success' ? 'Submitted ✓' : t.contactSection.submit}
-                            </button>
+                            <p className="text-xs text-gray-600 mt-6">Global projects welcome · English and Turkish · 50% deposit to begin campaign work</p>
                         </div>
-                    </form>
+                    </div>
                 </div>
 
             </div>

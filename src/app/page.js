@@ -10,12 +10,14 @@ import PurpleNeuralField from '../components/PurpleNeuralField';
 import CustomCursor from '../components/CustomCursor';
 import ServiceGrid from '../components/ServiceGrid';
 import AutomationFlow from '../components/AutomationFlow';
-import ReelGallery from '../components/ReelGallery';
+
 import UseCases from '../components/UseCases';
-import ProofMetrics from '../components/ProofMetrics';
 import ProcessTimeline from '../components/ProcessTimeline';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import NetworkProofSection from '../components/NetworkProofSection';
+import CommercialOffers from '../components/CommercialOffers';
+import RevenueSystems from '../components/RevenueSystems';
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -142,12 +144,12 @@ export default function Home() {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-6 hero-cta opacity-0">
-              <button className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-purple-50 hover:scale-105 transition-all duration-300">
+              <a href="#commercial" className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-purple-50 hover:scale-105 transition-all duration-300">
                 {t.hero.cta1}
-              </button>
-              <button className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
+              </a>
+              <a href="#proof" className="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
                 {t.hero.cta2}
-              </button>
+              </a>
             </div>
           </div>
 
@@ -162,8 +164,10 @@ export default function Home() {
         <ServiceGrid />
         <AutomationFlow />
 
+        <NetworkProofSection />
+        <CommercialOffers />
+        <RevenueSystems />
         <UseCases />
-        <ProofMetrics />
         <ProcessTimeline />
         <ContactSection />
       </main>

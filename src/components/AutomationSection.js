@@ -9,22 +9,20 @@ import { contentDetails } from '../i18n/contentDetails';
 
 const automations = [
     {
-        title: "Viral Content Automation",
-        description: "Analyze trends, generate viral scripts, and automatically post to social media. Your autonomous content creation engine.",
-        type: 'viral',
-        key: 'viral'
+        type: 'robot',
+        key: 'chatbot'
     },
     {
-        title: "Customer Finding Automation",
-        description: "Leverage Google Maps data to target and contact businesses in bulk. Streamline lead generation via WhatsApp.",
-        type: 'maps',
-        key: 'finder'
-    },
-    {
-        title: "Appointment Automation",
-        description: "AI Chatbot that manages schedules, syncs with Google Calendar/Excel, and handles events in natural Turkish language.",
         type: 'booking',
         key: 'booking'
+    },
+    {
+        type: 'clapper',
+        key: 'videoCreation'
+    },
+    {
+        type: 'maps',
+        key: 'finder'
     }
 ];
 
@@ -96,7 +94,11 @@ const AutomationSection = ({ lang = 'en' }) => {
             <div className={styles.verticalList}>
                 {automations.map((item, index) => {
                     const content = contentDetails[lang][item.key];
+                    // Fallback to English if content is missing for current lang
+                    const displayContent = content || contentDetails['en'][item.key];
                     const isExpanded = expandedIndex === index;
+
+                    if (!displayContent) return null;
 
                     return (
                         <div key={index} className={styles.serviceItem}>
@@ -105,8 +107,8 @@ const AutomationSection = ({ lang = 'en' }) => {
                                     <ThreeDIcon type={item.type} size={180} />
                                 </div>
                                 <div id={`auto-text-${index}`} className={styles.serviceInfo}>
-                                    <h3 className={styles.serviceTitle}>{item.title}</h3>
-                                    <p className={styles.serviceDesc}>{item.description}</p>
+                                    <h3 className={styles.serviceTitle}>{displayContent.title}</h3>
+                                    <p className={styles.serviceDesc}>{displayContent.intro}</p>
                                     <button
                                         className={styles.exploreBtn}
                                         onClick={() => handleExpand(index)}
@@ -119,9 +121,9 @@ const AutomationSection = ({ lang = 'en' }) => {
                             {isExpanded && (
                                 <div id={`automation-detail-${index}`} className={styles.detailPanel}>
                                     <div className={styles.detailContent}>
-                                        <h4 className={styles.detailSubtitle}>{content.subtitle}</h4>
+                                        <h4 className={styles.detailSubtitle}>{displayContent.subtitle}</h4>
                                         <ul className={styles.detailSteps}>
-                                            {content.steps.map((step, stepIndex) => (
+                                            {displayContent.steps.map((step, stepIndex) => (
                                                 <li key={stepIndex}>
                                                     <span className={styles.stepNumber}>
                                                         {String(stepIndex + 1).padStart(2, '0')}.

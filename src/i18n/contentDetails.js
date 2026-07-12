@@ -125,6 +125,19 @@ export const contentDetails = {
             ],
             integrationSummary: "Yani: Chatbot konuşur. Booking sistemi işi bitirir.",
             languages: "Türkçe, İngilizce, Almanca, Fransızca ve İtalyanca seçenekleri mevcuttur."
+        },
+        videoCreation: {
+            title: "İçerik Üretimi – Video",
+            intro: "Markanız için her platforma uygun, yüksek kaliteli video içerikler üretiyoruz. (Müzik, Emlak, Reklam)",
+            subtitle: "Süreç nasıl işler?",
+            steps: [
+                "Hedef kitlenize ve platforma uygun konsept geliştiriyoruz.",
+                "Yapay zeka sistemlerimizle senaryo ve görsel taslaklar oluşturuyoruz.",
+                "Çekim veya AI tabanlı üretim ile videonuzu hazırlıyoruz.",
+                "Kurgu, renk ve ses düzenlemeleriyle final haline getiriyoruz."
+            ],
+            goal: "Amaç:",
+            goalText: "İzlenen, paylaşılan ve dönüşüm getiren video içerikler oluşturmak."
         }
     },
     en: {
@@ -253,6 +266,19 @@ export const contentDetails = {
             ],
             integrationSummary: "So: Chatbot talks. Booking system gets the job done.",
             languages: "Available in Turkish, English, German, French and Italian."
+        },
+        videoCreation: {
+            title: "Content Creation – Video",
+            intro: "We produce high-quality video content suitable for every platform for your brand. (Music, Real Estate, Ads)",
+            subtitle: "How it works:",
+            steps: [
+                "We develop a concept suitable for your target audience and platform.",
+                "We create scripts and visual drafts with our AI systems.",
+                "We prepare your video with shooting or AI-based production.",
+                "We finalize it with editing, color, and sound arrangements."
+            ],
+            goal: "Goal:",
+            goalText: "To create video content that is watched, shared, and converts."
         }
     }
 };

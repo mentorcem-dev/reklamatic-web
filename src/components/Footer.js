@@ -11,11 +11,10 @@ const Footer = () => {
                 {/* Brand */}
                 <div className="col-span-1 md:col-span-1">
                     <h3 className="text-white text-xl font-bold mb-4">reklamatic.ai</h3>
-                    <p className="mb-4">Standardizing the chaotic world of content creation & automation.</p>
+                    <p className="mb-4">AI product videos, owned-media distribution and practical content automation.</p>
                     <div className="flex gap-4">
-                        <a href="#" className="hover:text-purple-400 transition-colors">Instagram</a>
-                        <a href="#" className="hover:text-purple-400 transition-colors">TikTok</a>
-                        <a href="#" className="hover:text-purple-400 transition-colors">YouTube</a>
+                        <a href="https://www.instagram.com/reklamatic.ai/" target="_blank" rel="noreferrer" className="hover:text-purple-400 transition-colors">Instagram</a>
+                        <a href="mailto:info@reklamatic.ai" className="hover:text-purple-400 transition-colors">Media kit</a>
                     </div>
                 </div>
 
@@ -40,15 +39,14 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Legal Placeholder */}
+                {/* Company */}
                 <div>
-                    <h4 className="text-white font-bold mb-4">{t.footer.legal}</h4>
+                    <h4 className="text-white font-bold mb-4">Company</h4>
                     <ul className="space-y-2 text-xs font-mono">
-                        <li>Reklamatic Media A.Ş.</li>
-                        <li>Tax Office: [Pending Update]</li>
-                        <li>Tax No: [Pending Update]</li>
-                        <li>MERSIS: [Pending Update]</li>
-                        <li>[Address Pending Update]</li>
+                        <li>Cem Gülçağ — Reklamatic</li>
+                        <li>Sole proprietorship</li>
+                        <li>Istanbul, Türkiye</li>
+                        <li>Global projects welcome</li>
                     </ul>
                 </div>
 
@@ -57,15 +55,11 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
                 <p>&copy; {new Date().getFullYear()} reklamatic.ai. {t.footer.rights}</p>
                 <div className="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" className="hover:text-white">Privacy Policy</a>
-                    <a href="#" className="hover:text-white">Terms of Service</a>
+                    <a href="mailto:info@reklamatic.ai?subject=Privacy%20request" className="hover:text-white">Privacy requests</a>
+                    <a href="mailto:info@reklamatic.ai?subject=Commercial%20terms" className="hover:text-white">Commercial terms</a>
                 </div>
             </div>
 
-            {/* Note for builder */}
-            <div className="text-center mt-12 opacity-20 text-[10px]">
-                Replace placeholders after receiving tax certificate/company details.
-            </div>
         </footer>
     );
 };

@@ -9,12 +9,12 @@ export const translations = {
             contact: "Contact"
         },
         hero: {
-            line1: "We turn AI into",
-            line2: "real business results.",
-            sub: "AI video ads + automation systems built for scale. Standardizing the chaotic world of content creation.",
-            chips: ["AI Video Ads", "n8n Automations", "Multi-Platform Publishing", "Influencer-Style Content"],
-            cta1: "See what we build",
-            cta2: "Start a project"
+            line1: "Create the content.",
+            line2: "Own the distribution.",
+            sub: "AI product videos, sponsored distribution across 26 owned channels, and content systems built by the team operating them.",
+            chips: ["152M+ Verified Views", "26 Connected Channels", "AI Product Video", "Global Campaigns"],
+            cta1: "View packages",
+            cta2: "See verified reach"
         },
         services: {
             title: "What We Do",
@@ -32,15 +32,15 @@ export const translations = {
             cats: { brand: "Brand Film", realEstate: "Real Estate", ugc: "UGC / TikTok", ad: "Ad Commercial", social: "Social Media" }
         },
         useCases: {
-            title: "Proven In Your Industry",
-            sub: "We adapt our AI engines to your specific niche.",
+            title: "One system, several ways to earn attention.",
+            sub: "Each audience gets a format and commercial path that matches what they already care about.",
             items: [
-                { title: "Beauty", outcome: "Fully booked weeks ahead." },
-                { title: "Gym", outcome: "20+ New members/mo." },
-                { title: "Real Estate", outcome: "Properties sold 2x faster." },
-                { title: "Clinics", outcome: "High-value patient leads." },
-                { title: "E-Commerce", outcome: "ROAS increased by 40%." },
-                { title: "Local Food", outcome: "Tables filled every weekend." }
+                { title: "Garden", outcome: "Tools, planters, growing systems" },
+                { title: "DIY", outcome: "Practical products and project ideas" },
+                { title: "Epoxy", outcome: "Resins, pigments, tools and kits" },
+                { title: "AI Tools", outcome: "Workflow and creator software" },
+                { title: "E-Commerce", outcome: "Product videos and distribution" },
+                { title: "Agencies", outcome: "White-label content systems" }
             ]
         },
         proof: {
