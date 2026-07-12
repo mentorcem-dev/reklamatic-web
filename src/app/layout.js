@@ -1,14 +1,13 @@
 import "./globals.css";
-import { Providers } from "./providers";
 
 export const metadata = {
   metadataBase: new URL('https://reklamatic.ai'),
   title: {
-    default: 'Reklamatic.ai | AI Video Ads & Automation',
+    default: 'Reklamatic.ai | Product Videos Published Across 26 Social Channels',
     template: '%s | Reklamatic.ai'
   },
-  description: 'AI product videos, sponsored distribution across a 26-channel owned media network, and practical content automation systems.',
-  keywords: ['AI Video', 'n8n Automation', 'Video Production', 'Content Creation', 'Digital Marketing', 'Business Automation', 'Reklamatic'],
+  description: 'We create short product videos and publish them across our own 26-channel Instagram, Facebook, TikTok and YouTube network.',
+  keywords: ['AI Product Video', 'Social Media Distribution', 'Instagram Reels', 'TikTok Video', 'YouTube Shorts', 'Facebook Reels', 'Reklamatic'],
   authors: [{ name: 'Reklamatic Team' }],
   creator: 'Reklamatic.ai',
   publisher: 'Reklamatic.ai',
@@ -24,8 +23,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Reklamatic.ai | AI Video Ads & Automation',
-    description: '152M+ verified views. AI product videos, sponsored distribution and content systems built by the team operating them.',
+    title: 'Reklamatic.ai | Product Videos and 26-Channel Distribution',
+    description: 'We create the videos, publish them through our own social media network and report the results.',
     url: 'https://reklamatic.ai',
     siteName: 'Reklamatic.ai',
     images: [{
@@ -64,9 +63,7 @@ export default function RootLayout({ children }) {
             }
           })();
         ` }} />
-        <Providers>
-          {children}
-        </Providers>
+        {children}
       </body>
     </html>
   );
