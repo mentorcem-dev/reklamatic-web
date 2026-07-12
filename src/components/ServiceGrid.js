@@ -2,23 +2,19 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLanguage } from '../context/LanguageContext';
-
 import ThreeDIcon from './ThreeDIcon';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ServiceGrid = () => {
     const gridRef = useRef(null);
-    const { t } = useLanguage();
-
     const services = [
-        { ...t.services.s1, iconType: "clapper" },
-        { ...t.services.s2, iconType: "robot" },
-        { ...t.services.s3, iconType: "nodes" },
-        { ...t.services.s4, iconType: "music" },
-        { ...t.services.s5, iconType: "building" },
-        { ...t.services.s6, iconType: "camera" }
+        { title: "Sponsored Distribution", list: ["6, 12 or up to 26 placements", "Relevant niche accounts", "Campaign reporting"], iconType: "nodes" },
+        { title: "AI Product Videos", list: ["Vertical product creative", "Five-video packs", "Optional usage licensing"], iconType: "clapper" },
+        { title: "Content Machine Setup", list: ["Strategy and workflow", "Reusable templates", "30-day publishing plan"], iconType: "robot" },
+        { title: "Implementation Day", list: ["One-day installation", "Content, sales or support workflows", "Team handover"], iconType: "booking" },
+        { title: "Managed Social System", list: ["Production and publishing", "Performance learning loop", "Monthly operation"], iconType: "camera" },
+        { title: "White-label Agency System", list: ["Delivered under your brand", "Production infrastructure", "AI agent workflows"], iconType: "maps" }
     ];
 
     useEffect(() => {
@@ -119,8 +115,8 @@ const ServiceGrid = () => {
         <section id="services" className="relative py-32 px-4 md:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-16">
-                    <span className="text-purple-400 font-mono text-sm tracking-widest uppercase block mb-2">{t.services.subtitle}</span>
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight">{t.services.title}</h2>
+                    <span className="text-purple-400 font-mono text-sm tracking-widest uppercase block mb-2">WHAT WE SELL</span>
+                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight">Real services. Clear deliverables.</h2>
                 </div>
 
                 <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

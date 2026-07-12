@@ -9,7 +9,6 @@ import Header from '../components/Header';
 import PurpleNeuralField from '../components/PurpleNeuralField';
 import CustomCursor from '../components/CustomCursor';
 import ServiceGrid from '../components/ServiceGrid';
-import AutomationFlow from '../components/AutomationFlow';
 
 import UseCases from '../components/UseCases';
 import ProcessTimeline from '../components/ProcessTimeline';
@@ -162,8 +161,6 @@ export default function Home() {
         </section>
 
         <ServiceGrid />
-        <AutomationFlow />
-
         <NetworkProofSection />
         <CommercialOffers />
         <RevenueSystems />

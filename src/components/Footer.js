@@ -23,8 +23,9 @@ const Footer = () => {
                     <h4 className="text-white font-bold mb-4">{t.footer.explore}</h4>
                     <ul className="space-y-2">
                         <li><a href="#services" className="hover:text-white transition-colors">{t.nav.services}</a></li>
-                        <li><a href="#automations" className="hover:text-white transition-colors">{t.nav.automations}</a></li>
-                        <li><a href="#ai-showcase" className="hover:text-white transition-colors">{t.nav.aiVideos}</a></li>
+                        <li><a href="#proof" className="hover:text-white transition-colors">Network proof</a></li>
+                        <li><a href="#commercial" className="hover:text-white transition-colors">Packages</a></li>
+                        <li><a href="#systems" className="hover:text-white transition-colors">Business systems</a></li>
                         <li><a href="#process" className="hover:text-white transition-colors">{t.nav.process}</a></li>
                     </ul>
                 </div>

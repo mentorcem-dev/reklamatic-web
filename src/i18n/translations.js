@@ -54,11 +54,11 @@ export const translations = {
             badge: "HOW WE WORK",
             title: "The Process",
             steps: [
-                { title: "Strategy", desc: "We define the AI roadmap. Target audience analysis, platform selection, and automation architecture." },
-                { title: "Script & Prompting", desc: "Our LLM systems generate high-conversion scripts and visual prompts tailored to your brand voice." },
-                { title: "Production", desc: "AI video generation, voice synthesis, and traditional editing merge for premium output." },
-                { title: "Automation Wiring", desc: "Connecting n8n, WhatsApp, and CRM. The nervous system of your operation." },
-                { title: "Scale", desc: "Auto-publishing and campaign management. We launch, monitor, and optimize." }
+                { title: "Fit", desc: "We match your product, target market and campaign goal to the right content format and relevant network accounts." },
+                { title: "Scope", desc: "You receive a plain-English deliverable list, timeline, usage terms and price. A 50% deposit reserves production." },
+                { title: "Production", desc: "We create the agreed vertical videos, apply your feedback and prepare platform-native captions." },
+                { title: "Distribution", desc: "Approved content is published through the selected Reklamatic network placements or delivered to your team." },
+                { title: "Report", desc: "We report actual performance, explain what worked and recommend the next test. View ranges remain estimates, not guarantees." }
             ]
         },
         footer: {

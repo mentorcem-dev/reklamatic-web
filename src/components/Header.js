@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -63,20 +62,20 @@ const Header = () => {
                         {t.nav.services}
                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
                     </button>
-                    <button onClick={() => scrollTo('automations')} className="hover:text-white transition-colors relative group">
-                        {t.nav.automations}
+                    <button onClick={() => scrollTo('proof')} className="hover:text-white transition-colors relative group">
+                        Network Proof
                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
                     </button>
 
-                    <button onClick={() => scrollTo('process')} className="hover:text-white transition-colors relative group">
-                        {t.nav.process}
+                    <button onClick={() => scrollTo('commercial')} className="hover:text-white transition-colors relative group">
+                        Packages
                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
                     </button>
 
-                    <Link href="/lead-finder" className="hover:text-white transition-colors relative group text-purple-400 font-semibold hover:text-purple-300">
-                        {t.nav.leadFinder || "Lead Finder"}
+                    <button onClick={() => scrollTo('systems')} className="hover:text-white transition-colors relative group text-purple-400 font-semibold hover:text-purple-300">
+                        Business Systems
                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-purple-500 transition-all group-hover:w-full"></span>
-                    </Link>
+                    </button>
 
                     <button onClick={() => scrollTo('contact')} className="px-5 py-2 rounded-full border border-white/10 hover:bg-white/5 transition-all text-white">
                         {t.nav.contact}
@@ -100,13 +99,11 @@ const Header = () => {
             <div className={`fixed inset-0 bg-[#070712] z-40 transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-center items-center ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <nav className="flex flex-col items-center gap-8 text-2xl font-bold text-white">
                     <button onClick={() => scrollTo('services')} className="hover:text-purple-400 transition-colors">{t.nav.services}</button>
-                    <button onClick={() => scrollTo('automations')} className="hover:text-purple-400 transition-colors">{t.nav.automations}</button>
+                    <button onClick={() => scrollTo('proof')} className="hover:text-purple-400 transition-colors">Network Proof</button>
 
-                    <button onClick={() => scrollTo('process')} className="hover:text-purple-400 transition-colors">{t.nav.process}</button>
+                    <button onClick={() => scrollTo('commercial')} className="hover:text-purple-400 transition-colors">Packages</button>
 
-                    <Link href="/lead-finder" onClick={() => setIsMenuOpen(false)} className="hover:text-purple-400 transition-colors text-purple-500 font-bold text-3xl md:text-2xl mt-4 md:mt-0">
-                        {t.nav.leadFinder || "Lead Finder"}
-                    </Link>
+                    <button onClick={() => scrollTo('systems')} className="hover:text-purple-400 transition-colors text-purple-500 font-bold text-3xl md:text-2xl mt-4 md:mt-0">Business Systems</button>
 
                     <button onClick={() => scrollTo('contact')} className="hover:text-purple-400 transition-colors mt-4 md:mt-0">{t.nav.contact}</button>
                 </nav>
