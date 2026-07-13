@@ -1,5 +1,5 @@
 const services = [
-  ["AI Product Video Pack", "€650", "Five ready-to-publish vertical product videos for brands that need more creative without a full agency contract."],
+  ["Product Integration Sponsorship", "Campaign", "We place a product naturally inside a short story, then publish the approved campaign through selected channels in our network."],
   ["Content Machine Setup", "€1,290", "We install the strategy, workflow, templates and 30-day publishing plan your team can actually follow."],
   ["Implementation Day", "€750", "A prepaid working session to install practical content, sales or support automations inside your business."],
   ["Managed Content System", "Custom", "Ongoing production, publishing and learning loops for companies that want a reliable monthly operation."],

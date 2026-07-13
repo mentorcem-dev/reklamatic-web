@@ -3,10 +3,10 @@ import "./globals.css";
 export const metadata = {
   metadataBase: new URL('https://reklamatic.ai'),
   title: {
-    default: 'Reklamatic.ai | Product Videos Published Across 26 Social Channels',
+    default: 'Reklamatic.ai | Sponsored Product Stories Across 26 Social Channels',
     template: '%s | Reklamatic.ai'
   },
-  description: 'We create short product videos and publish them across our own 26-channel Instagram, Facebook, TikTok and YouTube network.',
+  description: 'We place products inside short videos and publish the campaigns across our own 26-channel Instagram, Facebook, TikTok and YouTube network.',
   keywords: ['AI Product Video', 'Social Media Distribution', 'Instagram Reels', 'TikTok Video', 'YouTube Shorts', 'Facebook Reels', 'Reklamatic'],
   authors: [{ name: 'Reklamatic Team' }],
   creator: 'Reklamatic.ai',
@@ -23,8 +23,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Reklamatic.ai | Product Videos and 26-Channel Distribution',
-    description: 'We create the videos, publish them through our own social media network and report the results.',
+    title: 'Reklamatic.ai | Sponsored Product Stories and 26-Channel Distribution',
+    description: 'We create sponsored product stories, publish them through our own social media network and report the results.',
     url: 'https://reklamatic.ai',
     siteName: 'Reklamatic.ai',
     images: [{
