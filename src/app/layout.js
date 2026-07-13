@@ -53,10 +53,16 @@ export default function RootLayout({ children }) {
       <body>
         <script dangerouslySetInnerHTML={{ __html: `
           (() => {
-            if (sessionStorage.getItem('reklamatic-clean-v1')) return;
-            sessionStorage.setItem('reklamatic-clean-v1', '1');
+            if (sessionStorage.getItem('reklamatic-clean-v2')) return;
+            sessionStorage.setItem('reklamatic-clean-v2', '1');
             if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.getRegistrations().then(items => items.forEach(item => item.unregister()));
+              navigator.serviceWorker.getRegistrations().then(async items => {
+                await Promise.all(items.map(item => item.unregister()));
+                await navigator.serviceWorker.register('/reklamatic-sw.js', {
+                  scope: '/',
+                  updateViaCache: 'none'
+                });
+              });
             }
             if ('caches' in window) {
               caches.keys().then(keys => keys.forEach(key => caches.delete(key)));
