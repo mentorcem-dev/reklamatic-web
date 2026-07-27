@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const PHONE_DISPLAY = "+90 530 231 29 47";
 const PHONE = "+905302312947";
@@ -88,6 +89,13 @@ function Hero({ copy, ticker }) {
       <div className="ticker" aria-label="Content types"><div>{[...ticker, ...ticker].map((item, i) => <span key={`${item}-${i}`}>{item}<b>✦</b></span>)}</div></div>
     </section>
   );
+}
+
+function EditorialShowcase({ locale }) {
+  const text = locale === "tr"
+    ? { kicker: "KAYNAKTAN SİSTEME", title: "Tek bir uzun kaynağın içindeki farklı kısa video fırsatları.", note: "Özgün konsept görseli · Reklamatic müşteri sonucu veya performans kanıtı değildir.", alt: "Bir podcast kaynağının insan editoryal seçimiyle farklı dikey video fikirlerine dönüşmesini gösteren Reklamatic konsept görseli" }
+    : { kicker: "FROM SOURCE TO SYSTEM", title: "Different short-form opportunities inside one long-form source.", note: "Original concept visual · not a Reklamatic client result or performance claim.", alt: "Reklamatic concept visual showing one podcast source becoming different vertical video ideas through human editorial selection" };
+  return <section className="editorial-showcase" aria-labelledby="editorial-showcase-title"><div className="container"><figure><div className="editorial-image"><Image src="/media/generated/clipping-system.webp" width={1717} height={916} sizes="(max-width: 700px) 100vw, 1180px" priority alt={text.alt} /></div><figcaption><div><span>{text.kicker}</span><h2 id="editorial-showcase-title">{text.title}</h2></div><p>{text.note}</p></figcaption></figure></div></section>;
 }
 
 function ClipperRole({ copy }) {
@@ -227,8 +235,8 @@ function CampaignScenarios({ copy }) {
         <div className="proof-heading"><SectionTitle kicker={copy.kicker} title={copy.title} /><p>{copy.text}</p></div>
         <div className="proof-gallery">
           {copy.items.map((item, index) => <figure className={index === 0 ? "wide" : ""} key={item.title}>
-            <ScenarioVisual index={index} label={item.alt} />
-            <figcaption><strong><small>{copy.label}</small><br />{item.brand}<br /><small>{copy.fictional}</small><br />{item.title}</strong><span><b>{copy.source}:</b> {item.source}<br /><b>{copy.goal}:</b> {item.goal}<br /><b>{copy.outputs}:</b> {item.outputs}<br /><b>{copy.signals}:</b> {item.signals}</span></figcaption>
+            {index === 0 ? <Image className="scenario-image" src="/media/generated/illustrative-campaigns.webp" width={1722} height={907} sizes="(max-width: 700px) 100vw, 1180px" alt={item.alt} /> : <ScenarioVisual index={index} label={item.alt} />}
+            <figcaption><strong><small>{copy.label}</small><br />{item.title}</strong><span><b>{copy.source}:</b> {item.source}<br /><b>{copy.goal}:</b> {item.goal}<br /><b>{copy.outputs}:</b> {item.outputs}<br /><b>{copy.signals}:</b> {item.signals}</span></figcaption>
           </figure>)}
         </div>
         <p className="proof-note">{copy.note}</p>
@@ -242,6 +250,7 @@ function Resources({ copy }) {
     <section className="section what" id="resources">
       <div className="container">
         <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+        <figure className="resources-visual"><Image src="/media/generated/clipping-resources.webp" width={1536} height={1024} sizes="(max-width: 700px) 100vw, 1180px" alt={copy.title} /><figcaption>{copy.kicker} · Reklamatic editorial study</figcaption></figure>
         <div className="what-grid">
           {copy.items.map(([tag, title, text, points], index) => <article className={index === 1 ? "featured" : ""} key={title}><div className="card-index"><span>{tag}</span><i>+</i></div><h3>{title}</h3><p>{text}</p><details><summary>{copy.open}</summary><div className="hero-pills">{points.map((point) => <span key={point}>✓ {point}</span>)}</div></details></article>)}
         </div>
@@ -276,6 +285,7 @@ function Faq({ copy }) {
 function Contact({ copy, locale }) {
   const [error, setError] = useState("");
   const [mode, setMode] = useState("brand");
+  const tabRefs = useRef([]);
   useEffect(() => {
     const syncMode = () => setMode(window.location.hash === "#clipper-contact" ? "clipper" : "brand");
     syncMode();
@@ -296,6 +306,13 @@ function Contact({ copy, locale }) {
     const body = [`Path / Akış: ${isClipper ? "Clipper" : "Brand / Marka"}`, `Name / Ad: ${data.get("name")}`, `Email: ${email}`, `Phone / WhatsApp: ${data.get("phone") || "-"}`, `Company / Channel: ${data.get("company") || "-"}`, `Market: ${data.get("market") || "-"}`, `Platforms: ${data.get("platforms") || "-"}`, `Budget: ${data.get("budget") || "-"}`, `Source / Portfolio URL: ${data.get("source") || "-"}`, `Service / Specialty: ${data.get("service") || "-"}`, "", String(data.get("message"))].join("\n");
     window.location.href = `mailto:info@reklamatic.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
+  function handleTabKeyDown(event) {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const nextIndex = event.key === "ArrowLeft" || event.key === "Home" ? 0 : 1;
+    setMode(nextIndex === 0 ? "brand" : "clipper");
+    tabRefs.current[nextIndex]?.focus();
+  }
   return (
     <section className="section contact" id="contact">
       <span id="brand-contact" /> <span id="clipper-contact" />
@@ -304,9 +321,10 @@ function Contact({ copy, locale }) {
         <form onSubmit={submit} noValidate>
           <input type="hidden" name="mode" value={mode} />
           <div className="service-tabs" role="tablist" aria-label={copy.modeLabel} style={{ marginTop: 0, marginBottom: 22, gridTemplateColumns: "1fr 1fr" }}>
-            <button type="button" role="tab" aria-selected={mode === "brand"} onClick={() => setMode("brand")}><span>{copy.modes.brand}</span></button>
-            <button type="button" role="tab" aria-selected={mode === "clipper"} onClick={() => setMode("clipper")}><span>{copy.modes.clipper}</span></button>
+            <button ref={(node) => { tabRefs.current[0] = node; }} id="contact-tab-brand" type="button" role="tab" aria-selected={mode === "brand"} aria-controls="contact-panel" tabIndex={mode === "brand" ? 0 : -1} onKeyDown={handleTabKeyDown} onClick={() => setMode("brand")}><span>{copy.modes.brand}</span></button>
+            <button ref={(node) => { tabRefs.current[1] = node; }} id="contact-tab-clipper" type="button" role="tab" aria-selected={mode === "clipper"} aria-controls="contact-panel" tabIndex={mode === "clipper" ? 0 : -1} onKeyDown={handleTabKeyDown} onClick={() => setMode("clipper")}><span>{copy.modes.clipper}</span></button>
           </div>
+          <div id="contact-panel" role="tabpanel" aria-labelledby={mode === "brand" ? "contact-tab-brand" : "contact-tab-clipper"}>
           <div className="form-row"><label>{copy.labels.name}<input name="name" autoComplete="name" required /></label><label>{copy.labels.email}<input name="email" type="email" autoComplete="email" required /></label></div>
           <div className="form-row"><label>{copy.labels.phone}<input name="phone" type="tel" autoComplete="tel" /></label><label>{copy.labels.company}<input name="company" autoComplete="organization" /></label></div>
           {mode === "brand" ? <>
@@ -321,6 +339,7 @@ function Contact({ copy, locale }) {
           <label className="consent"><input type="checkbox" name="consent" required /><span>{copy.labels.consent} <a href={locale === "en" ? "/privacy" : "/tr/privacy"} target="_blank">{copy.labels.privacy}</a>.</span></label>
           {error && <p className="form-error" role="alert">{error}</p>}
           <button className="button button-dark" type="submit">{copy.labels.submit}<span>↗</span></button>
+          </div>
         </form>
       </div>
     </section>
@@ -328,8 +347,9 @@ function Contact({ copy, locale }) {
 }
 
 function Footer({ copy, nav, locale }) {
+  const directory = locale === "en" ? [["Clipping agency", "/clipping-agency"], ["For brands", "/for-brands"], ["For clippers", "/for-clippers"], ["Resources", "/blog"], ["FAQ", "/faq"]] : [["Clipping ajansı", "/tr/clipping-ajansi"], ["Markalar için", "/tr/markalar-icin"], ["Clipper adayları", "/tr/clipper-ol"], ["Kaynaklar", "/tr/blog"], ["SSS", "/tr/sss"]];
   return (
-    <footer><div className="container footer-grid"><div><a href="#top"><Wordmark /></a><p>{copy.line}</p><span>© 2026 Reklamatic. {copy.rights}</span></div><div><strong>{copy.explore}</strong>{nav.slice(0, 4).map(([label, url]) => <a href={url} key={url}>{label}</a>)}</div><div><strong>{copy.contact}</strong><a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a><a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a><a href="https://wa.me/905302312947" target="_blank" rel="noreferrer">WhatsApp ↗</a></div><div><strong>{copy.legal}</strong><a href={locale === "en" ? "/privacy" : "/tr/privacy"}>{copy.privacy}</a><a href={locale === "en" ? "/terms" : "/tr/terms"}>{copy.terms}</a><a href={locale === "en" ? "/tr" : "/"}>{locale === "en" ? "Türkçe" : "English"}</a></div></div></footer>
+    <footer><div className="container footer-grid"><div><a href="#top"><Wordmark /></a><p>{copy.line}</p><span>© 2026 Reklamatic. {copy.rights}</span></div><div><strong>{copy.explore}</strong>{directory.map(([label, url]) => <a href={url} key={url}>{label}</a>)}</div><div><strong>{copy.contact}</strong><a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a><a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a><a href="https://wa.me/905302312947" target="_blank" rel="noreferrer">WhatsApp ↗</a></div><div><strong>{copy.legal}</strong><a href={locale === "en" ? "/privacy" : "/tr/privacy"}>{copy.privacy}</a><a href={locale === "en" ? "/terms" : "/tr/terms"}>{copy.terms}</a><a href={locale === "en" ? "/tr" : "/"}>{locale === "en" ? "Türkçe" : "English"}</a></div></div></footer>
   );
 }
 
@@ -348,7 +368,7 @@ export default function ClippingSite({ copy, locale }) {
       <a className="skip-link" href="#clipping">{copy.skip}</a>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header copy={copy} locale={locale} />
-      <main><Hero copy={copy.hero} ticker={copy.ticker} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
+      <main><Hero copy={copy.hero} ticker={copy.ticker} /><EditorialShowcase locale={locale} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
       <Footer copy={copy.footer} nav={copy.nav} locale={locale} />
     </div>
   );
