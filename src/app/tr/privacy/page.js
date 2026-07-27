@@ -6,7 +6,7 @@ export default function PrivacyPageTr() {
   return (
     <LegalPage eyebrow="REKLAMATIC.AI" title="Gizlilik Politikası" updated="27 Temmuz 2026" updatedLabel="Son güncelleme" otherHref="/tr/terms" otherLabel="Koşullar" languageHref="/privacy" languageLabel="English">
       <h2>Veri sorumlusu</h2>
-      <p>Türkiye&apos;de Cem Gülçağ tarafından işletilen Reklamatic.ai, burada açıklanan kişisel verilerden sorumludur. Gizlilik taleplerinizi <a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a> adresine iletebilirsiniz.</p>
+      <p>Reklamatic.ai burada açıklanan kişisel verilerden sorumludur. Gizlilik taleplerinizi <a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a> adresine iletebilirsiniz.</p>
       <h2>Web sitesi ve satış talepleri</h2>
       <p>Kampanya özeti hazırlarken girdiğiniz ad, iş e-postası, telefon veya WhatsApp numarası, şirket, pazar, bütçe aralığı, kaynak bağlantısı ve mesaj yalnızca kendi e-posta uygulamanızda bir e-posta oluşturmak için kullanılır. Form verileri bu web sitesine yüklenmez veya burada saklanmaz. E-postayı gönderirseniz Reklamatic talebinizi yanıtlamak, kapsam hazırlamak ve iş yazışmalarını yürütmek amacıyla bilgileri işler.</p>
       <h2>İletişim, saklama ve paylaşım</h2>

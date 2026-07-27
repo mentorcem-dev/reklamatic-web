@@ -1,6 +1,6 @@
 export const sharedMetadata = {
   metadataBase: new URL("https://reklamatic.ai"),
-  title: { default: "Reklamatic.ai | Clipping Agency", template: "%s · Reklamatic.ai" },
+  title: { default: "Reklamatic.ai | Clipping Agent", template: "%s · Reklamatic.ai" },
   description: "Platform-native clipping, short-form production and distribution support for creators, brands and media teams.",
   authors: [{ name: "Reklamatic" }],
   creator: "Reklamatic.ai",

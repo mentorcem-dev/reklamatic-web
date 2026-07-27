@@ -2,9 +2,9 @@ import ClippingSite from "@/components/clipping/ClippingSite";
 import { content } from "@/lib/clippingContent";
 
 export const metadata = {
-  title: { absolute: "Clipping Agency for Short-Form Distribution | Reklamatic" },
+  title: { absolute: "Clipping Agent for Short-Form Distribution | Reklamatic" },
   description: "Reklamatic turns approved long-form content into short-form clips for TikTok, Instagram Reels and YouTube Shorts, with review and campaign reporting.",
-  keywords: ["clipping agency", "short form video agency", "podcast clips", "content repurposing", "TikTok clipping", "Instagram Reels agency", "YouTube Shorts agency"],
+  keywords: ["clipping agent", "clipping agency", "short form video agency", "podcast clips", "content repurposing", "TikTok clipping", "Instagram Reels agency", "YouTube Shorts agency"],
   alternates: {
     canonical: "https://reklamatic.ai/",
     languages: { en: "https://reklamatic.ai/", tr: "https://reklamatic.ai/tr", "x-default": "https://reklamatic.ai/" },

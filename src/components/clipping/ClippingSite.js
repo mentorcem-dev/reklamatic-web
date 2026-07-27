@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const PHONE_DISPLAY = "+90 530 231 29 47";
 const PHONE = "+905302312947";
@@ -42,22 +42,23 @@ function Header({ copy, locale }) {
   );
 }
 
+function FlowCanvas({ label }) {
+  return (
+    <div className="flow-canvas" role="img" aria-label={label}>
+      <div className="flow-source" aria-hidden="true">
+        <div className="flow-scene"><i /><i /><i /></div>
+        <div className="flow-timeline"><i /></div>
+      </div>
+      <div className="flow-rail" aria-hidden="true"><i /><i /><i /></div>
+      <div className="flow-clips" aria-hidden="true">
+        {[0, 1, 2].map((item) => <div className={`flow-clip flow-clip-${item + 1}`} key={item}><span /><b /><em /></div>)}
+      </div>
+      <div className="flow-signal" aria-hidden="true"><i /><i /><i /><i /></div>
+    </div>
+  );
+}
+
 function Hero({ copy, ticker }) {
-  const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(true);
-  useEffect(() => {
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const frame = window.requestAnimationFrame(() => {
-      videoRef.current?.pause();
-      setPlaying(false);
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
-  function toggleVideo() {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) { videoRef.current.play(); setPlaying(true); }
-    else { videoRef.current.pause(); setPlaying(false); }
-  }
   return (
     <section className="hero" id="top">
       <div className="hero-grid grid-lines" aria-hidden="true" />
@@ -75,12 +76,9 @@ function Hero({ copy, ticker }) {
         </div>
         <div className="hero-visual">
           <div className="video-frame">
-            <video ref={videoRef} autoPlay muted loop playsInline poster="/media/reklamatic-production-poster.jpg" aria-label={copy.visualLabel}>
-              <source src="/media/reklamatic-production-sample.mp4" type="video/mp4" />
-            </video>
-            <div className="video-top"><span>REKLAMATIC / CLIP 001</span><span>9:16</span></div>
+            <FlowCanvas label={copy.visualAlt} />
+            <div className="video-top"><span>REKLAMATIC / CLIPPING FLOW</span><span>9:16</span></div>
             <div className="video-caption"><small>{copy.visualLabel}</small><strong>{copy.visualTitle}</strong></div>
-            <button className="video-toggle" type="button" onClick={toggleVideo} aria-label={playing ? copy.pause : copy.play}>{playing ? "Ⅱ" : "▶"}</button>
             <div className="focus-corners" aria-hidden="true"><i /><i /><i /><i /></div>
           </div>
           <div className="float-card float-hook"><span>{copy.floating[0]}</span><strong>{copy.floating[1]}</strong></div>
@@ -88,6 +86,31 @@ function Hero({ copy, ticker }) {
         </div>
       </div>
       <div className="ticker" aria-label="Content types"><div>{[...ticker, ...ticker].map((item, i) => <span key={`${item}-${i}`}>{item}<b>✦</b></span>)}</div></div>
+    </section>
+  );
+}
+
+function ClipperRole({ copy }) {
+  return (
+    <section className="section what" id="clipper-role">
+      <div className="container">
+        <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+        <div className="what-grid">
+          {copy.items.map(([number, title, text], index) => <article className={index === 1 ? "featured" : ""} key={title}><div className="card-index"><span>{number}</span><i>{index === 1 ? "✦" : "↗"}</i></div><h3>{title}</h3><p>{text}</p></article>)}
+        </div>
+        <p className="fineprint">{copy.note}</p>
+      </div>
+    </section>
+  );
+}
+
+function BecomeClipper({ copy }) {
+  return (
+    <section className="section use-cases" id="become-clipper">
+      <div className="container use-layout">
+        <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+        <div className="use-list">{copy.items.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div><b>✓</b></article>)}<a className="button button-primary" href="#clipper-contact" style={{ marginTop: 24 }}>{copy.cta}<span>↗</span></a><p className="proof-note">{copy.note}</p></div>
+      </div>
     </section>
   );
 }
@@ -138,7 +161,7 @@ function UseCases({ copy }) {
   );
 }
 
-function Services({ copy }) {
+function BrandCampaigns({ copy }) {
   const [active, setActive] = useState(0);
   const current = copy.tabs[active];
   function moveTab(event, index) {
@@ -150,9 +173,10 @@ function Services({ copy }) {
     document.getElementById(`service-tab-${next}`)?.focus();
   }
   return (
-    <section className="section services" id="services">
+    <section className="section services" id="brand-campaigns">
       <div className="container">
         <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.intro} />
+        <div className="metric-grid">{copy.overview.map(([title, text]) => <article key={title}><strong style={{ fontSize: 22 }}>{title}</strong><span>{text}</span></article>)}</div>
         <div className="service-tabs" role="tablist" aria-label={copy.kicker}>
           {copy.tabs.map((tab, index) => <button key={tab.label} id={`service-tab-${index}`} type="button" role="tab" aria-selected={active === index} aria-controls="service-panel" tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={(event) => moveTab(event, index)}>{String(index + 1).padStart(2, "0")}<span>{tab.label}</span></button>)}
         </div>
@@ -166,16 +190,61 @@ function Services({ copy }) {
   );
 }
 
-function Proof({ copy }) {
+function SafetyMeasurement({ copy }) {
   return (
-    <section className="section proof" id="proof">
+    <section className="section proof" id="measurement">
       <div className="container">
         <div className="proof-heading"><SectionTitle kicker={copy.kicker} title={copy.title} /><p>{copy.text}</p></div>
-        <div className="metric-grid">{copy.metrics.map(([value, label]) => <article key={label}><strong>{value}</strong><span>{label}</span></article>)}</div>
+        <div className="metric-grid">{copy.pillars.map(([title, text]) => <article key={title}><strong style={{ fontSize: 24 }}>{title}</strong><span>{text}</span></article>)}</div>
+        <div className="comparison-wrap"><table><thead><tr>{copy.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{copy.rows.map((row) => <tr key={row[0]}>{row.map((cell) => <td key={cell}>{cell}</td>)}</tr>)}</tbody></table></div>
+        <p className="proof-note">{copy.note}</p>
+      </div>
+    </section>
+  );
+}
+
+function BrandSafety({ copy }) {
+  return (
+    <section className="section what" id="brand-safety">
+      <div className="container">
+        <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+        <div className="what-grid">{copy.items.map(([title, text], index) => <article className={index === 1 ? "featured" : ""} key={title}><div className="card-index"><span>0{index + 1}</span><i>✓</i></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <p className="fineprint">{copy.note}</p>
+      </div>
+    </section>
+  );
+}
+
+function ScenarioVisual({ index, label }) {
+  const backgrounds = ["linear-gradient(135deg,#0b2342,#086fd8 55%,#9bd4ff)", "linear-gradient(135deg,#081a34,#4967e9 55%,#d8e6ff)", "linear-gradient(135deg,#091a2d,#335d74 50%,#b9d5cc)"];
+  return <div role="img" aria-label={label} style={{ height: 325, background: backgrounds[index], display: "grid", placeItems: "center", overflow: "hidden" }}><div className={`card-graphic graphic-${index + 1}`} style={{ width: 220, height: 150, transform: "scale(1.35)" }} aria-hidden="true"><i /><i /><i /><i /><i /><i /></div></div>;
+}
+
+function CampaignScenarios({ copy }) {
+  return (
+    <section className="section proof" id="campaign-examples">
+      <div className="container">
+        <div className="proof-heading"><SectionTitle kicker={copy.kicker} title={copy.title} /><p>{copy.text}</p></div>
         <div className="proof-gallery">
-          {copy.images.map(([src, alt, title, text], index) => <figure className={index === 0 ? "wide" : ""} key={src}><img src={src} width={index === 0 ? 2394 : index === 1 ? 1490 : 1512} height={index === 0 ? 716 : index === 1 ? 780 : 805} alt={alt} loading="lazy" decoding="async" /><figcaption><strong>{title}</strong><span>{text}</span></figcaption></figure>)}
+          {copy.items.map((item, index) => <figure className={index === 0 ? "wide" : ""} key={item.title}>
+            <ScenarioVisual index={index} label={item.alt} />
+            <figcaption><strong><small>{copy.label}</small><br />{item.brand}<br /><small>{copy.fictional}</small><br />{item.title}</strong><span><b>{copy.source}:</b> {item.source}<br /><b>{copy.goal}:</b> {item.goal}<br /><b>{copy.outputs}:</b> {item.outputs}<br /><b>{copy.signals}:</b> {item.signals}</span></figcaption>
+          </figure>)}
         </div>
         <p className="proof-note">{copy.note}</p>
+      </div>
+    </section>
+  );
+}
+
+function Resources({ copy }) {
+  return (
+    <section className="section what" id="resources">
+      <div className="container">
+        <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+        <div className="what-grid">
+          {copy.items.map(([tag, title, text, points], index) => <article className={index === 1 ? "featured" : ""} key={title}><div className="card-index"><span>{tag}</span><i>+</i></div><h3>{title}</h3><p>{text}</p><details><summary>{copy.open}</summary><div className="hero-pills">{points.map((point) => <span key={point}>✓ {point}</span>)}</div></details></article>)}
+        </div>
       </div>
     </section>
   );
@@ -206,6 +275,13 @@ function Faq({ copy }) {
 
 function Contact({ copy, locale }) {
   const [error, setError] = useState("");
+  const [mode, setMode] = useState("brand");
+  useEffect(() => {
+    const syncMode = () => setMode(window.location.hash === "#clipper-contact" ? "clipper" : "brand");
+    syncMode();
+    window.addEventListener("hashchange", syncMode);
+    return () => window.removeEventListener("hashchange", syncMode);
+  }, []);
   function submit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -215,21 +291,33 @@ function Contact({ copy, locale }) {
       return;
     }
     setError("");
-    const subject = locale === "en" ? `Clipping brief — ${data.get("company") || data.get("name")}` : `Clipping talebi — ${data.get("company") || data.get("name")}`;
-    const body = [`Name / Ad: ${data.get("name")}`, `Email: ${email}`, `Phone / WhatsApp: ${data.get("phone") || "-"}`, `Company / Channel: ${data.get("company") || "-"}`, `Market: ${data.get("market")}`, `Platforms: ${data.get("platforms") || "-"}`, `Budget: ${data.get("budget")}`, `Source URL: ${data.get("source") || "-"}`, `Service: ${data.get("service")}`, "", String(data.get("message"))].join("\n");
+    const isClipper = data.get("mode") === "clipper";
+    const subject = isClipper ? (locale === "en" ? `Clipper interest — ${data.get("name")}` : `Clipper adaylığı — ${data.get("name")}`) : (locale === "en" ? `Brand clipping brief — ${data.get("company") || data.get("name")}` : `Marka clipping talebi — ${data.get("company") || data.get("name")}`);
+    const body = [`Path / Akış: ${isClipper ? "Clipper" : "Brand / Marka"}`, `Name / Ad: ${data.get("name")}`, `Email: ${email}`, `Phone / WhatsApp: ${data.get("phone") || "-"}`, `Company / Channel: ${data.get("company") || "-"}`, `Market: ${data.get("market") || "-"}`, `Platforms: ${data.get("platforms") || "-"}`, `Budget: ${data.get("budget") || "-"}`, `Source / Portfolio URL: ${data.get("source") || "-"}`, `Service / Specialty: ${data.get("service") || "-"}`, "", String(data.get("message"))].join("\n");
     window.location.href = `mailto:info@reklamatic.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
   return (
     <section className="section contact" id="contact">
+      <span id="brand-contact" /> <span id="clipper-contact" />
       <div className="container contact-shell">
         <div className="contact-copy"><SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} /><div className="direct"><span>{copy.direct}</span><a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a><a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a><a href="https://wa.me/905302312947" target="_blank" rel="noreferrer">WhatsApp ↗</a></div></div>
         <form onSubmit={submit} noValidate>
+          <input type="hidden" name="mode" value={mode} />
+          <div className="service-tabs" role="tablist" aria-label={copy.modeLabel} style={{ marginTop: 0, marginBottom: 22, gridTemplateColumns: "1fr 1fr" }}>
+            <button type="button" role="tab" aria-selected={mode === "brand"} onClick={() => setMode("brand")}><span>{copy.modes.brand}</span></button>
+            <button type="button" role="tab" aria-selected={mode === "clipper"} onClick={() => setMode("clipper")}><span>{copy.modes.clipper}</span></button>
+          </div>
           <div className="form-row"><label>{copy.labels.name}<input name="name" autoComplete="name" required /></label><label>{copy.labels.email}<input name="email" type="email" autoComplete="email" required /></label></div>
           <div className="form-row"><label>{copy.labels.phone}<input name="phone" type="tel" autoComplete="tel" /></label><label>{copy.labels.company}<input name="company" autoComplete="organization" /></label></div>
-          <div className="form-row"><label>{copy.labels.market}<select name="market">{copy.markets.map((market) => <option key={market}>{market}</option>)}</select></label><label>{copy.labels.platforms}<input name="platforms" placeholder={copy.labels.platformsHint} /></label></div>
-          <div className="form-row"><label>{copy.labels.budget}<select name="budget">{copy.budgets.map((budget) => <option key={budget}>{budget}</option>)}</select></label><label>{copy.labels.source}<input name="source" type="url" inputMode="url" placeholder="https://" /></label></div>
-          <label>{copy.labels.service}<select name="service">{copy.services.map((service) => <option key={service}>{service}</option>)}</select></label>
-          <label>{copy.labels.message}<textarea name="message" rows="4" required /></label>
+          {mode === "brand" ? <>
+            <div className="form-row"><label>{copy.labels.market}<select name="market">{copy.markets.map((market) => <option key={market}>{market}</option>)}</select></label><label>{copy.labels.platforms}<input name="platforms" placeholder={copy.labels.platformsHint} /></label></div>
+            <div className="form-row"><label>{copy.labels.budget}<select name="budget">{copy.budgets.map((budget) => <option key={budget}>{budget}</option>)}</select></label><label>{copy.labels.source}<input name="source" type="url" inputMode="url" placeholder="https://" /></label></div>
+            <label>{copy.labels.service}<select name="service">{copy.services.map((service) => <option key={service}>{service}</option>)}</select></label>
+          </> : <>
+            <div className="form-row"><label>{copy.labels.portfolio}<input name="source" type="url" inputMode="url" placeholder="https://" /></label><label>{copy.labels.specialty}<select name="service">{copy.specialties.map((item) => <option key={item}>{item}</option>)}</select></label></div>
+          </>}
+          <p className="fineprint" style={{ marginBottom: 16 }}>{copy.safetyNote}</p>
+          <label>{mode === "brand" ? copy.labels.message : copy.labels.clipperMessage}<textarea name="message" rows="4" required /></label>
           <label className="consent"><input type="checkbox" name="consent" required /><span>{copy.labels.consent} <a href={locale === "en" ? "/privacy" : "/tr/privacy"} target="_blank">{copy.labels.privacy}</a>.</span></label>
           {error && <p className="form-error" role="alert">{error}</p>}
           <button className="button button-dark" type="submit">{copy.labels.submit}<span>↗</span></button>
@@ -260,7 +348,7 @@ export default function ClippingSite({ copy, locale }) {
       <a className="skip-link" href="#clipping">{copy.skip}</a>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header copy={copy} locale={locale} />
-      <main><Hero copy={copy.hero} ticker={copy.ticker} /><WhatSection copy={copy.what} /><ProcessSection copy={copy.process} /><UseCases copy={copy.useCases} /><Services copy={copy.services} /><Proof copy={copy.proof} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
+      <main><Hero copy={copy.hero} ticker={copy.ticker} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
       <Footer copy={copy.footer} nav={copy.nav} locale={locale} />
     </div>
   );
