@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import CampaignExperience from "./CampaignExperience";
+import MotionLayer from "./MotionLayer";
 
 const PHONE_DISPLAY = "+90 530 231 29 47";
 const PHONE = "+905302312947";
@@ -67,16 +68,16 @@ function Hero({ copy, ticker }) {
       <div className="hero-orb orb-one" aria-hidden="true" /><div className="hero-orb orb-two" aria-hidden="true" />
       <div className="container hero-layout">
         <div className="hero-copy">
-          <p className="kicker"><i />{copy.kicker}</p>
-          <h1>{copy.titleA}<br /><em>{copy.titleB}</em></h1>
-          <p className="hero-text">{copy.text}</p>
-          <div className="hero-buttons">
+          <p className="kicker" data-motion-hero><i />{copy.kicker}</p>
+          <h1 data-motion-hero>{copy.titleA}<br /><em>{copy.titleB}</em></h1>
+          <p className="hero-text" data-motion-hero>{copy.text}</p>
+          <div className="hero-buttons" data-motion-hero>
             <a className="button button-primary" href="#contact">{copy.primary}<span>↗</span></a>
-            <a className="button button-quiet" href="#process">{copy.secondary}<span>↓</span></a>
+            <a className="button button-quiet" href={copy.secondaryHref || "#process"}>{copy.secondary}<span>↓</span></a>
           </div>
-          <div className="hero-pills">{copy.pills.map((pill) => <span key={pill}>✓ {pill}</span>)}</div>
+          <div className="hero-pills" data-motion-hero>{copy.pills.map((pill) => <span key={pill}>✓ {pill}</span>)}</div>
         </div>
-        <div className="hero-visual">
+        <div className="hero-visual" data-motion-hero>
           <div className="video-frame">
             <FlowCanvas label={copy.visualAlt} />
             <div className="video-top"><span>REKLAMATIC / CLIPPING FLOW</span><span>9:16</span></div>
@@ -90,6 +91,19 @@ function Hero({ copy, ticker }) {
       <div className="ticker" aria-label="Content types"><div>{[...ticker, ...ticker].map((item, i) => <span key={`${item}-${i}`}>{item}<b>✦</b></span>)}</div></div>
     </section>
   );
+}
+
+function HomePathways({ locale }) {
+  const cards = locale === "tr" ? [
+    ["MARKALAR İÇİN", "Reklamını clipper ağıyla büyüt", "Kampanyanı oluştur; içerik üretimi, doğru hesaplarla eşleşme, yayın takibi ve raporlamayı tek yerden yönet.", "/tr/markalar-icin", "Kampanya seçeneklerini gör"],
+    ["CLIPPER'LAR İÇİN", "Üret, kendi hesabında paylaş, kazan", "Sosyal medya hesabın ve içerik yeteneğinle ağa katıl; sana uygun marka kampanyalarında çalış.", "/tr/clipper-ol", "Clipper ol"],
+    ["SİSTEM NASIL ÇALIŞIR?", "Brief'ten yayına kadar her adım açık", "Marka kampanyayı açar, clipper içerik üretir, Reklamatic kontrol eder; paylaşım ve sonuçlar takip edilir.", "/tr/clipping-kampanyalari", "Süreci incele"],
+  ] : [
+    ["FOR BRANDS", "Scale campaigns through a clipper network", "Plan creative, match the right accounts, review publishing and measure delivery in one place.", "/for-brands", "Explore brand campaigns"],
+    ["FOR CLIPPERS", "Create, publish and earn", "Join with your social channels and creative skills, then work on campaigns that match your audience.", "/for-clippers", "Become a clipper"],
+    ["HOW IT WORKS", "A clear path from brief to live posts", "The brand opens a campaign, clippers create, Reklamatic reviews, and verified publishing is reported.", "/clipping-campaigns", "Explore the system"],
+  ];
+  return <section className="section pathways" data-motion-reveal><div className="container"><SectionTitle kicker={locale === "tr" ? "İKİ TARAF, TEK SİSTEM" : "TWO SIDES, ONE SYSTEM"} title={locale === "tr" ? "Burada ne yapmak istediğini seç." : "Choose how you want to take part."} text={locale === "tr" ? "Reklamatic markalara dağıtım gücü, içerik üreticilerine ise yeni iş fırsatları sunar. Her yolun kendi sayfası, süreci ve başvurusu var." : "Reklamatic gives brands distributed reach and creators new campaign opportunities, each with a dedicated path."} /><div className="pathway-grid">{cards.map(([eyebrow, title, text, href, cta], index) => <a href={href} key={href} className={index === 0 ? "pathway-card featured-path" : "pathway-card"} data-motion-item data-motion-tilt><span>0{index + 1} / {eyebrow}</span><h3>{title}</h3><p>{text}</p><b>{cta} ↗</b></a>)}</div></div></section>;
 }
 
 function EditorialShowcase({ locale }) {
@@ -365,11 +379,12 @@ export default function ClippingSite({ copy, locale }) {
     ],
   };
   return (
-    <div className="site" lang={locale}>
+    <div className="site" lang={locale} data-motion-root>
+      <MotionLayer />
       <a className="skip-link" href="#clipping">{copy.skip}</a>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header copy={copy} locale={locale} />
-      <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} /><EditorialShowcase locale={locale} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
+      {locale === "tr" ? <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} compact /><HomePathways locale={locale} /><WhatSection copy={copy.what} /><ProcessSection copy={copy.process} /><CampaignScenarios copy={copy.scenarios} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main> : <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} /><EditorialShowcase locale={locale} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>}
       <Footer copy={copy.footer} nav={copy.nav} locale={locale} />
     </div>
   );

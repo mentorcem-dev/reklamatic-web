@@ -3,6 +3,8 @@
 .heroGrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:70px;align-items:center}
 .heroCopy h1{font-size:clamp(48px,5.8vw,76px)}
 .visualStage{position:relative;min-height:560px;padding:22px;border:1px solid rgba(255,255,255,.6);border-radius:34px;background:#06182e;color:#fff;box-shadow:0 35px 90px rgba(4,33,64,.23);overflow:hidden;transform:rotate(1.2deg)}
+.visualStage[data-motion-tilt]{--tilt-x:0deg;--tilt-y:0deg;transform:perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) rotate(1.2deg);transition:transform .18s ease}
+.highlightGrid article[data-motion-tilt]{--tilt-x:0deg;--tilt-y:0deg;--spot-x:50%;--spot-y:50%;background:radial-gradient(circle at var(--spot-x) var(--spot-y),rgba(8,120,255,.13),transparent 36%),#fff;transform:perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));transition:transform .18s ease,border-color .2s,box-shadow .2s}.highlightGrid article[data-motion-tilt]:hover{border-color:#88c5ff;box-shadow:0 25px 60px rgba(7,41,72,.14)}
 .visualStage::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,color-mix(in srgb,var(--page-accent) 38%,transparent),transparent 34%),linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:auto,34px 34px,34px 34px;opacity:.9}
 .visualChrome{position:relative;display:flex;align-items:center;gap:7px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12)}
 .visualChrome>span{width:7px;height:7px;border-radius:50%;background:#70849a}.visualChrome>span:first-child{background:var(--page-accent)}

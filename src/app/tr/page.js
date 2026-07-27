@@ -2,22 +2,22 @@ import ClippingSite from "@/components/clipping/ClippingSite";
 import { content } from "@/lib/clippingContent";
 
 export const metadata = {
-  title: { absolute: "Clipping Ajansı | Kısa Video Dağıtımı | Reklamatic" },
-  description: "Uzun içerikleri TikTok, Instagram Reels ve YouTube Shorts için kısa videolara dönüştüren, üretim, kontrol ve raporlamayı yöneten clipping ajansı.",
-  keywords: ["clipping ajansı", "kısa video ajansı", "podcast klipleri", "içerik dönüştürme", "TikTok ajansı", "Instagram Reels ajansı", "YouTube Shorts ajansı"],
+  title: { absolute: "Clipping Reklam Ajansı ve Clipper Ağı | Reklamatic" },
+  description: "Markalar için kısa video üretimi ve clipper hesaplarında sosyal medya dağıtımı; içerik üreticileri için marka kampanyaları ve kazanç fırsatları.",
+  keywords: ["clipping ajansı", "clipper ol", "sosyal medya reklamı", "içerik üreticisi reklamı", "TikTok reklam ajansı", "Instagram Reels reklamı", "YouTube Shorts reklamı"],
   alternates: {
     canonical: "https://reklamatic.ai/tr",
     languages: { "en": "https://reklamatic.ai/", "tr": "https://reklamatic.ai/tr", "x-default": "https://reklamatic.ai/" },
   },
   openGraph: {
-    title: "Reklamatic.ai — Tek kayıt. Bir klip ağı.",
-    description: "Uzun fikirleri kısa video dağıtımına dönüştüren clipping partneri.",
+    title: "Reklamatic.ai — Reklam ver veya clipper olarak kazan.",
+    description: "Markaları kısa video üreten ve kendi hesaplarında paylaşan clipper'larla buluşturan kampanya ağı.",
     url: "https://reklamatic.ai/tr",
     locale: "tr_TR",
     alternateLocale: ["en_US"],
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Reklamatic.ai — tek kaynak, birden fazla keşif yolu" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Reklamatic.ai — markalar ve clipper'lar için kısa video kampanya ağı" }],
   },
-  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Ajansı", description: "Tek bir kaydı platforma doğal kısa videolardan oluşan bir dağıtım ağına dönüştürün.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Ağı", description: "Marka kampanyaları uygun clipper hesaplarında kısa videolarla yayımlanır.", images: ["/og.png"] },
 };
 
 export default function TurkishHome() {

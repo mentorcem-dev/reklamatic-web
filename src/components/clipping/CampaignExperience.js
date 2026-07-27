@@ -79,12 +79,12 @@ const copy = {
     ],
   },
   tr: {
-    mediaKicker: "KÜLTÜRÜ HAREKETE GEÇİREN KLİPLERİN ARKASINDAKİ DAĞITIM STÜDYOSU",
-    mediaTitle: "Bir kaynak",
-    mediaAccent: "yaşayan bir medya sistemine dönüşür.",
-    mediaText: "Strateji, editoryal seçim, üreticiye hazır formatlar, değerlendirme, raporlama ve sonraki kreatif karar—tek bir bağlı operasyon olarak tasarlanır.",
-    play: "Kampanya showreel’i",
-    founder: "Stüdyo notu · 2 dk",
+    mediaKicker: "MARKADAN CLIPPER AĞINA, CLIPPER AĞINDAN SOSYAL MEDYAYA",
+    mediaTitle: "Bir kampanya",
+    mediaAccent: "farklı hesaplarda yüzlerce anlatıma dönüşür.",
+    mediaText: "Marka brief'i, kısa video üretimi, doğru clipper'larla eşleşme, yayın onayı, performans takibi ve ödeme yönetimi tek bir kampanya sistemi içinde ilerler.",
+    play: "Kampanya akışını izle",
+    founder: "Clipper modeli · 2 dk",
     brands: ["NERA VALE", "VANTA", "AURA LABS", "NORTH/01", "MONO FM", "HALO RUN", "ARC HOUSE", "LUMA"],
     aboutKicker: "STÜDYO HAKKINDA",
     aboutTitleA: "İddialı ekiplerin",
@@ -149,13 +149,13 @@ const copy = {
 function MediaShowcase({ text }) {
   const [active, setActive] = useState("showreel");
   return (
-    <section className={styles.media} aria-labelledby="campaign-media-title">
+    <section className={styles.media} aria-labelledby="campaign-media-title" data-motion-reveal>
       <div className={styles.mediaCopy}>
-        <p className={styles.eyebrow}>{text.mediaKicker}</p>
-        <h2 id="campaign-media-title">{text.mediaTitle} <em>{text.mediaAccent}</em></h2>
-        <p>{text.mediaText}</p>
+        <p className={styles.eyebrow} data-motion-item>{text.mediaKicker}</p>
+        <h2 id="campaign-media-title" data-motion-item>{text.mediaTitle} <em>{text.mediaAccent}</em></h2>
+        <p data-motion-item>{text.mediaText}</p>
       </div>
-      <div className={styles.showreel}>
+      <div className={styles.showreel} data-motion-item data-motion-tilt>
         {active === "showreel" ? (
           <video autoPlay muted loop playsInline poster={campaignImages[0]} aria-label={text.play}>
             <source src="/media/generated/reklamatic-showreel.mp4" type="video/mp4" />
@@ -180,8 +180,9 @@ function MediaShowcase({ text }) {
   );
 }
 
-export default function CampaignExperience({ locale }) {
+export default function CampaignExperience({ locale, compact = false }) {
   const text = copy[locale] || copy.en;
+  if (compact) return <MediaShowcase text={text} />;
   return (
     <>
       <MediaShowcase text={text} />

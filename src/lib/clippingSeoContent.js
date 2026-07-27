@@ -174,5 +174,103 @@ export const seoPages = [
   }, ["brands", "clippers", "faq"]),
 ];
 
+const clearTurkishCopy = {
+  about: {
+    title: "Reklamatic Hakkında | Marka ve Clipper Ağı",
+    description: "Reklamatic'in markaları içerik üreticileriyle buluşturan kampanya, kısa video ve sosyal medya dağıtım sistemini tanıyın.",
+    kicker: "Reklamatic hakkında",
+    headline: "Markalara dağıtım gücü, içerik üreticilerine yeni iş fırsatları sunuyoruz.",
+    lead: "Reklamatic, markaların kampanyalarını uygun sosyal medya hesaplarında doğal kısa videolara dönüştüren bir içerik ve dağıtım ajansıdır. Markanın hedefini, clipper'ın üretim gücünü ve gerçek paylaşımlardan gelen veriyi tek sistemde birleştirir.",
+    highlights: [["Marka tarafı", "Tek brief ile birden fazla içerik üreticisine ulaşır"], ["Clipper tarafı", "Uygun kampanyalarda üretir, paylaşır ve kazanır"], ["Reklamatic", "Eşleşme, onay, yayın, takip ve raporlamayı yönetir"]],
+    sections: [["Neden varız?", "Markalar için tek tek içerik üreticisi bulmak, fiyat konuşmak, brief anlatmak, yayınları takip etmek ve sonuç toplamak yorucu bir süreçtir. İçerik üreticileri içinse düzenli ve güvenilir marka işi bulmak zordur. Reklamatic iki tarafı açık kuralları olan tek bir kampanya akışında buluşturur."], ["Ne yapıyoruz?", "Kampanya hedefini ve bütçeyi netleştirir, uygun clipper'ları seçer, kısa videoların üretilmesini sağlar, marka onayını yönetir, paylaşımları doğrular ve erişilebilen sonuçları raporlarız."], ["Neyi açıkça söyleriz?", "Her kampanyada içerik adedi, yayın yapılacak hesap türleri, onay süreci, ödeme modeli ve ölçülebilen hedefler baştan yazılır. Viral olma, kesin görüntülenme veya satış garantisi verilmez."]],
+    cta: "Reklamatic ile çalış"
+  },
+  agency: {
+    title: "Clipping Ajansı | İçerik Üretimi ve Clipper Dağıtımı",
+    description: "Marka kampanyanızı kısa videolara dönüştürün ve uygun clipper hesaplarında yayımlayın. Üretim, dağıtım ve raporlama tek yerde.",
+    kicker: "Clipping ajansı",
+    headline: "Sadece video üretmeyiz; videoyu doğru hesaplarda gerçek paylaşıma dönüştürürüz.",
+    lead: "Reklamatic, markanız için kısa video kampanyasını planlar, uygun clipper'ları seçer, içerikleri kontrol eder ve onaylanan videoların üreticilerin kendi hesaplarında yayımlanmasını yönetir.",
+    highlights: [["Üretim", "Markaya ve platforma uygun kısa videolar"], ["Dağıtım", "Kendi kitlesi olan clipper hesaplarında paylaşım"], ["Takip", "İçerik, hesap ve sonuç bazında kampanya raporu"]],
+    sections: [["Ajans ne yapar?", "Hedef kitleyi, platformu, bütçeyi ve marka kurallarını netleştirir; kampanyaya uygun içerik açıları oluşturur; clipper'larla eşleştirir; içerikleri yayın öncesi kontrol eder ve paylaşımları takip ederiz."], ["Kimler için uygundur?", "Ürününü, uygulamasını, müziğini, etkinliğini, podcast'ini veya hizmetini TikTok, Instagram Reels ve YouTube Shorts üzerinde farklı hesaplar üzerinden duyurmak isteyen markalar için uygundur."], ["Marka nasıl kontrolü korur?", "Kullanılabilecek mesajlar, yasaklı iddialar, görsel kurallar, reklam açıklaması ve hesap seçim ölçütleri brief'te belirlenir. Onaysız içerik kampanya yayınına çıkmaz."]],
+    cta: "Markam için kampanya iste"
+  },
+  campaigns: {
+    title: "Clipping Kampanyası Nasıl Çalışır? | Reklamatic",
+    description: "Marka brief'inden clipper eşleşmesine, içerik onayından sosyal medya paylaşımı ve raporlamaya kadar tüm süreci öğrenin.",
+    kicker: "Sistem nasıl çalışır?",
+    headline: "Marka kampanyayı açar. Clipper üretir ve paylaşır. Reklamatic tüm süreci yönetir.",
+    lead: "Her kampanya açık bir hedef, bütçe, platform ve içerik planıyla başlar. Uygun clipper'lar seçilir, videolar onaylanır, üreticilerin kendi hesaplarında yayımlanır ve doğrulanabilen sonuçlar tek raporda toplanır.",
+    highlights: [["1 · Kampanya", "Hedef, bütçe, platform ve marka kuralları"], ["2 · Clipper", "Eşleşme, üretim, onay ve kendi hesabında paylaşım"], ["3 · Sonuç", "Yayın doğrulaması, performans takibi ve ödeme"]],
+    sections: [["1. Kampanya brief'i", "Marka; neyi tanıtmak istediğini, kime ulaşmak istediğini, bütçesini, platformları, içerik kaynaklarını ve kullanılabilecek mesajları belirtir. Reklamatic buna göre kampanya yapısını ve çalışma modelini hazırlar."], ["2. Clipper seçimi ve içerik", "Kampanya, hesabının konusu ve kitlesi uygun clipper'lara açılır. Üreticiler brief'e göre video hazırlar veya markanın içeriğini kendi anlatımına uyarlar. Her video yayın öncesi kontrol edilir."], ["3. Yayın, rapor ve ödeme", "Onaylanan içerik clipper'ın kendi hesabında paylaşılır. Bağlantı, tarih ve erişilebilen performans verileri doğrulanır. Kampanyada belirtilen şartlara göre clipper ödemesi ve marka raporu hazırlanır."]],
+    cta: "Kampanya başlat"
+  },
+  pricing: {
+    title: "Clipping Kampanyası Fiyatları | Reklamatic",
+    description: "Clipper sayısı, içerik adedi, platform, kampanya süresi ve ödeme modeline göre clipping kampanyası fiyatının nasıl belirlendiğini öğrenin.",
+    kicker: "Kampanya bütçesi",
+    headline: "Fiyat; kaç içerik üretileceğine, kaç hesapta paylaşılacağına ve hedefinize göre belirlenir.",
+    lead: "Her marka ve kampanya farklıdır. Bu nedenle tek paket fiyat yerine içerik üretimi, clipper dağıtımı, kampanya süresi, platformlar ve raporlama ihtiyacına göre açık bir teklif hazırlarız.",
+    highlights: [["İçerik", "Video adedi, çekim ihtiyacı ve kreatif çeşitlilik"], ["Dağıtım", "Clipper sayısı, hesap türleri ve platformlar"], ["Operasyon", "Onay, yayın takibi, veri doğrulama ve rapor"]],
+    sections: [["Bütçeyi ne etkiler?", "Üretilecek video sayısı, clipper sayısı, içeriklerin hazır mı yoksa sıfırdan mı çekileceği, hedef platformlar, kampanya süresi, revizyonlar ve ödeme modeli bütçeyi belirler."], ["Teklifte ne yer alır?", "Markanın alacağı içerik adedi, hedeflenen clipper profili, yayın koşulları, kampanya takvimi, onay süreci, raporlama ve varsa performansa bağlı ödeme şartları açıkça yazılır."], ["Neden kesin sonuç fiyatı yok?", "Görüntülenme ve satış platform ile izleyici davranışına bağlıdır. Reklamatic; kararlaştırılan üretimi, yayın sürecini ve raporlamayı yönetir, viral sonucu garanti etmez."]],
+    cta: "Bütçeme göre teklif al"
+  },
+  brands: {
+    title: "Markalar için Clipping Reklamı | Reklamatic",
+    description: "Ürününüzü veya kampanyanızı uygun clipper'ların TikTok, Instagram ve YouTube hesaplarında doğal kısa videolarla duyurun.",
+    kicker: "Markalar için",
+    headline: "Tek kampanyayla farklı içerik üreticilerinin hesaplarında görünür olun.",
+    lead: "Tek tek influencer aramak, her biriyle ayrı brief ve fiyat konuşmak yerine kampanyanızı Reklamatic'e verin. Uygun clipper'ları bulalım, içerikleri üretelim, onaylayalım, yayımlayalım ve sonuçları tek raporda gösterelim.",
+    highlights: [["Siz anlatın", "Ürününüzü, hedefinizi, kitlenizi ve bütçenizi"], ["Biz yönetelim", "Clipper seçimi, içerik, onay ve yayın takibini"], ["Siz görün", "Hangi hesapta ne yayımlandığını ve doğrulanabilen sonuçları"]],
+    sections: [["Markadan ne gerekir?", "Ürün veya hizmet bilgisi, kampanya hedefi, hedef kitle, bütçe, kullanılabilecek görsel ve mesajlar, yasaklı ifadeler ve son onayı verecek yetkili gerekir."], ["Reklamatic ne yapar?", "Kampanya fikrini ve içerik formatlarını oluşturur, uygun clipper'ları seçer, üretim sürecini yönetir, marka kontrolünü yapar, paylaşımları doğrular ve sonuçları raporlarız."], ["Nerelerde yayımlanır?", "Kampanyaya göre TikTok, Instagram Reels ve YouTube Shorts hesaplarında yayımlanabilir. Hesapların konusu, kitle yapısı ve seçim ölçütleri kampanya başlamadan belirlenir."]],
+    cta: "Reklam vermek istiyorum"
+  },
+  clippers: {
+    title: "Clipper Ol | İçerik Üret, Paylaş ve Kazan",
+    description: "Reklamatic clipper ağına başvurun; uygun marka kampanyaları için kısa video üretin, kendi sosyal medya hesabınızda paylaşın ve kazanın.",
+    kicker: "Clipper ol",
+    headline: "İçerik yeteneğini ve sosyal medya hesabını marka kampanyalarında gelire dönüştür.",
+    lead: "TikTok, Instagram veya YouTube'da içerik üretiyorsan; video kurguluyor, kamera karşısında anlatıyor ya da belirli bir konuda aktif hesap yönetiyorsan Reklamatic clipper ağına katılabilirsin.",
+    highlights: [["Başvur", "Hesabını, içerik alanını ve örnek videolarını paylaş"], ["Eşleş", "Kitlene ve tarzına uygun kampanyaları seç"], ["Üret ve kazan", "Onaylı içeriği kendi hesabında paylaş, şartlara göre ödeme al"]],
+    sections: [["Clipper ne yapar?", "Kampanya brief'ini inceler, markanın içeriğinden kısa video üretir veya kendi çekimini hazırlar. İçerik onaylandıktan sonra kendi TikTok, Instagram ya da YouTube hesabında paylaşır."], ["Kimler başvurabilir?", "Büyük takipçi sayısı şart değildir. Düzenli içerik üreten, belirli bir konuda kitlesi olan, video kurgulayabilen veya kamera karşısında doğal anlatım yapabilen herkes başvurabilir."], ["Kazanç nasıl belirlenir?", "Kampanyaya göre sabit üretim ücreti, paylaşım ücreti veya doğrulanmış performansa bağlı ödeme uygulanabilir. Ücret, teslim şartı ve ödeme zamanı işi kabul etmeden önce gösterilir. Başvuru, iş veya gelir garantisi değildir."]],
+    cta: "Clipper başvurusu yap"
+  },
+  faq: {
+    title: "Clipping Hakkında Sık Sorulan Sorular | Reklamatic",
+    description: "Markaların nasıl reklam verdiğini, clipper'ların nasıl çalışıp kazandığını ve kampanya paylaşımlarının nasıl yönetildiğini öğrenin.",
+    kicker: "Sık sorulan sorular",
+    headline: "Marka ve clipper tarafındaki tüm temel soruların net cevapları.",
+    lead: "Clipping Türkiye'de yeni bir reklam modeli olabilir. En basit haliyle marka kampanya açar; clipper kısa video üretir ve kendi hesabında paylaşır; Reklamatic eşleşme, onay, takip ve ödemeyi yönetir.",
+    faq: [["Clipping nedir?", "Bir markanın kampanya içeriğinin kısa videolara dönüştürülüp uygun içerik üreticilerinin kendi sosyal medya hesaplarında yayımlanmasıdır."], ["Clipper kimdir?", "Marka brief'ine uygun içerik hazırlayan ve onaydan sonra kendi TikTok, Instagram veya YouTube hesabında paylaşan içerik üreticisidir."], ["Marka olarak ne satın alırım?", "Teklifte belirtilen içerik üretimi, clipper eşleşmesi, sosyal medya paylaşımları, yayın takibi ve kampanya raporunu satın alırsınız."], ["Clipper nasıl kazanır?", "Kampanyaya göre sabit üretim/paylaşım ücreti veya doğrulanmış performansa bağlı ödeme alır. Koşullar işe başlamadan açıklanır."], ["Takipçi sayısı şart mı?", "Tek başına takipçi sayısı belirleyici değildir. İçerik kalitesi, konu uyumu, izleyici yapısı ve hesap etkinliği birlikte değerlendirilir."], ["Sonuç garantisi var mı?", "Görüntülenme, viral olma veya satış garantisi yoktur. Üretilecek içerik ve yayın kapsamı yazılı olarak belirlenir."]],
+    sections: [["Marka için", "Kampanya hedefi, bütçe, içerik, platform ve onay kuralları belirlenir; uygun clipper'lar seçilir ve yayınlar raporlanır."], ["Clipper için", "Hesap ve içerik örnekleriyle başvuru yapılır; uygun kampanyalar teklif edilir; kabul edilen iş brief'e göre üretilip paylaşılır."], ["Güvenlik ve şeffaflık", "İçerik hakları, reklam açıklaması, ödeme koşulları ve ölçüm yöntemi her kampanyada baştan belirlenir."]],
+    cta: "Başvuru yollarını gör"
+  },
+  contact: {
+    title: "Reklamatic İletişim | Reklam Ver veya Clipper Ol",
+    description: "Markanız için clipping kampanyası başlatın veya içerik üreticisi olarak Reklamatic clipper ağına başvurun.",
+    kicker: "İletişim",
+    headline: "Marka olarak reklam verin veya clipper olarak ağımıza katılın.",
+    lead: "İki ayrı yol var: Markaysanız hedefinizi, bütçenizi ve tanıtmak istediğiniz ürünü anlatın. Clipper olmak istiyorsanız sosyal medya hesabınızı, içerik alanınızı ve örnek çalışmalarınızı paylaşın.",
+    highlights: [["Marka", "Kampanya talebi ve bütçe bilgisi"], ["Clipper", "Sosyal medya hesabı ve içerik örnekleri"], ["Doğrudan", "info@reklamatic.ai · +90 530 231 29 47"]],
+    sections: [["Marka başvurusu", "Marka veya şirket adı, hedef kitle, platformlar, tahmini bütçe, ürün/içerik bağlantısı ve kampanyanın ne başarmasını istediğinizi paylaşın."], ["Clipper başvurusu", "TikTok, Instagram veya YouTube hesabınızı; içerik ürettiğiniz konuları, örnek videolarınızı, çalışma şeklinizi ve uygunluğunuzu paylaşın."], ["Sonraki adım", "Başvuruyu inceledikten sonra uygun kapsam veya eşleşme varsa sizinle iletişime geçeriz. E-posta göndermek sözleşme, otomatik kabul ya da iş garantisi oluşturmaz."]],
+    cta: "Doğru başvuru yolunu seç"
+  },
+  "what-is-clipping": {
+    title: "Clipping Nedir? Markalar ve İçerik Üreticileri için Rehber",
+    description: "Clipping reklam modelinin nasıl çalıştığını, markaların nasıl dağıtım aldığını ve clipper'ların nasıl kazanabildiğini öğrenin.",
+    kicker: "Clipping nedir?",
+    headline: "Clipping, markanın reklamını içerik üreticilerinin kendi hesapları üzerinden yayma modelidir.",
+    lead: "Marka bir kampanya açar. Clipper'lar kampanyaya uygun kısa videolar üretir veya hazır içeriği kendi anlatımına uyarlar. Onaylanan videolar clipper hesaplarında yayımlanır; paylaşımlar ve sonuçlar Reklamatic tarafından takip edilir.",
+    highlights: [["Marka", "Tek kampanyayla farklı hesaplara ulaşır"], ["Clipper", "Üretir, kendi hesabında paylaşır ve kazanır"], ["Reklamatic", "İki taraf arasındaki tüm operasyonu yönetir"]],
+    sections: [["Normal influencer reklamından farkı", "Tek bir büyük hesapla çalışmak yerine kampanya çok sayıda uygun clipper'a açılabilir. Böylece farklı anlatımlar, farklı kitleler ve daha fazla içerik denemesi elde edilir."], ["Sadece video kesmek değildir", "Bazı kampanyalarda uzun videodan güçlü anlar çıkarılır; bazılarında clipper sıfırdan ürün demosu, yorum, tepki veya hikâye çeker. Ortak nokta, içeriğin kısa video formatında ve gerçek bir sosyal medya hesabında yayımlanmasıdır."], ["Para nasıl kazanılır?", "Marka kampanya bütçesi ayırır. Clipper, kabul ettiği işin şartlarına göre içerik üretimi, paylaşım veya doğrulanmış performans karşılığında ödeme alır. Ücret modeli her kampanyada baştan açıklanır."]],
+    cta: "Clipping modelini kullan"
+  }
+};
+
+Object.entries(clearTurkishCopy).forEach(([key, copy]) => {
+  const page = seoPages.find((item) => item.key === key);
+  if (page) Object.assign(page.tr, copy);
+});
+
 export const findSeoPage = (locale, path) => seoPages.find((page) => page.paths[locale] === path);
 export const routeParams = (locale) => seoPages.map((page) => ({ slug: page.paths[locale].split("/") }));
