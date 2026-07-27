@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://reklamatic.ai/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/" />
+  </url>
+  <url>
+    <loc>https://reklamatic.ai/tr</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/" />
+  </url>
+  <url><loc>https://reklamatic.ai/privacy</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
+  <url><loc>https://reklamatic.ai/terms</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
+  <url><loc>https://reklamatic.ai/tr/privacy</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
+  <url><loc>https://reklamatic.ai/tr/terms</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
+</urlset>
