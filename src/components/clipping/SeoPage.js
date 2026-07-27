@@ -49,17 +49,19 @@ function MethodStrip({ locale }) {
 }
 
 function EditorialMedia({ page, locale }) {
-  const isResource = page.key === "blog" || page.type === "Article";
-  const isCampaign = page.key === "cases";
-  const src = isCampaign ? "/media/generated/illustrative-campaigns.webp" : isResource ? "/media/generated/clipping-resources.webp" : "/media/generated/clipping-system.webp";
-  const dimensions = isCampaign ? [1722, 907] : isResource ? [1536, 1024] : [1717, 916];
-  const label = isCampaign
-    ? (locale === "tr" ? "Kurgusal kampanya dünyaları" : "Fictional campaign worlds")
-    : isResource
-      ? (locale === "tr" ? "Editoryal çalışma masası" : "Editorial working table")
-      : (locale === "tr" ? "Kaynak, seçim ve klip sistemi" : "Source, selection and clip system");
+  const mediaGroups = {
+    artist: ["agency", "campaigns", "strategy", "choose-agency"],
+    podcast: ["about", "podcast", "what-is-clipping", "repurposing"],
+    product: ["brands", "cases", "clipping-vs-ugc", "reels"],
+    technology: ["blog", "pricing", "tiktok", "shorts", "clippers", "contact", "faq"],
+  };
+  const group = Object.entries(mediaGroups).find(([, keys]) => keys.includes(page.key))?.[0] || (page.type === "Article" ? "podcast" : "technology");
+  const mediaIndex = { artist: 1, podcast: 2, product: 3, technology: 4 }[group];
+  const src = `/media/generated/reklamatic-campaign-${mediaIndex}.webp`;
+  const labelMap = locale === "tr" ? { artist: "Müzik ve kültür kampanya dünyası", podcast: "Podcast ve kurucu anlatısı", product: "Ürün ve creator kampanya dünyası", technology: "Teknoloji ve sistem anlatısı" } : { artist: "Music and culture campaign world", podcast: "Podcast and founder narrative", product: "Product and creator campaign world", technology: "Technology and systems narrative" };
+  const label = labelMap[group];
   const note = locale === "tr" ? "Özgün Reklamatic konsept görseli · gerçek müşteri sonucu değildir." : "Original Reklamatic concept visual · not a real client result.";
-  return <section className={styles.editorialMedia}><div className={styles.container}><figure><Image src={src} width={dimensions[0]} height={dimensions[1]} sizes="(max-width: 700px) 100vw, 1120px" alt={`${page[locale].kicker}: ${label}`} /><figcaption><span>{label}</span><small>{note}</small></figcaption></figure></div></section>;
+  return <section className={styles.editorialMedia}><div className={styles.container}><figure><Image src={src} width={1376} height={768} sizes="(max-width: 700px) 100vw, 1120px" alt={`${page[locale].kicker}: ${label}`} /><figcaption><span>{label}</span><small>{note}</small></figcaption></figure></div></section>;
 }
 
 function pageSchema(page, locale) {
@@ -83,8 +85,8 @@ export function seoMetadata(page, locale) {
   return {
     title: { absolute: copy.title }, description: copy.description,
     alternates: { canonical, languages: { en: fullUrl("en", page.paths.en), tr: fullUrl("tr", page.paths.tr), "x-default": fullUrl("en", page.paths.en) } },
-    openGraph: { title: copy.title, description: copy.description, url: canonical, locale: locale === "tr" ? "tr_TR" : "en_US", type: page.type === "Article" ? "article" : "website", images: [{ url: locale === "tr" ? "/og-clipping-tr.png" : "/og-clipping.png", width: 1200, height: 630, alt: copy.headline }] },
-    twitter: { card: "summary_large_image", title: copy.title, description: copy.description, images: [locale === "tr" ? "/og-clipping-tr.png" : "/og-clipping.png"] },
+    openGraph: { title: copy.title, description: copy.description, url: canonical, locale: locale === "tr" ? "tr_TR" : "en_US", type: page.type === "Article" ? "article" : "website", images: [{ url: "/og.png", width: 1200, height: 630, alt: copy.headline }] },
+    twitter: { card: "summary_large_image", title: copy.title, description: copy.description, images: ["/og.png"] },
   };
 }
 
@@ -97,7 +99,7 @@ export default function SeoPage({ page, locale }) {
   const ctaUrl = page.key === "clippers" ? `${home(locale)}#clipper-contact` : page.key === "contact" ? `${home(locale)}#contact` : localPath(locale, contactPage.paths[locale]);
   return <div className={styles.page}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema(page, locale)).replace(/</g, "\\u003c") }} />
-    <header className={styles.header}><nav aria-label={locale === "tr" ? "Ana navigasyon" : "Main navigation"}><Link href={home(locale)}><Logo /></Link><div className={styles.navLinks}><Link href={localPath(locale, seoPages.find((item) => item.key === "agency").paths[locale])}>{locale === "tr" ? "Ajans" : "Agency"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "brands").paths[locale])}>{locale === "tr" ? "Markalar" : "Brands"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "blog").paths[locale])}>{locale === "tr" ? "Kaynaklar" : "Resources"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "faq").paths[locale])}>FAQ</Link></div><Link className={styles.lang} href={languageUrl} hrefLang={locale === "tr" ? "en" : "tr"}>{locale === "tr" ? "EN" : "TR"}</Link><Link className={styles.navCta} href={localPath(locale, contactPage.paths[locale])}>{locale === "tr" ? "İletişim" : "Contact"} ↗</Link></nav></header>
+    <header className={styles.header}><nav aria-label={locale === "tr" ? "Ana navigasyon" : "Main navigation"}><Link href={home(locale)}><Logo /></Link><div className={styles.navLinks}><Link href={localPath(locale, seoPages.find((item) => item.key === "about").paths[locale])}>{locale === "tr" ? "Hakkımızda" : "About"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "agency").paths[locale])}>{locale === "tr" ? "Hizmetler" : "Services"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "cases").paths[locale])}>{locale === "tr" ? "Kampanyalar" : "Campaigns"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "blog").paths[locale])}>{locale === "tr" ? "Kaynaklar" : "Resources"}</Link></div><details className={styles.mobileMenu}><summary aria-label={locale === "tr" ? "Menüyü aç" : "Open menu"}>☰</summary><div><Link href={localPath(locale, seoPages.find((item) => item.key === "about").paths[locale])}>{locale === "tr" ? "Hakkımızda" : "About"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "agency").paths[locale])}>{locale === "tr" ? "Hizmetler" : "Services"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "cases").paths[locale])}>{locale === "tr" ? "Kampanyalar" : "Campaigns"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "blog").paths[locale])}>{locale === "tr" ? "Kaynaklar" : "Resources"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "pricing").paths[locale])}>{locale === "tr" ? "Fiyatlandırma" : "Pricing"}</Link></div></details><Link className={styles.lang} href={languageUrl} hrefLang={locale === "tr" ? "en" : "tr"}>{locale === "tr" ? "EN" : "TR"}</Link><Link className={styles.navCta} href={localPath(locale, contactPage.paths[locale])}>{locale === "tr" ? "İletişim" : "Contact"} ↗</Link></nav></header>
     <main>
       <section className={styles.hero}><div className={styles.orb} /><div className={`${styles.container} ${styles.heroGrid}`}><div className={styles.heroCopy}><nav className={styles.breadcrumb} aria-label="Breadcrumb"><Link href={home(locale)}>{locale === "tr" ? "Ana sayfa" : "Home"}</Link><span>/</span><span>{copy.kicker}</span></nav><p className={styles.kicker}>{copy.kicker}</p><h1>{copy.headline}</h1><p className={styles.lead}>{copy.lead}</p><div className={styles.actions}><Link className={styles.primary} href={ctaUrl}>{copy.cta} <span>↗</span></Link><Link className={styles.secondary} href={localPath(locale, seoPages.find((item) => item.key === "faq").paths[locale])}>{locale === "tr" ? "Soruları incele" : "Review common questions"}</Link></div></div><VisualStage page={page} locale={locale} /></div></section>
       <section className={styles.highlights}><div className={styles.container}><div className={styles.highlightGrid}>{copy.highlights?.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h2>{title}</h2><p>{text}</p></article>)}</div></div></section>

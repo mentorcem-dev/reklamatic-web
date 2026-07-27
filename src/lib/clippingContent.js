@@ -1,7 +1,7 @@
 export const content = {
   en: {
     lang: "English", skip: "Skip to content", cta: "Start a project", menu: "Open menu",
-    nav: [["Clipping", "#clipping"], ["For brands", "#brand-campaigns"], ["For clippers", "#become-clipper"], ["Process", "#process"], ["Examples", "#campaign-examples"], ["FAQ", "#faq"]],
+    nav: [["About", "/about"], ["Services", "/clipping-agency"], ["Campaigns", "/case-studies"], ["Process", "#process"], ["Resources", "/blog"], ["FAQ", "#faq"]],
     hero: { kicker: "Your clipping agent for short-form distribution", titleA: "One source.", titleB: "Many chances to be seen.", text: "Reklamatic turns podcasts, interviews, founder content and campaign footage into platform-native clips—with clear approvals, rights checks and a learning loop.", primary: "Build my clipping plan", secondary: "See the workflow", pills: ["Human creative judgment", "Brand-safe approvals", "TR + EN delivery"], visualLabel: "Source → moment → platform", visualTitle: "A repeatable clipping workflow", visualAlt: "Conceptual Reklamatic clipping workflow from long-form content to vertical clips", floating: ["MOMENT MAP", "00:01.2", "LEARNING LOOP"] },
     ticker: ["PODCASTS", "FOUNDER CONTENT", "EDUCATION", "PRODUCT STORIES", "INTERVIEWS", "LIVE STREAMS"],
     clipperRole: { kicker: "What a clipper does", title: "The clipper carries meaning from the source into the feed.", text: "A clipper is more than an operator. The role combines editorial judgment, short-form craft and reliable quality control while staying inside the approved brief.", items: [
@@ -68,7 +68,7 @@ export const content = {
   },
   tr: {
     lang: "Türkçe", skip: "İçeriğe geç", cta: "Proje başlat", menu: "Menüyü aç",
-    nav: [["Clipping", "#clipping"], ["Markalar", "#brand-campaigns"], ["Clipper adayları", "#become-clipper"], ["Süreç", "#process"], ["Örnekler", "#campaign-examples"], ["SSS", "#faq"]],
+    nav: [["Hakkımızda", "/tr/hakkimizda"], ["Hizmetler", "/tr/clipping-ajansi"], ["Kampanyalar", "/tr/ornek-kampanyalar"], ["Süreç", "#process"], ["Kaynaklar", "/tr/blog"], ["SSS", "#faq"]],
     hero: { kicker: "Kısa video dağıtımı için clipping partneriniz", titleA: "Tek kaynak.", titleB: "Görünmek için birçok fırsat.", text: "Reklamatic; podcast, röportaj, kurucu içeriği ve kampanya çekimlerini net onaylar, hak kontrolleri ve öğrenme döngüsüyle platforma doğal kliplere dönüştürür.", primary: "Clipping planımı oluştur", secondary: "Süreci gör", pills: ["İnsan odaklı kreatif karar", "Marka güvenli onay", "TR + EN teslimat"], visualLabel: "Kaynak → an → platform", visualTitle: "Tekrarlanabilir clipping akışı", visualAlt: "Uzun içerikten dikey kliplere uzanan temsili Reklamatic clipping akışı", floating: ["AN HARİTASI", "00:01.2", "ÖĞRENME DÖNGÜSÜ"] },
     ticker: ["PODCAST", "KURUCU İÇERİĞİ", "EĞİTİM", "ÜRÜN HİKÂYESİ", "RÖPORTAJ", "CANLI YAYIN"],
     clipperRole: { kicker: "Clipper ne yapar?", title: "Clipper, kaynaktaki anlamı kısa video akışına taşır.", text: "Clipper yalnızca teknik operatör değildir. Onaylı brief sınırlarında editoryal karar, kısa video kurgusu ve güvenilir kalite kontrolünü birleştirir.", items: [

@@ -15,9 +15,9 @@ export const metadata = {
     url: "https://reklamatic.ai/",
     locale: "en_US",
     alternateLocale: ["tr_TR"],
-    images: [{ url: "/og-clipping.png", width: 1200, height: 630, alt: "Reklamatic.ai Clipping Agent — one video, many distribution moments" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Reklamatic.ai — one source, more than one path to discovery" }],
   },
-  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Agent", description: "Turn one recording into a network of platform-native short-form clips.", images: ["/og-clipping.png"] },
+  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Agent", description: "Turn one recording into a network of platform-native short-form clips.", images: ["/og.png"] },
 };
 
 export default function Home() {

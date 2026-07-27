@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import CampaignExperience from "./CampaignExperience";
 
 const PHONE_DISPLAY = "+90 530 231 29 47";
 const PHONE = "+905302312947";
@@ -368,7 +369,7 @@ export default function ClippingSite({ copy, locale }) {
       <a className="skip-link" href="#clipping">{copy.skip}</a>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header copy={copy} locale={locale} />
-      <main><Hero copy={copy.hero} ticker={copy.ticker} /><EditorialShowcase locale={locale} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
+      <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} /><EditorialShowcase locale={locale} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
       <Footer copy={copy.footer} nav={copy.nav} locale={locale} />
     </div>
   );

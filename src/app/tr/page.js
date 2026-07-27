@@ -15,9 +15,9 @@ export const metadata = {
     url: "https://reklamatic.ai/tr",
     locale: "tr_TR",
     alternateLocale: ["en_US"],
-    images: [{ url: "/og-clipping-tr.png", width: 1200, height: 630, alt: "Reklamatic.ai Clipping Ajansı — bir video, sayısız dağıtım anı" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Reklamatic.ai — tek kaynak, birden fazla keşif yolu" }],
   },
-  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Ajansı", description: "Tek bir kaydı platforma doğal kısa videolardan oluşan bir dağıtım ağına dönüştürün.", images: ["/og-clipping-tr.png"] },
+  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Ajansı", description: "Tek bir kaydı platforma doğal kısa videolardan oluşan bir dağıtım ağına dönüştürün.", images: ["/og.png"] },
 };
 
 export default function TurkishHome() {
