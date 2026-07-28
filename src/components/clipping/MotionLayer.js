@@ -1,65 +1,61 @@
 "use client";
 
 import { useEffect } from "react";
-import { animate, createTimeline, stagger } from "animejs";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 
 export default function MotionLayer() {
   useEffect(() => {
     const root = document.querySelector("[data-motion-root]");
-    if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!root || reduced.matches) return undefined;
 
-    const heroItems = root.querySelectorAll("[data-motion-hero]");
-    if (heroItems.length) {
-      createTimeline({ defaults: { duration: 900, ease: "outExpo" } })
-        .add(heroItems, { opacity: { from: 0 }, y: { from: 32 }, delay: stagger(85) }, 80);
+    gsap.registerPlugin(ScrollTrigger);
+    let lenis;
+    let lenisTick;
+    if (window.matchMedia("(min-width: 960px) and (pointer: fine)").matches) {
+      lenis = new Lenis({ lerp: 0.095, smoothWheel: true, syncTouch: false });
+      lenis.on("scroll", ScrollTrigger.update);
+      lenisTick = (time) => lenis.raf(time * 1000);
+      gsap.ticker.add(lenisTick);
+      gsap.ticker.lagSmoothing(0);
     }
 
-    const revealItems = [...root.querySelectorAll("[data-motion-reveal]")];
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        observer.unobserve(entry.target);
-        const children = entry.target.querySelectorAll("[data-motion-item]");
-        animate(children.length ? children : entry.target, {
-          opacity: { from: 0 },
-          y: { from: 28 },
-          scale: { from: 0.98 },
-          delay: children.length ? stagger(75) : 0,
-          duration: 780,
-          ease: "outExpo",
-          onComplete: () => {
-            if (children.length) children.forEach((child) => child.style.removeProperty("transform"));
-          },
-        });
+    const context = gsap.context(() => {
+      const heroItems = root.querySelectorAll("[data-motion-hero]");
+      gsap.fromTo(heroItems, { autoAlpha: 0, y: 34 }, { autoAlpha: 1, y: 0, duration: 1, stagger: 0.09, ease: "power3.out", delay: 0.08 });
+
+      root.querySelectorAll("[data-motion-reveal]").forEach((section) => {
+        const items = section.querySelectorAll("[data-motion-item]");
+        gsap.fromTo(items.length ? items : section, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power2.out", scrollTrigger: { trigger: section, start: "top 84%", once: true } });
       });
-    }, { threshold: 0.16, rootMargin: "0px 0px -7%" });
-    revealItems.forEach((item) => observer.observe(item));
 
-    const cleanups = [...root.querySelectorAll("[data-motion-tilt]")].map((card) => {
-      const move = (event) => {
-        const box = card.getBoundingClientRect();
-        const x = (event.clientX - box.left) / box.width - 0.5;
-        const y = (event.clientY - box.top) / box.height - 0.5;
-        card.style.setProperty("--tilt-x", `${(-y * 5).toFixed(2)}deg`);
-        card.style.setProperty("--tilt-y", `${(x * 6).toFixed(2)}deg`);
-        card.style.setProperty("--spot-x", `${((x + 0.5) * 100).toFixed(1)}%`);
-        card.style.setProperty("--spot-y", `${((y + 0.5) * 100).toFixed(1)}%`);
-      };
-      const leave = () => {
-        card.style.setProperty("--tilt-x", "0deg");
-        card.style.setProperty("--tilt-y", "0deg");
-      };
-      card.addEventListener("pointermove", move);
-      card.addEventListener("pointerleave", leave);
-      return () => {
-        card.removeEventListener("pointermove", move);
-        card.removeEventListener("pointerleave", leave);
-      };
-    });
+      const story = root.querySelector("[data-story]");
+      const stage = story?.querySelector("[data-story-stage]");
+      const steps = story ? [...story.querySelectorAll("[data-story-step]")] : [];
+      if (stage && steps.length) {
+        const label = stage.querySelector("strong");
+        const activate = (step, index) => {
+          stage.dataset.active = String(index);
+          steps.forEach((item) => { item.dataset.active = item === step ? "true" : "false"; });
+          if (label) label.textContent = step.querySelector("small")?.textContent || "";
+        };
+        steps.forEach((step, index) => ScrollTrigger.create({ trigger: step, start: "top 58%", end: "bottom 42%", onEnter: () => activate(step, index), onEnterBack: () => activate(step, index) }));
+        ScrollTrigger.matchMedia({
+          "(min-width: 960px)": () => ScrollTrigger.create({ trigger: story, start: "top top+=96", endTrigger: steps[steps.length - 1], end: "bottom 68%", pin: stage, pinSpacing: false, anticipatePin: 1 }),
+        });
+      }
 
+      root.querySelectorAll("[data-parallax]").forEach((item) => gsap.fromTo(item, { y: 28 }, { y: -28, ease: "none", scrollTrigger: { trigger: item, start: "top bottom", end: "bottom top", scrub: 0.8 } }));
+      root.querySelectorAll("[data-film-track]").forEach((track) => gsap.fromTo(track, { xPercent: 1.5 }, { xPercent: -1.5, ease: "none", scrollTrigger: { trigger: track, start: "top bottom", end: "bottom top", scrub: 1 } }));
+    }, root);
+
+    ScrollTrigger.refresh();
     return () => {
-      observer.disconnect();
-      cleanups.forEach((cleanup) => cleanup());
+      context.revert();
+      if (lenisTick) gsap.ticker.remove(lenisTick);
+      lenis?.destroy();
     };
   }, []);
 
