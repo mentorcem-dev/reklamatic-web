@@ -1,235 +1,122 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import styles from "./CampaignExperience.module.css";
 
-const campaignImages = [
+const media = [
   "/media/generated/reklamatic-campaign-1.webp",
-  "/media/generated/reklamatic-campaign-2.webp",
-  "/media/generated/reklamatic-campaign-3.webp",
-  "/media/generated/reklamatic-campaign-4.webp",
+  "/media/generated/reklamatic-app-lumen.webp",
+  "/media/generated/reklamatic-music-noctra.webp",
+  "/media/generated/reklamatic-streamer-raidline.webp",
+  "/media/generated/reklamatic-network-velocity.webp",
 ];
 
 const copy = {
   en: {
-    mediaKicker: "THE DISTRIBUTION STUDIO BEHIND CULTURE-MOVING CLIPS",
-    mediaTitle: "A source becomes",
-    mediaAccent: "a living media system.",
-    mediaText: "Strategy, editorial selection, creator-ready formats, review, reporting and the next creative decision—designed as one connected operation.",
-    play: "Campaign showreel",
-    founder: "Studio note · 2 min",
-    brands: ["NERA VALE", "VANTA", "AURA LABS", "NORTH/01", "MONO FM", "HALO RUN", "ARC HOUSE", "LUMA"],
-    aboutKicker: "ABOUT THE STUDIO",
-    aboutTitleA: "We make it easy for",
-    aboutTitleB: "ambitious teams",
-    aboutTitleC: "to turn one strong idea into a feed full of distinct moments.",
-    aboutText: "Reklamatic is an independent clipping and short-form studio based in Istanbul. Fictional campaign worlds below show the range of the system—not past client claims.",
-    metrics: [["48h", "typical first creative map"], ["3", "platform-native directions"], ["TR / EN", "bilingual editorial delivery"], ["100%", "human review before approval"]],
-    casesKicker: "FICTIONAL CAMPAIGN WORLDS",
-    casesTitle: "Every source deserves its own visual language.",
-    casesText: "Four original campaign studies show how the same operating system adapts to music, founders, products and technology.",
-    cases: [
-      { brand: "NERA VALE", type: "Artist launch", title: "A release week told through rehearsal tension, fan lore and live-performance fragments.", stat: "36", label: "clip directions", image: 0 },
-      { brand: "AYLA / MONO", type: "Founder podcast", title: "A design leader’s long-form thinking rebuilt as compact, useful arguments.", stat: "12", label: "episode arcs", image: 1 },
-      { brand: "VANTA", type: "Consumer brand", title: "A sunset product world split into rituals, reactions, textures and creator POVs.", stat: "5", label: "creative territories", image: 2 },
-      { brand: "AURA LABS", type: "Technology", title: "A complex AI workflow translated into demos, objections and before-after stories.", stat: "24", label: "launch assets", image: 3 },
+    kicker: "MANAGED CLIPPING CAMPAIGNS",
+    title: "One contract connects the brand, the clips and the distribution.",
+    text: "Reklamatic plans short-form campaigns for apps, music releases and publishers. We turn approved campaign material into clip directions, assign suitable clippers from our managed network, coordinate approval and report eligible views under the written agreement.",
+    primary: "Request a campaign scope",
+    secondary: "Share clipper interest",
+    steps: [
+      ["01", "Brief & contract", "Audience, message, platforms, deliverables, eligible-view definition, reporting period and any guarantee are written before launch."],
+      ["02", "Creative pack", "Approved footage, music, claims, links and brand rules become clear clip directions and platform-ready source packs."],
+      ["03", "Managed clipper allocation", "Reklamatic assigns suitable clippers and accounts for the campaign. This is managed distribution, not an open self-service job board."],
+      ["04", "Approval, publishing & reporting", "Brand approval comes before publishing. Platform analytics are checked against the contract and invalid or excluded traffic is not counted."],
     ],
-    openCase: "View campaign anatomy",
-    systemKicker: "HOW THE SYSTEM MOVES",
-    systemTitle: "From one approved source to a measurable creative loop.",
-    systemText: "The goal is not to cut everything. It is to find the few moments that can carry meaning, then give each one the right opening, frame, pace and destination.",
-    stages: [
-      ["01", "Source intelligence", "Rights, audience, context, claims and visual material are mapped before editing begins."],
-      ["02", "Moment architecture", "We identify tensions, proofs, stories and demonstrations; then build hook families around them."],
-      ["03", "Platform craft", "Each idea receives its own pacing, captions, framing, safe zones and ending—not a blind resize."],
-      ["04", "Review & learning", "Approved signals become a documented next hypothesis. Performance is read honestly, never promised."],
+    reelKicker: "CAMPAIGN SHOWREEL",
+    reelTitle: "See the range of short-form directions a single campaign can support.",
+    reelText: "See how app demos, music moments and publisher footage can become platform-ready short-form directions for managed distribution.",
+    reelLabel: "Reklamatic creative showreel",
+    categories: ["APP CAMPAIGNS", "MUSIC RELEASES", "PUBLISHERS", "BRAND STORIES", "SHORT-FORM DISTRIBUTION"],
+    examplesKicker: "CAMPAIGN CONCEPTS",
+    examplesTitle: "Three campaign structures, each built for a different buyer.",
+    examplesText: "LUMEN, NOCTRA and RAIDLINE show how the source, clipper direction and reporting plan change by campaign type. These are example concepts; the figures and scope are set in each brand's contract.",
+    examples: [
+      { name: "LUMEN", type: "App advertising", image: 1, title: "Product demonstrations, objection answers and use-case stories prepared for short-form distribution.", details: [["Input", "Approved product footage and claims"], ["Clipper direction", "Demo, comparison and problem-solution formats"], ["Reported", "Eligible views, watch signals and tracked clicks when scoped"]] },
+      { name: "NOCTRA", type: "Music release", image: 2, title: "A release campaign built from performance, rehearsal, archive and artist-approved story material.", details: [["Input", "Cleared music and approved release footage"], ["Clipper direction", "Performance, lore and release-moment formats"], ["Reported", "Eligible views and platform engagement in the agreed period"]] },
+      { name: "RAIDLINE", type: "Publisher campaign", image: 3, title: "Publisher moments distributed through context-safe, self-contained clips.", details: [["Input", "Approved episodes, transcripts and editorial limits"], ["Clipper direction", "Argument, reaction and story formats"], ["Reported", "Eligible views, watch behavior and link actions when available"]] },
     ],
-    peopleKicker: "FICTIONAL STUDIO ROLES",
-    peopleTitle: "Two concept characters showing the human decisions inside the system.",
-    people: [
-      { name: "Ayla Demir", role: "Editorial Director", note: "Turns source material into narrative territories, hook families and approval-ready briefs.", image: 1 },
-      { name: "Mert Acar", role: "Creative Systems Lead", note: "Designs repeatable workflows across editing, motion, QA, delivery and learning notes.", image: 3 },
-    ],
-    fitKicker: "WHO WE BUILD FOR",
-    fitTitle: "Different categories. Different rhythms. The same editorial discipline.",
-    fits: [
-      ["01", "Artists & labels", "Release worlds, live moments, archive footage and fan-language angles.", 0],
-      ["02", "Founders & podcasts", "Arguments, stories, frameworks and repeatable points of view.", 1],
-      ["03", "Products & brands", "Demonstrations, rituals, objections, comparisons and customer language.", 2],
-      ["04", "Apps & technology", "Complex workflows translated into visible, useful short narratives.", 3],
-      ["05", "Education & experts", "Lessons, transformations, myths and practical takeaways.", 1],
-      ["06", "Communities & events", "People, energy, backstage access and moments worth belonging to.", 2],
-    ],
-    reviewKicker: "NOT BORING TESTIMONIALS",
-    reviewTitle: "What fictional collaborators would say if this were already a case-study archive.",
-    reviews: [
-      ["“They did not just cut the episode. They found the argument we should have led with.”", "Derya Akın · MONO FM"],
-      ["“Every clip felt like part of one launch world, but none of them felt duplicated.”", "Milo Kent · NERA VALE"],
-      ["“The system made our technical product understandable without making it simplistic.”", "Selin Aras · AURA LABS"],
-      ["“The approval trail was as thoughtful as the creative work.”", "Jonas Reed · NORTH/01"],
-    ],
-    researchKicker: "OPERATING PRINCIPLES",
-    researchTitle: "The details that keep volume from becoming noise.",
-    principles: [
-      ["Context before hooks", "A sharp opening is useful only when the clip still represents the source fairly."],
-      ["Variation with a reason", "Different cuts should test distinct stories, audiences or creative hypotheses."],
-      ["Rights live in the brief", "Music, footage, claims, disclosures and usage boundaries are defined early."],
-      ["Signals need limits", "Views, watch behavior and engagement can guide decisions; they do not prove revenue alone."],
-    ],
+    guaranteeKicker: "CONTRACT-DEFINED VIEW GUARANTEE",
+    guaranteeTitle: "The guarantee is a written campaign term—not a promise of virality.",
+    guaranteeText: "When a campaign includes a view guarantee, the agreement states the target, eligible platforms and accounts, measurement source, reporting window, geography if relevant, exclusions and the remedy for a shortfall. Organic reach, sales, profit and viral outcomes are never guaranteed by that term.",
+    guaranteeItems: [["Counted", "Eligible views shown by the agreed platform analytics"], ["Excluded", "Invalid traffic, deleted posts, out-of-scope accounts and other written exclusions"], ["Controlled", "Brand approval, account list, campaign window and reporting trail"], ["Resolved", "Any shortfall follows the remedy written in the campaign agreement"]],
+    networkKicker: "HOW THE CLIPPER NETWORK IS MANAGED",
+    networkTitle: "Clippers receive a controlled campaign pack, not an open-ended claim.",
+    networkText: "Reklamatic matches the campaign with suitable clippers, supplies approved material and rules, checks submissions, coordinates publishing permissions and consolidates reporting. Clipper interest does not guarantee onboarding, assignments or earnings.",
+    networkSteps: [["Fit", "Category, language, platform and editing style"], ["Rules", "Rights, claims, disclosures, links and prohibited topics"], ["Review", "Human QA and brand approval before publishing"], ["Report", "Post-level records and agreed platform analytics"]],
+    proofKicker: "WHAT A BUYER CAN VERIFY",
+    proofTitle: "Every campaign leaves a clear operating trail.",
+    proof: [["Written campaign scope", "Deliverables, roles, platforms, timing and commercial terms are visible before launch."], ["Approval record", "The brand knows which material and clip directions were approved for publishing."], ["Defined guarantee logic", "The view target and every counting rule exist in the agreement when a guarantee is sold."], ["Campaign reporting", "Reporting identifies the source platform, account/post scope and agreed measurement period."]],
   },
   tr: {
-    mediaKicker: "MARKADAN CLIPPER AĞINA, CLIPPER AĞINDAN SOSYAL MEDYAYA",
-    mediaTitle: "Bir kampanya",
-    mediaAccent: "farklı hesaplarda yüzlerce anlatıma dönüşür.",
-    mediaText: "Marka brief'i, kısa video üretimi, doğru clipper'larla eşleşme, yayın onayı, performans takibi ve ödeme yönetimi tek bir kampanya sistemi içinde ilerler.",
-    play: "Kampanya akışını izle",
-    founder: "Clipper modeli · 2 dk",
-    brands: ["NERA VALE", "VANTA", "AURA LABS", "NORTH/01", "MONO FM", "HALO RUN", "ARC HOUSE", "LUMA"],
-    aboutKicker: "STÜDYO HAKKINDA",
-    aboutTitleA: "İddialı ekiplerin",
-    aboutTitleB: "tek güçlü fikri",
-    aboutTitleC: "birbirinden farklı anlarla dolu bir akışa çevirmesini kolaylaştırıyoruz.",
-    aboutText: "Reklamatic, İstanbul merkezli bağımsız bir clipping ve kısa video stüdyosudur. Aşağıdaki kurgusal kampanya dünyaları sistemin aralığını gösterir; geçmiş müşteri iddiası değildir.",
-    metrics: [["48 saat", "tipik ilk kreatif harita"], ["3", "platforma doğal yön"], ["TR / EN", "iki dilli editoryal teslim"], ["%100", "onay öncesi insan kontrolü"]],
-    casesKicker: "KURGUSAL KAMPANYA DÜNYALARI",
-    casesTitle: "Her kaynak kendi görsel dilini hak eder.",
-    casesText: "Dört özgün kampanya çalışması aynı operasyon sisteminin müzik, kurucu, ürün ve teknolojiye nasıl uyarlandığını gösteriyor.",
-    cases: [
-      { brand: "NERA VALE", type: "Sanatçı lansmanı", title: "Prova gerilimi, hayran hikâyeleri ve canlı performans parçalarıyla anlatılan çıkış haftası.", stat: "36", label: "klip yönü", image: 0 },
-      { brand: "AYLA / MONO", type: "Kurucu podcast’i", title: "Bir tasarım liderinin uzun düşüncelerinin kısa ve faydalı argümanlara dönüşümü.", stat: "12", label: "bölüm akışı", image: 1 },
-      { brand: "VANTA", type: "Tüketici markası", title: "Ritüel, tepki, doku ve üretici bakışlarına ayrılan gün batımı ürün dünyası.", stat: "5", label: "kreatif alan", image: 2 },
-      { brand: "AURA LABS", type: "Teknoloji", title: "Karmaşık bir AI iş akışının demo, itiraz ve önce-sonra hikâyelerine çevrilmesi.", stat: "24", label: "lansman varlığı", image: 3 },
+    kicker: "YÖNETİLEN CLIPPING KAMPANYALARI",
+    title: "Tek sözleşme markayı, klipleri ve dağıtımı birbirine bağlar.",
+    text: "Reklamatic; uygulamalar, müzik yayınları ve yayıncılar için kısa video kampanyaları planlar. Onaylı kampanya materyalini klip yönlerine dönüştürür, yönetilen ağımızdan uygun clipper'ları atar, onayı koordine eder ve uygun görüntülenmeleri yazılı sözleşmeye göre raporlar.",
+    primary: "Kampanya kapsamı iste",
+    secondary: "Clipper ilgini paylaş",
+    steps: [
+      ["01", "Brief ve sözleşme", "Kitle, mesaj, platformlar, teslimatlar, uygun görüntülenme tanımı, rapor dönemi ve varsa garanti lansmandan önce yazılır."],
+      ["02", "Kreatif paket", "Onaylı görüntü, müzik, iddia, bağlantı ve marka kuralları net klip yönlerine ve platforma hazır kaynak paketlerine dönüşür."],
+      ["03", "Yönetilen clipper ataması", "Reklamatic kampanya için uygun clipper ve hesapları atar. Bu, açık self-servis iş panosu değil; yönetilen dağıtımdır."],
+      ["04", "Onay, yayın ve rapor", "Marka onayı yayından önce gelir. Platform analitiği sözleşmeye göre kontrol edilir; geçersiz veya hariç trafik sayılmaz."],
     ],
-    openCase: "Kampanya anatomisini gör",
-    systemKicker: "SİSTEM NASIL İLERLER",
-    systemTitle: "Tek onaylı kaynaktan ölçülebilir kreatif döngüye.",
-    systemText: "Amaç her şeyi kesmek değildir. Anlamı taşıyabilecek birkaç anı bulmak, sonra her birine doğru açılış, kadraj, tempo ve hedefi vermektir.",
-    stages: [
-      ["01", "Kaynak zekâsı", "Haklar, kitle, bağlam, iddialar ve görsel malzeme kurgu başlamadan haritalanır."],
-      ["02", "An mimarisi", "Gerilim, kanıt, hikâye ve demolar bulunur; etraflarında açılış aileleri kurulur."],
-      ["03", "Platform zanaatı", "Her fikir kendi tempo, altyazı, kadraj, güvenli alan ve kapanışını alır; körlemesine boyutlanmaz."],
-      ["04", "Değerlendirme ve öğrenme", "Onaylı sinyaller belgelenmiş sonraki hipoteze dönüşür. Performans dürüstçe okunur, vaat edilmez."],
+    reelKicker: "KAMPANYA SHOWREEL'İ",
+    reelTitle: "Tek kampanyanın destekleyebileceği kısa video yönlerini görün.",
+    reelText: "Uygulama demolarının, müzik anlarının ve yayıncı görüntülerinin yönetilen dağıtıma hazır kısa video yönlerine nasıl dönüşebileceğini görün.",
+    reelLabel: "Reklamatic kreatif showreel'i",
+    categories: ["UYGULAMA KAMPANYALARI", "MÜZİK YAYINLARI", "YAYINCILAR", "MARKA HİKÂYELERİ", "KISA VİDEO DAĞITIMI"],
+    examplesKicker: "KAMPANYA KONSEPTLERİ",
+    examplesTitle: "Farklı alıcılar için üç kampanya yapısı.",
+    examplesText: "LUMEN, NOCTRA ve RAIDLINE; kaynak, clipper yönü ve rapor planının kampanya türüne göre nasıl değiştiğini gösterir. Bunlar örnek konseptlerdir; adetler ve kapsam her markanın sözleşmesinde belirlenir.",
+    examples: [
+      { name: "LUMEN", type: "Uygulama reklamı", image: 1, title: "Kısa video dağıtımı için hazırlanan ürün demoları, itiraz yanıtları ve kullanım hikâyeleri.", details: [["Girdi", "Onaylı ürün görüntüsü ve iddialar"], ["Clipper yönü", "Demo, karşılaştırma ve sorun-çözüm formatları"], ["Rapor", "Kapsama göre uygun görüntülenme, izleme sinyali ve takipli tıklama"]] },
+      { name: "NOCTRA", type: "Müzik yayını", image: 2, title: "Performans, prova, arşiv ve sanatçı onaylı hikâye materyalinden kurulan yayın kampanyası.", details: [["Girdi", "Hakları temizlenmiş müzik ve onaylı yayın görüntüsü"], ["Clipper yönü", "Performans, hikâye ve yayın anı formatları"], ["Rapor", "Mutabık dönemde uygun görüntülenme ve platform etkileşimi"]] },
+      { name: "RAIDLINE", type: "Yayıncı kampanyası", image: 3, title: "Yayıncı anlarının bağlamı koruyan, tek başına anlaşılır kliplerle dağıtımı.", details: [["Girdi", "Onaylı bölümler, transkript ve editoryal sınırlar"], ["Clipper yönü", "Argüman, tepki ve hikâye formatları"], ["Rapor", "Uygun görüntülenme, izleme davranışı ve varsa bağlantı aksiyonu"]] },
     ],
-    peopleKicker: "KURGUSAL STÜDYO ROLLERİ",
-    peopleTitle: "Sistemdeki insan kararlarını gösteren iki konsept karakter.",
-    people: [
-      { name: "Ayla Demir", role: "Editoryal Direktör", note: "Kaynakları anlatı alanlarına, açılış ailelerine ve onaya hazır brief’lere dönüştürür.", image: 1 },
-      { name: "Mert Acar", role: "Kreatif Sistemler Lideri", note: "Kurgu, motion, kalite, teslim ve öğrenme notları arasında tekrarlanabilir sistemler kurar.", image: 3 },
-    ],
-    fitKicker: "KİMLER İÇİN ÜRETİYORUZ",
-    fitTitle: "Farklı kategoriler. Farklı ritimler. Aynı editoryal disiplin.",
-    fits: [
-      ["01", "Sanatçılar ve label’lar", "Çıkış dünyaları, canlı anlar, arşiv görüntüsü ve hayran dili.", 0],
-      ["02", "Kurucular ve podcast’ler", "Argüman, hikâye, çerçeve ve tekrarlanabilir bakış açısı.", 1],
-      ["03", "Ürünler ve markalar", "Demo, ritüel, itiraz, karşılaştırma ve müşteri dili.", 2],
-      ["04", "Uygulamalar ve teknoloji", "Karmaşık akışların görünür ve faydalı kısa anlatılara çevrilmesi.", 3],
-      ["05", "Eğitim ve uzmanlar", "Ders, dönüşüm, yanlış bilgi ve pratik çıkarımlar.", 1],
-      ["06", "Topluluk ve etkinlikler", "İnsanlar, enerji, perde arkası ve ait olmaya değer anlar.", 2],
-    ],
-    reviewKicker: "SIKICI OLMAYAN YORUMLAR",
-    reviewTitle: "Burası şimdiden dolu bir vaka arşivi olsaydı kurgusal iş ortaklarımız ne derdi?",
-    reviews: [
-      ["“Bölümü yalnızca kesmediler; en başta söylememiz gereken argümanı buldular.”", "Derya Akın · MONO FM"],
-      ["“Her klip tek bir lansman dünyasına aitti ama hiçbiri tekrar gibi değildi.”", "Milo Kent · NERA VALE"],
-      ["“Sistem teknik ürünümüzü basitleştirmeden anlaşılır hale getirdi.”", "Selin Aras · AURA LABS"],
-      ["“Onay zinciri kreatif iş kadar düşünülmüştü.”", "Jonas Reed · NORTH/01"],
-    ],
-    researchKicker: "ÇALIŞMA İLKELERİ",
-    researchTitle: "Hacmin gürültüye dönüşmesini engelleyen ayrıntılar.",
-    principles: [
-      ["Açılıştan önce bağlam", "Keskin başlangıç ancak klip kaynağı hâlâ dürüstçe temsil ediyorsa değerlidir."],
-      ["Nedeni olan varyasyon", "Farklı kurgular farklı hikâye, kitle veya kreatif hipotezi sınamalıdır."],
-      ["Haklar brief’in içindedir", "Müzik, görüntü, iddia, açıklama ve kullanım sınırı en başta tanımlanır."],
-      ["Sinyalin sınırı vardır", "Görüntülenme, izleme ve etkileşim karar yönlendirir; tek başına geliri kanıtlamaz."],
-    ],
+    guaranteeKicker: "SÖZLEŞMEDE TANIMLI GÖRÜNTÜLENME GARANTİSİ",
+    guaranteeTitle: "Garanti yazılı kampanya koşuludur; viral olma sözü değildir.",
+    guaranteeText: "Kampanyada görüntülenme garantisi varsa sözleşme hedefi, uygun platform ve hesapları, ölçüm kaynağını, rapor dönemini, gerekiyorsa coğrafyayı, hariçleri ve eksik kalma telafisini yazar. Organik erişim, satış, kâr veya viral sonuç bu koşulla garanti edilmez.",
+    guaranteeItems: [["Sayılan", "Mutabık platform analitiğinde görünen uygun görüntülenmeler"], ["Hariç", "Geçersiz trafik, silinen gönderi, kapsam dışı hesap ve yazılı diğer hariçler"], ["Kontrol", "Marka onayı, hesap listesi, kampanya dönemi ve rapor izi"], ["Çözüm", "Eksik kalma durumunda kampanya sözleşmesindeki telafi uygulanır"]],
+    networkKicker: "CLIPPER AĞI NASIL YÖNETİLİR?",
+    networkTitle: "Clipper'lar açık uçlu vaat değil, kontrollü kampanya paketi alır.",
+    networkText: "Reklamatic kampanyayı uygun clipper'larla eşleştirir; onaylı materyal ve kuralları verir, gönderimleri kontrol eder, yayın izinlerini koordine eder ve raporu birleştirir. İlgi paylaşmak onboarding, görev veya kazanç garantisi vermez.",
+    networkSteps: [["Uyum", "Kategori, dil, platform ve kurgu stili"], ["Kurallar", "Haklar, iddialar, açıklamalar, linkler ve yasaklı konular"], ["Kontrol", "Yayın öncesi insan kalite kontrolü ve marka onayı"], ["Rapor", "Gönderi bazlı kayıt ve mutabık platform analitiği"]],
+    proofKicker: "ALICI NEYİ DOĞRULAYABİLİR?",
+    proofTitle: "Her kampanya doğrulanabilir bir operasyon izi bırakır.",
+    proof: [["Yazılı kampanya kapsamı", "Teslimatlar, roller, platformlar, süre ve ticari koşullar lansman öncesi görünürdür."], ["Onay kaydı", "Marka hangi materyal ve klip yönlerinin yayın için onaylandığını bilir."], ["Tanımlı garanti mantığı", "Garanti satılıyorsa görüntülenme hedefi ve tüm sayım kuralları sözleşmede yer alır."], ["Kampanya raporu", "Rapor kaynak platformu, hesap/gönderi kapsamını ve mutabık ölçüm dönemini belirtir."]],
   },
 };
 
-function MediaShowcase({ text }) {
-  const [active, setActive] = useState("showreel");
-  return (
-    <section className={styles.media} aria-labelledby="campaign-media-title" data-motion-reveal>
-      <div className={styles.mediaCopy}>
-        <p className={styles.eyebrow} data-motion-item>{text.mediaKicker}</p>
-        <h2 id="campaign-media-title" data-motion-item>{text.mediaTitle} <em>{text.mediaAccent}</em></h2>
-        <p data-motion-item>{text.mediaText}</p>
-      </div>
-      <div className={styles.showreel} data-motion-item data-motion-tilt>
-        {active === "showreel" ? (
-          <video autoPlay muted loop playsInline poster={campaignImages[0]} aria-label={text.play}>
-            <source src="/media/generated/reklamatic-showreel.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <Image src={campaignImages[1]} fill sizes="100vw" alt="" />
-        )}
-        <div className={styles.showreelShade} />
-        <div className={styles.showreelTop}><span>REKLAMATIC / 2026</span><span>TR + EN · 16:9 / 9:16 / 1:1</span></div>
-        <div className={styles.showreelBottom}>
-          <div><small>{active === "showreel" ? "00:08" : "02:00"}</small><strong>{active === "showreel" ? text.play : text.founder}</strong></div>
-          <div className={styles.mediaTabs} role="tablist" aria-label={text.play}>
-            <button type="button" role="tab" aria-selected={active === "showreel"} onClick={() => setActive("showreel")}>● {text.play}</button>
-            <button type="button" role="tab" aria-selected={active === "founder"} onClick={() => setActive("founder")}>▶ {text.founder}</button>
-          </div>
-        </div>
-      </div>
-      <div className={styles.brandRail} aria-label="Fictional campaign brands">
-        <div>{[...text.brands, ...text.brands].map((brand, index) => <span key={`${brand}-${index}`}>{brand}</span>)}</div>
-      </div>
-    </section>
-  );
+function Heading({ kicker, title, text }) {
+  return <div className={styles.heading}><p>{kicker}</p><h2>{title}</h2>{text && <span>{text}</span>}</div>;
 }
 
-export default function CampaignExperience({ locale, compact = false }) {
+export default function CampaignExperience({ locale }) {
   const text = copy[locale] || copy.en;
-  if (compact) return <MediaShowcase text={text} />;
-  return (
-    <>
-      <MediaShowcase text={text} />
-      <section className={styles.about}>
-        <div className={styles.sectionHead}><p className={styles.eyebrow}>{text.aboutKicker}</p><h2>{text.aboutTitleA} <span className={styles.inlinePortrait}><Image src={campaignImages[1]} fill sizes="100px" alt="" /></span> <em>{text.aboutTitleB}</em> {text.aboutTitleC}</h2><p>{text.aboutText}</p></div>
-        <div className={styles.metrics}>{text.metrics.map(([value, label]) => <article key={label}><strong>{value}</strong><span>{label}</span></article>)}</div>
-      </section>
+  return <div className={styles.experience}>
+    <section className={styles.model} id="campaign-model">
+      <div className={styles.wrap}><Heading kicker={text.kicker} title={text.title} text={text.text} /><div className={styles.actions}><a href="#brand-contact">{text.primary} <b>↗</b></a><a href="#clipper-contact">{text.secondary}</a></div><div className={styles.stepGrid}>{text.steps.map(([number, title, body]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{body}</p></article>)}</div></div>
+    </section>
 
-      <section className={styles.cases} id="campaign-library">
-        <div className={styles.sectionHead}><p className={styles.eyebrow}>{text.casesKicker}</p><h2>{text.casesTitle}</h2><p>{text.casesText}</p></div>
-        <div className={styles.caseGrid}>{text.cases.map((item, index) => <article className={index === 0 ? styles.caseWide : ""} key={item.brand}>
-          <div className={styles.caseImage}><Image src={campaignImages[item.image]} fill sizes={index === 0 ? "(max-width: 800px) 100vw, 66vw" : "(max-width: 800px) 100vw, 34vw"} alt={`${item.brand} — ${item.type}`} /><span>{item.type}</span></div>
-          <div className={styles.caseBody}><div><small>0{index + 1} / {item.brand}</small><h3>{item.title}</h3></div><div className={styles.caseStat}><strong>{item.stat}</strong><span>{item.label}</span></div><a href="#contact">{text.openCase}<b>↗</b></a></div>
-        </article>)}</div>
-      </section>
+    <section className={styles.reel} aria-labelledby="showreel-title">
+      <div className={styles.wrap}><Heading kicker={text.reelKicker} title={text.reelTitle} text={text.reelText} /></div>
+      <div className={styles.videoFrame}><video controls muted playsInline preload="metadata" poster={media[0]} aria-label={text.reelLabel}><source src="/media/generated/reklamatic-showreel.mp4" type="video/mp4" /></video><div className={styles.reelStamp}><span>REKLAMATIC / SHOWREEL</span><span>TR + EN</span></div></div>
+      <div className={styles.categoryRail} aria-label={text.reelKicker}>{text.categories.map((item) => <span key={item}>{item}</span>)}</div>
+    </section>
 
-      <section className={styles.system}>
-        <div className={styles.sectionHead}><p className={styles.eyebrow}>{text.systemKicker}</p><h2>{text.systemTitle}</h2><p>{text.systemText}</p></div>
-        <div className={styles.systemGrid}>
-          <div className={styles.systemVisual}>
-            <div className={styles.sourceCard}><small>APPROVED SOURCE / 48:12</small><strong>One conversation. Four narrative territories.</strong><div><i /><i /><i /><i /><i /><i /><i /><i /></div></div>
-            <div className={styles.clipStack}>{["HOOK / 00:18", "PROOF / 00:27", "STORY / 00:41"].map((label, index) => <div key={label} style={{ "--shift": index }}><small>{label}</small><b>9:16</b><span /></div>)}</div>
-            <div className={styles.signalCard}><small>LEARNING NOTE</small><strong>Specific claims held attention longer.</strong><span>Next hypothesis →</span></div>
-          </div>
-          <div className={styles.stages}>{text.stages.map(([number, title, body]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{body}</p></div></article>)}</div>
-        </div>
-      </section>
+    <section className={styles.examples} id="campaign-examples">
+      <div className={styles.wrap}><Heading kicker={text.examplesKicker} title={text.examplesTitle} text={text.examplesText} /><div className={styles.exampleStack}>{text.examples.map((item, index) => <article className={styles[`example${index + 1}`]} key={item.name}><div className={styles.exampleImage}><Image src={media[item.image]} fill sizes="(max-width: 700px) 100vw, 55vw" alt={`${item.name} — ${item.type}`} /></div><div className={styles.exampleBody}><small>{item.type} / {item.name}</small><h3>{item.title}</h3><dl>{item.details.map(([term, value]) => <div key={term}><dt>{term}</dt><dd>{value}</dd></div>)}</dl></div></article>)}</div></div>
+    </section>
 
-      <section className={styles.people}>
-        <div className={styles.sectionHead}><p className={styles.eyebrow}>{text.peopleKicker}</p><h2>{text.peopleTitle}</h2></div>
-        <div className={styles.peopleGrid}>{text.people.map((person) => <article key={person.name}><div><Image src={campaignImages[person.image]} fill sizes="(max-width: 700px) 100vw, 50vw" alt={person.name} /></div><small>{person.role}</small><h3>{person.name}</h3><p>{person.note}</p></article>)}</div>
-      </section>
+    <section className={styles.guarantee} id="view-guarantee">
+      <div className={styles.wrap}><div className={styles.guaranteeIntro}><Heading kicker={text.guaranteeKicker} title={text.guaranteeTitle} text={text.guaranteeText} /><div className={styles.contractVisual} aria-hidden="true"><span>CAMPAIGN SCOPE</span><i /><i /><i /><b>VIEW RULES ✓</b></div></div><div className={styles.guaranteeGrid}>{text.guaranteeItems.map(([title, body]) => <article key={title}><strong>{title}</strong><p>{body}</p></article>)}</div></div>
+    </section>
 
-      <section className={styles.fit}>
-        <div className={styles.fitHeading}><p className={styles.eyebrow}>{text.fitKicker}</p><h2>{text.fitTitle}</h2></div>
-        <div className={styles.fitList}>{text.fits.map(([number, title, body, image]) => <article key={number}><span>{number}</span><div className={styles.fitThumb}><Image src={campaignImages[image]} fill sizes="110px" alt="" /></div><h3>{title}</h3><p>{body}</p><b>↗</b></article>)}</div>
-      </section>
+    <section className={styles.network} id="clipper-network">
+      <div className={styles.wrap}><div className={styles.networkMedia}><Image src={media[4]} fill sizes="(max-width: 700px) 100vw, 48vw" alt={locale === "tr" ? "Velocity X1 demo kampanyasının Reklamatic clipper ağına dağıtımını gösteren konsept görsel" : "Concept visual showing the distribution of the Velocity X1 demo campaign through the Reklamatic clipper network"} /></div><div className={styles.networkCopy}><Heading kicker={text.networkKicker} title={text.networkTitle} text={text.networkText} /><div>{text.networkSteps.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{body}</p></div></article>)}</div></div></div>
+    </section>
 
-      <section className={styles.reviews}>
-        <div className={styles.sectionHead}><p className={styles.eyebrow}>{text.reviewKicker}</p><h2>{text.reviewTitle}</h2></div>
-        <div className={styles.reviewRail}><div>{[...text.reviews, ...text.reviews].map(([quote, author], index) => <blockquote key={`${author}-${index}`}><span>★★★★★</span><p>{quote}</p><footer>{author}</footer></blockquote>)}</div></div>
-      </section>
-
-      <section className={styles.principles}>
-        <div className={styles.sectionHead}><p className={styles.eyebrow}>{text.researchKicker}</p><h2>{text.researchTitle}</h2></div>
-        <div className={styles.principleGrid}>{text.principles.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
-      </section>
-    </>
-  );
+    <section className={styles.proof} id="operating-proof">
+      <div className={styles.wrap}><Heading kicker={text.proofKicker} title={text.proofTitle} /><div className={styles.proofGrid}>{text.proof.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}</div></div>
+    </section>
+  </div>;
 }

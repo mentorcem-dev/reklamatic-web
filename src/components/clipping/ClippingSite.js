@@ -24,21 +24,28 @@ function SectionTitle({ kicker, title, text, centered = false }) {
 
 function Header({ copy, locale }) {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
   const otherUrl = locale === "en" ? "/tr" : "/";
   const otherLabel = locale === "en" ? "TR" : "EN";
+  useEffect(() => {
+    if (!open) return undefined;
+    const close = (event) => { if (event.key === "Escape") { setOpen(false); menuRef.current?.focus(); } };
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
+  }, [open]);
 
   return (
     <header className="nav-shell">
       <nav className="nav-pill" aria-label={locale === "en" ? "Main navigation" : "Ana navigasyon"}>
         <a className="brand" href="#top" aria-label="Reklamatic.ai"><Wordmark /></a>
-        <div className={`nav-links ${open ? "open" : ""}`}>
+        <div className={`nav-links ${open ? "open" : ""}`} id="site-mobile-nav">
           {copy.nav.map(([label, url]) => <a key={url} href={url} onClick={() => setOpen(false)}>{label}</a>)}
           <a className="mobile-contact" href="#contact" onClick={() => setOpen(false)}>{copy.cta}</a>
         </div>
         <div className="nav-actions">
           <a className="language-link" href={otherUrl} hrefLang={locale === "en" ? "tr" : "en"} aria-label={locale === "en" ? "Türkçe sürüm" : "English version"}>{otherLabel}</a>
           <a className="nav-cta" href="#contact">{copy.cta}<span>↗</span></a>
-          <button className={`menu-button ${open ? "active" : ""}`} type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={copy.menu}><span /><span /></button>
+          <button ref={menuRef} className={`menu-button ${open ? "active" : ""}`} type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="site-mobile-nav" aria-label={copy.menu}><span /><span /></button>
         </div>
       </nav>
     </header>
@@ -95,15 +102,15 @@ function Hero({ copy, ticker }) {
 
 function HomePathways({ locale }) {
   const cards = locale === "tr" ? [
-    ["MARKALAR İÇİN", "Reklamını clipper ağıyla büyüt", "Kampanyanı oluştur; içerik üretimi, doğru hesaplarla eşleşme, yayın takibi ve raporlamayı tek yerden yönet.", "/tr/markalar-icin", "Kampanya seçeneklerini gör"],
-    ["CLIPPER'LAR İÇİN", "Üret, kendi hesabında paylaş, kazan", "Sosyal medya hesabın ve içerik yeteneğinle ağa katıl; sana uygun marka kampanyalarında çalış.", "/tr/clipper-ol", "Clipper ol"],
-    ["SİSTEM NASIL ÇALIŞIR?", "Brief'ten yayına kadar her adım açık", "Marka kampanyayı açar, clipper içerik üretir, Reklamatic kontrol eder; paylaşım ve sonuçlar takip edilir.", "/tr/clipping-kampanyalari", "Süreci incele"],
+    ["MARKALAR İÇİN", "Kampanyayı tek sözleşmeyle yönet", "Klip üretimi, clipper ataması, marka onayı, yayın takibi ve uygun view raporu tek kapsamda ilerler.", "/tr/markalar-icin", "Kampanya seçeneklerini gör"],
+    ["CLIPPER'LAR İÇİN", "Portfolyonu ve kategori uyumunu paylaş", "Hesabını, platformunu ve üretim alanını ilet. İlgi paylaşımı görev, onboarding veya kazanç garantisi vermez.", "/tr/clipper-ol", "Clipper ilgisi paylaş"],
+    ["SÖZLEŞME NASIL ÇALIŞIR?", "View hedefi ve sayım kuralları baştan yazılır", "Uygun hesaplar, rapor dönemi, hariç trafik ve eksik kalma telafisi kampanya sözleşmesinde belirlenir.", "/tr/clipping-kampanyalari", "Süreci incele"],
   ] : [
-    ["FOR BRANDS", "Scale campaigns through a clipper network", "Plan creative, match the right accounts, review publishing and measure delivery in one place.", "/for-brands", "Explore brand campaigns"],
-    ["FOR CLIPPERS", "Create, publish and earn", "Join with your social channels and creative skills, then work on campaigns that match your audience.", "/for-clippers", "Become a clipper"],
-    ["HOW IT WORKS", "A clear path from brief to live posts", "The brand opens a campaign, clippers create, Reklamatic reviews, and verified publishing is reported.", "/clipping-campaigns", "Explore the system"],
+    ["FOR BRANDS", "Manage the campaign under one agreement", "Clip production, clipper allocation, brand approval, publishing records and eligible-view reporting stay in one scope.", "/for-brands", "Explore brand campaigns"],
+    ["FOR CLIPPERS", "Share your portfolio and category fit", "Submit your account, platforms and production strengths. Interest does not guarantee onboarding, assignments or earnings.", "/for-clippers", "Share clipper interest"],
+    ["HOW THE CONTRACT WORKS", "View targets and counting rules are written first", "Eligible accounts, reporting window, excluded traffic and any shortfall remedy are defined in the campaign agreement.", "/clipping-campaigns", "Explore the process"],
   ];
-  return <section className="section pathways" data-motion-reveal><div className="container"><SectionTitle kicker={locale === "tr" ? "İKİ TARAF, TEK SİSTEM" : "TWO SIDES, ONE SYSTEM"} title={locale === "tr" ? "Burada ne yapmak istediğini seç." : "Choose how you want to take part."} text={locale === "tr" ? "Reklamatic markalara dağıtım gücü, içerik üreticilerine ise yeni iş fırsatları sunar. Her yolun kendi sayfası, süreci ve başvurusu var." : "Reklamatic gives brands distributed reach and creators new campaign opportunities, each with a dedicated path."} /><div className="pathway-grid">{cards.map(([eyebrow, title, text, href, cta], index) => <a href={href} key={href} className={index === 0 ? "pathway-card featured-path" : "pathway-card"} data-motion-item data-motion-tilt><span>0{index + 1} / {eyebrow}</span><h3>{title}</h3><p>{text}</p><b>{cta} ↗</b></a>)}</div></div></section>;
+  return <section className="section pathways" data-motion-reveal><div className="container"><SectionTitle kicker={locale === "tr" ? "ÜÇ NET KARAR YOLU" : "THREE CLEAR DECISION PATHS"} title={locale === "tr" ? "İhtiyacına uygun yolu seç." : "Choose the path that matches your role."} text={locale === "tr" ? "Marka kapsamı, clipper ilgi yolu ve sözleşme mantığı birbirinden ayrıdır; her sayfa kendi şartlarını açıklar." : "Brand scope, clipper interest and contract logic are separate; each page explains its own terms."} /><div className="pathway-grid">{cards.map(([eyebrow, title, text, href, cta], index) => <a href={href} key={href} className={index === 0 ? "pathway-card featured-path" : "pathway-card"} data-motion-item data-motion-tilt><span>0{index + 1} / {eyebrow}</span><h3>{title}</h3><p>{text}</p><b>{cta} ↗</b></a>)}</div></div></section>;
 }
 
 function EditorialShowcase({ locale }) {
@@ -384,7 +391,7 @@ export default function ClippingSite({ copy, locale }) {
       <a className="skip-link" href="#clipping">{copy.skip}</a>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header copy={copy} locale={locale} />
-      {locale === "tr" ? <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} compact /><HomePathways locale={locale} /><WhatSection copy={copy.what} /><ProcessSection copy={copy.process} /><CampaignScenarios copy={copy.scenarios} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main> : <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} /><EditorialShowcase locale={locale} /><WhatSection copy={copy.what} /><ClipperRole copy={copy.clipperRole} /><BrandCampaigns copy={copy.services} /><BecomeClipper copy={copy.becomeClipper} /><ProcessSection copy={copy.process} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><CampaignScenarios copy={copy.scenarios} /><Resources copy={copy.resources} /><Compare copy={copy.compare} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>}
+      <main><Hero copy={copy.hero} ticker={copy.ticker} /><CampaignExperience locale={locale} /><HomePathways locale={locale} /><WhatSection copy={copy.what} /><SafetyMeasurement copy={copy.measurement} /><BrandSafety copy={copy.brandSafety} /><Resources copy={copy.resources} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main>
       <Footer copy={copy.footer} nav={copy.nav} locale={locale} />
     </div>
   );
