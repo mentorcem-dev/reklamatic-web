@@ -9,3 +9,9 @@
 @media(max-width:390px){.heading h2{font-size:38px}.story{padding-inline:12px}.storyStage{min-height:470px}.storySteps article{min-height:58vh}.browserBody{grid-template-columns:38px 1fr}.queue{padding-inline:10px}.slot{grid-template-columns:24px 1fr}.slot>b{grid-column:2;margin-top:-4px;justify-self:start}.filmTrack figure{flex-basis:86vw}}
 @media(prefers-reduced-motion:reduce){.experience *{scroll-behavior:auto!important;animation:none!important;transition:none!important}.sourceTile,.clipTiles>div,.stageReport,.browser{transform:none!important}}
 .storySteps article[data-active="true"]{opacity:1}
+.story{padding-bottom:72px}.storySteps article,.storySteps article:last-child{min-height:0}.storySteps article{padding:58px 8px}
+@media(min-width:960px){.story{padding-bottom:105px}.storyLayout{grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);gap:72px}.storyStage{position:sticky;top:104px;min-height:540px;max-height:calc(100vh - 125px)}.storySteps article,.storySteps article:last-child{min-height:0;padding:74px 0}.storySteps article:first-child{padding-top:36px}}
+
+/* Readable operational labels at real mobile viewing distance. */
+.stageTop{color:#a8c3d9;font-size:9px}.sourceTile small{color:#b0cce3;font-size:9px}.clipTiles b,.clipTiles span{font-size:9px}.stageReport>span{color:#b1cce2;font-size:9px}.stageLabel{font-size:10px}.storySteps article>small{color:#91acc4;font-size:10px}.reelMeta{font-size:9px}.opsCopy>p{color:#536d84;font-size:13px}.filmTrack figcaption span{color:#9bb3c9;font-size:10px}
+@media(min-width:960px){.story{padding-bottom:64px}.reel{padding-top:72px}}

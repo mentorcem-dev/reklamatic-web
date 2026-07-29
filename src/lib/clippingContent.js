@@ -34,16 +34,16 @@ export const content = {
     lang: "English", skip: "Skip to clipping story", cta: "Advertise", menu: "Open menu",
     nav: [["For brands", "/for-brands"], ["For clippers", "/for-clippers"], ["How it works", "/clipping-campaigns"], ["Operations tool", "#operations"], ["FAQ", "#faq"]],
     hero: {
-      kicker: "MANAGED CLIPPING MARKETPLACE",
-      titleA: "Campaigns fund the clips.", titleB: "Clippers carry them into the feed.",
-      text: "Reklamatic connects apps, artists, publishers, streamers and brands with managed clippers. We run the brief, assignment, QA, brand approval, publishing and eligible-view reporting under one campaign agreement.",
-      primary: "Advertise", secondary: "Become a clipper", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
-      status: "Apps · music · publishers · streamers · products", visualAlt: "A brand campaign moving through Reklamatic to approved clips, eligible accounts and view reporting",
+      kicker: "MANAGED CLIPPING CAMPAIGNS FOR BRANDS",
+      titleA: "One brief. Multiple creator accounts.", titleB: "One managed campaign.",
+      text: "Reklamatic turns approved brand material into platform-native short videos and manages clipper matching, pre-publish review, distribution tracking and campaign reporting. When a campaign includes an eligible-view guarantee, the agreement defines the target, counting method, reporting window, exclusions and remedy.",
+      primary: "Plan a campaign", secondary: "Apply as a clipper", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
+      status: "TikTok · Instagram Reels · YouTube Shorts", visualAlt: "A managed clipping campaign moving from approved source to creator accounts and measured distribution",
     },
     pathways: {
-      kicker: "CHOOSE YOUR SIDE", title: "One marketplace. Two clear roles.",
-      brand: { label: "FOR BRANDS", title: "Fund managed distribution.", text: "Set the objective, approved source, platforms, budget and view rules. Reklamatic manages the clipper operation.", cta: "Explore brand campaigns", href: "/for-brands" },
-      clipper: { label: "FOR CLIPPERS", title: "Create, publish and earn by the campaign terms.", text: "Review the rate and eligibility rules before accepting work. Produce from approved sources and publish through an eligible account after approval.", cta: "See the clipper path", href: "/for-clippers" },
+      kicker: "CHOOSE YOUR PATH", title: "Two roles. One written operating scope.",
+      brand: { label: "FOR BRANDS", title: "Start a managed campaign.", text: "Share your objective, budget and approved material. Reklamatic scopes production, matching, approval, distribution tracking and reporting in writing.", cta: "Explore brand campaigns", href: "/for-brands" },
+      clipper: { label: "FOR CLIPPERS", title: "Apply with your public portfolio.", text: "Share your platforms and specialties. If a suitable campaign becomes available, the assignment, eligibility and payment terms are written before work starts.", cta: "See the clipper path", href: "/for-clippers" },
     },
     experience: {
       story: { kicker: "CLIPPING IN 20 SECONDS", title: "From approved source to eligible views.", intro: "Scroll through the campaign loop. On mobile, the same four steps stay native and swipe-free.", steps: [
@@ -54,13 +54,13 @@ export const content = {
       ]},
       reel: { kicker: "CAMPAIGN SHOWREEL", title: "Different feeds need different native cuts.", text: "A production-style reel, not a client-results montage.", label: "Reklamatic campaign showreel", play: "Play showreel", pause: "Pause showreel" },
       operations: { kicker: "OPERATIONS TOOL", badge: "REKLAMATIC OPERATIONS", title: "The distribution work has an operating layer.", text: "The Reklamatic extension helps approved clippers manage multiple channels, campaign queues, publishing and submission tracking from one operational view. Retry and recovery states keep interrupted work visible to the operator.", note: "Used inside Reklamatic-managed operations. It is not offered as public self-serve software and the website does not expose account or workflow data.", cta: "Discuss an operated campaign", href: "/contact", slots: [["01", "Channel group", "Ready"], ["02", "Campaign queue", "In review"], ["03", "Publishing", "Tracking"], ["04", "Recovery", "Available"]] },
-      film: { kicker: "CAMPAIGN CATEGORIES", title: "One operating model, four creative worlds.", text: "Original Reklamatic demo concepts show category direction, not customer work or achieved results.", items: [
-        ["LUMEN", "Apps", "/media/generated/reklamatic-app-lumen.webp", "Lumen app campaign concept"],
-        ["NOCTRA", "Music releases", "/media/generated/reklamatic-music-noctra.webp", "Noctra music release campaign concept"],
-        ["RAIDLINE", "Publishers & streamers", "/media/generated/reklamatic-streamer-raidline.webp", "Raidline streamer campaign concept"],
-        ["VELOCITY", "Products", "/media/generated/reklamatic-network-velocity.webp", "Velocity product distribution concept"],
+      film: { kicker: "CAMPAIGN CATEGORIES", title: "One operating model, four creative worlds.", text: "See how the same managed workflow changes for apps, music, publishers and consumer products.", items: [
+        ["APP LAUNCH", "Apps", "/media/generated/reklamatic-app-lumen.webp", "Short-form app campaign workflow"],
+        ["RELEASE WEEK", "Music releases", "/media/generated/reklamatic-music-noctra.webp", "Music release campaign workflow"],
+        ["STREAM MOMENTS", "Publishers & streamers", "/media/generated/reklamatic-streamer-raidline.webp", "Publisher and streamer campaign workflow"],
+        ["PRODUCT STORIES", "Products", "/media/editorial/view-guarantee.webp", "Product campaign review workflow"],
       ]},
-      economics: { kicker: "TERMS BEFORE WORK", title: "The campaign agreement controls both sides.", brandTitle: "For the campaign buyer", brandText: "A contract-defined view target states eligible accounts, platforms, measurement source, period, exclusions and the shortfall remedy. It does not guarantee sales, profit or virality.", clipperTitle: "For the clipper", clipperText: "The fixed fee, per-1K eligible-view rate, performance terms and eligibility rules are shown before work. An assignment or earnings are never guaranteed.", formula: "eligible views ÷ 1,000 × campaign rate + fixed bonus" },
+      economics: { kicker: "TERMS BEFORE WORK", title: "The campaign agreement controls both sides.", brandTitle: "For the campaign buyer", brandText: "A contract-defined view target states eligible accounts, platforms, measurement source, period, exclusions and the shortfall remedy. It does not guarantee sales, profit or virality.", clipperTitle: "For the clipper", clipperText: "The fixed fee, per-1K eligible-view rate, performance terms and eligibility rules are shown before work. An assignment or earnings are never guaranteed.", formula: "written fixed fee (if any) + eligible verified views ÷ 1,000 × campaign rate (if any)" },
     },
     faq: { kicker: "QUICK ANSWERS", title: "Know the model before joining it.", items: [
       ["What is clipping?", "Clipping turns approved source material into a platform-native short video with its own hook, context, captions and pace."],
@@ -77,16 +77,16 @@ export const content = {
     lang: "Türkçe", skip: "Clipping anlatısına geç", cta: "Reklam ver", menu: "Menüyü aç",
     nav: [["Markalar için", "/tr/markalar-icin"], ["Clipper ol", "/tr/clipper-ol"], ["Nasıl çalışır?", "/tr/clipping-kampanyalari"], ["Operasyon aracı", "#operations"], ["SSS", "#faq"]],
     hero: {
-      kicker: "YÖNETİLEN CLIPPING PAZARYERİ",
-      titleA: "Kampanya klipleri fonlar.", titleB: "Clipper'lar akışa taşır.",
-      text: "Reklamatic; uygulama, sanatçı, yayıncı, streamer ve markaları yönetilen clipper ağıyla buluşturur. Brief, atama, kalite kontrol, marka onayı, yayın ve uygun view raporunu tek kampanya sözleşmesiyle yönetir.",
-      primary: "Reklam ver", secondary: "Clipper ol", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
-      status: "Uygulama · müzik · yayıncı · streamer · ürün", visualAlt: "Marka kampanyasının Reklamatic üzerinden onaylı kliplere, uygun hesaplara ve view raporuna ilerlemesi",
+      kicker: "MARKALAR İÇİN YÖNETİLEN CLIPPING KAMPANYALARI",
+      titleA: "Bir brief. Birden fazla üretici hesabı.", titleB: "Tek kampanya operasyonu.",
+      text: "Reklamatic, onaylı marka materyalini platforma uygun kısa videolara dönüştürür; clipper eşleşmesini, yayın öncesi kontrolü, dağıtım takibini ve kampanya raporlamasını yönetir. Uygun görüntülenme garantisi sunulan kampanyalarda hedef, sayım yöntemi, rapor dönemi, hariçler ve telafi maddesi sözleşmede tanımlanır.",
+      primary: "Kampanya planla", secondary: "Clipper olarak başvur", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
+      status: "TikTok · Instagram Reels · YouTube Shorts", visualAlt: "Onaylı kaynaktan üretici hesaplarına ve ölçülen dağıtıma ilerleyen yönetilen clipping kampanyası",
     },
     pathways: {
-      kicker: "TARAFINI SEÇ", title: "Tek pazaryeri. İki net rol.",
-      brand: { label: "MARKALAR İÇİN", title: "Yönetilen dağıtımı fonla.", text: "Hedefi, onaylı kaynağı, platformları, bütçeyi ve view kurallarını belirle. Clipper operasyonunu Reklamatic yönetsin.", cta: "Marka kampanyalarını incele", href: "/tr/markalar-icin" },
-      clipper: { label: "CLIPPER'LAR İÇİN", title: "Üret, yayınla, kampanya koşuluna göre kazan.", text: "İşi kabul etmeden oranı ve uygunluk kurallarını gör. Onaylı kaynaktan üret ve marka onayından sonra uygun hesabında yayınla.", cta: "Clipper yolunu incele", href: "/tr/clipper-ol" },
+      kicker: "ÇALIŞMA YOLUNU SEÇ", title: "İki rol. Tek yazılı operasyon kapsamı.",
+      brand: { label: "MARKALAR İÇİN", title: "Yönetilen kampanyayı başlat.", text: "Hedefini, bütçeni ve onaylı materyalini paylaş. Reklamatic üretim, eşleşme, onay, dağıtım takibi ve raporlamayı yazılı kapsamda yönetir.", cta: "Marka kampanyalarını incele", href: "/tr/markalar-icin" },
+      clipper: { label: "CLIPPER'LAR İÇİN", title: "Herkese açık portfolyonla başvur.", text: "Platformlarını ve uzmanlığını paylaş. Uygun kampanya olduğunda görev, uygunluk ve ödeme koşulları işe başlamadan önce yazılır.", cta: "Clipper yolunu incele", href: "/tr/clipper-ol" },
     },
     experience: {
       story: { kicker: "20 SANİYEDE CLIPPING", title: "Onaylı kaynaktan uygun view'a.", intro: "Kampanya döngüsünü kaydırarak izle. Mobilde aynı dört adım doğal sayfa akışında kalır.", steps: [
@@ -97,13 +97,13 @@ export const content = {
       ]},
       reel: { kicker: "KAMPANYA SHOWREEL'İ", title: "Farklı akışlar, farklı doğal kurgular ister.", text: "Üretim stilini gösteren reel; müşteri sonucu montajı değildir.", label: "Reklamatic kampanya showreel'i", play: "Showreel'i oynat", pause: "Showreel'i duraklat" },
       operations: { kicker: "OPERASYON ARACI", badge: "REKLAMATIC OPERASYONLARI", title: "Dağıtım işinin bir operasyon katmanı var.", text: "Reklamatic eklentisi, onaylı clipper'ların birden fazla kanalı, kampanya kuyruklarını, yayın ve gönderim takibini tek operasyon görünümünden yönetmesine yardımcı olur. Yeniden deneme ve kurtarma durumları kesintiye uğrayan işi operatör için görünür tutar.", note: "Reklamatic'in yönettiği operasyonlarda kullanılır. Herkese açık self-servis yazılım değildir; web sitesi hesap veya iş akışı verisi göstermez.", cta: "Yönetilen kampanyayı görüş", href: "/tr/iletisim", slots: [["01", "Kanal grubu", "Hazır"], ["02", "Kampanya kuyruğu", "Kontrolde"], ["03", "Yayın", "Takipte"], ["04", "Kurtarma", "Kullanılabilir"]] },
-      film: { kicker: "KAMPANYA KATEGORİLERİ", title: "Tek operasyon modeli, dört kreatif dünya.", text: "Özgün Reklamatic demo konseptleri kategori yönünü gösterir; müşteri işi veya elde edilmiş sonuç değildir.", items: [
-        ["LUMEN", "Uygulamalar", "/media/generated/reklamatic-app-lumen.webp", "Lumen uygulama kampanyası konsepti"],
-        ["NOCTRA", "Müzik yayınları", "/media/generated/reklamatic-music-noctra.webp", "Noctra müzik yayını kampanya konsepti"],
-        ["RAIDLINE", "Yayıncı ve streamer'lar", "/media/generated/reklamatic-streamer-raidline.webp", "Raidline streamer kampanya konsepti"],
-        ["VELOCITY", "Ürünler", "/media/generated/reklamatic-network-velocity.webp", "Velocity ürün dağıtım konsepti"],
+      film: { kicker: "KAMPANYA KATEGORİLERİ", title: "Tek operasyon modeli, dört kreatif dünya.", text: "Aynı yönetilen iş akışının uygulama, müzik, yayıncı ve tüketici ürünlerinde nasıl değiştiğini görün.", items: [
+        ["UYGULAMA LANSMANI", "Uygulamalar", "/media/generated/reklamatic-app-lumen.webp", "Kısa video uygulama kampanyası iş akışı"],
+        ["YAYIN HAFTASI", "Müzik yayınları", "/media/generated/reklamatic-music-noctra.webp", "Müzik yayını kampanyası iş akışı"],
+        ["YAYIN KESİTLERİ", "Yayıncı ve streamer'lar", "/media/generated/reklamatic-streamer-raidline.webp", "Yayıncı ve streamer kampanyası iş akışı"],
+        ["ÜRÜN HİKÂYELERİ", "Ürünler", "/media/editorial/view-guarantee.webp", "Ürün kampanyası inceleme iş akışı"],
       ]},
-      economics: { kicker: "İŞTEN ÖNCE KOŞULLAR", title: "Kampanya sözleşmesi iki tarafı da yönetir.", brandTitle: "Kampanya alıcısı için", brandText: "Sözleşmede tanımlı view hedefi; uygun hesapları, platformları, ölçüm kaynağını, dönemi, hariçleri ve eksik kalma telafisini yazar. Satış, kâr veya viral olma garantisi değildir.", clipperTitle: "Clipper için", clipperText: "Sabit ücret, 1.000 uygun view başına oran, performans koşulu ve uygunluk kuralları işe başlamadan gösterilir. Görev veya kazanç garanti edilmez.", formula: "uygun view ÷ 1.000 × kampanya oranı + sabit bonus" },
+      economics: { kicker: "İŞTEN ÖNCE KOŞULLAR", title: "Kampanya sözleşmesi iki tarafı da yönetir.", brandTitle: "Kampanya alıcısı için", brandText: "Sözleşmede tanımlı görüntülenme hedefi; uygun hesapları, platformları, ölçüm kaynağını, dönemi, hariçleri ve eksik kalma telafisini yazar. Satış, kâr veya viral olma garantisi değildir.", clipperTitle: "Clipper için", clipperText: "Sabit ücret, 1.000 uygun doğrulanmış görüntülenme başına oran, performans koşulu ve uygunluk kuralları işe başlamadan gösterilir. Görev veya kazanç garanti edilmez.", formula: "yazılı sabit ücret (varsa) + uygun doğrulanmış görüntülenme ÷ 1.000 × kampanya oranı (varsa)" },
     },
     faq: { kicker: "KISA YANITLAR", title: "Modele katılmadan önce nasıl çalıştığını bil.", items: [
       ["Clipping nedir?", "Onaylı kaynak materyalini kendine ait açılışı, bağlamı, altyazısı ve temposu olan platforma doğal kısa videoya dönüştürmektir."],
