@@ -34,7 +34,7 @@ function Header({ copy, locale }) {
 }
 
 function HeroPhoto({ alt, locale }) {
-  const labels = locale === "tr" ? ["ONAYLI KAYNAK", "KURGU", "CLIPPER", "YAYIN"] : ["APPROVED SOURCE", "EDIT", "CLIPPER", "PUBLISH"];
+  const labels = locale === "tr" ? ["ONAYLI KAYNAK", "KISA VİDEO", "60 HESAP", "UYGUN VIEW"] : ["APPROVED SOURCE", "SHORT VIDEO", "60 ACCOUNTS", "ELIGIBLE VIEWS"];
   return <figure className="hero-photo">
     <Image src="/media/editorial/platform-updates.webp" alt={alt} fill priority sizes="(max-width: 1000px) 100vw, 46vw" />
     <figcaption><span>REKLAMATIC / WORKFLOW</span><ol>{labels.map((label, index) => <li key={label}><b>0{index + 1}</b>{label}</li>)}</ol></figcaption>
@@ -48,8 +48,19 @@ function Hero({ copy, locale }) {
   </div></section>;
 }
 
+function ModelIntro({ copy }) {
+  return <section className="model-intro" id="clipping-nedir" data-motion-reveal><div className="container">
+    <div className="model-heading"><SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} /></div>
+    <div className="definition-row">{copy.definitions.map(([label, text], index) => <article key={label} data-motion-item><span>0{index + 1}</span><div><h3>{label}</h3><p>{text}</p></div></article>)}</div>
+    <div className="market-explainer" data-motion-item>
+      <div><p className="kicker">{copy.contextKicker}</p><h3>{copy.contextTitle}</h3><p>{copy.contextText}</p><p>{copy.marketText}</p></div>
+      <aside><strong>{copy.metric}</strong><span>{copy.metricLabel}</span><p>{copy.metricText}</p></aside>
+    </div>
+  </div></section>;
+}
+
 function Pathways({ copy }) {
-  return <section className="pathways" data-motion-reveal><div className="container"><SectionTitle kicker={copy.kicker} title={copy.title} /><div className="pathway-split">{[copy.brand, copy.clipper].map((item, index) => <article key={item.label} data-motion-item><span>0{index + 1} / {item.label}</span><h3>{item.title}</h3><p>{item.text}</p><a href={item.href}>{item.cta}<b>↗</b></a></article>)}</div></div></section>;
+  return <section className="pathways" data-motion-reveal><div className="container"><SectionTitle kicker={copy.kicker} title={copy.title} /><div className="pathway-split">{[copy.brand, copy.clipper].map((item, index) => <article key={item.label} data-motion-item><span>0{index + 1} / {item.label}</span><h3>{item.title}</h3><p>{item.text}</p><ol>{item.steps.map((step, stepIndex) => <li key={step}><b>0{stepIndex + 1}</b>{step}</li>)}</ol><a href={item.href}>{item.cta}<b>↗</b></a></article>)}</div></div></section>;
 }
 
 function Faq({ copy }) {
@@ -97,6 +108,6 @@ function Footer({ copy, locale }) {
 }
 
 export default function ClippingSite({ copy, locale }) {
-  const schema = { "@context": "https://schema.org", "@graph": [{ "@type": "Organization", "@id": "https://reklamatic.ai/#organization", name: "Reklamatic.ai", url: "https://reklamatic.ai", email: "info@reklamatic.ai", telephone: PHONE, areaServed: "Worldwide", knowsLanguage: ["en", "tr"] }, { "@type": "WebSite", "@id": "https://reklamatic.ai/#website", name: "Reklamatic.ai", url: "https://reklamatic.ai", publisher: { "@id": "https://reklamatic.ai/#organization" }, inLanguage: ["en", "tr"] }, { "@type": "Service", name: locale === "tr" ? "Yönetilen clipping kampanyaları" : "Managed clipping campaigns", provider: { "@id": "https://reklamatic.ai/#organization" }, areaServed: "Worldwide", serviceType: "Managed short-form production, clipper distribution and campaign reporting" }, { "@type": "FAQPage", mainEntity: copy.faq.items.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) }] };
-  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} locale={locale} /><Pathways copy={copy.pathways} /><CampaignExperience copy={copy.experience} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
+  const schema = { "@context": "https://schema.org", "@graph": [{ "@type": "Organization", "@id": "https://reklamatic.ai/#organization", name: "Reklamatic.ai", url: "https://reklamatic.ai", email: "info@reklamatic.ai", telephone: PHONE, areaServed: "TR", knowsLanguage: ["en", "tr"] }, { "@type": "WebSite", "@id": "https://reklamatic.ai/#website", name: "Reklamatic.ai", url: "https://reklamatic.ai", publisher: { "@id": "https://reklamatic.ai/#organization" }, inLanguage: ["en", "tr"] }, { "@type": "Service", name: locale === "tr" ? "Yönetilen clipping kampanyaları" : "Managed clipping campaigns", provider: { "@id": "https://reklamatic.ai/#organization" }, areaServed: "TR", serviceType: "Türkiye-focused short-form production, managed account distribution and eligible-view campaign reporting" }, { "@type": "FAQPage", mainEntity: copy.faq.items.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) }] };
+  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} locale={locale} /><ModelIntro copy={copy.model} /><Pathways copy={copy.pathways} /><CampaignExperience copy={copy.experience} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
 }
