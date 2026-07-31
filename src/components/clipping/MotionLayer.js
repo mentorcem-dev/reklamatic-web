@@ -50,6 +50,31 @@ export default function MotionLayer() {
       root.querySelectorAll("[data-film-track]").forEach((track) => gsap.fromTo(track, { xPercent: 1.5 }, { xPercent: -1.5, ease: "none", scrollTrigger: { trigger: track, start: "top bottom", end: "bottom top", scrub: 1 } }));
     }, root);
 
+    const tiltCleanups = [];
+    if (window.matchMedia("(pointer: fine)").matches) {
+      root.querySelectorAll("[data-motion-tilt]").forEach((item) => {
+        const move = (event) => {
+          const bounds = item.getBoundingClientRect();
+          const x = (event.clientX - bounds.left) / bounds.width;
+          const y = (event.clientY - bounds.top) / bounds.height;
+          item.style.setProperty("--tilt-x", `${(0.5 - y) * 5}deg`);
+          item.style.setProperty("--tilt-y", `${(x - 0.5) * 5}deg`);
+          item.style.setProperty("--spot-x", `${x * 100}%`);
+          item.style.setProperty("--spot-y", `${y * 100}%`);
+        };
+        const reset = () => {
+          item.style.setProperty("--tilt-x", "0deg");
+          item.style.setProperty("--tilt-y", "0deg");
+        };
+        item.addEventListener("pointermove", move);
+        item.addEventListener("pointerleave", reset);
+        tiltCleanups.push(() => {
+          item.removeEventListener("pointermove", move);
+          item.removeEventListener("pointerleave", reset);
+        });
+      });
+    }
+
     const showWithoutMotion = () => {
       context.revert();
       root.querySelectorAll("[data-motion-hero], [data-motion-item], [data-motion-reveal]").forEach((item) => {
@@ -59,6 +84,7 @@ export default function MotionLayer() {
       });
       if (lenisTick) gsap.ticker.remove(lenisTick);
       lenis?.destroy();
+      tiltCleanups.forEach((cleanup) => cleanup());
     };
     const handleReducedMotion = (event) => {
       if (event.matches) showWithoutMotion();
@@ -79,6 +105,7 @@ export default function MotionLayer() {
       context.revert();
       if (lenisTick) gsap.ticker.remove(lenisTick);
       lenis?.destroy();
+      tiltCleanups.forEach((cleanup) => cleanup());
     };
   }, []);
 

@@ -53,7 +53,7 @@ function ProofGallery({ copy }) {
     <div className="proof-heading"><SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} /><div className="proof-metrics">{copy.metrics.map(([value, label]) => <div key={label} data-motion-item><strong>{value}</strong><span>{label}</span></div>)}</div></div>
     <div className="proof-showcase">
       <figure className="proof-profile" data-motion-item><div><Image src={copy.profile[2]} alt={copy.profile[3]} fill sizes="(max-width: 700px) 84vw, 31vw" /></div><figcaption><span>{copy.profile[0]}</span><strong>{copy.profile[1]}</strong></figcaption></figure>
-      <div className="proof-details">{copy.details.map(([value, label, src, crop, alt]) => <figure className={`proof-detail proof-detail-${crop}`} key={`${src}-${crop}`} data-motion-item><div><Image src={src} alt={alt} fill sizes="(max-width: 700px) 84vw, 39vw" /></div><figcaption><strong>{value}</strong><span>{label}</span></figcaption></figure>)}</div>
+      <div className="proof-details">{copy.details.map(([value, label, src, crop, alt]) => <figure className={`proof-detail proof-detail-${crop}`} key={`${src}-${crop}`} data-motion-item><div><Image src={src} alt={alt} fill sizes="(max-width: 700px) 84vw, 39vw" /></div><figcaption><span>{value} · {label}</span></figcaption></figure>)}</div>
     </div>
     <p className="proof-note">{copy.note}</p>
   </div></section>;

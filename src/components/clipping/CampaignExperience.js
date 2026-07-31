@@ -48,6 +48,20 @@ function Operations({ copy }) {
   </section>;
 }
 
+function NetworkImpact({ copy }) {
+  return <section className={styles.impact} id="reklamatic-advantage" data-motion-reveal>
+    <div className={styles.wrap}>
+      <div className={styles.impactCopy} data-motion-item><Heading kicker={copy.kicker} title={copy.title} text={copy.text} dark /><div className={styles.impactStats}>{copy.stats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div>
+      <div className={styles.impactScene} data-motion-item aria-label={copy.visualLabel}>
+        <div className={styles.impactOrbit}><i /><i /><i /><strong>R</strong>{Array.from({ length: 10 }, (_, index) => <span key={index} style={{ "--node": index }} />)}</div>
+        <div className={styles.impactClips}><div><small>9:16</small><b>01</b></div><div><small>9:16</small><b>02</b></div><div><small>9:16</small><b>03</b></div></div>
+        <div className={styles.impactSignal}><span>VIEW DELIVERY</span><i /><i /><i /><i /><i /></div>
+      </div>
+      <div className={styles.guaranteeRail}>{copy.guarantees.map(([label, text]) => <article key={label} data-motion-item><span>{label}</span><p>{text}</p></article>)}</div>
+    </div>
+  </section>;
+}
+
 function ClipperToolkit({ copy }) {
   return <section className={styles.toolkit} id="clipper-system" data-motion-reveal>
     <div className={styles.wrap}>
@@ -57,7 +71,7 @@ function ClipperToolkit({ copy }) {
         <article className={styles.packageCard} data-motion-item><span>SETUP + TRAINING</span><h3>{copy.packageTitle}</h3><p>{copy.packageText}</p></article>
         <article className={styles.companyCard} data-motion-item><span>OPTIONAL SERVICE</span><h3>{copy.companyTitle}</h3><p>{copy.companyText}</p></article>
       </div>
-      <div className={styles.reality} data-motion-item><div><span>PLATFORM REALITY</span><h3>{copy.realityTitle}</h3><p>{copy.realityText}</p></div><nav aria-label="Official platform and tax sources">{copy.sources.map(([label, href]) => <a href={href} key={href} target="_blank" rel="noreferrer">{label}<b>↗</b></a>)}</nav></div>
+      <div className={styles.reality} data-motion-item><div><span>CAMPAIGN PAYOUT</span><h3>{copy.realityTitle}</h3><p>{copy.realityText}</p></div><div className={styles.payoutSteps}>{copy.realityCards.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div>
     </div>
   </section>;
 }
@@ -77,6 +91,7 @@ export default function CampaignExperience({ copy }) {
   return <div className={styles.experience}>
     <Story copy={copy.story} />
     <Operations copy={copy.operations} />
+    <NetworkImpact copy={copy.advantage} />
     <ClipperToolkit copy={copy.toolkit} />
     <Filmstrip copy={copy.film} />
     <Economics copy={copy.economics} />
