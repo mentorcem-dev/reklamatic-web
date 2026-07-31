@@ -83,11 +83,11 @@ const ContactSection = () => {
                 <div className="lg:w-1/2 fade-up delay-100">
                     <div className="submission-card relative z-10">
                         <div className="relative z-10">
-                            <p className="text-purple-300 font-mono text-sm uppercase tracking-widest mb-4">Start with one clear brief</p>
+                            <p className="text-purple-300 font-mono text-sm uppercase tracking-widest mb-4">Start with one clear campaign form</p>
                             <h3 className="text-3xl font-bold mb-4">Tell us what you sell and who should see it.</h3>
                             <p className="text-gray-400 leading-relaxed mb-8">We will reply with the most suitable accounts, content format, delivery plan and commercial package. No vague discovery form and no fake automated confirmation.</p>
                             <div className="grid gap-3">
-                                <a href="mailto:info@reklamatic.ai?subject=Project%20Brief&body=Hi%20Reklamatic%2C%0A%0ACompany%3A%0AProduct%20or%20service%3A%0ATarget%20market%3A%0AGoal%3A%0ATimeline%3A" className="submit-btn text-center">Send a project brief</a>
+                                <a href="mailto:info@reklamatic.ai?subject=Campaign%20Form&body=Hi%20Reklamatic%2C%0A%0ACompany%3A%0AProduct%20or%20service%3A%0ATarget%20market%3A%0AGoal%3A%0ATimeline%3A" className="submit-btn text-center">Send campaign details</a>
                                 <a href="https://wa.me/905302312947?text=Hi%20Reklamatic%2C%20I%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer" className="w-full py-4 rounded-full border border-white/15 text-center font-bold hover:bg-white/5 transition-colors">Talk on WhatsApp</a>
                             </div>
                             <p className="text-xs text-gray-600 mt-6">Global projects welcome · English and Turkish · 50% deposit to begin campaign work</p>

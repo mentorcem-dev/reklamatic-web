@@ -48,6 +48,20 @@ function Operations({ copy }) {
   </section>;
 }
 
+function ClipperToolkit({ copy }) {
+  return <section className={styles.toolkit} id="clipper-system" data-motion-reveal>
+    <div className={styles.wrap}>
+      <div className={styles.toolkitHead}><Heading kicker={copy.kicker} title={copy.title} text={copy.text} dark /><div className={styles.flow} aria-label={copy.flow.join(" — ")}>{copy.flow.map((step, index) => <span key={step}><b>0{index + 1}</b>{step}</span>)}</div></div>
+      <div className={styles.toolkitGrid}>{copy.benefits.map(([number, title, text]) => <article key={number} data-motion-item><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+      <div className={styles.supportGrid}>
+        <article className={styles.packageCard} data-motion-item><span>SETUP + TRAINING</span><h3>{copy.packageTitle}</h3><p>{copy.packageText}</p></article>
+        <article className={styles.companyCard} data-motion-item><span>OPTIONAL SERVICE</span><h3>{copy.companyTitle}</h3><p>{copy.companyText}</p></article>
+      </div>
+      <div className={styles.reality} data-motion-item><div><span>PLATFORM REALITY</span><h3>{copy.realityTitle}</h3><p>{copy.realityText}</p></div><nav aria-label="Official platform and tax sources">{copy.sources.map(([label, href]) => <a href={href} key={href} target="_blank" rel="noreferrer">{label}<b>↗</b></a>)}</nav></div>
+    </div>
+  </section>;
+}
+
 function Filmstrip({ copy }) {
   return <section className={styles.film} data-filmstrip data-motion-reveal>
     <div className={styles.wrap}><Heading kicker={copy.kicker} title={copy.title} text={copy.text} dark /></div>
@@ -63,6 +77,7 @@ export default function CampaignExperience({ copy }) {
   return <div className={styles.experience}>
     <Story copy={copy.story} />
     <Operations copy={copy.operations} />
+    <ClipperToolkit copy={copy.toolkit} />
     <Filmstrip copy={copy.film} />
     <Economics copy={copy.economics} />
   </div>;

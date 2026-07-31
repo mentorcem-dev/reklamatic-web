@@ -8,7 +8,7 @@ export default function PrivacyPage() {
       <h2>Who is responsible</h2>
       <p>Reklamatic.ai is responsible for the personal data described here. Privacy requests can be sent to <a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a>.</p>
       <h2>Website and sales inquiries</h2>
-      <p>When you prepare a campaign brief, the website uses the details you enter—such as your name, work email, phone or WhatsApp number, company, market, budget range, source link and message—to create an email in your own mail application. The website does not upload or store that form data. If you send the email, Reklamatic receives and processes it to answer your request, prepare a scope and maintain business correspondence.</p>
+      <p>When you complete a campaign form, the website uses the details you enter—such as your name, work email, phone or WhatsApp number, company, market, budget range, source link and message—to create an email in your own mail application. The website does not upload or store that form data. If you send the email, Reklamatic receives and processes it to answer your request, prepare a scope and maintain business correspondence.</p>
       <h2>Communication, retention and sharing</h2>
       <p>We may reply by email, phone or WhatsApp using the channel you provide. Inquiry records are kept only as long as reasonably needed for the relationship, legal obligations and dispute resolution. Email, hosting, analytics or messaging providers may process limited data on our behalf or under their own policies; we do not sell personal data.</p>
       <h2>Your choices</h2>
