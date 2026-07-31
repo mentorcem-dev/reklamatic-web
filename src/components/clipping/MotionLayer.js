@@ -48,6 +48,19 @@ export default function MotionLayer() {
 
       root.querySelectorAll("[data-parallax]").forEach((item) => gsap.fromTo(item, { y: 28 }, { y: -28, ease: "none", scrollTrigger: { trigger: item, start: "top bottom", end: "bottom top", scrub: 0.8 } }));
       root.querySelectorAll("[data-film-track]").forEach((track) => gsap.fromTo(track, { xPercent: 1.5 }, { xPercent: -1.5, ease: "none", scrollTrigger: { trigger: track, start: "top bottom", end: "bottom top", scrub: 1 } }));
+
+      root.querySelectorAll("[data-scroll-film]").forEach((film) => {
+        const video = film.querySelector("[data-scroll-video]");
+        if (!video) return;
+        const connectTimeline = () => {
+          if (!Number.isFinite(video.duration) || video.duration <= 0 || video.dataset.timelineReady) return;
+          video.dataset.timelineReady = "true";
+          video.pause();
+          gsap.fromTo(video, { currentTime: 0 }, { currentTime: Math.max(0.01, video.duration - 0.05), ease: "none", scrollTrigger: { trigger: film.closest("section") || film, start: "top 78%", end: "bottom 22%", scrub: 0.45 } });
+        };
+        if (video.readyState >= 1) connectTimeline();
+        else video.addEventListener("loadedmetadata", connectTimeline, { once: true });
+      });
     }, root);
 
     const tiltCleanups = [];

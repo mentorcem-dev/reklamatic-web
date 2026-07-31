@@ -12,6 +12,7 @@ const serviceFaq = (locale) => locale === "tr" ? [["Kampanyada kaç içerik yay�
 function Logo() { return <span className={styles.logo}>reklamatic<span>.ai</span></span>; }
 
 const visualAccents = ["#0878ff", "#725cff", "#00a986", "#ff7a45", "#db3e76"];
+const scrollVideoPages = new Set(["campaigns"]);
 
 function VisualStage({ page, locale }) {
   const copy = page[locale];
@@ -21,6 +22,8 @@ function VisualStage({ page, locale }) {
     : { source: "APPROVED SOURCE", map: "MOMENT MAP", cut: "EDITORIAL SELECT", ready: "PLATFORM READY", signal: "LEARNING SIGNAL", clips: ["Hook", "Context", "Pacing"] };
 
   return <div className={styles.visualStage} style={{ "--page-accent": accent }} role="img" aria-label={copy.headline} data-motion-tilt>
+    {page.image && <Image className={styles.visualPhoto} src={page.image} fill sizes="(max-width: 980px) 500px, 38vw" alt="" priority />}
+    <div className={styles.visualShade} />
     <div className={styles.visualChrome}><span /><span /><span /><b>REKLAMATIC / CLIP SYSTEM</b></div>
     <div className={styles.sourcePanel}>
       <small>{labels.source}</small>
@@ -53,15 +56,19 @@ function experiencePreset(page, locale) {
   const tr = {
     clippers: { kicker: "CLIPPER AVANTAJI", title: "Kanalının para kazanmasını bekleme.", text: "Kabul ettiğin kampanyayı üret, uygun hesabında paylaş ve doğrulanan her 1.000 uygun görüntülenmeden kampanya oranıyla kazan.", metrics: [["0", "platform para kazanma şartı"], ["1.000", "uygun view ödeme birimi"], ["∞", "gelecek kampanya erişimi"]], flow: ["Kampanyayı seç", "İçeriği üret", "Yayınla", "View'dan kazan"] },
     "what-is-clipping": { kicker: "MODELİN ÖZÜ", title: "Bir kaynak. Birçok klip. Gerçek hesaplarda dağıtım.", text: "Clipping yalnızca video kesmek değildir; markanın onaylı içeriğini platforma doğal kısa videolara dönüştürüp clipper hesaplarında yayınlamaktır.", metrics: [["01", "onaylı kaynak"], ["9:16", "platforma doğal klip"], ["₺", "uygun view geliri"]], flow: ["Kaynak", "Klip", "Clipper hesabı", "Görüntülenme", "Ödeme"] },
-    brands: { kicker: "YÖNETİLEN DAĞITIM", title: "Tek kampanyayı 50–200 uygun hesaba taşı.", text: "İçerik üretimi, marka onayı, yayın planı ve raporlama tek ekipte. Garantili pakette hedef tamamlanana kadar dağıtım sürer.", metrics: [["50–200", "hesaplı sabit plan"], ["GÜNLÜK", "kararlaştırılan yayın"], ["GARANTİ", "sözleşmedeki uygun view"]], flow: ["Form", "Üretim", "Onay", "Dağıtım", "Rapor"] },
-    campaigns: { kicker: "KAMPANYA MOTORU", title: "Üretim, dağıtım ve view teslimi tek operasyonda.", text: "Marka hedefini yazar; Reklamatic içeriği, uygun clipper eşleşmesini, yayın takvimini ve doğrulanan sonucu yönetir.", metrics: [["200M+", "geçmiş platform view"], ["50–200", "uygun hesap seçeneği"], ["TR + EN", "iki dilde operasyon"]], flow: ["Hedef", "Kreatif", "Clipper", "Yayın", "Teslim"] },
+    brands: { kicker: "YÖNETİLEN DAĞITIM", title: "Ana model görüntülenme hedefi; sabit dağıtım alternatif.", text: "İçerik üretimi, marka onayı, clipper eşleşmesi, yayın doğrulama ve raporlama tek ekipte. Görüntülenme paketinde uygun view hedefi tamamlanana kadar dağıtım sürer.", metrics: [["VIEW", "ana satın alma modeli"], ["50–200", "sabit hesap alternatifi"], ["GARANTİ", "sözleşmedeki uygun view"]], flow: ["Form", "Kreatif", "Onay", "Dağıtım", "Teslim"] },
+    campaigns: { kicker: "KAMPANYA MOTORU", title: "Formdan doğrulanmış view teslimine beş adım.", text: "Marka hedefini yazar; Reklamatic modeli, kreatifi, marka onayını, uygun clipper eşleşmesini, yayın takvimini ve doğrulanmış sonucu yönetir.", metrics: [["5 ADIM", "net kampanya akışı"], ["200M+", "geçmiş platform view"], ["50–200", "sabit hesap seçeneği"]], flow: ["Hedef", "Teklif", "Kreatif", "Yayın", "Rapor"] },
+    cases: { kicker: "KATEGORİYE GÖRE PLAN", title: "Her ürün aynı videoyla anlatılmaz.", text: "Uygulama demosu, müzik yayını, streamer kesiti ve ürün anlatısı için farklı kaynak, hook, hesap eşleşmesi ve rapor yapısı kurarız.", metrics: [["4", "ana kampanya formatı"], ["2", "satın alma modeli"], ["1", "doğrulanmış rapor"]], flow: ["Kaynak", "Yaratıcı yön", "Hesap eşleşmesi", "Yayın", "Rapor"] },
+    contact: { kicker: "İKİ AYRI BAŞVURU", title: "Reklam vermek ve clipper olmak aynı form değildir.", text: "Marka; hedef, bütçe ve dağıtım modelini paylaşır. Clipper; herkese açık hesaplarını, kategorisini ve kitle coğrafyasını gönderir.", metrics: [["MARKA", "kampanya teklifi"], ["CLIPPER", "ağ başvurusu"], ["DOĞRUDAN", "e-posta ve telefon"]], flow: ["Form", "İnceleme", "Teklif", "Onboarding"] },
     pricing: { kicker: "İKİ SATIN ALMA MODELİ", title: "Sabit dağıtım veya garantili görüntülenme.", text: "Hesap ve günlük yayın sayısına göre sabit plan seçin ya da uygun view hedefini sözleşmeye yazdırın.", metrics: [["SABİT", "hesap ve yayın planı"], ["VIEW", "garantili teslim modeli"], ["ŞEFFAF", "tek teklif ve rapor"]], flow: ["Kapsam", "Teklif", "Yayın", "Rapor"] },
   };
   const en = {
     clippers: { kicker: "THE CLIPPER ADVANTAGE", title: "Do not wait for channel monetization.", text: "Accept a campaign, create the clip, publish through an eligible account and earn the listed campaign rate for each verified block of 1,000 eligible views.", metrics: [["0", "platform monetization required"], ["1,000", "eligible-view payout unit"], ["∞", "future campaign access"]], flow: ["Choose", "Create", "Publish", "Earn"] },
     "what-is-clipping": { kicker: "THE MODEL", title: "One source. Many clips. Distributed through real accounts.", text: "Clipping is more than cutting video: it turns approved brand material into platform-native short videos and publishes them through clipper accounts.", metrics: [["01", "approved source"], ["9:16", "platform-native clip"], ["$", "eligible-view income"]], flow: ["Source", "Clip", "Clipper account", "Views", "Payout"] },
-    brands: { kicker: "MANAGED DISTRIBUTION", title: "Take one campaign across 50–200 suitable accounts.", text: "Production, brand approval, publishing and reporting run through one team. Guaranteed packages continue distribution until the target is delivered.", metrics: [["50–200", "account fixed plan"], ["DAILY", "agreed publishing"], ["GUARANTEE", "contracted eligible views"]], flow: ["Form", "Create", "Approve", "Distribute", "Report"] },
-    campaigns: { kicker: "CAMPAIGN ENGINE", title: "Production, distribution and view delivery in one operation.", text: "The brand sets the target. Reklamatic manages content, suitable clipper matching, publishing and verified delivery.", metrics: [["200M+", "historical platform views"], ["50–200", "suitable-account option"], ["TR + EN", "bilingual operation"]], flow: ["Goal", "Creative", "Clipper", "Publish", "Deliver"] },
+    brands: { kicker: "MANAGED DISTRIBUTION", title: "Eligible-view delivery first; fixed distribution when you need it.", text: "Production, brand approval, clipper matching, publishing verification and reporting run through one team. Eligible-view packages continue distribution until delivery.", metrics: [["VIEWS", "primary buying model"], ["50–200", "fixed-account alternative"], ["GUARANTEE", "contracted eligible views"]], flow: ["Form", "Creative", "Approve", "Distribute", "Deliver"] },
+    campaigns: { kicker: "CAMPAIGN ENGINE", title: "Five steps from form to verified delivery.", text: "The brand sets the objective. Reklamatic manages the model, creative, approval, suitable clipper matching, publishing and verified delivery.", metrics: [["5 STEPS", "clear campaign flow"], ["200M+", "historical platform views"], ["50–200", "fixed-account option"]], flow: ["Goal", "Proposal", "Creative", "Publish", "Report"] },
+    cases: { kicker: "CATEGORY-SPECIFIC PLANS", title: "Every product needs a different short-form system.", text: "App demos, music releases, streamer clips and product stories use different sources, hooks, account matching and reporting structures.", metrics: [["4", "core campaign formats"], ["2", "buying models"], ["1", "verified report"]], flow: ["Source", "Creative direction", "Account match", "Publish", "Report"] },
+    contact: { kicker: "TWO APPLICATION PATHS", title: "Advertising and becoming a clipper require different information.", text: "Brands share an objective, budget and distribution model. Clippers share public accounts, categories and audience geography.", metrics: [["BRAND", "campaign proposal"], ["CLIPPER", "network application"], ["DIRECT", "email and phone"]], flow: ["Form", "Review", "Proposal", "Onboarding"] },
     pricing: { kicker: "TWO BUYING MODELS", title: "Fixed distribution or guaranteed views.", text: "Choose a fixed account and daily publishing plan, or write an eligible-view target into the agreement.", metrics: [["FIXED", "account and publishing plan"], ["VIEWS", "guaranteed delivery"], ["CLEAR", "one proposal and report"]], flow: ["Scope", "Proposal", "Publish", "Report"] },
   };
   const base = locale === "tr"
@@ -72,14 +79,23 @@ function experiencePreset(page, locale) {
 
 function PageExperience({ page, locale }) {
   const preset = experiencePreset(page, locale);
+  const hasScrollVideo = scrollVideoPages.has(page.key);
   return <section className={styles.pageExperience} data-motion-reveal>
     <div className={[styles.container, styles.experienceGrid].join(" ")}>
       <div className={styles.experienceCopy} data-motion-item><p className={styles.kicker}>{preset.kicker}</p><h2>{preset.title}</h2><p>{preset.text}</p><div className={styles.experienceMetrics}>{preset.metrics.map(([value, label]) => <article key={`${value}-${label}`}><strong>{value}</strong><span>{label}</span></article>)}</div></div>
-      <div className={styles.experienceScene} data-motion-item data-motion-tilt role="img" aria-label={preset.title}>
+      {hasScrollVideo ? <div className={styles.scrollFilm} data-motion-item data-scroll-film aria-label={preset.title}>
+        <video muted playsInline preload="metadata" poster={page.image} data-scroll-video aria-hidden="true"><source src="/media/higgsfield/reklamatic-clipping-scroll.mp4" type="video/mp4" /></video>
+        <div className={styles.filmShade} />
+        <div className={styles.filmTop}><span>REKLAMATIC / LIVE CAMPAIGN SYSTEM</span><b>{locale === "tr" ? "SCROLL İLE İLERLET" : "SCROLL TO ADVANCE"}</b></div>
+        <div className={styles.filmCaption}><small>{preset.kicker}</small><strong>{locale === "tr" ? "Kaynak → klip → gerçek hesap → uygun view" : "Source → clip → real account → eligible view"}</strong></div>
+        <div className={styles.filmProgress}>{preset.flow.map((item, index) => <span key={item} style={{ "--flow-index": index }}><i />{item}</span>)}</div>
+      </div> : <div className={styles.experienceScene} data-motion-item data-motion-tilt role="img" aria-label={preset.title}>
+        {page.image && <Image className={styles.experiencePhoto} src={page.image} fill sizes="(max-width: 980px) 650px, 46vw" alt="" />}
+        <div className={styles.sceneShade} />
         <div className={styles.sceneGlow} /><div className={styles.sceneSource}><span>REKLAMATIC</span><b>R</b><small>{locale === "tr" ? "KAMPANYA" : "CAMPAIGN"}</small></div>
         <div className={styles.scenePhones}>{["HOOK", "CONTEXT", "CTA"].map((label, index) => <div key={label}><i>0{index + 1}</i><b>▶</b><span>{label}</span></div>)}</div>
         <div className={styles.sceneFlow}>{preset.flow.map((item, index) => <span key={item} style={{ "--flow-index": index }}>{item}</span>)}</div>
-      </div>
+      </div>}
     </div>
   </section>;
 }
@@ -93,7 +109,7 @@ function EditorialMedia({ page, locale }) {
     technology: ["blog", "pricing", "tiktok", "clippers", "contact", "faq"],
   };
   const group = Object.entries(mediaGroups).find(([, keys]) => keys.includes(page.key))?.[0] || (page.type === "Article" ? "podcast" : "technology");
-  const srcMap = { artist: "/media/generated/reklamatic-music-noctra.webp", podcast: "/media/generated/reklamatic-campaign-2.webp", product: "/media/generated/reklamatic-app-lumen.webp", publisher: "/media/generated/reklamatic-streamer-raidline.webp", technology: "/media/generated/reklamatic-network-velocity.webp" };
+  const srcMap = { artist: "/media/higgsfield/reklamatic-music-release.webp", podcast: "/media/higgsfield/reklamatic-clipper-workstation.webp", product: "/media/higgsfield/reklamatic-app-launch.webp", publisher: "/media/higgsfield/reklamatic-campaign-command-center.webp", technology: "/media/higgsfield/reklamatic-product-campaign.webp" };
   const src = page.image || srcMap[group];
   const labelMap = locale === "tr" ? { artist: "Müzik kampanyası", podcast: "Podcast ve kurucu anlatısı", product: "Uygulama kampanyası", publisher: "Yayıncı kampanyası", technology: "Yönetilen clipper dağıtımı" } : { artist: "Music campaign", podcast: "Podcast and founder narrative", product: "App campaign", publisher: "Publisher campaign", technology: "Managed clipper distribution" };
   const label = labelMap[group];

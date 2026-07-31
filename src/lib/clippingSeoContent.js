@@ -305,5 +305,137 @@ Object.entries(clearTurkishCopy).forEach(([key, copy]) => {
   if (page) Object.assign(page.tr, copy);
 });
 
+const navigationPageCopy = {
+  brands: {
+    image: "/media/higgsfield/reklamatic-app-launch.webp",
+    tr: {
+      title: "Markalar için Clipping Reklamı ve Garantili Görüntülenme | Reklamatic",
+      description: "Uygulama, ürün, müzik, yayıncı ve influencer kampanyanızı gerçek clipper hesaplarında dağıtın; garantili uygun view veya sabit 50–200 hesap modeliyle çalışın.",
+      kicker: "Markalar için",
+      headline: "İçeriğiniz tek hesaba bağlı kalmadan farklı akışlarda izlensin.",
+      lead: "Reklamatic bir clipping ajansıdır. Onayladığınız kaynakları kısa videolara dönüştürür, kampanyaya uygun clipper hesaplarında yayınlar ve sonucu tek raporda toplar. Ana modelimiz sözleşmede belirlenen uygun görüntülenme hedefidir; isterseniz hesap ve günlük yayın adedi sabit bir dağıtım planı da kurabiliriz.",
+      highlights: [["Görüntülenme hedefi", "Uygun view hedefi sözleşmeye yazılır ve teslim tamamlanana kadar dağıtım sürer"], ["Sabit dağıtım", "Kapasiteye göre 50–200 uygun hesap ve günlük yayın adedi baştan belirlenir"], ["Tek operasyon", "Kreatif, onay, clipper eşleşmesi, yayın doğrulama ve raporlama"]],
+      sections: [["Kimler reklam verebilir?", "Türkiye'de uygulamasını, ürününü, müziğini, yayını, podcast'ini, etkinliğini veya kişisel markasını büyütmek isteyen şirketler, sanatçılar, yayıncılar, streamer'lar ve influencerlar kampanya açabilir."], ["Ana model: uygun görüntülenme hedefi", "Hedef kitle, platform, süre, ölçüm kaynağı ve uygun view hedefi teklifte netleşir. Reklamatic üretim ve dağıtımı yönetir; hedef eksik kalırsa uygun hesaplarla telafi yayınlarını sürdürür."], ["Alternatif model: sabit yayın ağı", "View hedefi yerine kaç hesaptan ve günde kaç içerik yayınlanacağını satın alabilirsiniz. Kampanya uyumuna göre 50–200 uygun hesap, platformlar, günlük adet ve süre sabit teklifte yazılır."], ["Neyi teslim alırsınız?", "Onaylanan kreatifler, doğrulanmış paylaşım bağlantıları, hesap ve platform listesi, yayın tarihleri ve uygun görüntülenme raporu tek kampanya dosyasında sunulur."], ["Nasıl başlar?", "Formda ürününüzü, hedefinizi, Türkiye'deki kitlenizi, bütçenizi, kaynak içeriğinizi ve tercih ettiğiniz modeli paylaşın. Uygun kapsamı, takvimi ve fiyatı net bir teklif olarak iletelim."]],
+      faq: [["Görüntülenme garanti ediliyor mu?", "Görüntülenme hedefli paket seçildiğinde uygun view hedefi ve sayım koşulları sözleşmeye yazılır; hedef tamamlanana kadar dağıtım devam eder."], ["Kaç hesaptan paylaşım yapılabilir?", "Sabit dağıtım modeli kampanya uyumu ve kapasiteye göre 50–200 uygun hesapla planlanabilir."], ["Videoları kim hazırlıyor?", "Kaynak içeriğe göre Reklamatic ekibi ve kampanyaya atanmış clipper'lar farklı hook, kurgu ve platform versiyonları hazırlar; marka onayı olmadan yayın yapılmaz."], ["Hangi platformlarda yayınlanır?", "Kampanya kapsamına göre TikTok, Instagram Reels ve YouTube Shorts kullanılır."], ["Satış da garanti mi?", "Hayır. Garantinin kapsamı sözleşmede tanımlanan uygun görüntülenmedir; satış, takipçi veya viral sonuç ayrı bir performans sonucudur."]],
+      cta: "Kampanyam için teklif al"
+    },
+    en: {
+      title: "Clipping Advertising and Guaranteed Views for Brands | Reklamatic",
+      description: "Distribute app, product, music, publisher and creator campaigns through real clipper accounts with an eligible-view target or a fixed 50–200 account plan.",
+      kicker: "For brands",
+      headline: "Put your campaign into more feeds without relying on one account.",
+      lead: "Reklamatic is a managed clipping agency. We turn approved source material into short-form creative, publish through suitable clipper accounts and consolidate delivery in one report. Our primary model is a contracted eligible-view target; a fixed account and daily publishing plan is also available.",
+      highlights: [["Eligible-view target", "The agreed target is written into the contract and distribution continues until delivery"], ["Fixed distribution", "Define 50–200 suitable accounts and a daily publishing volume in advance"], ["One operation", "Creative, approval, clipper matching, publishing verification and reporting"]],
+      sections: [["Who can run a campaign?", "Companies, apps, products, artists, publishers, streamers, podcasters and creators that want to reach audiences in Türkiye through short-form video."], ["Primary model: eligible-view delivery", "Audience, platforms, period, measurement source and eligible-view target are defined in the proposal. Reklamatic manages production and distribution and continues replacement publishing when eligible delivery falls short."], ["Alternative model: fixed publishing network", "Instead of a view target, purchase a defined number of accounts and daily posts. Subject to campaign fit and capacity, a plan can cover 50–200 suitable accounts with platforms, cadence and duration stated in the proposal."], ["What do you receive?", "Approved creative, verified post URLs, account and platform lists, publishing dates and eligible-view reporting in one campaign record."], ["How do you start?", "Share the product, objective, Turkish audience, budget, source material and preferred buying model. We return a clear scope, timeline and price."]],
+      faq: [["Are views guaranteed?", "When the eligible-view package is selected, the target and counting rules are written into the agreement and distribution continues until delivery."], ["How many accounts can publish?", "Subject to campaign fit and capacity, a fixed distribution plan can cover 50–200 suitable accounts."], ["Who creates the videos?", "Reklamatic and assigned clippers build multiple hooks, edits and platform variants from approved source material. Nothing is published without brand approval."], ["Where are clips published?", "Campaigns can run across TikTok, Instagram Reels and YouTube Shorts."], ["Are sales guaranteed?", "No. The guarantee covers the eligible-view target defined in the agreement; sales, followers and virality are separate outcomes."]],
+      cta: "Get a campaign proposal"
+    }
+  },
+  clippers: {
+    image: "/media/higgsfield/reklamatic-clipper-workstation.webp",
+    tr: {
+      title: "Clipper Ol ve 1.000 Uygun Görüntülenme Başına Kazan | Reklamatic",
+      description: "Türkiye odaklı clipping kampanyalarına katılın; kanal para kazanma şartı olmadan doğrulanan her 1.000 uygun görüntülenme için kampanya oranıyla kazanın.",
+      kicker: "Clipper ol",
+      headline: "Hesabını aç. Kampanyayı seç. Uygun view üzerinden kazan.",
+      lead: "Clipper; onaylı içeriği kısa videoya dönüştüren ve kendi uygun sosyal medya hesabında yayınlayan kişidir. Reklamatic kampanyasında Instagram, TikTok veya YouTube kanalının platform para kazanma özelliğinin açık olması gerekmez. İşi kabul etmeden önce içerik kurallarını, hedef coğrafyayı, geçerli view tanımını ve 1.000 uygun görüntülenme oranını görürsün.",
+      highlights: [["0 kanal şartı", "Platformun para kazanma programına kabul edilmiş olman gerekmez"], ["1.000 uygun view", "Ödeme birimi ve geçerlilik kuralları kampanyada baştan görünür"], ["Türkiye kampanyaları", "Yerel markaların Türkiye'den istediği uygun görüntülenmeler"]],
+      sections: [["Kimler clipper olabilir?", "Herkese açık TikTok, Instagram Reels veya YouTube Shorts hesabı bulunan; kısa video üretebilen ya da öğrenmek isteyen kişiler başvurabilir. Hesap kategorisi, kitle coğrafyası, içerik kalitesi ve geçmişi kampanya eşleşmesinde değerlendirilir."], ["Kazanç nasıl oluşur?", "Kampanyayı kabul eder, onaylı kaynaktan kurallara uygun videoyu üretir ve eşleşen hesabında yayınlarsın. Doğrulanan her 1.000 uygun görüntülenme için ilanda yazan oran üzerinden kazanç hesaplanır."], ["Neden platform gelirinden farklı?", "Instagram ve TikTok her sıradan görüntülenmeye otomatik ödeme yapmaz. YouTube'da reklam geliri için kanalın para kazanma şartlarını tamamlaması gerekir. Reklamatic kampanya ödemesi bu platform programlarından bağımsızdır."], ["Otomasyon ve eğitim paketi", "Reklamatic'in clipper sistemi; kampanya sırasını, içerik varyasyonlarını ve izin verdiğiniz hesapların yayın akışını tek panelde düzenlemeye yardımcı olur. AI, CapCut veya kendi aracınızla hazırladığınız videoları daha fazla hesap için yönetebilirsiniz. Kurulum, eğitim ve danışmanlık ayrı bir hizmet paketidir."], ["Şirket kuruluş desteği", "Kazancı yasal biçimde beyan etmek isteyenler için isteğe bağlı ve tek seferlik şahıs şirketi kuruluş desteği sunulur. Bu hizmet kampanyalara katılma şartı değildir; vergi yükümlülükleri mali müşavirle teyit edilir."], ["Türkiye avantajı", "Yurt dışındaki bazı kampanyalar yalnızca ABD gibi belirli ülkelerden gelen görüntülenmeleri sayar. Türkiye kitlesine sahip bir hesap için bu hedef zor olabilir. Reklamatic yerel kampanyaları yerel clipper'larla eşleştirir; Türkiye görüntülenmesi kampanyanın merkezindedir."]],
+      faq: [["Yeni hesapla başlayabilir miyim?", "Evet. Ancak her kampanyanın hesap uygunluğu, kategori ve kalite ölçütleri farklıdır; başvuru otomatik kabul anlamına gelmez."], ["Kanalım para kazanmıyorsa ödeme alabilir miyim?", "Evet. Reklamatic kampanya ödemesi için platform para kazanma özelliğinin açık olması gerekmez."], ["Ne kadar kazanırım?", "Oran kampanyaya göre değişir. 1.000 uygun görüntülenme oranı, sayım dönemi, coğrafya ve ödeme koşulları işi kabul etmeden önce görünür."], ["Eklentiyi kullanmak zorunlu mu?", "Hayır. Otomasyon, eğitim ve kurulum paketi ayrı bir hizmettir; kampanya katılım koşulları kampanya sayfasında belirtilir."], ["Gelecek kampanyalar için abonelik var mı?", "Kabul edilen Reklamatic kampanyalarına erişim için tekrar eden üyelik ücreti alınmaz; ayrı eğitim, otomasyon veya kuruluş hizmetlerinin fiyatı kendi kapsamına göre belirlenir."]],
+      cta: "Clipper başvurusu yap"
+    },
+    en: {
+      title: "Become a Clipper and Earn per 1,000 Eligible Views | Reklamatic",
+      description: "Join Türkiye-focused clipping campaigns and earn the listed campaign rate for each verified block of 1,000 eligible views without platform monetization.",
+      kicker: "For clippers",
+      headline: "Open your account. Choose a campaign. Earn from eligible views.",
+      lead: "A clipper turns approved material into short-form video and publishes it through a suitable social account they operate. Your Instagram, TikTok or YouTube channel does not need platform monetization for a Reklamatic campaign. Before accepting, you see the creative rules, target geography, eligible-view definition and payout rate per 1,000 eligible views.",
+      highlights: [["No channel threshold", "You do not need acceptance into a platform monetization program"], ["1,000 eligible views", "The payout unit and validation rules are visible before acceptance"], ["Türkiye campaigns", "Local campaigns designed for eligible Turkish audiences"]],
+      sections: [["Who can become a clipper?", "People with a public TikTok, Instagram Reels or YouTube Shorts account who can create short-form video or want to learn. Account category, audience geography, creative quality and history are evaluated for each match."], ["How is income calculated?", "Accept a campaign, create from approved material, follow the rules and publish through the matched account. Earnings use the listed rate for each verified block of 1,000 eligible views."], ["How is this different from platform revenue?", "Instagram and TikTok do not automatically pay every account for ordinary views. YouTube ad revenue requires channel eligibility. Reklamatic campaign payouts operate separately from those programs."], ["Automation and training package", "The Reklamatic clipper system helps organize campaigns, content variants and publishing across accounts you authorize. Manage videos produced with AI, CapCut or your own workflow across more accounts. Setup, training and consulting are offered as a separate service package."], ["Business setup support", "Optional one-time business setup support is available for clippers who need a legal way to declare income. It is not required to join campaigns; tax obligations should be confirmed with a licensed adviser."], ["Why Türkiye matters", "Some international campaigns count only views from markets such as the United States. That can be difficult for a Turkish account. Reklamatic matches local campaigns with local clippers so Turkish reach is part of the campaign objective."]],
+      faq: [["Can I start with a new account?", "Yes, but account eligibility, category and quality requirements vary by campaign and an application is not automatic acceptance."], ["Can I earn without channel monetization?", "Yes. Platform monetization is not required for Reklamatic campaign payouts."], ["How much can I earn?", "Rates vary by campaign. The rate per 1,000 eligible views, counting period, geography and payout terms are shown before acceptance."], ["Is the automation required?", "No. Automation, setup and training are a separate service; campaign requirements are stated on each campaign."], ["Is there a recurring campaign subscription?", "There is no recurring membership fee to access accepted Reklamatic campaigns. Separate automation, training or company setup services have their own scope and price."]],
+      cta: "Apply as a clipper"
+    }
+  },
+  campaigns: {
+    image: "/media/higgsfield/reklamatic-campaign-command-center.webp",
+    tr: {
+      title: "Clipping Kampanyası Nasıl Çalışır? 5 Adımda Süreç | Reklamatic",
+      description: "Form, teklif, kreatif üretim, clipper dağıtımı ve uygun görüntülenme raporundan oluşan Reklamatic clipping kampanyası sürecini inceleyin.",
+      kicker: "Nasıl çalışır?",
+      headline: "Kampanya formundan doğrulanmış görüntülenmeye beş net adım.",
+      lead: "Marka hedefini ve bütçesini paylaşır. Reklamatic uygun satın alma modelini kurar, kısa video yönlerini üretir, marka onayını alır, clipper ağında yayınlar ve sonucu doğrular. Her adımın sahibi ve çıktısı baştan bellidir.",
+      highlights: [["1 · Model", "Uygun view hedefi veya sabit 50–200 hesap dağıtımı"], ["2 · Operasyon", "Kreatif üretim, marka onayı, eşleşme ve yayın takvimi"], ["3 · Teslim", "Doğrulanmış gönderiler ve uygun görüntülenme raporu"]],
+      sections: [["1. Hedefi ve modeli seç", "Ürün, hedef kitle, Türkiye odağı, platform, bütçe ve süre belirlenir. Ana modelde uygun view hedefi; alternatif modelde hesap sayısı ve günlük yayın adedi satın alınır."], ["2. Formu teklife dönüştür", "Onaylı kaynaklar, kullanılabilecek iddialar, yasaklar, CTA, ölçüm kaynağı ve geçerli görüntülenme koşulları tek kampanya kapsamına yazılır."], ["3. Kısa video yönlerini üret", "Kaynak içerikten farklı hook, kurgu, altyazı ve platform versiyonları hazırlanır. Marka onayından geçmeyen içerik yayınlanmaz."], ["4. Clipper ağında yayınla", "İçerik kategorisine ve hedef kitleye uygun hesaplar seçilir. Onaylanan videolar planlanan tarihlerde clipper hesaplarında yayınlanır; geçersiz veya silinen paylaşımlar gerektiğinde değiştirilir."], ["5. Doğrula ve teslim et", "Gönderi bağlantıları, hesaplar, platformlar, yayın tarihleri ve uygun view verileri raporlanır. Görüntülenme hedefli pakette dağıtım, sözleşmedeki hedef tamamlanana kadar sürer."]],
+      faq: [["Formdan sonra ne olur?", "Hedef, bütçe ve kaynaklar incelenir; uygun model, tahmini takvim, kapsam ve fiyat teklif edilir."], ["Marka videoları onaylar mı?", "Evet. Yayına girecek içerikler ve gerektiğinde hesap seçimi marka onayından geçer."], ["Geçersiz paylaşım olursa ne olur?", "Sözleşmedeki koşullara uymayan, silinen veya geçersiz sayılan yayınlar kapsam dahilinde telafi dağıtımına alınır."], ["Rapor neleri gösterir?", "Doğrulanmış URL, hesap, platform, yayın tarihi ve mutabık ölçüm kaynağındaki uygun görüntülenmeyi gösterir."]],
+      cta: "Kampanya formunu doldur"
+    },
+    en: {
+      title: "How a Clipping Campaign Works in 5 Steps | Reklamatic",
+      description: "See the Reklamatic process from form and proposal through creative production, clipper distribution and eligible-view reporting.",
+      kicker: "How it works",
+      headline: "Five clear steps from campaign form to verified delivery.",
+      lead: "The brand shares its objective and budget. Reklamatic structures the buying model, develops short-form directions, obtains approval, publishes through the clipper network and verifies delivery. Ownership and output are clear at every stage.",
+      highlights: [["1 · Model", "Eligible-view target or fixed distribution across 50–200 accounts"], ["2 · Operation", "Creative production, brand approval, matching and publishing schedule"], ["3 · Delivery", "Verified posts and eligible-view reporting"]],
+      sections: [["1. Choose the objective and model", "Define the product, audience, Türkiye focus, platforms, budget and period. The primary model purchases an eligible-view target; the alternative defines accounts and daily publishing volume."], ["2. Turn the form into a proposal", "Approved source material, permitted claims, exclusions, CTA, measurement source and eligible-view rules are documented in one campaign scope."], ["3. Build the short-form directions", "Multiple hooks, edits, captions and platform versions are created from the source. Nothing is published without approval."], ["4. Publish through the clipper network", "Suitable accounts are selected by category and audience fit. Approved videos are published on schedule; invalid or removed posts are replaced when required."], ["5. Verify and deliver", "The report includes post URLs, accounts, platforms, publishing dates and eligible-view data. With a view-target package, distribution continues until the contracted target is delivered."]],
+      faq: [["What happens after the form?", "We review the objective, budget and source material and return the recommended model, scope, timeline and price."], ["Does the brand approve the videos?", "Yes. Creative and, where agreed, account selection are approved before publishing."], ["What if a post becomes invalid?", "Posts that do not meet agreed conditions, are removed or become invalid enter replacement distribution within scope."], ["What does the report include?", "Verified URL, account, platform, publishing date and eligible views from the agreed measurement source."]],
+      cta: "Complete the campaign form"
+    }
+  },
+  cases: {
+    image: "/media/higgsfield/reklamatic-music-release.webp",
+    tr: {
+      title: "Clipping Kampanya Formatları: Uygulama, Müzik, Yayın ve Ürün | Reklamatic",
+      description: "Uygulama lansmanı, müzik yayını, streamer kesitleri ve ürün tanıtımı için clipping kampanya planlarını ve teslim yapılarını inceleyin.",
+      kicker: "Kampanya formatları",
+      headline: "Aynı dağıtım sistemi, her kategori için farklı içerik planı.",
+      lead: "Bu sayfadaki örnekler uydurma müşteri hikâyeleri değil; farklı sektörler için kullandığımız kampanya kurulum şablonlarıdır. Her plan kaynak türünü, yaratıcı yönleri, uygun hesapları, satın alma modelini ve raporu baştan tanımlar.",
+      highlights: [["Uygulama", "Demo, problem–çözüm ve kullanım senaryosu"], ["Müzik", "Performans, duygu, hikâye ve trend uyarlaması"], ["Yayıncı & ürün", "Kesit, tepki, kanıt, demo ve CTA"]],
+      sections: [["Uygulama ve SaaS lansmanı", "Ekran kaydı, kurucu anlatısı veya ürün demosundan farklı problem–çözüm videoları hazırlanır. Ana satın alma modeli uygun view hedefidir; alternatif olarak seçili teknoloji ve ilgi hesaplarında sabit yayın yapılır."], ["Müzik ve sanatçı kampanyası", "Onaylı parça, performans ve hikâye materyalinden duygu, söz, sahne ve kullanım bağlamı üretilir. Haklar ve kullanılabilecek ses bölümü baştan belirlenir; yayınlar müzik ve kültür hesaplarına eşleştirilir."], ["Streamer, podcast ve yayıncı", "Uzun yayındaki komik an, güçlü fikir, tartışma veya tepki tek başına anlaşılır kısa videoya dönüştürülür. Kaynak ve bağlam korunur; uygun eğlence, oyun, iş veya ilgi hesaplarında dağıtılır."], ["Ürün, influencer ve etkinlik", "Ürünün faydası; demo, önce–sonra, kullanım anı, itiraz cevabı veya etkinlik kesiti üzerinden anlatılır. İçerik reklam açıklaması ve marka onayıyla farklı kısa video akışlarına dağıtılır."], ["Her formatta ortak teslim", "Kreatif yönler, onaylanan videolar, doğrulanmış yayın bağlantıları, hesap ve platform listesi ile uygun view raporu tek kampanya çıktısında birleştirilir."]],
+      cta: "Kategorime uygun plan iste"
+    },
+    en: {
+      title: "Clipping Campaign Formats for Apps, Music, Publishers and Products | Reklamatic",
+      description: "Explore practical campaign structures for app launches, music releases, streamer clips and product distribution.",
+      kicker: "Campaign formats",
+      headline: "One distribution system, a different content plan for every category.",
+      lead: "These are not invented client stories. They are operational campaign blueprints showing how source material, creative directions, suitable accounts, the buying model and reporting change by category.",
+      highlights: [["Apps", "Demo, problem–solution and use-case creative"], ["Music", "Performance, emotion, story and trend adaptation"], ["Publishers & products", "Clips, reactions, proof, demonstrations and CTA"]],
+      sections: [["App and SaaS launch", "Screen recordings, founder explanations or product demos become multiple problem–solution videos. The primary model uses an eligible-view target; fixed publishing through suitable technology and interest accounts is also available."], ["Music and artist campaign", "Approved tracks, performances and story material become emotion, lyric, scene and usage-context directions. Rights and permitted audio sections are defined first, then matched to music and culture accounts."], ["Streamer, podcast and publisher", "A funny moment, strong opinion, debate or reaction becomes a self-contained short. Source and context are preserved and distributed through suitable entertainment, gaming, business or interest accounts."], ["Product, creator and event", "Benefits are communicated through demonstrations, before–after, usage moments, objection handling or event clips. Creative is distributed through different feeds with disclosure and approval rules."], ["Shared delivery structure", "Creative directions, approved videos, verified post URLs, account and platform lists and eligible-view reporting are consolidated into one campaign output."]],
+      cta: "Request a category plan"
+    }
+  },
+  contact: {
+    image: "/media/higgsfield/reklamatic-product-campaign.webp",
+    tr: {
+      title: "Reklamatic İletişim | Reklam Ver veya Clipper Ol",
+      description: "Clipping kampanyası için teklif alın veya Reklamatic clipper ağına başvurun. Marka ve clipper için gerekli bilgileri inceleyin.",
+      kicker: "İletişim",
+      headline: "Reklam vermek veya clipper olmak için doğru formu seçin.",
+      lead: "Markaysanız kampanya hedefinizi ve tercih ettiğiniz dağıtım modelini; clipper'sanız herkese açık hesaplarınızı ve içerik alanınızı paylaşın. İnceleme sonrası doğru ekiple doğrudan iletişime geçersiniz.",
+      highlights: [["Marka formu", "Hedef, bütçe, kaynak, platform ve satın alma modeli"], ["Clipper başvurusu", "Herkese açık hesaplar, kategori, kitle ve örnek içerikler"], ["Doğrudan iletişim", "info@reklamatic.ai · +90 530 231 29 47"]],
+      sections: [["Marka formunda ne olmalı?", "Marka veya proje adı, tanıtılacak ürün, Türkiye'deki hedef kitle, platformlar, tahmini bütçe, onaylı kaynak bağlantısı ve tercih edilen model: uygun view hedefi ya da sabit 50–200 hesap dağıtımı."], ["Clipper başvurusunda ne olmalı?", "Herkese açık TikTok, Instagram veya YouTube bağlantıları; içerik kategorileri, kitlenin ağırlıklı ülkesi, örnek videolar ve çalışma sıklığı. Parola veya hesap erişim bilgisi göndermeyin."], ["Sonraki adım nedir?", "Marka talebinde kampanya uyumu, kapasite, model, takvim ve fiyat; clipper başvurusunda hesap uygunluğu ve mevcut kampanyalar incelenir. Uygun olduğunda teklif veya onboarding adımı için iletişime geçilir."], ["Hızlı ulaşmak isterseniz", "Form dışında info@reklamatic.ai adresine yazabilir veya +90 530 231 29 47 numarasından iletişime geçebilirsiniz. Form göndermek otomatik kabul veya sözleşme oluşturmaz."]],
+      cta: "Başvuru seçeneklerini aç"
+    },
+    en: {
+      title: "Contact Reklamatic | Advertise or Become a Clipper",
+      description: "Request a clipping campaign proposal or apply to the Reklamatic clipper network. See what brands and clippers should provide.",
+      kicker: "Contact",
+      headline: "Choose the right form to advertise or become a clipper.",
+      lead: "Brands share the campaign objective and preferred distribution model. Clippers share public accounts and content categories. After review, the relevant team contacts you directly.",
+      highlights: [["Brand form", "Objective, budget, source, platforms and buying model"], ["Clipper application", "Public accounts, category, audience and sample content"], ["Direct contact", "info@reklamatic.ai · +90 530 231 29 47"]],
+      sections: [["What should a brand provide?", "Brand or project name, product, Turkish audience, platforms, indicative budget, approved source URL and preferred model: eligible-view target or fixed distribution across 50–200 accounts."], ["What should a clipper provide?", "Public TikTok, Instagram or YouTube URLs, content categories, primary audience geography, sample videos and availability. Never send passwords or account access details."], ["What happens next?", "For brands we review fit, capacity, model, timeline and price. For clippers we review account eligibility and available campaigns. When there is a fit, we follow up with a proposal or onboarding step."], ["Need a direct route?", "Email info@reklamatic.ai or call +90 530 231 29 47. Submitting a form does not create automatic acceptance or a service agreement."]],
+      cta: "Open the application options"
+    }
+  }
+};
+
+Object.entries(navigationPageCopy).forEach(([key, content]) => {
+  const page = seoPages.find((item) => item.key === key);
+  if (!page) return;
+  page.image = content.image;
+  Object.assign(page.tr, content.tr);
+  Object.assign(page.en, content.en);
+});
+
 export const findSeoPage = (locale, path) => seoPages.find((page) => page.paths[locale] === path);
 export const routeParams = (locale) => seoPages.map((page) => ({ slug: page.paths[locale].split("/") }));
