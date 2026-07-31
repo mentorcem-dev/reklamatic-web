@@ -53,6 +53,8 @@ function NetworkImpact({ copy }) {
     <div className={styles.wrap}>
       <div className={styles.impactCopy} data-motion-item><Heading kicker={copy.kicker} title={copy.title} text={copy.text} dark /><div className={styles.impactStats}>{copy.stats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div>
       <div className={styles.impactScene} data-motion-item aria-label={copy.visualLabel}>
+        <Image className={styles.impactPhoto} src={copy.image} fill sizes="(max-width: 700px) 100vw, 1180px" alt={copy.imageAlt} />
+        <div className={styles.impactPhotoShade} />
         <div className={styles.impactOrbit}><i /><i /><i /><strong>R</strong>{Array.from({ length: 10 }, (_, index) => <span key={index} style={{ "--node": index }} />)}</div>
         <div className={styles.impactClips}><div><small>9:16</small><b>01</b></div><div><small>9:16</small><b>02</b></div><div><small>9:16</small><b>03</b></div></div>
         <div className={styles.impactSignal}><span>VIEW DELIVERY</span><i /><i /><i /><i /><i /></div>
@@ -84,7 +86,9 @@ function Filmstrip({ copy }) {
 }
 
 function Economics({ copy }) {
-  return <section className={styles.economics} id="terms" data-motion-reveal><div className={styles.wrap}><Heading kicker={copy.kicker} title={copy.title} /><div className={styles.economicSplit}><article data-motion-item><span>BRAND</span><h3>{copy.brandTitle}</h3><p>{copy.brandText}</p>{copy.brandFormula && <code>{copy.brandFormula}</code>}</article><article data-motion-item><span>CLIPPER</span><h3>{copy.clipperTitle}</h3><p>{copy.clipperText}</p><code>{copy.formula}</code></article></div></div></section>;
+  return <section className={styles.economics} id="terms" data-motion-reveal><div className={styles.wrap}><Heading kicker={copy.kicker} title={copy.title} />
+    <div className={styles.buyModels}>{copy.models.map(([number, badge, title, text, formula], index) => <article key={number} data-motion-item data-primary={index === 0 ? "true" : "false"}><span>{number}</span><small>{badge}</small><h3>{title}</h3><p>{text}</p><code>{formula}</code></article>)}</div>
+    <div className={styles.economicSplit}><article data-motion-item><span>BRAND</span><h3>{copy.brandTitle}</h3><p>{copy.brandText}</p></article><article data-motion-item><span>CLIPPER</span><h3>{copy.clipperTitle}</h3><p>{copy.clipperText}</p><code>{copy.formula}</code></article></div></div></section>;
 }
 
 export default function CampaignExperience({ copy }) {
