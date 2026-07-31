@@ -1,10 +1,10 @@
 import LegalPage from "@/components/LegalPage";
 
-export const metadata = { title: "Hizmet Koşulları", description: "Reklamatic.ai clipping hizmetleri ve yayın araçları için koşullar.", alternates: { canonical: "https://reklamatic.ai/tr/terms", languages: { en: "https://reklamatic.ai/terms", tr: "https://reklamatic.ai/tr/terms" } } };
+export const metadata = { title: "Hizmet Koşulları", description: "Reklamatic.ai clipping hizmetleri ve yayın araçları için koşullar.", alternates: { canonical: "https://reklamatic.ai/terms", languages: { tr: "https://reklamatic.ai/terms", en: "https://reklamatic.ai/en/terms", "x-default": "https://reklamatic.ai/terms" } } };
 
 export default function TermsPageTr() {
   return (
-    <LegalPage eyebrow="REKLAMATIC.AI" title="Hizmet Koşulları" updated="27 Temmuz 2026" updatedLabel="Son güncelleme" otherHref="/tr/privacy" otherLabel="Gizlilik" languageHref="/terms" languageLabel="English">
+    <LegalPage eyebrow="REKLAMATIC.AI" title="Hizmet Koşulları" updated="27 Temmuz 2026" updatedLabel="Son güncelleme" otherHref="/privacy" otherLabel="Gizlilik" languageHref="/en/terms" languageLabel="English">
       <h2>Kapsam ve yazılı anlaşma</h2>
       <p>Web sitesindeki açıklamalar genel bilgilendirmedir ve bağlayıcı teklif değildir. Teslimatlar, platformlar, takvim, onaylar, ücretler, ödeme koşulları ve yayın sorumlulukları işe başlamadan önce yazılı teklif veya sözleşmede netleştirilir.</p>
       <h2>Kaynak içerik ve haklar</h2>

@@ -23,9 +23,8 @@ button{color:inherit}
 .language-link,.menu-button{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:10px;font-weight:850}
 .nav-cta{min-height:44px;padding:0 17px;display:flex;align-items:center;gap:15px;border-radius:999px;background:var(--navy);color:#fff;font-size:11px;font-weight:800}
 .nav-cta span{color:var(--cyan)}
-.menu-button{display:none;cursor:pointer}
-.menu-button span{display:block;width:16px;height:1px;background:var(--ink)}
-.menu-button span+span{margin-top:5px}
+.menu-button{display:none;padding:0;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;appearance:none}
+.menu-button span{display:block;width:16px;height:1px;margin:0;background:var(--ink);transform-origin:center;transition:transform .2s ease}
 .menu-button.active span:first-child{transform:translateY(3px) rotate(45deg)}
 .menu-button.active span:last-child{transform:translateY(-3px) rotate(-45deg)}
 .hero{position:relative;min-height:100svh;padding:145px 0 90px;display:flex;align-items:center;background:linear-gradient(145deg,#fbfdff,#ecf7ff 60%,#dcefff);overflow:clip}
@@ -163,7 +162,7 @@ footer{padding:70px 0;background:var(--navy);color:#fff}
   .nav-links.open{display:grid}
   .nav-links a{min-height:44px;padding:0 13px;display:flex;align-items:center;border-radius:9px}
   .nav-links a:hover{background:var(--ice)}
-  .menu-button{display:block}
+  .menu-button{display:flex}
   .hero-layout{grid-template-columns:1fr;gap:65px}
   .hero-copy{text-align:center}
   .hero-copy h1,.hero-text{margin-inline:auto}

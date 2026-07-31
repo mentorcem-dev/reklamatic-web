@@ -1,10 +1,10 @@
 import LegalPage from "@/components/LegalPage";
 
-export const metadata = { title: "Gizlilik Politikası", description: "Reklamatic.ai web sitesi taleplerinde ve hizmetlerinde kişisel verilerin işlenmesi.", alternates: { canonical: "https://reklamatic.ai/tr/privacy", languages: { en: "https://reklamatic.ai/privacy", tr: "https://reklamatic.ai/tr/privacy" } } };
+export const metadata = { title: "Gizlilik Politikası", description: "Reklamatic.ai web sitesi taleplerinde ve hizmetlerinde kişisel verilerin işlenmesi.", alternates: { canonical: "https://reklamatic.ai/privacy", languages: { tr: "https://reklamatic.ai/privacy", en: "https://reklamatic.ai/en/privacy", "x-default": "https://reklamatic.ai/privacy" } } };
 
 export default function PrivacyPageTr() {
   return (
-    <LegalPage eyebrow="REKLAMATIC.AI" title="Gizlilik Politikası" updated="27 Temmuz 2026" updatedLabel="Son güncelleme" otherHref="/tr/terms" otherLabel="Koşullar" languageHref="/privacy" languageLabel="English">
+    <LegalPage eyebrow="REKLAMATIC.AI" title="Gizlilik Politikası" updated="27 Temmuz 2026" updatedLabel="Son güncelleme" otherHref="/terms" otherLabel="Koşullar" languageHref="/en/privacy" languageLabel="English">
       <h2>Veri sorumlusu</h2>
       <p>Reklamatic.ai burada açıklanan kişisel verilerden sorumludur. Gizlilik taleplerinizi <a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a> adresine iletebilirsiniz.</p>
       <h2>Web sitesi ve satış talepleri</h2>

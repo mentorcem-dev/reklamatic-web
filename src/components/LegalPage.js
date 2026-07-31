@@ -1,11 +1,11 @@
 import Link from "next/link";
 import styles from "@/app/legal.module.css";
 
-export default function LegalPage({ eyebrow, title, updated, updatedLabel = "Last updated", otherHref, otherLabel, languageHref, languageLabel, children }) {
+export default function LegalPage({ eyebrow, title, updated, updatedLabel = "Last updated", homeHref = "/", otherHref, otherLabel, languageHref, languageLabel, children }) {
   return (
     <div className={styles.shell}>
       <header className={styles.header}>
-        <Link className={styles.brand} href="/">reklamatic<span>.ai</span></Link>
+        <Link className={styles.brand} href={homeHref}>reklamatic<span>.ai</span></Link>
         <nav className={styles.links} aria-label="Legal navigation">
           <Link href={otherHref}>{otherLabel}</Link>
           {languageHref && <Link href={languageHref}>{languageLabel}</Link>}

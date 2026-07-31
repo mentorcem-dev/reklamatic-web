@@ -2,24 +2,24 @@ import ClippingSite from "@/components/clipping/ClippingSite";
 import { content } from "@/lib/clippingContent";
 
 export const metadata = {
-  title: { absolute: "Clipping Agency and Active Clipper Network | Reklamatic" },
-  description: "Distribute your content through Reklamatic's active clipper network, or become a clipper and earn from eligible verified campaign views.",
-  keywords: ["clipping agent", "clipping agency", "clipping campaigns", "become a clipper", "pay per view campaign", "Türkiye short video distribution", "TikTok clipping", "Instagram Reels clipping", "YouTube Shorts clipping"],
+  title: { absolute: "Clipping Ajansı ve Aktif Clipper Ağı | Reklamatic" },
+  description: "İçeriğinizi Reklamatic'in aktif clipper ağıyla farklı sosyal medya hesaplarında yayınlatın veya clipper olarak uygun doğrulanmış görüntülenmeden kazanın.",
+  keywords: ["clipping ajansı", "clipping nedir", "clipper kimdir", "clipper ol", "izlenme başına para kazanma", "sosyal medya reklamı", "TikTok clipping", "Instagram Reels reklamı", "YouTube Shorts clipping"],
   alternates: {
     canonical: "https://reklamatic.ai/",
-    languages: { en: "https://reklamatic.ai/", tr: "https://reklamatic.ai/tr", "x-default": "https://reklamatic.ai/" },
+    languages: { tr: "https://reklamatic.ai/", en: "https://reklamatic.ai/en", "x-default": "https://reklamatic.ai/" },
   },
   openGraph: {
-    title: "Reklamatic.ai — Clipping agency and active clipper network.",
-    description: "Start getting clipped: short-video production, clipper distribution and eligible-view reporting in one agency operation.",
+    title: "Reklamatic.ai — Clipping ajansı ve aktif clipper ağı.",
+    description: "Hemen cliplenmeye başlayın: kısa video üretimi, clipper dağıtımı ve uygun görüntülenme raporu tek ajans operasyonunda.",
     url: "https://reklamatic.ai/",
-    locale: "en_US",
-    alternateLocale: ["tr_TR"],
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Reklamatic.ai — one source, more than one path to discovery" }],
+    locale: "tr_TR",
+    alternateLocale: ["en_US"],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Reklamatic.ai — markalar ve clipper'lar için kısa video kampanya ağı" }],
   },
-  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Agency", description: "Short-video production, active clipper distribution and eligible-view reporting.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "Reklamatic.ai Clipping Ajansı", description: "Kısa video üretimi, aktif clipper ağıyla dağıtım ve uygun görüntülenme raporu.", images: ["/og.png"] },
 };
 
 export default function Home() {
-  return <ClippingSite locale="en" copy={content.en} />;
+  return <ClippingSite locale="tr" copy={content.tr} />;
 }

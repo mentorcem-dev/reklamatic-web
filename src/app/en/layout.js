@@ -3,6 +3,6 @@ import { sharedMetadata } from "@/lib/siteMetadata";
 
 export const metadata = sharedMetadata;
 
-export default function TurkishRootLayout({ children }) {
-  return <html lang="tr"><body>{children}</body></html>;
+export default function EnglishLayout({ children }) {
+  return <html lang="en"><body>{children}</body></html>;
 }

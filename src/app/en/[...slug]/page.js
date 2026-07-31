@@ -5,18 +5,18 @@ import { findSeoPage, routeParams } from "@/lib/clippingSeoContent";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return routeParams("tr");
+  return routeParams("en");
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const page = findSeoPage("tr", slug.join("/"));
-  return page ? seoMetadata(page, "tr") : {};
+  const page = findSeoPage("en", slug.join("/"));
+  return page ? seoMetadata(page, "en") : {};
 }
 
-export default async function TurkishRootSeoPage({ params }) {
+export default async function EnglishSeoPage({ params }) {
   const { slug } = await params;
-  const page = findSeoPage("tr", slug.join("/"));
+  const page = findSeoPage("en", slug.join("/"));
   if (!page) notFound();
-  return <SeoPage page={page} locale="tr" />;
+  return <SeoPage page={page} locale="en" />;
 }
