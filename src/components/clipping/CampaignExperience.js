@@ -70,7 +70,7 @@ function Filmstrip({ copy }) {
 }
 
 function Economics({ copy }) {
-  return <section className={styles.economics} id="terms" data-motion-reveal><div className={styles.wrap}><Heading kicker={copy.kicker} title={copy.title} /><div className={styles.economicSplit}><article data-motion-item><span>BRAND</span><h3>{copy.brandTitle}</h3><p>{copy.brandText}</p></article><article data-motion-item><span>CLIPPER</span><h3>{copy.clipperTitle}</h3><p>{copy.clipperText}</p><code>{copy.formula}</code></article></div></div></section>;
+  return <section className={styles.economics} id="terms" data-motion-reveal><div className={styles.wrap}><Heading kicker={copy.kicker} title={copy.title} /><div className={styles.economicSplit}><article data-motion-item><span>BRAND</span><h3>{copy.brandTitle}</h3><p>{copy.brandText}</p>{copy.brandFormula && <code>{copy.brandFormula}</code>}</article><article data-motion-item><span>CLIPPER</span><h3>{copy.clipperTitle}</h3><p>{copy.clipperText}</p><code>{copy.formula}</code></article></div></div></section>;
 }
 
 export default function CampaignExperience({ copy }) {
