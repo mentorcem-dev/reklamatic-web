@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import styles from "./CampaignExperience.module.css";
 
 function Heading({ kicker, title, text, dark = false }) {
@@ -25,43 +24,6 @@ function Story({ copy }) {
     <div className={styles.storyLayout}>
       <StoryStage story={copy} />
       <div className={styles.storySteps}>{copy.steps.map(([time, title, body, signal], index) => <article key={time} data-story-step data-index={index} data-active={index === 0 ? "true" : "false"}><span>{time}</span><small>{signal}</small><h3>{title}</h3><p>{body}</p></article>)}</div>
-    </div>
-  </section>;
-}
-
-function Showreel({ copy }) {
-  const videoRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
-  const [reduced, setReduced] = useState(true);
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => {
-      setReduced(query.matches);
-      if (query.matches) {
-        videoRef.current?.pause();
-        setPlaying(false);
-      } else {
-        videoRef.current?.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-      }
-    };
-    sync();
-    query.addEventListener("change", sync);
-    return () => query.removeEventListener("change", sync);
-  }, []);
-
-  const toggle = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) videoRef.current.play().then(() => setPlaying(true)).catch(() => {});
-    else { videoRef.current.pause(); setPlaying(false); }
-  };
-
-  return <section className={styles.reel} data-motion-reveal>
-    <div className={styles.wrap}><Heading kicker={copy.kicker} title={copy.title} text={copy.text} dark /></div>
-    <div className={styles.reelFrame} data-motion-item>
-      <video ref={videoRef} muted loop playsInline controls preload="metadata" poster="/media/generated/reklamatic-campaign-1.webp" aria-label={copy.label} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}><source src="/media/generated/reklamatic-showreel.mp4" type="video/mp4" /></video>
-      <button type="button" onClick={toggle} aria-label={playing ? copy.pause : copy.play} aria-pressed={playing}>{playing ? "Ⅱ" : "▶"}</button>
-      <div className={styles.reelMeta}><span>REKLAMATIC / SHOWREEL</span><span>{reduced ? "MANUAL PLAY" : "AUTO LOOP"}</span></div>
     </div>
   </section>;
 }
@@ -100,7 +62,6 @@ function Economics({ copy }) {
 export default function CampaignExperience({ copy }) {
   return <div className={styles.experience}>
     <Story copy={copy.story} />
-    <Showreel copy={copy.reel} />
     <Operations copy={copy.operations} />
     <Filmstrip copy={copy.film} />
     <Economics copy={copy.economics} />
