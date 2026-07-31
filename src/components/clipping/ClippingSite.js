@@ -7,6 +7,14 @@ import MotionLayer from "./MotionLayer";
 
 const PHONE_DISPLAY = "+90 530 231 29 47";
 const PHONE = "+905302312947";
+const FORM_ENDPOINT = "https://docs.google.com/forms/d/e/1FAIpQLSfg9mhaZWRcuYezObFCOI8Uq7MzwE1LXvI8off-nJaXUWF-cg/formResponse";
+const FORM_FIELDS = {
+  mode: "entry.2090732694", name: "entry.2058097317", email: "entry.1007092747",
+  phone: "entry.1344067601", company: "entry.183421694", market: "entry.2106359197",
+  platforms: "entry.1509822955", budget: "entry.1636346258", source: "entry.1668084592",
+  service: "entry.1875898320", message: "entry.910700140", locale: "entry.689776949",
+  site: "entry.113667821",
+};
 
 function Wordmark() {
   return <span className="wordmark">reklamatic<span>.ai</span></span>;
@@ -81,6 +89,7 @@ function Faq({ copy }) {
 function Contact({ copy, locale }) {
   const [mode, setMode] = useState("brand");
   const [error, setError] = useState("");
+  const [status, setStatus] = useState("idle");
   const tabs = useRef([]);
   useEffect(() => {
     const sync = () => setMode(window.location.hash === "#clipper-contact" ? "clipper" : "brand");
@@ -92,23 +101,38 @@ function Contact({ copy, locale }) {
     event.preventDefault();
     selectMode(event.key === "ArrowLeft" || event.key === "Home" ? "brand" : "clipper", true);
   };
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const email = String(data.get("email") || "").trim();
-    if (!data.get("name") || !email.includes("@") || !data.get("message") || !data.get("consent")) { setError(copy.labels.required); return; }
+    if (!data.get("name") || !email.includes("@") || !data.get("message") || !data.get("consent")) { setError(copy.labels.required); setStatus("idle"); return; }
     setError("");
     const clipper = data.get("mode") === "clipper";
-    const subject = clipper ? `${locale === "tr" ? "Clipper başvurusu" : "Clipper application"} — ${data.get("name")}` : `${locale === "tr" ? "Marka kampanyası" : "Brand campaign"} — ${data.get("company") || data.get("name")}`;
-    const body = [`Path: ${clipper ? "Clipper" : "Brand"}`, `Name: ${data.get("name")}`, `Email: ${email}`, `Phone: ${data.get("phone") || "-"}`, `Company: ${data.get("company") || "-"}`, `Market: ${data.get("market") || "-"}`, `Platforms: ${data.get("platforms") || "-"}`, `Budget: ${data.get("budget") || "-"}`, `Source / portfolio: ${data.get("source") || "-"}`, `Campaign / category: ${data.get("service") || "-"}`, "", String(data.get("message"))].join("\n");
-    window.location.href = `mailto:info@reklamatic.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const payload = new FormData();
+    const values = {
+      mode: clipper ? "Clipper" : (locale === "tr" ? "Marka" : "Brand"), name: data.get("name"), email,
+      phone: data.get("phone") || "-", company: data.get("company") || "-", market: data.get("market") || "-",
+      platforms: data.get("platforms") || "-", budget: data.get("budget") || "-", source: data.get("source") || "-",
+      service: data.get("service") || "-", message: data.get("message"), locale: locale.toUpperCase(),
+      site: window.location.href,
+    };
+    Object.entries(values).forEach(([key, value]) => payload.append(FORM_FIELDS[key], String(value)));
+    setStatus("sending");
+    try {
+      await fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: payload });
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("failed");
+    }
   };
   return <section className="contact" id="contact" data-motion-reveal><span id="brand-contact" /><span id="clipper-contact" /><div className="container contact-shell">
     <div className="contact-copy" data-motion-item><SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} /><div className="direct"><span>{copy.direct}</span><a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a><a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a><a href="https://wa.me/905302312947" target="_blank" rel="noreferrer">WhatsApp ↗</a></div></div>
     <form onSubmit={submit} noValidate data-motion-item><input type="hidden" name="mode" value={mode} /><div className="contact-tabs" role="tablist" aria-label={copy.modeLabel}><button ref={(node) => { tabs.current[0] = node; }} type="button" role="tab" aria-selected={mode === "brand"} aria-controls="contact-panel" tabIndex={mode === "brand" ? 0 : -1} onKeyDown={handleTab} onClick={() => selectMode("brand")}>{copy.modes.brand}</button><button ref={(node) => { tabs.current[1] = node; }} type="button" role="tab" aria-selected={mode === "clipper"} aria-controls="contact-panel" tabIndex={mode === "clipper" ? 0 : -1} onKeyDown={handleTab} onClick={() => selectMode("clipper")}>{copy.modes.clipper}</button></div>
       <div id="contact-panel" role="tabpanel"><div className="form-row"><label>{copy.labels.name}<input name="name" autoComplete="name" required /></label><label>{copy.labels.email}<input name="email" type="email" autoComplete="email" required /></label></div><div className="form-row"><label>{copy.labels.phone}<input name="phone" type="tel" autoComplete="tel" /></label><label>{copy.labels.company}<input name="company" autoComplete="organization" /></label></div>
       {mode === "brand" ? <><div className="form-row"><label>{copy.labels.market}<select name="market">{copy.markets.map((item) => <option key={item}>{item}</option>)}</select></label><label>{copy.labels.platforms}<input name="platforms" placeholder={copy.labels.platformsHint} /></label></div><div className="form-row"><label>{copy.labels.budget}<select name="budget">{copy.budgets.map((item) => <option key={item}>{item}</option>)}</select></label><label>{copy.labels.source}<input name="source" type="url" inputMode="url" placeholder="https://" /></label></div><label>{copy.labels.service}<select name="service">{copy.services.map((item) => <option key={item}>{item}</option>)}</select></label></> : <div className="form-row"><label>{copy.labels.portfolio}<input name="source" type="url" inputMode="url" placeholder="https://" /></label><label>{copy.labels.specialty}<select name="service">{copy.specialties.map((item) => <option key={item}>{item}</option>)}</select></label></div>}
-      <p className="form-note">{copy.safetyNote}</p><label>{mode === "brand" ? copy.labels.message : copy.labels.clipperMessage}<textarea name="message" rows="4" required /></label><label className="consent"><input type="checkbox" name="consent" required /><span>{copy.labels.consent} <a href={locale === "en" ? "/en/privacy" : "/privacy"} target="_blank">{copy.labels.privacy}</a>.</span></label>{error && <p className="form-error" role="alert">{error}</p>}<button className="button button-dark" type="submit">{copy.labels.submit}<span>↗</span></button></div>
+      <p className="form-note">{copy.safetyNote}</p><label>{mode === "brand" ? copy.labels.message : copy.labels.clipperMessage}<textarea name="message" rows="4" required /></label><label className="consent"><input type="checkbox" name="consent" required /><span>{copy.labels.consent} <a href={locale === "en" ? "/en/privacy" : "/privacy"} target="_blank">{copy.labels.privacy}</a>.</span></label>{error && <p className="form-error" role="alert">{error}</p>}{status === "success" && <p className="form-success" role="status">{copy.labels.success}</p>}{status === "failed" && <p className="form-error" role="alert">{copy.labels.failed}</p>}<button className="button button-dark" type="submit" disabled={status === "sending"}>{status === "sending" ? copy.labels.sending : copy.labels.submit}<span>↗</span></button></div>
     </form>
   </div></section>;
 }

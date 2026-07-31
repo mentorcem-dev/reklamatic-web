@@ -149,6 +149,8 @@ button{color:inherit}
 .consent input{width:17px;height:17px;min-height:0;margin:1px 0 0}
 .consent a{color:var(--blue);text-decoration:underline}
 .form-error{margin:8px 0;color:#a32222;font-size:11px}
+.form-success{margin:8px 0;padding:11px 13px;border:1px solid #a8d9bf;border-radius:10px;background:#ecfaf2;color:#17633b;font-size:11px;font-weight:750;line-height:1.5}
+.contact button:disabled{cursor:wait;opacity:.65}
 footer{padding:70px 0;background:var(--navy);color:#fff}
 .footer-grid{display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:50px}
 .footer-grid>div{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
