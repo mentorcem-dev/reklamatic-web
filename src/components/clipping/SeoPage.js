@@ -11,6 +11,13 @@ const serviceFaq = (locale) => locale === "tr" ? [["Kampanyada kaç içerik yay�
 
 function Logo() { return <span className={styles.logo}>reklamatic<span>.ai</span></span>; }
 
+function splitParas(text) {
+  const sentences = text.split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ"“0-9])/);
+  const paras = [];
+  for (let index = 0; index < sentences.length; index += 2) paras.push(sentences.slice(index, index + 2).join(" "));
+  return paras;
+}
+
 const visualAccents = ["#0878ff", "#725cff", "#00a986", "#ff7a45", "#db3e76"];
 const scrollVideoPages = new Set(["campaigns"]);
 
@@ -102,16 +109,18 @@ function PageExperience({ page, locale }) {
 
 function EditorialMedia({ page, locale }) {
   const mediaGroups = {
-    artist: ["agency", "strategy", "choose-agency"],
-    podcast: ["about", "podcast", "what-is-clipping", "repurposing"],
+    artist: ["strategy", "choose-agency"],
+    studio: ["about", "agency"],
+    clipperdesk: ["clippers", "contact", "faq"],
+    podcast: ["podcast", "what-is-clipping", "repurposing"],
     product: ["brands", "clipping-vs-ugc", "reels"],
     publisher: ["campaigns", "cases", "shorts"],
-    technology: ["blog", "pricing", "tiktok", "clippers", "contact", "faq"],
+    technology: ["blog", "pricing", "tiktok"],
   };
   const group = Object.entries(mediaGroups).find(([, keys]) => keys.includes(page.key))?.[0] || (page.type === "Article" ? "podcast" : "technology");
-  const srcMap = { artist: "/media/higgsfield/reklamatic-music-release.webp", podcast: "/media/higgsfield/reklamatic-clipper-workstation.webp", product: "/media/higgsfield/reklamatic-app-launch.webp", publisher: "/media/higgsfield/reklamatic-campaign-command-center.webp", technology: "/media/higgsfield/reklamatic-product-campaign.webp" };
+  const srcMap = { artist: "/media/higgsfield/reklamatic-music-stage.webp", studio: "/media/higgsfield/reklamatic-istanbul-studio.webp", clipperdesk: "/media/higgsfield/reklamatic-clipper-desk.webp", podcast: "/media/higgsfield/reklamatic-clipper-workstation.webp", product: "/media/higgsfield/reklamatic-app-launch.webp", publisher: "/media/higgsfield/reklamatic-campaign-command-center.webp", technology: "/media/higgsfield/reklamatic-editorial-desk.webp" };
   const src = page.image || srcMap[group];
-  const labelMap = locale === "tr" ? { artist: "Müzik kampanyası", podcast: "Podcast ve kurucu anlatısı", product: "Uygulama kampanyası", publisher: "Yayıncı kampanyası", technology: "Yönetilen clipper dağıtımı" } : { artist: "Music campaign", podcast: "Podcast and founder narrative", product: "App campaign", publisher: "Publisher campaign", technology: "Managed clipper distribution" };
+  const labelMap = locale === "tr" ? { artist: "Müzik kampanyası", studio: "İstanbul içerik stüdyosu", clipperdesk: "Clipper çalışma alanı", podcast: "Podcast ve kurucu anlatısı", product: "Uygulama kampanyası", publisher: "Yayıncı kampanyası", technology: "Yönetilen clipper dağıtımı" } : { artist: "Music campaign", studio: "Istanbul content studio", clipperdesk: "Clipper workspace", podcast: "Podcast and founder narrative", product: "App campaign", publisher: "Publisher campaign", technology: "Managed clipper distribution" };
   const label = labelMap[group];
   const note = page.type === "Article" ? (locale === "tr" ? "Reklamatic editoryal görseli" : "Reklamatic editorial visual") : page.key === "cases" ? (locale === "tr" ? "Kaynak → içerik yönü → dağıtım → raporlama" : "Source → creative direction → distribution → reporting") : (locale === "tr" ? "Reklamatic kampanya görseli" : "Reklamatic campaign visual");
   return <section className={styles.editorialMedia} data-motion-reveal><div className={styles.container}><figure data-motion-item><Image src={src} width={1376} height={768} sizes="(max-width: 700px) 100vw, 1120px" alt={`${page[locale].kicker}: ${label}`} /><figcaption><span>{label}</span><small>{note}</small></figcaption></figure></div></section>;
@@ -168,8 +177,9 @@ export default function SeoPage({ page, locale }) {
       {serviceLayout && <MethodStrip locale={locale} />}
       {editorialLayout && <EditorialMedia page={page} locale={locale} />}
       {(articleLayout || editorialLayout || referenceLayout) && highlightBlock}
+      {referenceLayout && <EditorialMedia page={page} locale={locale} />}
       {referenceLayout && faqBlock}
-      <section className={[styles.content, articleLayout || referenceLayout ? styles.contentWide : "", articleLayout ? styles.contentArticle : "", referenceLayout ? styles.contentReference : ""].join(" ")}><div className={styles.container}><div className={styles.article}>{copy.sections.map(([title, text], index) => <section key={title} id={"section-" + (index + 1)} data-motion-reveal><span>0{index + 1}</span><h2>{title}</h2><p>{text}</p></section>)}</div>{(serviceLayout || editorialLayout) && <aside><div className={styles.asideCard}><strong>{locale === "tr" ? "Bu sayfada" : "On this page"}</strong>{copy.sections.map(([title], index) => <a href={"#section-" + (index + 1)} key={title}>{title}</a>)}</div>{serviceLayout && <div className={styles.asideCard}><strong>{locale === "tr" ? "Sözleşme çerçevesi" : "Contract frame"}</strong><p>{contractNote}</p></div>}</aside>}</div></section>
+      <section className={[styles.content, articleLayout || referenceLayout ? styles.contentWide : "", articleLayout ? styles.contentArticle : "", referenceLayout ? styles.contentReference : ""].join(" ")}><div className={styles.container}><div className={styles.article}>{copy.sections.map(([title, text], index) => <section key={title} id={"section-" + (index + 1)} data-motion-reveal><span>0{index + 1}</span><h2>{title}</h2>{splitParas(text).map((para, paraIndex) => <p key={paraIndex}>{para}</p>)}</section>)}</div>{(serviceLayout || editorialLayout) && <aside><div className={styles.asideCard}><strong>{locale === "tr" ? "Bu sayfada" : "On this page"}</strong>{copy.sections.map(([title], index) => <a href={"#section-" + (index + 1)} key={title}>{title}</a>)}</div>{serviceLayout && <div className={styles.asideCard}><strong>{locale === "tr" ? "Sözleşme çerçevesi" : "Contract frame"}</strong><p>{contractNote}</p></div>}</aside>}</div></section>
       {articleLayout && <EditorialMedia page={page} locale={locale} />}
       {!referenceLayout && faqBlock}
       <section className={styles.related}><div className={styles.container}><p className={styles.kicker}>{locale === "tr" ? "Sonraki adım" : "Continue exploring"}</p><h2>{locale === "tr" ? "İlgili rehberler ve hizmetler" : "Related guides and services"}</h2><div className={styles.relatedGrid}>{related.map((item) => <Link href={localPath(locale, item.paths[locale])} key={item.key}><span>{item[locale].kicker}</span><h3>{item[locale].headline}</h3><b>↗</b></Link>)}</div></div></section>

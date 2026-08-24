@@ -32,25 +32,30 @@ const sharedContact = {
 export const content = {
   en: {
     lang: "English", skip: "Skip to clipping story", cta: "Advertise", menu: "Open menu",
-    nav: [["For brands", "/en/for-brands"], ["Become a clipper", "/en/for-clippers"], ["What is clipping?", "#clipping-nedir"], ["How it works", "/en/clipping-campaigns"], ["Blog", "/en/blog"], ["FAQ", "#faq"]],
+    nav: [["For brands", "/en/for-brands"], ["Become a clipper", "/en/for-clippers"], ["What is clipping?", "#clipping-nedir"], ["How it works", "/en/clipping-campaigns"], ["Pricing", "/en/pricing"], ["Blog", "/en/blog"], ["FAQ", "#faq"]],
     hero: {
       kicker: "TÜRKİYE'S FIRST CLIPPING AGENCY",
       titleA: "Do not leave your content on one account.", titleB: "Distribute it through our clipper network.",
       text: "Reklamatic is Türkiye's first clipping agency and an official Whop partner. We turn campaigns from brands, apps, artists, publishers, streamers and creators into short videos, coordinate approval and publish through suitable accounts in our active clipper network. Our publishing history exceeds 300 million platform views.",
       primary: "Start getting clipped today", secondary: "Become a clipper", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
-      status: "300M+ HISTORICAL VIEWS · OFFICIAL WHOP PARTNER · TR + EN", visualAlt: "Reklamatic clipping campaign showreel",
+      status: "300M+ HISTORICAL VIEWS · OFFICIAL WHOP PARTNER · TR + EN",
+      stats: [["300M+", "historical platform views"], ["84.4M", "single-Reel record"], ["WHOP", "official partner"]],
+      claimText: "Read the evidence file behind the claim", claimHref: "/en/blog/turkiyes-first-clipping-agency",
+      visualAlt: "Reklamatic clipping campaign showreel",
       visualLabel: "REKLAMATIC / CLIPPING AGENCY", visualTitle: "One campaign. Many feeds.", visualText: "Short-video production, clipper distribution and view reporting in one agency operation.",
     },
     proof: {
       kicker: "REAL DISTRIBUTION PROOF", title: "More than 300 million historical views across our publishing operation.",
       text: "The posts below are live on Reklamatic publishing accounts right now. Tap any phone to open the original Reel on Instagram and check the numbers yourself. When a guaranteed-view package is selected, its delivery target is written separately into the campaign agreement.",
       metrics: [["300M+", "historical views across the publishing operation"], ["84.4M", "views on a single Reel, publicly visible"], ["20.5M", "views on a second record Reel"]],
+      showcaseKicker: "LIVE FROM OUR ACCOUNTS", showcaseTitle: "The phones below are playing our actual posts.",
+      showcaseText: "Each frame loops footage from the Reel itself and links to the original post. Tap through to Instagram and verify every number in its real account context.",
       reels: [
         { url: "https://www.instagram.com/reel/DVoCWEllRVV/", image: "/media/reels/reel-84m.webp", alt: "Cucumber tower timelapse Reel with 84.4 million views", handle: "bestdiyvide0s", count: 84.4, suffix: "M" },
-        { url: "https://www.instagram.com/reel/DZkN-7qEgSG/", image: "/media/reels/reel-20m.webp", alt: "DIY build Reel with 20.5 million views", handle: "diyvideos888", count: 20.5, suffix: "M" },
-        { url: "https://www.instagram.com/reel/DVl9li3FsjD/", image: "/media/reels/reel-13m.webp", alt: "Grow tower Reel with 12.7 million views", handle: "bestdiyvide0s", count: 12.7, suffix: "M" },
+        { url: "https://www.instagram.com/reel/DZkN-7qEgSG/", image: "/media/reels/reel-20m.webp", video: "/media/reels/reel-20m.mp4", alt: "DIY build Reel with 20.5 million views", handle: "diyvideos888", count: 20.5, suffix: "M" },
+        { url: "https://www.instagram.com/reel/DVl9li3FsjD/", image: "/media/reels/reel-13m.webp", video: "/media/reels/reel-13m.mp4", alt: "Grow tower Reel with 12.7 million views", handle: "bestdiyvide0s", count: 12.7, suffix: "M" },
       ],
-      note: "Live posts from Reklamatic publishing accounts. Every card links to the original Reel on Instagram; counts are shown in their original account context.",
+      note: "Live posts from Reklamatic publishing accounts. Every card links to the original Reel on Instagram; counts are shown in their original account context. Counts as of August 24, 2026.",
     },
     model: {
       kicker: "CLIPPING, EXPLAINED", title: "The brand gets distributed. The clipper turns eligible views into earnings.",
@@ -74,6 +79,16 @@ export const content = {
         { name: "Reklamatic Network", role: "Our own publishing network", text: "Our own publishing network across YouTube, Instagram, TikTok and Facebook proves the operation daily: more than 300 million historical platform views with automated production and scheduling, including single Reels above 84 million views.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["300M+ views", "Daily publishing", "24/7 automation"] },
       ],
       note: "Logos belong to their respective trademark owners and indicate campaigns and collaborations Reklamatic has operated in their ecosystems.",
+    },
+    turkiye: {
+      kicker: "WORK IN TÜRKİYE", title: "Music, podcast and viral formats — we run clipping on home ground too.",
+      text: "Alongside global campaigns we work directly with Turkish artist management and publishers. These three engagements show how the same clipping model applies to different content types.",
+      cases: [
+        { name: "maNga", tag: "MUSIC", role: "Clip distribution with GD Management", accent: "#72d4ff", text: "Concert and video clips of maNga — the Turkish rock band that finished second at Eurovision 2010 — are reworked into short-form and released through the distribution network. The campaign feeds catalogue listening with discovery traffic coming from short video.", tags: ["Concert clips", "Catalogue listening", "Short-form distribution"] },
+        { name: "Barış Özcan · 111 Hz", tag: "PODCAST", role: "Podcast clipping with Podbee", accent: "#8de3c3", text: "Episodes of Barış Özcan's 111 Hz video podcast are cut into vertical clips that each carry a single self-contained narrative. Discovery of the long episode grows through viewers routed in by the clips.", tags: ["Video podcast", "Vertical clips", "Episode discovery"] },
+        { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#ffd166", text: "The Kedi C5 video produced in our studio spread fast after release: on day two Spotify Türkiye commented on the post, the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account for the content appeared.", highlight: "Day 2: comment from Spotify Türkiye · reposts by Akdo and Lvbel C5", tags: ["Original character", "Artist reposts", "Platform engagement"] },
+      ],
+      note: "These engagements run under the respective artist, management and publisher collaborations; names and trademarks belong to their owners.",
     },
     pathways: {
       kicker: "CHOOSE YOUR PATH", title: "Advertise or earn as a clipper.",
@@ -128,25 +143,30 @@ export const content = {
   },
   tr: {
     lang: "Türkçe", skip: "Clipping anlatısına geç", cta: "Reklam ver", menu: "Menüyü aç",
-    nav: [["Markalar için", "/markalar-icin"], ["Clipper ol", "/clipper-ol"], ["Clipping nedir?", "#clipping-nedir"], ["Nasıl çalışır?", "/clipping-kampanyalari"], ["Blog", "/blog"], ["SSS", "#faq"]],
+    nav: [["Markalar için", "/markalar-icin"], ["Clipper ol", "/clipper-ol"], ["Clipping nedir?", "#clipping-nedir"], ["Nasıl çalışır?", "/clipping-kampanyalari"], ["Fiyatlandırma", "/fiyatlandirma"], ["Blog", "/blog"], ["SSS", "#faq"]],
     hero: {
       kicker: "TÜRKİYE'NİN İLK CLIPPING AJANSI",
       titleA: "İçeriğiniz tek hesapta kalmasın.", titleB: "Clipper ağımızla farklı hesaplarda yayınlansın.",
       text: "Reklamatic, Türkiye'nin ilk clipping ajansı ve Whop'un resmi partneridir. Marka, uygulama, sanatçı, yayıncı, streamer ve influencer kampanyalarını kısa videolara dönüştürür; onayı yönetir ve aktif clipper ağındaki uygun hesaplarda yayınlatırız. Yayın operasyonumuzun geçmişi 300 milyonun üzerinde platform görüntülenmesi içerir.",
       primary: "Hemen bugün cliplenmeye başla", secondary: "Clipper ol", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
-      status: "300 MN+ GEÇMİŞ GÖRÜNTÜLENME · WHOP RESMİ PARTNERİ · TR + EN", visualAlt: "Reklamatic clipping kampanyası showreel videosu",
+      status: "300 MN+ GEÇMİŞ GÖRÜNTÜLENME · WHOP RESMİ PARTNERİ · TR + EN",
+      stats: [["300 Mn+", "geçmiş platform görüntülenmesi"], ["84,4 Mn", "tekil Reels rekoru"], ["WHOP", "resmi partner"]],
+      claimText: "İddianın kanıt dosyasını oku", claimHref: "/blog/turkiyenin-ilk-clipping-ajansi",
+      visualAlt: "Reklamatic clipping kampanyası showreel videosu",
       visualLabel: "REKLAMATIC / CLIPPING AJANSI", visualTitle: "Tek kampanya. Birçok akış.", visualText: "Kısa video üretimi, clipper dağıtımı ve görüntülenme raporu tek ajans operasyonunda.",
     },
     proof: {
       kicker: "GERÇEK DAĞITIM KANITI", title: "Yayın operasyonumuzda 300 milyonun üzerinde geçmiş görüntülenme.",
       text: "Aşağıdaki gönderiler şu anda Reklamatic yayın hesaplarında canlı. Herhangi bir telefona dokunup orijinal Reels videosunu Instagram'da açın ve sayıları kendiniz kontrol edin. Görüntülenme garantili pakette teslim hedefi ayrıca kampanya sözleşmesine yazılır.",
       metrics: [["300 Mn+", "yayın operasyonundaki geçmiş toplam görüntülenme"], ["84,4 Mn", "tek bir Reels videosunda herkese açık görüntülenme"], ["20,5 Mn", "ikinci rekor Reels videosundaki görüntülenme"]],
+      showcaseKicker: "HESAPLARIMIZDAN CANLI", showcaseTitle: "Aşağıdaki telefonlar gerçek gönderilerimizi oynatıyor.",
+      showcaseText: "Her çerçeve, ilgili Reels videosunun kendi görüntüsünü döngüde oynatır ve orijinal gönderiye bağlanır. Instagram'a geçip her sayıyı gerçek hesap bağlamında doğrulayabilirsiniz.",
       reels: [
         { url: "https://www.instagram.com/reel/DVoCWEllRVV/", image: "/media/reels/reel-84m.webp", alt: "84,4 milyon görüntülenmeli salatalık kulesi Reels videosu", handle: "bestdiyvide0s", count: 84.4, suffix: "Mn" },
-        { url: "https://www.instagram.com/reel/DZkN-7qEgSG/", image: "/media/reels/reel-20m.webp", alt: "20,5 milyon görüntülenmeli DIY Reels videosu", handle: "diyvideos888", count: 20.5, suffix: "Mn" },
-        { url: "https://www.instagram.com/reel/DVl9li3FsjD/", image: "/media/reels/reel-13m.webp", alt: "12,7 milyon görüntülenmeli kule Reels videosu", handle: "bestdiyvide0s", count: 12.7, suffix: "Mn" },
+        { url: "https://www.instagram.com/reel/DZkN-7qEgSG/", image: "/media/reels/reel-20m.webp", video: "/media/reels/reel-20m.mp4", alt: "20,5 milyon görüntülenmeli DIY Reels videosu", handle: "diyvideos888", count: 20.5, suffix: "Mn" },
+        { url: "https://www.instagram.com/reel/DVl9li3FsjD/", image: "/media/reels/reel-13m.webp", video: "/media/reels/reel-13m.mp4", alt: "12,7 milyon görüntülenmeli kule Reels videosu", handle: "bestdiyvide0s", count: 12.7, suffix: "Mn" },
       ],
-      note: "Reklamatic yayın hesaplarından canlı gönderiler. Her kart Instagram'daki orijinal Reels videosuna gider; sayılar özgün hesap bağlamında görünür.",
+      note: "Reklamatic yayın hesaplarından canlı gönderiler. Her kart Instagram'daki orijinal Reels videosuna gider; sayılar özgün hesap bağlamında görünür. Sayılar 24 Ağustos 2026 itibarıyladır.",
     },
     model: {
       kicker: "CLIPPING, KISACA", title: "Marka dağıtım alır. Clipper uygun görüntülenmeyi kazanca çevirir.",
@@ -170,6 +190,16 @@ export const content = {
         { name: "Reklamatic Ağı", role: "Kendi yayın ağımız", text: "YouTube, Instagram, TikTok ve Facebook'taki kendi yayın ağımız operasyonu her gün kanıtlıyor: otomatik üretim ve planlamayla 300 milyondan fazla geçmiş platform görüntülenmesi; 84 milyonu aşan tekil Reels videoları dahil.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["300 Mn+ view", "Günlük yayın", "7/24 otomasyon"] },
       ],
       note: "Logolar ilgili marka sahiplerine aittir; Reklamatic'in bu ekosistemlerde yürüttüğü kampanya ve iş birliklerini belirtir.",
+    },
+    turkiye: {
+      kicker: "TÜRKİYE İŞLERİ", title: "Müzik, podcast ve viral format — clipping'i kendi sahamızda da işletiyoruz.",
+      text: "Küresel kampanyaların yanında Türkiye'de menajerlik ve yayıncılarla doğrudan çalışıyoruz. Bu üç iş, aynı clipping modelinin farklı içerik türlerine nasıl uygulandığını gösteriyor.",
+      cases: [
+        { name: "maNga", tag: "MÜZİK", role: "GD Menajerlik ile kesit dağıtımı", accent: "#72d4ff", text: "Eurovision 2010 ikincisi Türk rock grubu maNga'nın konser ve klip kesitleri kısa video formatına uyarlanıp dağıtım ağında yayınlanıyor. Kampanya, kısa videodan gelen keşif trafiğiyle grubun katalog dinlenmesini besliyor.", tags: ["Konser kesiti", "Katalog dinlenmesi", "Kısa video dağıtımı"] },
+        { name: "Barış Özcan · 111 Hz", tag: "PODCAST", role: "Podbee ile podcast clipping", accent: "#8de3c3", text: "Barış Özcan'ın 111 Hz video podcast bölümleri, her biri tek başına anlaşılır bir anlatı taşıyan dikey kesitlere dönüştürülüyor. Uzun bölümün keşfi, kesitlerin yönlendirdiği izleyiciyle büyüyor.", tags: ["Video podcast", "Dikey kesit", "Bölüm keşfi"] },
+        { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#ffd166", text: "Stüdyomuzda üretilen Kedi C5 videosu yayına girdikten sonra hızla yayıldı: ikinci gününde Spotify Türkiye gönderiye yorum yaptı, Akdo ve Lvbel C5 videoyu repostladı ve içerik için ayrı bir repost hesabı açıldı.", highlight: "2. gün: Spotify Türkiye yorumu · Akdo ve Lvbel C5 repostu", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
+      ],
+      note: "Bu işler ilgili sanatçı, menajerlik ve yayıncı iş birlikleri kapsamında yürütülür; isim ve marka hakları sahiplerine aittir.",
     },
     pathways: {
       kicker: "YOLUNU SEÇ", title: "Reklam ver veya clipper olarak kazan.",

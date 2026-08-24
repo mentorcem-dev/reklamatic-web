@@ -51,7 +51,7 @@ function HeroVideo({ copy }) {
 
 function Hero({ copy }) {
   return <section className="hero" id="top"><div className="hero-grid" aria-hidden="true" /><div className="container hero-layout">
-    <div className="hero-copy"><p className="kicker" data-motion-hero>{copy.kicker}</p><h1 data-motion-hero>{copy.titleA}<em>{copy.titleB}</em></h1><p className="hero-text" data-motion-hero>{copy.text}</p><div className="hero-buttons" data-motion-hero><a className="button button-primary" href={copy.primaryHref}>{copy.primary}<span>↗</span></a><a className="button button-secondary" href={copy.secondaryHref}>{copy.secondary}<span>↗</span></a></div><p className="hero-status" data-motion-hero>{copy.status}</p></div>
+    <div className="hero-copy"><p className="claim-badge" data-motion-hero><i aria-hidden="true" />{copy.kicker}</p><h1 data-motion-hero>{copy.titleA}<em>{copy.titleB}</em></h1><p className="hero-text" data-motion-hero>{copy.text}</p><div className="hero-buttons" data-motion-hero><a className="button button-primary" href={copy.primaryHref}>{copy.primary}<span>→</span></a><a className="button button-secondary" href={copy.secondaryHref}>{copy.secondary}<span>→</span></a></div>{copy.stats && <div className="hero-proof" data-motion-hero>{copy.stats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>}{copy.claimHref && <a className="claim-link" data-motion-hero href={copy.claimHref}>{copy.claimText} <b aria-hidden="true">→</b></a>}</div>
     <div className="hero-visual" data-motion-hero data-parallax><HeroVideo copy={copy} /></div>
   </div></section>;
 }
@@ -83,10 +83,43 @@ function CountUp({ value, suffix }) {
   return <b ref={ref}>{value.toLocaleString("tr-TR")}{suffix}</b>;
 }
 
+function TurkiyeWork({ copy }) {
+  if (!copy) return null;
+  return <section className="turkiye" id="turkiye" data-motion-reveal><div className="container">
+    <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+    <div className="turkiye-grid">
+      {copy.cases.map((item) => <article className="turkiye-card" key={item.name} data-motion-item style={{ "--accent": item.accent }}>
+        <header>
+          <span className="turkiye-tag">{item.tag}</span>
+          <h3>{item.name}</h3>
+          <p className="turkiye-role">{item.role}</p>
+        </header>
+        <p>{item.text}</p>
+        {item.highlight && <div className="turkiye-highlight"><i aria-hidden="true">✦</i><span>{item.highlight}</span></div>}
+        <div className="work-tags">{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
+      </article>)}
+    </div>
+    <p className="proof-note">{copy.note}</p>
+  </div></section>;
+}
+
 function PhoneCard({ reel, locale }) {
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const node = videoRef.current;
+    if (!node) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) node.play().catch(() => {}); else node.pause(); });
+    }, { threshold: 0.35 });
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
   return <a className="phone-card" href={reel.url} target="_blank" rel="noreferrer" data-motion-item aria-label={`${reel.count} ${reel.suffix} ${locale === "tr" ? "görüntülenme, Instagram'da izle" : "views, watch on Instagram"}`}>
     <span className="phone-notch" aria-hidden="true" />
-    <Image src={reel.image} alt={reel.alt} fill sizes="(max-width: 700px) 70vw, 300px" />
+    {reel.video
+      ? <video ref={videoRef} muted loop playsInline preload="metadata" poster={reel.image} aria-hidden="true"><source src={reel.video} type="video/mp4" /></video>
+      : <Image src={reel.image} alt={reel.alt} fill sizes="(max-width: 700px) 82vw, 380px" />}
     <span className="phone-shade" aria-hidden="true" />
     <span className="phone-handle">@{reel.handle}</span>
     <span className="phone-views"><i aria-hidden="true">▶</i><CountUp value={reel.count} suffix={` ${reel.suffix}`} /><small>{locale === "tr" ? "görüntülenme" : "views"}</small></span>
@@ -94,9 +127,15 @@ function PhoneCard({ reel, locale }) {
   </a>;
 }
 
-function ProofGallery({ copy, locale }) {
+function ProofGallery({ copy }) {
   return <section className="proof" id="proof" data-motion-reveal><div className="container">
     <div className="proof-heading"><SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} /><div className="proof-metrics">{copy.metrics.map(([value, label]) => <div key={label} data-motion-item><strong>{value}</strong><span>{label}</span></div>)}</div></div>
+  </div></section>;
+}
+
+function ShowcaseRail({ copy, locale }) {
+  return <section className="showcase" id="showcase" data-motion-reveal><div className="container">
+    <SectionTitle kicker={copy.showcaseKicker} title={copy.showcaseTitle} text={copy.showcaseText} />
     <div className="phone-rail">{copy.reels.map((reel) => <PhoneCard reel={reel} locale={locale} key={reel.url} />)}</div>
     <p className="proof-note">{copy.note}</p>
   </div></section>;
@@ -120,7 +159,6 @@ function GlobalWork({ copy }) {
     ["/media/logos/topps.svg", "Topps"],
     ["/media/logos/lovable.png", "Lovable"],
   ];
-  const strip = [...marqueeLogos, ...marqueeLogos, ...marqueeLogos];
   return <section className="work" id="work" data-motion-reveal><div className="container">
     <div className="work-heading">
       <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
@@ -133,14 +171,12 @@ function GlobalWork({ copy }) {
         <p>{copy.partnerText}</p>
       </aside>
     </div>
-    <div className="logo-marquee" aria-label={copy.logosLabel}>
-      <div className="logo-track">
-        {strip.map(([src, alt], index) => <span key={`${alt}-${index}`} className={`logo-chip logo-chip-${alt.toLowerCase()}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={index < marqueeLogos.length ? `${alt} logo` : ""} aria-hidden={index >= marqueeLogos.length} loading="lazy" />
-          <b>{alt}</b>
-        </span>)}
-      </div>
+    <div className="logo-bar" aria-label={copy.logosLabel} data-motion-item>
+      {marqueeLogos.map(([src, alt]) => <span key={alt} className={`logo-chip logo-chip-${alt.toLowerCase()}`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={`${alt} logo`} loading="lazy" />
+        <b>{alt}</b>
+      </span>)}
     </div>
     <div className="work-grid">
       {copy.projects.map((project) => <article className="work-card" key={project.name} data-motion-item>
@@ -176,7 +212,11 @@ function Contact({ copy, locale }) {
   const [status, setStatus] = useState("idle");
   const tabs = useRef([]);
   useEffect(() => {
-    const sync = () => setMode(window.location.hash === "#clipper-contact" ? "clipper" : "brand");
+    const sync = () => {
+      const tip = new URLSearchParams(window.location.search).get("tip");
+      if (window.location.hash === "#clipper-contact" || tip === "clipper") setMode("clipper");
+      else if (window.location.hash === "#brand-contact" || tip === "marka" || tip === "brand") setMode("brand");
+    };
     sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync);
   }, []);
   const selectMode = (next, focus = false) => { setMode(next); if (focus) tabs.current[next === "brand" ? 0 : 1]?.focus(); };
@@ -228,5 +268,5 @@ function Footer({ copy, locale }) {
 
 export default function ClippingSite({ copy, locale }) {
   const schema = { "@context": "https://schema.org", "@graph": [{ "@type": "Organization", "@id": "https://reklamatic.ai/#organization", name: "Reklamatic.ai", url: "https://reklamatic.ai", email: "info@reklamatic.ai", telephone: PHONE, areaServed: "TR", knowsLanguage: ["en", "tr"] }, { "@type": "WebSite", "@id": "https://reklamatic.ai/#website", name: "Reklamatic.ai", url: "https://reklamatic.ai", publisher: { "@id": "https://reklamatic.ai/#organization" }, inLanguage: ["en", "tr"] }, { "@type": "Service", name: locale === "tr" ? "Clipping ajansı ve clipper dağıtım hizmeti" : "Clipping agency and clipper distribution service", provider: { "@id": "https://reklamatic.ai/#organization" }, areaServed: "TR", serviceType: "Short-form production, active clipper network distribution and eligible-view campaign reporting" }, { "@type": "FAQPage", mainEntity: copy.faq.items.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) }] };
-  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} /><ProofGallery copy={copy.proof} locale={locale} /><ModelIntro copy={copy.model} /><GlobalWork copy={copy.work} /><Pathways copy={copy.pathways} /><CampaignExperience copy={copy.experience} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
+  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} /><ProofGallery copy={copy.proof} /><Pathways copy={copy.pathways} /><ModelIntro copy={copy.model} /><CampaignExperience copy={copy.experience} /><GlobalWork copy={copy.work} /><ShowcaseRail copy={copy.proof} locale={locale} /><TurkiyeWork copy={copy.turkiye} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
 }
