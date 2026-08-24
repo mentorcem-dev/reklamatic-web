@@ -81,14 +81,12 @@ export const content = {
       note: "Logos belong to their respective trademark owners and indicate campaigns and collaborations Reklamatic has operated in their ecosystems.",
     },
     turkiye: {
-      kicker: "WORK IN TÜRKİYE", title: "Music, podcast and viral formats — we run clipping on home ground too.",
-      text: "Alongside global campaigns we work directly with Turkish artist management and publishers. These three engagements show how the same clipping model applies to different content types.",
+      kicker: "WORK IN TÜRKİYE", title: "A viral release built in our own studio: Kedi C5.",
+      text: "Alongside global campaigns we build original formats of our own. Kedi C5 is a viral music character developed in our studio; it reached the radar of platforms and artists on its second day live.",
       cases: [
-        { name: "maNga", tag: "MUSIC", role: "Clip distribution with GD Management", accent: "#72d4ff", text: "Concert and video clips of maNga — the Turkish rock band that finished second at Eurovision 2010 — are reworked into short-form and released through the distribution network. The campaign feeds catalogue listening with discovery traffic coming from short video.", tags: ["Concert clips", "Catalogue listening", "Short-form distribution"] },
-        { name: "Barış Özcan · 111 Hz", tag: "PODCAST", role: "Podcast clipping with Podbee", accent: "#8de3c3", text: "Episodes of Barış Özcan's 111 Hz video podcast are cut into vertical clips that each carry a single self-contained narrative. Discovery of the long episode grows through viewers routed in by the clips.", tags: ["Video podcast", "Vertical clips", "Episode discovery"] },
-        { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#ffd166", text: "The Kedi C5 video produced in our studio spread fast after release: on day two Spotify Türkiye commented on the post, the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account for the content appeared.", highlight: "Day 2: comment from Spotify Türkiye · reposts by Akdo and Lvbel C5", tags: ["Original character", "Artist reposts", "Platform engagement"] },
+        { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#ffd166", text: "The Kedi C5 video produced in our studio spread fast after release: on day two Spotify Türkiye commented on the post, the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account for the content appeared. The same production and distribution system runs music and entertainment campaigns for brands.", highlight: "Day 2: comment from Spotify Türkiye · reposts by Akdo and Lvbel C5", tags: ["Original character", "Artist reposts", "Platform engagement"] },
       ],
-      note: "These engagements run under the respective artist, management and publisher collaborations; names and trademarks belong to their owners.",
+      note: "The interactions are visible on public posts; platform and artist names belong to their owners.",
     },
     pathways: {
       kicker: "CHOOSE YOUR PATH", title: "Advertise or earn as a clipper.",
@@ -192,14 +190,12 @@ export const content = {
       note: "Logolar ilgili marka sahiplerine aittir; Reklamatic'in bu ekosistemlerde yürüttüğü kampanya ve iş birliklerini belirtir.",
     },
     turkiye: {
-      kicker: "TÜRKİYE İŞLERİ", title: "Müzik, podcast ve viral format — clipping'i kendi sahamızda da işletiyoruz.",
-      text: "Küresel kampanyaların yanında Türkiye'de menajerlik ve yayıncılarla doğrudan çalışıyoruz. Bu üç iş, aynı clipping modelinin farklı içerik türlerine nasıl uygulandığını gösteriyor.",
+      kicker: "TÜRKİYE İŞLERİ", title: "Kendi stüdyomuzdan çıkan viral iş: Kedi C5.",
+      text: "Küresel kampanyaların yanında kendi orijinal formatlarımızı da üretiyoruz. Kedi C5, stüdyomuzda geliştirilen viral müzik karakteri; yayına girdiği ikinci gün platformların ve sanatçıların radarına girdi.",
       cases: [
-        { name: "maNga", tag: "MÜZİK", role: "GD Menajerlik ile kesit dağıtımı", accent: "#72d4ff", text: "Eurovision 2010 ikincisi Türk rock grubu maNga'nın konser ve klip kesitleri kısa video formatına uyarlanıp dağıtım ağında yayınlanıyor. Kampanya, kısa videodan gelen keşif trafiğiyle grubun katalog dinlenmesini besliyor.", tags: ["Konser kesiti", "Katalog dinlenmesi", "Kısa video dağıtımı"] },
-        { name: "Barış Özcan · 111 Hz", tag: "PODCAST", role: "Podbee ile podcast clipping", accent: "#8de3c3", text: "Barış Özcan'ın 111 Hz video podcast bölümleri, her biri tek başına anlaşılır bir anlatı taşıyan dikey kesitlere dönüştürülüyor. Uzun bölümün keşfi, kesitlerin yönlendirdiği izleyiciyle büyüyor.", tags: ["Video podcast", "Dikey kesit", "Bölüm keşfi"] },
-        { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#ffd166", text: "Stüdyomuzda üretilen Kedi C5 videosu yayına girdikten sonra hızla yayıldı: ikinci gününde Spotify Türkiye gönderiye yorum yaptı, Akdo ve Lvbel C5 videoyu repostladı ve içerik için ayrı bir repost hesabı açıldı.", highlight: "2. gün: Spotify Türkiye yorumu · Akdo ve Lvbel C5 repostu", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
+        { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#ffd166", text: "Stüdyomuzda üretilen Kedi C5 videosu yayına girdikten sonra hızla yayıldı: ikinci gününde Spotify Türkiye gönderiye yorum yaptı, Akdo ve Lvbel C5 videoyu repostladı ve içerik için ayrı bir repost hesabı açıldı. Aynı üretim ve dağıtım sistemi, müzik ve eğlence kampanyalarında markalar için çalışıyor.", highlight: "2. gün: Spotify Türkiye yorumu · Akdo ve Lvbel C5 repostu", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
       ],
-      note: "Bu işler ilgili sanatçı, menajerlik ve yayıncı iş birlikleri kapsamında yürütülür; isim ve marka hakları sahiplerine aittir.",
+      note: "Etkileşimler herkese açık gönderilerde görülebilir; adı geçen platform ve sanatçı isimleri sahiplerine aittir.",
     },
     pathways: {
       kicker: "YOLUNU SEÇ", title: "Reklam ver veya clipper olarak kazan.",

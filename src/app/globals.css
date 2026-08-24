@@ -307,6 +307,10 @@ footer{padding:70px 0;background:var(--navy);color:#fff}
 .turkiye .kicker{color:var(--cyan)}
 .turkiye .section-intro{color:rgba(214,232,250,.78)}
 .turkiye-grid{margin-top:54px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.turkiye-card:only-child{grid-column:1/-1;width:min(100%,780px);margin-inline:auto;backdrop-filter:blur(6px);background:rgba(4,12,22,.55)}
+.turkiye-card:only-child h3{font-size:clamp(30px,3.4vw,44px)}
+.turkiye-card:only-child p{font-size:16px;line-height:1.78}
+.turkiye-card:only-child .turkiye-highlight{font-size:14.5px;padding:15px 18px !important}
 .turkiye-card{position:relative;display:flex;flex-direction:column;gap:16px;padding:12px;border-radius:30px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);transition:transform .6s cubic-bezier(.32,.72,0,1),border-color .6s}
 .turkiye-card>*{padding-left:18px;padding-right:18px}
 .turkiye-card>header{padding-top:20px}
