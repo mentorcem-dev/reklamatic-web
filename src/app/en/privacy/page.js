@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage eyebrow="REKLAMATIC.AI" title="Privacy Policy" updated="July 31, 2026" homeHref="/en" otherHref="/en/terms" otherLabel="Terms" languageHref="/privacy" languageLabel="Türkçe">
       <h2>Who is responsible</h2>
-      <p>Reklamatic.ai is responsible for the personal data described here. Privacy requests can be sent to <a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a>.</p>
+      <p>Reklamatic.ai is responsible for the personal data described here. Registered office: Fenerbahçe Mah. Iğrıp Sk. No: 13 İç Kapı No: 1, Kadıköy / İstanbul, Türkiye. Privacy requests can be sent to <a href="mailto:info@reklamatic.ai">info@reklamatic.ai</a>. For data subjects in Türkiye, the KVKK disclosure text (in Turkish) is available on the <a href="/privacy#kvkk">Turkish version of this page</a>.</p>
       <h2>Website and sales inquiries</h2>
       <p>When you submit an application form, the details you enter—such as your name, email, phone or WhatsApp number, company, market, budget range, source link and message—are sent directly to Reklamatic&apos;s access-controlled Google Forms and Google Sheets workspace. We process them to review your inquiry, contact you, and manage a proposal or onboarding process.</p>
       <h2>Communication, retention and sharing</h2>

@@ -436,3 +436,8 @@ html,body{overflow-x:clip}
 .turkiye-formats em{font-style:normal;padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#dcebf9;font-size:13px;font-weight:650;transition:border-color .3s,background-color .3s,transform .3s cubic-bezier(.32,.72,0,1)}
 .turkiye-formats em:hover{border-color:rgba(111,200,255,.55);background:rgba(111,200,255,.08);transform:translateY(-2px)}
 @media (max-width:640px){.turkiye-formats em{font-size:12px;padding:8px 14px}}
+
+/* adres */
+.office-address,.footer-address{font-style:normal}
+.office-address{display:block;margin-top:12px;max-width:300px;font-size:12.5px;line-height:1.65;color:#5b7085}
+.footer-address{display:block;margin-top:6px;max-width:250px;font-size:11px;line-height:1.65;color:#8fa3b8}

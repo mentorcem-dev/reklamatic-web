@@ -48,3 +48,5 @@
 .activeLink:after{content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;border-radius:2px;background:var(--blue)}
 
 .page{overflow-x:clip}
+
+.footerAddress{font-style:normal;margin-top:6px;max-width:240px;font-size:10.5px;line-height:1.65;color:#8fa3b8}
