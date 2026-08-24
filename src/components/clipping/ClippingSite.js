@@ -42,8 +42,13 @@ function Header({ copy, locale }) {
 }
 
 function HeroVideo({ copy }) {
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const node = videoRef.current;
+    if (node && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { node.removeAttribute("autoplay"); node.pause(); }
+  }, []);
   return <figure className="hero-video">
-    <video autoPlay muted loop playsInline preload="metadata" poster="/media/generated/reklamatic-campaign-1.webp" aria-label={copy.visualAlt}><source src="/media/generated/reklamatic-showreel.mp4" type="video/mp4" /></video>
+    <video ref={videoRef} autoPlay muted loop playsInline preload="metadata" poster="/media/generated/reklamatic-campaign-1.webp" aria-label={copy.visualAlt}><source src="/media/generated/reklamatic-showreel.mp4" type="video/mp4" /></video>
     <div className="hero-video-shade" aria-hidden="true" />
     <figcaption><span>{copy.visualLabel}</span><strong>{copy.visualTitle}</strong><p>{copy.visualText}</p></figcaption>
   </figure>;

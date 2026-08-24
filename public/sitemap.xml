@@ -1,249 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://reklamatic.ai/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/tr</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/" />
-  </url>
-  <url><loc>https://reklamatic.ai/privacy</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
-  <url><loc>https://reklamatic.ai/terms</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
-  <url><loc>https://reklamatic.ai/tr/privacy</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
-  <url><loc>https://reklamatic.ai/tr/terms</loc><lastmod>2026-07-27</lastmod><priority>0.3</priority></url>
-  <url><loc>https://reklamatic.ai/about</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/about"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hakkimizda"/></url>
-  <url><loc>https://reklamatic.ai/tr/hakkimizda</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/about"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hakkimizda"/></url>
-  <url><loc>https://reklamatic.ai/clipping-agency</loc><lastmod>2026-07-27</lastmod><priority>0.9</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/clipping-agency"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/clipping-ajansi"/></url>
-  <url><loc>https://reklamatic.ai/tr/clipping-ajansi</loc><lastmod>2026-07-27</lastmod><priority>0.9</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/clipping-agency"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/clipping-ajansi"/></url>
-  <url><loc>https://reklamatic.ai/clipping-campaigns</loc><lastmod>2026-07-27</lastmod><priority>0.85</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/clipping-campaigns"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/clipping-kampanyalari"/></url>
-  <url><loc>https://reklamatic.ai/tr/clipping-kampanyalari</loc><lastmod>2026-07-27</lastmod><priority>0.85</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/clipping-campaigns"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/clipping-kampanyalari"/></url>
-  <url><loc>https://reklamatic.ai/pricing</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/pricing"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/fiyatlandirma"/></url>
-  <url><loc>https://reklamatic.ai/tr/fiyatlandirma</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/pricing"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/fiyatlandirma"/></url>
-  <url><loc>https://reklamatic.ai/case-studies</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/case-studies"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/ornek-kampanyalar"/></url>
-  <url><loc>https://reklamatic.ai/tr/ornek-kampanyalar</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/case-studies"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/ornek-kampanyalar"/></url>
-  <url><loc>https://reklamatic.ai/faq</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/faq"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/sss"/></url>
-  <url><loc>https://reklamatic.ai/tr/sss</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/faq"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/sss"/></url>
-  <url><loc>https://reklamatic.ai/blog</loc><lastmod>2026-07-27</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog</loc><lastmod>2026-07-27</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog"/></url>
-  <url><loc>https://reklamatic.ai/blog/what-is-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/what-is-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-nedir"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/clipping-nedir</loc><lastmod>2026-07-27</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/what-is-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-nedir"/></url>
-  <url><loc>https://reklamatic.ai/blog/clipping-vs-ugc</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/clipping-vs-ugc"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-ve-ugc"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/clipping-ve-ugc</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/clipping-vs-ugc"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-ve-ugc"/></url>
-  <url><loc>https://reklamatic.ai/blog/clipping-strategy</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/clipping-strategy"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-stratejisi"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/clipping-stratejisi</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/clipping-strategy"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-stratejisi"/></url>
-  <url><loc>https://reklamatic.ai/blog/how-to-choose-a-clipping-agency</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/how-to-choose-a-clipping-agency"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-ajansi-secimi"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/clipping-ajansi-secimi</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/how-to-choose-a-clipping-agency"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipping-ajansi-secimi"/></url>
-  <url><loc>https://reklamatic.ai/blog/content-repurposing</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/content-repurposing"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/icerik-yeniden-kullanim"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/icerik-yeniden-kullanim</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/content-repurposing"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/icerik-yeniden-kullanim"/></url>
-  <url><loc>https://reklamatic.ai/blog/short-form-platform-updates-2026</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/short-form-platform-updates-2026"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/kisa-video-platform-guncellemeleri-2026"/><xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/short-form-platform-updates-2026"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/kisa-video-platform-guncellemeleri-2026</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/short-form-platform-updates-2026"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/kisa-video-platform-guncellemeleri-2026"/><xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/short-form-platform-updates-2026"/></url>
-  <url><loc>https://reklamatic.ai/blog/how-clippers-earn</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/how-clippers-earn"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipper-nasil-kazanir"/><xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/how-clippers-earn"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/clipper-nasil-kazanir</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/how-clippers-earn"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/clipper-nasil-kazanir"/><xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/how-clippers-earn"/></url>
-  <url><loc>https://reklamatic.ai/blog/eligible-view-guarantee</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/eligible-view-guarantee"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/uygun-goruntulenme-garantisi"/><xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/eligible-view-guarantee"/></url>
-  <url><loc>https://reklamatic.ai/tr/blog/uygun-goruntulenme-garantisi</loc><lastmod>2026-07-28</lastmod><priority>0.8</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/blog/eligible-view-guarantee"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/blog/uygun-goruntulenme-garantisi"/><xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/eligible-view-guarantee"/></url>
-  <url><loc>https://reklamatic.ai/services/podcast-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/podcast-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/podcast-clipping"/></url>
-  <url><loc>https://reklamatic.ai/tr/hizmetler/podcast-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/podcast-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/podcast-clipping"/></url>
-  <url><loc>https://reklamatic.ai/services/tiktok-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/tiktok-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/tiktok-clipping"/></url>
-  <url><loc>https://reklamatic.ai/tr/hizmetler/tiktok-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/tiktok-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/tiktok-clipping"/></url>
-  <url><loc>https://reklamatic.ai/services/instagram-reels-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/instagram-reels-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/instagram-reels-clipping"/></url>
-  <url><loc>https://reklamatic.ai/tr/hizmetler/instagram-reels-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/instagram-reels-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/instagram-reels-clipping"/></url>
-  <url><loc>https://reklamatic.ai/services/youtube-shorts-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/youtube-shorts-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/youtube-shorts-clipping"/></url>
-  <url><loc>https://reklamatic.ai/tr/hizmetler/youtube-shorts-clipping</loc><lastmod>2026-07-27</lastmod><priority>0.7</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/services/youtube-shorts-clipping"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/hizmetler/youtube-shorts-clipping"/></url>
-  <url><loc>https://reklamatic.ai/for-brands</loc><lastmod>2026-07-27</lastmod><priority>0.85</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/for-brands"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/markalar-icin"/></url>
-  <url><loc>https://reklamatic.ai/tr/markalar-icin</loc><lastmod>2026-07-27</lastmod><priority>0.85</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/for-brands"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/markalar-icin"/></url>
-  <url><loc>https://reklamatic.ai/for-clippers</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/for-clippers"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/clipper-ol"/></url>
-  <url><loc>https://reklamatic.ai/tr/clipper-ol</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/for-clippers"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/clipper-ol"/></url>
-  <url><loc>https://reklamatic.ai/contact</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/contact"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/iletisim"/></url>
-  <url><loc>https://reklamatic.ai/tr/iletisim</loc><lastmod>2026-07-27</lastmod><priority>0.75</priority><xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/contact"/><xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/tr/iletisim"/></url>
-  <url>
-    <loc>https://reklamatic.ai/blog/turkiyenin-ilk-clipping-ajansi</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/turkiyes-first-clipping-agency" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/turkiyenin-ilk-clipping-ajansi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/turkiyenin-ilk-clipping-ajansi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/turkiyes-first-clipping-agency</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/turkiyes-first-clipping-agency" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/turkiyenin-ilk-clipping-ajansi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/turkiyenin-ilk-clipping-ajansi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/whop-resmi-partneri</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/official-whop-partner" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/whop-resmi-partneri" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/whop-resmi-partneri" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/official-whop-partner</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/official-whop-partner" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/whop-resmi-partneri" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/whop-resmi-partneri" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/cantina-kampanya-operasyonu</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/cantina-campaign-operations" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/cantina-kampanya-operasyonu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/cantina-kampanya-operasyonu" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/cantina-campaign-operations</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/cantina-campaign-operations" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/cantina-kampanya-operasyonu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/cantina-kampanya-operasyonu" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/topps-kart-agi-operasyonu</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/topps-card-network-operations" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/topps-kart-agi-operasyonu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/topps-kart-agi-operasyonu" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/topps-card-network-operations</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/topps-card-network-operations" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/topps-kart-agi-operasyonu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/topps-kart-agi-operasyonu" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/lovable-ile-urun-clippingi</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/clipping-for-product-brands-lovable" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/lovable-ile-urun-clippingi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/lovable-ile-urun-clippingi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/clipping-for-product-brands-lovable</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/clipping-for-product-brands-lovable" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/lovable-ile-urun-clippingi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/lovable-ile-urun-clippingi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/kendi-yayin-agimiz</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/owned-publishing-network" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/kendi-yayin-agimiz" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/kendi-yayin-agimiz" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/owned-publishing-network</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/owned-publishing-network" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/kendi-yayin-agimiz" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/kendi-yayin-agimiz" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/izlenmeden-gelir-clipper-ekonomisi</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/creator-clipping-economy" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/izlenmeden-gelir-clipper-ekonomisi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/izlenmeden-gelir-clipper-ekonomisi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/creator-clipping-economy</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/creator-clipping-economy" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/izlenmeden-gelir-clipper-ekonomisi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/izlenmeden-gelir-clipper-ekonomisi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/clippingde-marka-guvenligi</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/brand-safety-in-clipping" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/clippingde-marka-guvenligi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/clippingde-marka-guvenligi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/brand-safety-in-clipping</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/brand-safety-in-clipping" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/clippingde-marka-guvenligi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/clippingde-marka-guvenligi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/uygulama-lansmani-clipping-rehberi</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/app-launch-clipping-playbook" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/uygulama-lansmani-clipping-rehberi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/uygulama-lansmani-clipping-rehberi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/app-launch-clipping-playbook</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/app-launch-clipping-playbook" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/uygulama-lansmani-clipping-rehberi" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/uygulama-lansmani-clipping-rehberi" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/blog/ai-destekli-clipping-operasyonu</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/ai-assisted-clipping-operations" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/ai-destekli-clipping-operasyonu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/ai-destekli-clipping-operasyonu" />
-  </url>
-  <url>
-    <loc>https://reklamatic.ai/en/blog/ai-assisted-clipping-operations</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://reklamatic.ai/en/blog/ai-assisted-clipping-operations" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://reklamatic.ai/blog/ai-destekli-clipping-operasyonu" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://reklamatic.ai/blog/ai-destekli-clipping-operasyonu" />
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://reklamatic.ai</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/_not-found</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/clipper-ol</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/clipping-ajansi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/clipping-kampanyalari</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/fiyatlandirma</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/hakkimizda</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/iletisim</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/markalar-icin</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/ornek-kampanyalar</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/privacy</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/sss</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/terms</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/ai-destekli-clipping-operasyonu</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/cantina-kampanya-operasyonu</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/clipper-nasil-kazanir</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/clipping-ajansi-secimi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/clipping-nedir</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/clipping-stratejisi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/clipping-ve-ugc</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/clippingde-marka-guvenligi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/icerik-yeniden-kullanim</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/izlenmeden-gelir-clipper-ekonomisi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/kendi-yayin-agimiz</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/kisa-video-platform-guncellemeleri-2026</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/lovable-ile-urun-clippingi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/topps-kart-agi-operasyonu</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/turkiyenin-ilk-clipping-ajansi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/uygulama-lansmani-clipping-rehberi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/uygun-goruntulenme-garantisi</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/blog/whop-resmi-partneri</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/about</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/case-studies</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/clipping-agency</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/clipping-campaigns</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/contact</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/faq</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/for-brands</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/for-clippers</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/pricing</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/privacy</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/terms</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/hizmetler/instagram-reels-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/hizmetler/podcast-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/hizmetler/tiktok-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/hizmetler/youtube-shorts-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/ai-assisted-clipping-operations</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/app-launch-clipping-playbook</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/brand-safety-in-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/cantina-campaign-operations</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/clipping-for-product-brands-lovable</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/clipping-strategy</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/clipping-vs-ugc</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/content-repurposing</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/creator-clipping-economy</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/eligible-view-guarantee</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/how-clippers-earn</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/how-to-choose-a-clipping-agency</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/official-whop-partner</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/owned-publishing-network</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/short-form-platform-updates-2026</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/topps-card-network-operations</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/turkiyes-first-clipping-agency</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/blog/what-is-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/services/instagram-reels-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/services/podcast-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/services/tiktok-clipping</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://reklamatic.ai/en/services/youtube-shorts-clipping</loc><lastmod>2026-08-24</lastmod></url>
 </urlset>
