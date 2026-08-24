@@ -2,7 +2,7 @@ import ClippingSite from "@/components/clipping/ClippingSite";
 import { content } from "@/lib/clippingContent";
 
 export const metadata = {
-  title: { absolute: "Clipping Agency and Active Clipper Network | Reklamatic" },
+  title: { absolute: "Türkiye's First Clipping Agency | Reklamatic" },
   description: "Distribute your content through Reklamatic's active clipper network, or become a clipper and earn from eligible verified campaign views.",
   keywords: ["clipping agent", "clipping agency", "clipping campaigns", "become a clipper", "pay per view campaign", "Türkiye short video distribution", "TikTok clipping", "Instagram Reels clipping", "YouTube Shorts clipping"],
   alternates: {

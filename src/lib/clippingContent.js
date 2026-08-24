@@ -32,13 +32,13 @@ const sharedContact = {
 export const content = {
   en: {
     lang: "English", skip: "Skip to clipping story", cta: "Advertise", menu: "Open menu",
-    nav: [["For brands", "/en/for-brands"], ["Become a clipper", "/en/for-clippers"], ["What is clipping?", "#clipping-nedir"], ["How it works", "/en/clipping-campaigns"], ["FAQ", "#faq"]],
+    nav: [["For brands", "/en/for-brands"], ["Become a clipper", "/en/for-clippers"], ["What is clipping?", "#clipping-nedir"], ["How it works", "/en/clipping-campaigns"], ["Blog", "/en/blog"], ["FAQ", "#faq"]],
     hero: {
-      kicker: "A CLIPPING AGENCY FOR BRANDS AND CREATORS",
+      kicker: "TÜRKİYE'S FIRST CLIPPING AGENCY",
       titleA: "Do not leave your content on one account.", titleB: "Distribute it through our clipper network.",
-      text: "Reklamatic is a clipping agency. We turn campaigns from brands, apps, artists, publishers, streamers and creators into short videos, coordinate approval and publish through suitable accounts in our active clipper network. Our publishing history exceeds 200 million platform views.",
+      text: "Reklamatic is Türkiye's first clipping agency and an official Whop partner. We turn campaigns from brands, apps, artists, publishers, streamers and creators into short videos, coordinate approval and publish through suitable accounts in our active clipper network. Our publishing history exceeds 200 million platform views.",
       primary: "Start getting clipped today", secondary: "Become a clipper", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
-      status: "200M+ HISTORICAL VIEWS · ACTIVE CLIPPER NETWORK · TR + EN", visualAlt: "Reklamatic clipping campaign showreel",
+      status: "200M+ HISTORICAL VIEWS · OFFICIAL WHOP PARTNER · TR + EN", visualAlt: "Reklamatic clipping campaign showreel",
       visualLabel: "REKLAMATIC / CLIPPING AGENCY", visualTitle: "One campaign. Many feeds.", visualText: "Short-video production, clipper distribution and view reporting in one agency operation.",
     },
     proof: {
@@ -57,6 +57,20 @@ export const content = {
       contextText: "An ordinary view on Instagram or TikTok is not automatically income for every account. YouTube platform revenue also requires channel eligibility. Many pages grow followers hoping for future sponsorships, but that process takes time and a deal may never arrive. Reklamatic creates a separate campaign-based earning path.",
       marketText: "Some overseas clipping campaigns require traffic from specific countries, often the United States. Views from a Türkiye-based audience may therefore be ineligible. Reklamatic builds Türkiye-focused campaigns for local audiences and accounts.",
       metric: "200M+", metricLabel: "historical platform views", metricText: "Reklamatic combines an active clipper network, publishing experience and an AI-assisted operations layer to coordinate production, distribution and reporting.",
+    },
+    work: {
+      kicker: "GLOBAL CAMPAIGNS AND PARTNERS", title: "First in Türkiye. Active on global campaigns.",
+      text: "Reklamatic did not start clipping yesterday. Our clipper network has produced and distributed for global campaign ecosystems such as Cantina and Topps, and we create clipping content around product platforms such as Lovable. As an official Whop partner, campaign acceptance, eligible-view verification and clipper payouts can run transparently on Whop infrastructure.",
+      partnerBadge: "OFFICIAL WHOP PARTNER",
+      partnerText: "Whop is the marketplace infrastructure where modern clipping campaigns are funded, verified and paid. Reklamatic runs campaign submissions and clipper payouts through Whop as an official partner.",
+      logosLabel: "The ecosystem we work in",
+      projects: [
+        { name: "Cantina", role: "Global campaign operations", text: "Ongoing short-video production and multi-account distribution for the Cantina social-AI ecosystem's Whop-funded clipping campaigns, with submissions verified per campaign rules.", logo: "/media/logos/cantina.png", logoAlt: "Cantina logo", image: "/media/cases/cantina.webp", tags: ["Whop campaign", "Social AI", "Short-form"] },
+        { name: "Topps", role: "Trading-card content network", text: "A dedicated five-channel YouTube network built for the trading-card niche, publishing daily Topps-focused short videos and feeding campaign submissions through Whop.", logo: "/media/logos/topps.svg", logoAlt: "Topps logo", image: "/media/cases/topps.webp", tags: ["5 YouTube channels", "Daily publishing", "Collector niche"] },
+        { name: "Lovable", role: "Product clipping", text: "Clipping-style short videos produced around the Lovable app-building ecosystem: product demos, build stories and creator-angle cuts distributed through suitable accounts.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logo", image: "/media/cases/lovable.webp", tags: ["Product demos", "Creator angle", "App ecosystem"] },
+        { name: "Reklamatic Network", role: "Our own 26-account grid", text: "Our own publishing grid across YouTube, Instagram, TikTok and Facebook proves the operation daily: more than 200 million historical platform views generated with automated production and scheduling.", logo: null, logoAlt: "", image: "/media/proof/instagram-best-diy.webp", tags: ["26 accounts", "200M+ views", "24/7 automation"] },
+      ],
+      note: "Logos belong to their respective trademark owners and indicate campaigns and collaborations Reklamatic has operated in their ecosystems.",
     },
     pathways: {
       kicker: "CHOOSE YOUR PATH", title: "Advertise or earn as a clipper.",
@@ -92,6 +106,8 @@ export const content = {
       economics: { kicker: "TWO CLEAR MODELS", title: "View-based by default. Fixed distribution when needed.", models: [["01", "PRIMARY MODEL", "Guaranteed eligible views", "Choose an eligible-view target. Reklamatic manages production and distribution until the agreed target is delivered.", "campaign = eligible-view target + agreed rate"], ["02", "ALTERNATIVE MODEL", "Fixed account distribution", "Choose the number of suitable accounts, daily publishing volume and campaign duration. The commercial total is fixed before launch.", "fixed plan = 50–200 accounts × daily posts × duration"]], brandTitle: "For brands", brandText: "Most campaigns are planned around an eligible-view target. Fixed-price account distribution is available when the objective is a defined publishing footprint rather than a view target.", clipperTitle: "For clippers", clipperText: "Accept a campaign, publish the approved content and earn at the stated rate for each verified 1,000 eligible views. Platform monetization status is not required for campaign payment.", formula: "eligible verified views ÷ 1,000 × campaign rate" },
     },
     faq: { kicker: "QUICK ANSWERS", title: "Know the model before joining it.", items: [
+      ["Is Reklamatic really Türkiye's first clipping agency?", "Yes. Reklamatic established clipping as a managed campaign model in the Turkish market first: a local clipper network, Turkish campaign conditions and an eligible-view payout path built for Türkiye audiences. Beyond Türkiye, the same operation has run inside global campaign ecosystems such as Cantina and Topps."],
+      ["What is your relationship with Whop?", "Reklamatic is an official Whop partner. Campaign acceptance, submission verification and clipper payouts can run through Whop's marketplace infrastructure, which keeps conditions and payments transparent for both brands and clippers."],
       ["What is clipping?", "Clipping turns approved source material and written campaign conditions into a self-contained short video and distributes it through a suitable social account."],
       ["What is a clipping campaign?", "A brand, app, artist, publisher or creator submits a campaign form and funds the approved scope. Reklamatic prepares and approves the content, coordinates publishing through eligible accounts and reports the agreed views."],
       ["What does a clipper do?", "A clipper accepts the campaign terms, creates from approved sources, follows the content rules and publishes through an eligible account after QA and brand approval."],
@@ -105,17 +121,17 @@ export const content = {
       ["Can we start today?", "Yes. Complete the form with your brand, source material, audience, platforms and expected view scope. Reklamatic reviews the information and returns with the suitable campaign structure, timeline and commercial terms."],
     ]},
     contact: sharedContact.en,
-    footer: { line: "Managed clipping campaigns for apps, music, publishers, streamers and products.", explore: "Explore", contact: "Contact", legal: "Legal", privacy: "Privacy", terms: "Terms", rights: "All rights reserved." },
+    footer: { line: "Türkiye's first clipping agency. Official Whop partner. Managed clipping campaigns for apps, music, publishers, streamers and products.", explore: "Explore", contact: "Contact", legal: "Legal", privacy: "Privacy", terms: "Terms", rights: "All rights reserved." },
   },
   tr: {
     lang: "Türkçe", skip: "Clipping anlatısına geç", cta: "Reklam ver", menu: "Menüyü aç",
-    nav: [["Markalar için", "/markalar-icin"], ["Clipper ol", "/clipper-ol"], ["Clipping nedir?", "#clipping-nedir"], ["Nasıl çalışır?", "/clipping-kampanyalari"], ["SSS", "#faq"]],
+    nav: [["Markalar için", "/markalar-icin"], ["Clipper ol", "/clipper-ol"], ["Clipping nedir?", "#clipping-nedir"], ["Nasıl çalışır?", "/clipping-kampanyalari"], ["Blog", "/blog"], ["SSS", "#faq"]],
     hero: {
-      kicker: "MARKALAR VE ÜRETİCİLER İÇİN CLIPPING AJANSI",
+      kicker: "TÜRKİYE'NİN İLK CLIPPING AJANSI",
       titleA: "İçeriğiniz tek hesapta kalmasın.", titleB: "Clipper ağımızla farklı hesaplarda yayınlansın.",
-      text: "Reklamatic bir clipping ajansıdır. Marka, uygulama, sanatçı, yayıncı, streamer ve influencer kampanyalarını kısa videolara dönüştürür; onayı yönetir ve aktif clipper ağındaki uygun hesaplarda yayınlatırız. Yayın operasyonumuzun geçmişi 200 milyonun üzerinde platform görüntülenmesi içerir.",
+      text: "Reklamatic, Türkiye'nin ilk clipping ajansı ve Whop'un resmi partneridir. Marka, uygulama, sanatçı, yayıncı, streamer ve influencer kampanyalarını kısa videolara dönüştürür; onayı yönetir ve aktif clipper ağındaki uygun hesaplarda yayınlatırız. Yayın operasyonumuzun geçmişi 200 milyonun üzerinde platform görüntülenmesi içerir.",
       primary: "Hemen bugün cliplenmeye başla", secondary: "Clipper ol", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
-      status: "200 MN+ GEÇMİŞ GÖRÜNTÜLENME · AKTİF CLIPPER AĞI · TR + EN", visualAlt: "Reklamatic clipping kampanyası showreel videosu",
+      status: "200 MN+ GEÇMİŞ GÖRÜNTÜLENME · WHOP RESMİ PARTNERİ · TR + EN", visualAlt: "Reklamatic clipping kampanyası showreel videosu",
       visualLabel: "REKLAMATIC / CLIPPING AJANSI", visualTitle: "Tek kampanya. Birçok akış.", visualText: "Kısa video üretimi, clipper dağıtımı ve görüntülenme raporu tek ajans operasyonunda.",
     },
     proof: {
@@ -134,6 +150,20 @@ export const content = {
       contextText: "Normal bir Instagram veya TikTok hesabında her izlenme otomatik gelir değildir. YouTube'da platform geliri için de kanalın para kazanma şartlarını tamamlaması gerekir. Birçok sayfa gelecekte reklam almak için büyür; fakat bu süreç uzundur ve iş birliği hiç gelmeyebilir. Reklamatic ayrı bir kampanya bazlı kazanç yolu açar.",
       marketText: "Bazı yurt dışı clipping kampanyaları görüntülenmenin belirli ülkelerden, çoğunlukla ABD'den gelmesini ister. Türkiye kitlesinden gelen görüntülenmeler bu nedenle geçersiz sayılabilir. Reklamatic, Türkiye kitlesi ve yerel hesaplar için kampanya kurar.",
       metric: "200 Mn+", metricLabel: "geçmiş platform görüntülenmesi", metricText: "Reklamatic; aktif clipper ağını, yayın tecrübesini ve yapay zekâ destekli operasyon katmanını üretim, dağıtım ve raporlama için birleştirir.",
+    },
+    work: {
+      kicker: "GLOBAL İŞLER VE PARTNERLER", title: "Türkiye'de ilk. Global kampanyalarda aktif.",
+      text: "Reklamatic clipping'e dün başlamadı. Clipper ağımız Cantina ve Topps gibi global kampanya ekosistemleri için üretim ve dağıtım yürüttü; Lovable gibi ürün platformları çevresinde clipping içerikleri çalışıyoruz. Whop'un resmi partneri olarak kampanya kabulü, uygun view doğrulaması ve clipper ödemeleri Whop altyapısında şeffaf ilerleyebilir.",
+      partnerBadge: "WHOP RESMİ PARTNERİ",
+      partnerText: "Whop, modern clipping kampanyalarının fonlandığı, doğrulandığı ve ödendiği pazar yeri altyapısıdır. Reklamatic, resmi partner olarak kampanya gönderimlerini ve clipper ödemelerini Whop üzerinden yürütür.",
+      logosLabel: "İçinde çalıştığımız ekosistem",
+      projects: [
+        { name: "Cantina", role: "Global kampanya operasyonu", text: "Cantina sosyal yapay zekâ ekosisteminin Whop fonlu clipping kampanyaları için sürekli kısa video üretimi ve çoklu hesap dağıtımı; gönderimler kampanya kurallarına göre doğrulanır.", logo: "/media/logos/cantina.png", logoAlt: "Cantina logosu", image: "/media/cases/cantina.webp", tags: ["Whop kampanyası", "Sosyal AI", "Kısa video"] },
+        { name: "Topps", role: "Koleksiyon kartı içerik ağı", text: "Koleksiyon kartı nişi için kurulmuş beş kanallı özel YouTube ağı: günlük Topps odaklı kısa videolar ve Whop üzerinden ilerleyen kampanya gönderimleri.", logo: "/media/logos/topps.svg", logoAlt: "Topps logosu", image: "/media/cases/topps.webp", tags: ["5 YouTube kanalı", "Günlük yayın", "Koleksiyoner nişi"] },
+        { name: "Lovable", role: "Ürün clipping'i", text: "Lovable uygulama geliştirme ekosistemi çevresinde clipping tarzı kısa videolar: ürün demoları, geliştirme hikâyeleri ve üretici bakışlı kurgular uygun hesaplarda dağıtılır.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logosu", image: "/media/cases/lovable.webp", tags: ["Ürün demosu", "Üretici bakışı", "Uygulama ekosistemi"] },
+        { name: "Reklamatic Ağı", role: "26 hesaplık kendi ağımız", text: "YouTube, Instagram, TikTok ve Facebook'taki kendi yayın ağımız operasyonu her gün kanıtlıyor: otomatik üretim ve planlamayla 200 milyondan fazla geçmiş platform görüntülenmesi.", logo: null, logoAlt: "", image: "/media/proof/instagram-best-diy.webp", tags: ["26 hesap", "200 Mn+ view", "7/24 otomasyon"] },
+      ],
+      note: "Logolar ilgili marka sahiplerine aittir; Reklamatic'in bu ekosistemlerde yürüttüğü kampanya ve iş birliklerini belirtir.",
     },
     pathways: {
       kicker: "YOLUNU SEÇ", title: "Reklam ver veya clipper olarak kazan.",
@@ -169,6 +199,8 @@ export const content = {
       economics: { kicker: "İKİ NET MODEL", title: "Ana model görüntülenme bazlıdır. İstenirse sabit dağıtım yapılır.", models: [["01", "ANA MODEL", "Garantili uygun görüntülenme", "Uygun view hedefini seç. Reklamatic üretimi ve dağıtımı, mutabık hedef tamamlanana kadar yönetir.", "kampanya = uygun view hedefi + mutabık oran"], ["02", "ALTERNATİF MODEL", "Sabit hesap dağıtımı", "Uygun hesap sayısını, günlük yayın adedini ve kampanya süresini seç. Toplam ticari bedel kampanya başlamadan sabitlenir.", "sabit plan = 50–200 hesap × günlük yayın × süre"]], brandTitle: "Marka için", brandText: "Kampanyaların ana modeli uygun görüntülenme hedefidir. Amaç belirli bir yayın hacmi kurmaksa 50–200 uygun hesapta sabit fiyatlı dağıtım da seçilebilir.", clipperTitle: "Clipper için", clipperText: "Kampanyayı kabul et, onaylı içeriği yayınla ve doğrulanan her 1.000 uygun görüntülenme için ilan edilen oran üzerinden kazan. Platform para kazanma statüsü aranmaz.", formula: "uygun doğrulanmış view ÷ 1.000 × kampanya oranı" },
     },
     faq: { kicker: "KISA YANITLAR", title: "Modele katılmadan önce nasıl çalıştığını bil.", items: [
+      ["Reklamatic gerçekten Türkiye'nin ilk clipping ajansı mı?", "Evet. Reklamatic, clipping'i Türkiye pazarında yönetilen kampanya modeli olarak kuran ilk ajanstır: yerel clipper ağı, Türkçe kampanya koşulları ve Türkiye kitlesi için işleyen uygun view kazanç yolu ilk kez bizimle kuruldu. Aynı operasyon Türkiye dışında Cantina ve Topps gibi global kampanya ekosistemlerinde de çalıştı."],
+      ["Whop ile ilişkiniz nedir?", "Reklamatic, Whop'un resmi partneridir. Kampanya kabulü, gönderim doğrulaması ve clipper ödemeleri Whop pazar yeri altyapısı üzerinden yürütülebilir; bu koşulları ve ödemeleri hem marka hem clipper için şeffaf tutar."],
       ["Clipping nedir?", "Onaylı kaynak materyalini ve yazılı kampanya koşullarını tek başına anlaşılır kısa videoya dönüştürüp uygun sosyal medya hesabında dağıtmaktır."],
       ["Clipping kampanyası nedir?", "Marka, uygulama, sanatçı, yayıncı veya influencer kampanya açar. Reklamatic içeriği hazırlar, onaylatır, uygun hesaplarda yayını koordine eder ve mutabık görüntülenmeleri raporlar."],
       ["Clipper ne yapar?", "Kampanya koşullarını kabul eder, onaylı kaynaktan üretir, içerik kurallarına uyar ve kalite kontrol ile marka onayından sonra uygun hesabında yayınlar."],
@@ -182,6 +214,6 @@ export const content = {
       ["Bugün başlayabilir miyiz?", "Evet. Markanı, kaynak içeriğini, hedef kitleni, platformları ve beklediğin görüntülenme kapsamını paylaş. Reklamatic uygun kampanya yapısı, takvim ve ticari koşullarla dönüş yapar."],
     ]},
     contact: sharedContact.tr,
-    footer: { line: "Uygulama, müzik, yayıncı, streamer ve ürünler için yönetilen clipping kampanyaları.", explore: "Keşfet", contact: "İletişim", legal: "Yasal", privacy: "Gizlilik", terms: "Koşullar", rights: "Tüm hakları saklıdır." },
+    footer: { line: "Türkiye'nin ilk clipping ajansı. Whop resmi partneri. Uygulama, müzik, yayıncı, streamer ve ürünler için yönetilen clipping kampanyaları.", explore: "Keşfet", contact: "İletişim", legal: "Yasal", privacy: "Gizlilik", terms: "Koşullar", rights: "Tüm hakları saklıdır." },
   },
 };

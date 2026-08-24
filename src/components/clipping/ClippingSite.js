@@ -78,6 +78,55 @@ function ModelIntro({ copy }) {
   </div></section>;
 }
 
+function GlobalWork({ copy }) {
+  const marqueeLogos = [
+    ["/media/logos/whop.png", "Whop"],
+    ["/media/logos/cantina.png", "Cantina"],
+    ["/media/logos/topps.svg", "Topps"],
+    ["/media/logos/lovable.png", "Lovable"],
+  ];
+  const strip = [...marqueeLogos, ...marqueeLogos, ...marqueeLogos];
+  return <section className="work" id="work" data-motion-reveal><div className="container">
+    <div className="work-heading">
+      <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
+      <aside className="whop-card" data-motion-item>
+        <div className="whop-card-head">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/media/logos/whop.png" alt="Whop logo" width="44" height="44" />
+          <span>{copy.partnerBadge}</span>
+        </div>
+        <p>{copy.partnerText}</p>
+      </aside>
+    </div>
+    <div className="logo-marquee" aria-label={copy.logosLabel}>
+      <div className="logo-track">
+        {strip.map(([src, alt], index) => <span key={`${alt}-${index}`} className={`logo-chip logo-chip-${alt.toLowerCase()}`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={src} alt={index < marqueeLogos.length ? `${alt} logo` : ""} aria-hidden={index >= marqueeLogos.length} loading="lazy" />
+          <b>{alt}</b>
+        </span>)}
+      </div>
+    </div>
+    <div className="work-grid">
+      {copy.projects.map((project) => <article className="work-card" key={project.name} data-motion-item>
+        <figure>
+          <Image src={project.image} alt={`${project.name}: ${project.role}`} fill sizes="(max-width: 700px) 92vw, 44vw" />
+          {project.logo && <span className={`work-logo work-logo-${project.name.split(" ")[0].toLowerCase()}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={project.logo} alt={project.logoAlt} loading="lazy" />
+          </span>}
+        </figure>
+        <div className="work-body">
+          <header><h3>{project.name}</h3><span>{project.role}</span></header>
+          <p>{project.text}</p>
+          <div className="work-tags">{project.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
+        </div>
+      </article>)}
+    </div>
+    <p className="work-note">{copy.note}</p>
+  </div></section>;
+}
+
 function Pathways({ copy }) {
   return <section className="pathways" data-motion-reveal><div className="container"><SectionTitle kicker={copy.kicker} title={copy.title} /><div className="pathway-split">{[copy.brand, copy.clipper].map((item, index) => <article key={item.label} data-motion-item><span>0{index + 1} / {item.label}</span><h3>{item.title}</h3><p>{item.text}</p><ol>{item.steps.map((step, stepIndex) => <li key={step}><b>0{stepIndex + 1}</b>{step}</li>)}</ol><a href={item.href}>{item.cta}<b>↗</b></a></article>)}</div></div></section>;
 }
@@ -144,5 +193,5 @@ function Footer({ copy, locale }) {
 
 export default function ClippingSite({ copy, locale }) {
   const schema = { "@context": "https://schema.org", "@graph": [{ "@type": "Organization", "@id": "https://reklamatic.ai/#organization", name: "Reklamatic.ai", url: "https://reklamatic.ai", email: "info@reklamatic.ai", telephone: PHONE, areaServed: "TR", knowsLanguage: ["en", "tr"] }, { "@type": "WebSite", "@id": "https://reklamatic.ai/#website", name: "Reklamatic.ai", url: "https://reklamatic.ai", publisher: { "@id": "https://reklamatic.ai/#organization" }, inLanguage: ["en", "tr"] }, { "@type": "Service", name: locale === "tr" ? "Clipping ajansı ve clipper dağıtım hizmeti" : "Clipping agency and clipper distribution service", provider: { "@id": "https://reklamatic.ai/#organization" }, areaServed: "TR", serviceType: "Short-form production, active clipper network distribution and eligible-view campaign reporting" }, { "@type": "FAQPage", mainEntity: copy.faq.items.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) }] };
-  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} /><ProofGallery copy={copy.proof} /><ModelIntro copy={copy.model} /><Pathways copy={copy.pathways} /><CampaignExperience copy={copy.experience} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
+  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} /><ProofGallery copy={copy.proof} /><ModelIntro copy={copy.model} /><GlobalWork copy={copy.work} /><Pathways copy={copy.pathways} /><CampaignExperience copy={copy.experience} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
 }

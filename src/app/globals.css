@@ -232,3 +232,39 @@ footer{padding:70px 0;background:var(--navy);color:#fff}
 .proof-detail-views20 img{object-fit:contain;background:#03070c}
 @media(max-width:700px){.hero-copy h1{font-size:clamp(42px,12.7vw,57px);line-height:.98}.campaign-map,.hero-video{min-height:460px}}
 @media(max-width:390px){.hero-copy h1{font-size:41px}.campaign-map,.hero-video{min-height:430px}}
+
+/* ── Global work / partners (Türkiye'nin ilk clipping ajansı bölümü) ── */
+.work{padding:105px 0 90px;background:linear-gradient(180deg,var(--ice),#fff 30%)}
+.work-heading{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.72fr);gap:56px;align-items:start}
+.whop-card{padding:30px 32px;border-radius:26px;background:var(--navy);color:#fff;box-shadow:0 30px 70px rgba(7,47,86,.28)}
+.whop-card-head{display:flex;align-items:center;gap:14px}
+.whop-card-head img{width:44px;height:44px;border-radius:12px;background:#fff;padding:5px;object-fit:contain}
+.whop-card-head span{font-size:11px;font-weight:850;letter-spacing:.14em;color:var(--cyan)}
+.whop-card p{margin-top:16px;font-size:13.5px;line-height:1.66;color:#c7dcef}
+.logo-marquee{margin-top:52px;padding:22px 0;border-block:1px solid var(--line);overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.logo-track{display:flex;gap:18px;width:max-content;animation:logo-scroll 26s linear infinite}
+.logo-marquee:hover .logo-track{animation-play-state:paused}
+@keyframes logo-scroll{to{transform:translateX(calc(-100%/3))}}
+@media (prefers-reduced-motion: reduce){.logo-track{animation:none}}
+.logo-chip{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:16px;background:var(--navy);box-shadow:0 12px 26px rgba(7,47,86,.16)}
+.logo-chip img{height:26px;width:auto;max-width:118px;object-fit:contain}
+.logo-chip-whop img,.logo-chip-lovable img{border-radius:7px}
+.logo-chip b{color:#dcecfa;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.work-grid{margin-top:46px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.work-card{border:1px solid var(--line);border-radius:28px;background:#fff;overflow:hidden;box-shadow:0 22px 55px rgba(7,47,86,.1);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.work-card:hover{transform:translateY(-7px);box-shadow:0 36px 80px rgba(7,47,86,.17)}
+.work-card figure{position:relative;height:250px;margin:0;background:var(--navy);overflow:hidden}
+.work-card figure img{object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.work-card:hover figure img{transform:scale(1.05)}
+.work-logo{position:absolute;left:20px;bottom:18px;display:inline-flex;align-items:center;padding:9px 14px;border-radius:13px;background:rgba(7,21,38,.86);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22)}
+.work-logo img{height:24px;width:auto;max-width:120px;object-fit:contain}
+.work-logo-topps{background:rgba(255,255,255,.94)}
+.work-body{padding:26px 30px 30px}
+.work-body header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.work-body h3{font-size:21px;font-weight:850;color:var(--ink)}
+.work-body header span{color:var(--blue);font-size:10.5px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.work-body p{margin-top:12px;color:#40586f;font-size:14px;line-height:1.7}
+.work-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.work-tags em{font-style:normal;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ice);color:#28506f;font-size:10.5px;font-weight:800;letter-spacing:.05em}
+.work-note{margin-top:30px;color:#7a90a4;font-size:11px;line-height:1.6}
+@media (max-width: 960px){.work-heading{grid-template-columns:1fr;gap:30px}.work-grid{grid-template-columns:1fr}.work-card figure{height:210px}}
