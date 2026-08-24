@@ -295,7 +295,7 @@ footer{padding:70px 0;background:var(--navy);color:#fff}
 .phone-views small{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#bcd7ee}
 .phone-open{position:absolute;left:18px;bottom:20px;z-index:2;color:var(--cyan);font-size:11px;font-weight:850;letter-spacing:.06em}
 .phone-card:hover .phone-open{text-decoration:underline}
-@media (max-width: 900px){.phone-rail{grid-template-columns:1fr;gap:30px}.phone-card{width:min(86%,330px)}.phone-card:nth-child(2){transform:rotate(.9deg)}}
+
 
 /* showcase (video rail below Whop) */
 .showcase{padding:86px 0 78px;background:linear-gradient(180deg,var(--ice) 0%,#fff 46%,var(--ice) 100%)}
@@ -323,7 +323,7 @@ footer{padding:70px 0;background:var(--navy);color:#fff}
 .prod-card figcaption{margin-top:16px;text-align:center}
 .prod-card figcaption strong{display:block;font-size:15px;color:#fff}
 .prod-card figcaption span{display:block;margin-top:5px;font-size:12px;line-height:1.55;color:rgba(214,232,250,.68)}
-@media (max-width:700px){.turkiye-prods{grid-template-columns:minmax(0,286px)}}
+
 .turkiye-card{position:relative;display:flex;flex-direction:column;gap:16px;padding:12px;border-radius:30px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);transition:transform .6s cubic-bezier(.32,.72,0,1),border-color .6s}
 .turkiye-body{display:flex;flex-direction:column;gap:16px;min-width:0}
 .turkiye-body>*{padding-left:18px;padding-right:18px}
@@ -402,4 +402,29 @@ html,body{overflow-x:clip}
 @media (max-width:640px){
   .container{width:calc(100% - 24px)}
   .turkiye-comment{margin:4px 12px 6px}
+}
+
+/* Kedi C5 gerçek yorum ekran görüntüsü */
+.turkiye-shot{margin:4px 18px 6px}
+.turkiye-shot img{width:100%;height:auto;border-radius:18px;border:1px solid rgba(255,255,255,.14);box-shadow:0 22px 50px rgba(0,0,0,.4);display:block}
+.turkiye-shot figcaption{margin-top:9px;font-size:11.5px;color:rgba(214,232,250,.6)}
+@media (max-width:640px){.turkiye-shot{margin:4px 12px 6px}}
+
+/* mobilde ikili telefon grid */
+@media (max-width:900px){
+  .phone-rail{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .phone-card{width:100%}
+  .phone-card:nth-child(3){grid-column:1/-1;width:min(60%,300px);justify-self:center}
+  .phone-card,.phone-card:nth-child(2),.phone-card:nth-child(3){transform:none}
+  .phone-card:hover{transform:translateY(-6px)}
+}
+@media (max-width:700px){
+  .turkiye-prods{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%}
+}
+@media (max-width:900px){
+  .phone-views{flex-wrap:wrap;gap:4px 7px}
+  .phone-views b{font-size:clamp(17px,7.5cqw,24px)}
+  .phone-views small{font-size:7px;letter-spacing:.05em}
+  .phone-handle{font-size:10px}
+  .phone-open{font-size:10.5px}
 }

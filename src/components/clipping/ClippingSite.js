@@ -121,10 +121,9 @@ function TurkiyeWork({ copy }) {
           </header>
           <p>{item.text}</p>
           {item.highlight && <div className="turkiye-highlight"><i aria-hidden="true">✦</i><span>{item.highlight}</span></div>}
-          {item.comment && <figure className="turkiye-comment">
-            <div className="tc-head"><span className="tc-avatar" aria-hidden="true">♫</span><b>{item.comment.handle}</b><i className="tc-verified" aria-hidden="true">✓</i></div>
-            <blockquote>{item.comment.text}</blockquote>
-            <figcaption>{item.comment.meta}</figcaption>
+          {item.commentImage && <figure className="turkiye-shot">
+            <Image src={item.commentImage} alt={item.commentAlt} width={900} height={936} sizes="(max-width: 820px) 92vw, 560px" />
+            <figcaption>{item.comment?.meta}</figcaption>
           </figure>}
           <div className="work-tags">{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
         </div>
@@ -305,5 +304,5 @@ function Footer({ copy, locale }) {
 
 export default function ClippingSite({ copy, locale }) {
   const schema = { "@context": "https://schema.org", "@graph": [{ "@type": "Organization", "@id": "https://reklamatic.ai/#organization", name: "Reklamatic.ai", url: "https://reklamatic.ai", email: "info@reklamatic.ai", telephone: PHONE, areaServed: "TR", knowsLanguage: ["en", "tr"] }, { "@type": "WebSite", "@id": "https://reklamatic.ai/#website", name: "Reklamatic.ai", url: "https://reklamatic.ai", publisher: { "@id": "https://reklamatic.ai/#organization" }, inLanguage: ["en", "tr"] }, { "@type": "Service", name: locale === "tr" ? "Clipping ajansı ve clipper dağıtım hizmeti" : "Clipping agency and clipper distribution service", provider: { "@id": "https://reklamatic.ai/#organization" }, areaServed: "TR", serviceType: "Short-form production, active clipper network distribution and eligible-view campaign reporting" }, { "@type": "FAQPage", mainEntity: copy.faq.items.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) }] };
-  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} /><ProofGallery copy={copy.proof} /><GlobalWork copy={copy.work} /><ShowcaseRail copy={copy.proof} locale={locale} /><TurkiyeWork copy={copy.turkiye} /><Pathways copy={copy.pathways} /><ModelIntro copy={copy.model} /><CampaignExperience copy={copy.experience} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
+  return <div className="site" lang={locale} data-motion-root><MotionLayer /><a className="skip-link" href="#main-content">{copy.skip}</a><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} /><Header copy={copy} locale={locale} /><main id="main-content"><Hero copy={copy.hero} /><GlobalWork copy={copy.work} /><ShowcaseRail copy={copy.proof} locale={locale} /><TurkiyeWork copy={copy.turkiye} /><Pathways copy={copy.pathways} /><ModelIntro copy={copy.model} /><CampaignExperience copy={copy.experience} /><ProofGallery copy={copy.proof} /><Faq copy={copy.faq} /><Contact copy={copy.contact} locale={locale} /></main><Footer copy={copy.footer} locale={locale} /></div>;
 }
