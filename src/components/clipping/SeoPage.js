@@ -29,15 +29,53 @@ const pageVisualMap = {
   publisher: ["campaigns", "cases", "shorts"],
   technology: ["blog", "pricing", "tiktok"],
 };
-const pageVisualSrc = { artist: "/media/higgsfield/reklamatic-music-stage.webp", studio: "/media/higgsfield/reklamatic-istanbul-studio.webp", clipperdesk: "/media/higgsfield/reklamatic-clipper-desk.webp", podcast: "/media/higgsfield/reklamatic-clipper-workstation.webp", product: "/media/higgsfield/reklamatic-app-launch.webp", publisher: "/media/higgsfield/reklamatic-campaign-command-center.webp", technology: "/media/higgsfield/reklamatic-editorial-desk.webp" };
-function pageVisual(page) {
+const V = {
+  studio: "/media/higgsfield/reklamatic-istanbul-studio.webp",
+  desk: "/media/higgsfield/reklamatic-clipper-desk.webp",
+  stage: "/media/higgsfield/reklamatic-music-stage.webp",
+  editorial: "/media/higgsfield/reklamatic-editorial-desk.webp",
+  workstation: "/media/higgsfield/reklamatic-clipper-workstation.webp",
+  app: "/media/higgsfield/reklamatic-app-launch.webp",
+  command: "/media/higgsfield/reklamatic-campaign-command-center.webp",
+  product: "/media/higgsfield/reklamatic-product-campaign.webp",
+  release: "/media/higgsfield/reklamatic-music-release.webp",
+  grid: "/media/higgsfield/reklamatic-phone-grid.webp",
+  board: "/media/higgsfield/reklamatic-storyboard-wall.webp",
+  rooftop: "/media/higgsfield/reklamatic-rooftop-shoot.webp",
+};
+// slot başına farklı görsel: [stage, scene, editorial] — aynı sayfada tekrar yok
+const slotVisuals = {
+  brands: [V.app, V.grid, V.command],
+  clippers: [V.desk, V.workstation, V.grid],
+  campaigns: [V.command, V.rooftop, V.grid],
+  pricing: [V.editorial, V.command, V.studio],
+  cases: [V.product, V.rooftop, V.grid],
+  agency: [V.studio, V.board, V.release],
+  about: [V.board, V.studio, V.rooftop],
+  contact: [V.workstation, V.desk, V.studio],
+  faq: [V.desk, V.board, V.editorial],
+  blog: [V.editorial, V.board, V.editorial],
+  "what-is-clipping": [V.product, V.grid, V.release],
+  podcast: [V.workstation, V.release, V.board],
+  repurposing: [V.board, V.workstation, V.product],
+  tiktok: [V.grid, V.product, V.rooftop],
+  reels: [V.rooftop, V.app, V.grid],
+  shorts: [V.grid, V.command, V.rooftop],
+  strategy: [V.stage, V.board, V.release],
+  "choose-agency": [V.release, V.studio, V.stage],
+  "clipping-vs-ugc": [V.app, V.rooftop, V.product],
+};
+const SLOT_INDEX = { stage: 0, scene: 1, editorial: 2 };
+function pageVisual(page, slot = "editorial") {
   const group = Object.entries(pageVisualMap).find(([, keys]) => keys.includes(page.key))?.[0] || (page.type === "Article" ? "podcast" : "technology");
-  return { group, src: page.image || pageVisualSrc[group] };
+  const assigned = slotVisuals[page.key]?.[SLOT_INDEX[slot]];
+  if (slot === "editorial" && page.image) return { group, src: page.image };
+  return { group, src: assigned || page.image || V.editorial };
 }
 
 function VisualStage({ page, locale }) {
   const copy = page[locale];
-  const { src } = pageVisual(page);
+  const { src } = pageVisual(page, "stage");
   const labels = locale === "tr" ? ["İÇERİK ONAYI", "YAYINA HAZIR", "SONUÇ TAKİBİ"] : ["CONTENT APPROVAL", "READY TO PUBLISH", "RESULT TRACKING"];
   return <div className={styles.visualStage} role="img" aria-label={copy.headline} data-motion-tilt>
     <Image className={styles.stagePhoto} src={src} fill sizes="(max-width: 980px) 500px, 38vw" alt="" priority />
@@ -97,7 +135,7 @@ function PageExperience({ page, locale }) {
         <div className={styles.filmCaption}><small>{preset.kicker}</small><strong>{locale === "tr" ? "Kaynak → klip → gerçek hesap → uygun view" : "Source → clip → real account → eligible view"}</strong></div>
         <div className={styles.filmProgress}>{preset.flow.map((item, index) => <span key={item} style={{ "--flow-index": index }}><i />{item}</span>)}</div>
       </div> : <div className={styles.experienceScene} data-motion-item data-motion-tilt role="img" aria-label={preset.title}>
-        <Image className={styles.scenePhoto} src={pageVisual(page).src} fill sizes="(max-width: 980px) 650px, 46vw" alt="" />
+        <Image className={styles.scenePhoto} src={pageVisual(page, "scene").src} fill sizes="(max-width: 980px) 650px, 46vw" alt="" />
         <div className={styles.sceneShade2} />
         <div className={styles.sceneCaption}><small>{preset.kicker}</small></div>
         <div className={styles.sceneFlow}>{preset.flow.map((item, index) => <span key={item} style={{ "--flow-index": index }}>{item}</span>)}</div>
@@ -107,7 +145,7 @@ function PageExperience({ page, locale }) {
 }
 
 function EditorialMedia({ page, locale }) {
-  const { group, src } = pageVisual(page);
+  const { group, src } = pageVisual(page, "editorial");
   const labelMap = locale === "tr" ? { artist: "Müzik kampanyası", studio: "İstanbul içerik stüdyosu", clipperdesk: "Clipper çalışma alanı", podcast: "Podcast ve kurucu anlatısı", product: "Uygulama kampanyası", publisher: "Yayıncı kampanyası", technology: "Yönetilen clipper dağıtımı" } : { artist: "Music campaign", studio: "Istanbul content studio", clipperdesk: "Clipper workspace", podcast: "Podcast and founder narrative", product: "App campaign", publisher: "Publisher campaign", technology: "Managed clipper distribution" };
   const label = labelMap[group];
   const note = page.type === "Article" ? (locale === "tr" ? "Reklamatic editoryal görseli" : "Reklamatic editorial visual") : page.key === "cases" ? (locale === "tr" ? "Kaynak → içerik yönü → dağıtım → raporlama" : "Source → creative direction → distribution → reporting") : (locale === "tr" ? "Reklamatic kampanya görseli" : "Reklamatic campaign visual");

@@ -112,15 +112,26 @@ function TurkiyeWork({ copy }) {
   return <section className="turkiye" id="turkiye" data-motion-reveal><div className="container">
     <SectionTitle kicker={copy.kicker} title={copy.title} text={copy.text} />
     <div className="turkiye-grid">
-      {copy.cases.map((item) => <article className="turkiye-card" key={item.name} data-motion-item style={{ "--accent": item.accent }}>
-        <header>
-          <span className="turkiye-tag">{item.tag}</span>
-          <h3>{item.name}</h3>
-          <p className="turkiye-role">{item.role}</p>
-        </header>
-        <p>{item.text}</p>
-        {item.highlight && <div className="turkiye-highlight"><i aria-hidden="true">✦</i><span>{item.highlight}</span></div>}
-        <div className="work-tags">{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
+      {copy.cases.map((item) => <article className={item.video ? "turkiye-card has-media" : "turkiye-card"} key={item.name} data-motion-item style={{ "--accent": item.accent }}>
+        <div className="turkiye-body">
+          <header>
+            <span className="turkiye-tag">{item.tag}</span>
+            <h3>{item.name}</h3>
+            <p className="turkiye-role">{item.role}</p>
+          </header>
+          <p>{item.text}</p>
+          {item.highlight && <div className="turkiye-highlight"><i aria-hidden="true">✦</i><span>{item.highlight}</span></div>}
+          {item.comment && <figure className="turkiye-comment">
+            <div className="tc-head"><span className="tc-avatar" aria-hidden="true">♫</span><b>{item.comment.handle}</b><i className="tc-verified" aria-hidden="true">✓</i></div>
+            <blockquote>{item.comment.text}</blockquote>
+            <figcaption>{item.comment.meta}</figcaption>
+          </figure>}
+          <div className="work-tags">{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
+        </div>
+        {item.video && <div className="turkiye-media">
+          <ProdCard prod={{ name: `@${item.handle}`, role: `${item.views} ${copy.viewsLabel || "görüntülenme"}`, video: item.video, image: item.image }} />
+          <a className="turkiye-open" href={item.href} target="_blank" rel="noreferrer">{item.linkLabel} <b aria-hidden="true">↗</b></a>
+        </div>}
       </article>)}
     </div>
     {copy.productions && <div className="turkiye-prods-head" data-motion-item><h3>{copy.productionsTitle}</h3><p>{copy.productionsText}</p></div>}

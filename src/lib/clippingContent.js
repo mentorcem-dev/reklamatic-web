@@ -81,15 +81,15 @@ export const content = {
       note: "Logos belong to their respective trademark owners and indicate campaigns and collaborations Reklamatic has operated in their ecosystems.",
     },
     turkiye: {
-      kicker: "WORK IN TÜRKİYE", title: "A viral release built in our own studio: Kedi C5.",
+      kicker: "WORK IN TÜRKİYE", title: "A viral release built in our own studio: Kedi C5.", viewsLabel: "views",
       text: "Alongside global campaigns we build original formats of our own. Kedi C5 is a viral music character developed in our studio; it reached the radar of platforms and artists on its second day live.",
       cases: [
-        { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#6fc8ff", text: "The Kedi C5 video produced in our studio spread fast after release: on day two Spotify Türkiye commented on the post, the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account for the content appeared. The same production and distribution system runs music and entertainment campaigns for brands.", highlight: "Day 2: comment from Spotify Türkiye · reposts by Akdo and Lvbel C5", tags: ["Original character", "Artist reposts", "Platform engagement"] },
+        { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#6fc8ff", text: "On its second day live, Spotify Türkiye commented on the post; the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account appeared.", comment: { handle: "spotifyturkiye", text: "AI-çerisi şampiyonlar ligi ✨", meta: "December 22, 2025 · TikTok comment · 21 likes" }, video: "/media/reels/kedic5.mp4", image: "/media/reels/kedic5.webp", href: "https://www.tiktok.com/@kedi.c5/video/7585265795446361364", handle: "kedi.c5", views: "600K+", linkLabel: "Open on TikTok", tags: ["Original character", "Artist reposts", "Platform engagement"] },
       ],
       productionsTitle: "From our production desk",
       productionsText: "Two of the vertical clip formats we prepare for Turkish artist and publisher content. The phones play the clips themselves.",
       productions: [
-        { name: "maNga · Eurovision archive", role: "An archive clip we prepared from the 2010 stage", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
+        { name: "maNga · Symphonic live", role: "A lyric clip we prepared from the live symphonic stage", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
         { name: "Barış Özcan · 111 Hz", role: "A vertical cut carrying the episode's narrative", video: "/media/reels/prod-baris.mp4", image: "/media/reels/prod-baris.webp" },
       ],
       note: "The interactions are visible on public posts; the clips are promotional studio productions of ours, and platform and artist names belong to their owners.",
@@ -199,12 +199,12 @@ export const content = {
       kicker: "TÜRKİYE İŞLERİ", title: "Kendi stüdyomuzdan çıkan viral iş: Kedi C5.",
       text: "Küresel kampanyaların yanında kendi orijinal formatlarımızı da üretiyoruz. Kedi C5, stüdyomuzda geliştirilen viral müzik karakteri; yayına girdiği ikinci gün platformların ve sanatçıların radarına girdi.",
       cases: [
-        { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#6fc8ff", text: "Stüdyomuzda üretilen Kedi C5 videosu yayına girdikten sonra hızla yayıldı: ikinci gününde Spotify Türkiye gönderiye yorum yaptı, Akdo ve Lvbel C5 videoyu repostladı ve içerik için ayrı bir repost hesabı açıldı. Aynı üretim ve dağıtım sistemi, müzik ve eğlence kampanyalarında markalar için çalışıyor.", highlight: "2. gün: Spotify Türkiye yorumu · Akdo ve Lvbel C5 repostu", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
+        { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#6fc8ff", text: "Yayına girdiği ikinci gün Spotify Türkiye gönderiye yorum bıraktı; Akdo ve Lvbel C5 videoyu repostladı, içerik için ayrı bir repost hesabı açıldı.", comment: { handle: "spotifyturkiye", text: "AI-çerisi şampiyonlar ligi ✨", meta: "22 Aralık 2025 · TikTok yorumu · 21 beğeni" }, video: "/media/reels/kedic5.mp4", image: "/media/reels/kedic5.webp", href: "https://www.tiktok.com/@kedi.c5/video/7585265795446361364", handle: "kedi.c5", views: "600B+", linkLabel: "TikTok'ta aç", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
       ],
       productionsTitle: "Üretim masamızdan",
       productionsText: "Türk sanatçı ve yayıncı içerikleri için hazırladığımız dikey kesit formatlarından iki örnek. Telefonlar kesitlerin kendisini oynatıyor.",
       productions: [
-        { name: "maNga · Eurovision arşivi", role: "2010 sahnesinden hazırladığımız arşiv kesiti", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
+        { name: "maNga · Senfonik performans", role: "Canlı senfonik sahneden hazırladığımız lyric kesiti", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
         { name: "Barış Özcan · 111 Hz", role: "Bölüm anlatısını taşıyan dikey kesit kurgusu", video: "/media/reels/prod-baris.mp4", image: "/media/reels/prod-baris.webp" },
       ],
       note: "Etkileşimler herkese açık gönderilerde görülebilir; kesitler tanıtım amaçlı stüdyo üretimlerimizdir, adı geçen platform ve sanatçı isimleri sahiplerine aittir.",
