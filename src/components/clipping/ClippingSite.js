@@ -83,6 +83,26 @@ function CountUp({ value, suffix }) {
   return <b ref={ref}>{value.toLocaleString("tr-TR")}{suffix}</b>;
 }
 
+function ProdCard({ prod }) {
+  const videoRef = useRef(null);
+  useEffect(() => {
+    const node = videoRef.current;
+    if (!node) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) node.play().catch(() => {}); else node.pause(); });
+    }, { threshold: 0.35 });
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+  return <figure className="prod-card" data-motion-item>
+    <div className="prod-frame"><span className="phone-notch" aria-hidden="true" />
+      <video ref={videoRef} muted loop playsInline preload="metadata" poster={prod.image} aria-label={prod.name}><source src={prod.video} type="video/mp4" /></video>
+    </div>
+    <figcaption><strong>{prod.name}</strong><span>{prod.role}</span></figcaption>
+  </figure>;
+}
+
 function TurkiyeWork({ copy }) {
   if (!copy) return null;
   return <section className="turkiye" id="turkiye" data-motion-reveal><div className="container">
@@ -99,6 +119,8 @@ function TurkiyeWork({ copy }) {
         <div className="work-tags">{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
       </article>)}
     </div>
+    {copy.productions && <div className="turkiye-prods-head" data-motion-item><h3>{copy.productionsTitle}</h3><p>{copy.productionsText}</p></div>}
+    {copy.productions && <div className="turkiye-prods">{copy.productions.map((prod) => <ProdCard prod={prod} key={prod.name} />)}</div>}
     <p className="proof-note">{copy.note}</p>
   </div></section>;
 }

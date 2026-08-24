@@ -311,6 +311,19 @@ footer{padding:70px 0;background:var(--navy);color:#fff}
 .turkiye-card:only-child h3{font-size:clamp(30px,3.4vw,44px)}
 .turkiye-card:only-child p{font-size:16px;line-height:1.78}
 .turkiye-card:only-child .turkiye-highlight{font-size:14.5px;padding:15px 18px !important}
+.turkiye-prods-head{margin-top:74px;text-align:center}
+.turkiye-prods-head h3{font-size:clamp(24px,2.8vw,36px);letter-spacing:-.02em;color:#fff}
+.turkiye-prods-head p{margin:12px auto 0;max-width:560px;font-size:14.5px;line-height:1.7;color:rgba(214,232,250,.75)}
+.turkiye-prods{margin-top:38px;display:grid;grid-template-columns:repeat(2,minmax(0,286px));gap:34px;justify-content:center}
+.prod-card{margin:0}
+.prod-frame{position:relative;aspect-ratio:9/16;border-radius:38px;border:9px solid #101f31;background:#03070c;overflow:hidden;box-shadow:0 34px 80px rgba(0,0,0,.4);transition:transform .6s cubic-bezier(.32,.72,0,1)}
+.prod-card:hover .prod-frame{transform:translateY(-8px)}
+.prod-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.prod-frame .phone-notch{position:absolute;z-index:3;top:10px;left:50%;transform:translateX(-50%)}
+.prod-card figcaption{margin-top:16px;text-align:center}
+.prod-card figcaption strong{display:block;font-size:15px;color:#fff}
+.prod-card figcaption span{display:block;margin-top:5px;font-size:12px;line-height:1.55;color:rgba(214,232,250,.68)}
+@media (max-width:700px){.turkiye-prods{grid-template-columns:minmax(0,286px)}}
 .turkiye-card{position:relative;display:flex;flex-direction:column;gap:16px;padding:12px;border-radius:30px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);transition:transform .6s cubic-bezier(.32,.72,0,1),border-color .6s}
 .turkiye-card>*{padding-left:18px;padding-right:18px}
 .turkiye-card>header{padding-top:20px}

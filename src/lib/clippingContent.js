@@ -36,7 +36,7 @@ export const content = {
     hero: {
       kicker: "TÜRKİYE'S FIRST CLIPPING AGENCY",
       titleA: "Do not leave your content on one account.", titleB: "Distribute it through our clipper network.",
-      text: "Reklamatic is Türkiye's first clipping agency and an official Whop partner. We turn campaigns from brands, apps, artists, publishers, streamers and creators into short videos, coordinate approval and publish through suitable accounts in our active clipper network. Our publishing history exceeds 300 million platform views.",
+      text: "Reklamatic is Türkiye's first clipping agency and an official Whop partner. We turn campaigns from brands, apps, artists, publishers, streamers and creators into short videos, coordinate approval and publish through suitable accounts in our active clipper network.",
       primary: "Start getting clipped today", secondary: "Become a clipper", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
       status: "300M+ HISTORICAL VIEWS · OFFICIAL WHOP PARTNER · TR + EN",
       stats: [["300M+", "historical platform views"], ["84.4M", "single-Reel record"], ["WHOP", "official partner"]],
@@ -47,7 +47,7 @@ export const content = {
     proof: {
       kicker: "REAL DISTRIBUTION PROOF", title: "More than 300 million historical views across our publishing operation.",
       text: "The posts below are live on Reklamatic publishing accounts right now. Tap any phone to open the original Reel on Instagram and check the numbers yourself. When a guaranteed-view package is selected, its delivery target is written separately into the campaign agreement.",
-      metrics: [["300M+", "historical views across the publishing operation"], ["84.4M", "views on a single Reel, publicly visible"], ["20.5M", "views on a second record Reel"]],
+      metrics: [["84.4M", "views on a single Reel, publicly visible"], ["20.5M", "views on a second record Reel"], ["12.7M", "views on a third record Reel"]],
       showcaseKicker: "LIVE FROM OUR ACCOUNTS", showcaseTitle: "The phones below are playing our actual posts.",
       showcaseText: "Each frame loops footage from the Reel itself and links to the original post. Tap through to Instagram and verify every number in its real account context.",
       reels: [
@@ -68,15 +68,15 @@ export const content = {
     },
     work: {
       kicker: "GLOBAL CAMPAIGNS AND PARTNERS", title: "First in Türkiye. Active on global campaigns.",
-      text: "Reklamatic did not start clipping yesterday. Our clipper network has produced and distributed for global campaign ecosystems such as Cantina and Topps, and we create clipping content around product platforms such as Lovable. As an official Whop partner, campaign acceptance, eligible-view verification and clipper payouts can run transparently on Whop infrastructure.",
+      text: "Reklamatic did not start clipping yesterday. Our clipper network has produced and distributed for global campaign ecosystems such as Cantina and Topps, and we produce clipping content promoting web applications built with platforms such as Lovable. As an official Whop partner, campaign acceptance, eligible-view verification and clipper payouts can run transparently on Whop infrastructure.",
       partnerBadge: "OFFICIAL WHOP PARTNER",
       partnerText: "Whop is the marketplace infrastructure where modern clipping campaigns are funded, verified and paid. Reklamatic runs campaign submissions and clipper payouts through Whop as an official partner.",
       logosLabel: "The ecosystem we work in",
       projects: [
         { name: "Cantina", role: "Global campaign operations", text: "Ongoing short-video production and multi-account distribution for the Cantina social-AI ecosystem's Whop-funded clipping campaigns, with submissions verified per campaign rules.", logo: "/media/logos/cantina.png", logoAlt: "Cantina logo", image: "/media/cases/cantina.webp", tags: ["Whop campaign", "Social AI", "Short-form"] },
         { name: "Topps", role: "Trading-card content network", text: "A dedicated five-channel YouTube network built for the trading-card niche, publishing daily Topps-focused short videos and feeding campaign submissions through Whop.", logo: "/media/logos/topps.svg", logoAlt: "Topps logo", image: "/media/cases/topps.webp", tags: ["5 YouTube channels", "Daily publishing", "Collector niche"] },
-        { name: "Lovable", role: "Product clipping", text: "Clipping-style short videos produced around the Lovable app-building ecosystem: product demos, build stories and creator-angle cuts distributed through suitable accounts.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logo", image: "/media/cases/lovable.webp", tags: ["Product demos", "Creator angle", "App ecosystem"] },
-        { name: "Reklamatic Network", role: "Our own publishing network", text: "Our own publishing network across YouTube, Instagram, TikTok and Facebook proves the operation daily: more than 300 million historical platform views with automated production and scheduling, including single Reels above 84 million views.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["300M+ views", "Daily publishing", "24/7 automation"] },
+        { name: "Lovable", role: "Web app promotion clipping", text: "Clipping-style short videos promoting web applications built with Lovable: app walkthroughs, build stories and creator-angle cuts distributed through suitable accounts.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logo", image: "/media/cases/lovable.webp", tags: ["App walkthroughs", "Creator angle", "Web apps"] },
+        { name: "Reklamatic Network", role: "Our own publishing network", text: "Our own publishing network across YouTube, Instagram, TikTok and Facebook proves the operation daily: automated production and scheduling, with single Reels reaching tens of millions of views.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["Record Reels", "Daily publishing", "24/7 automation"] },
       ],
       note: "Logos belong to their respective trademark owners and indicate campaigns and collaborations Reklamatic has operated in their ecosystems.",
     },
@@ -86,7 +86,13 @@ export const content = {
       cases: [
         { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#ffd166", text: "The Kedi C5 video produced in our studio spread fast after release: on day two Spotify Türkiye commented on the post, the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account for the content appeared. The same production and distribution system runs music and entertainment campaigns for brands.", highlight: "Day 2: comment from Spotify Türkiye · reposts by Akdo and Lvbel C5", tags: ["Original character", "Artist reposts", "Platform engagement"] },
       ],
-      note: "The interactions are visible on public posts; platform and artist names belong to their owners.",
+      productionsTitle: "From our production desk",
+      productionsText: "Two of the vertical clip formats we prepare for Turkish artist and publisher content. The phones play the clips themselves.",
+      productions: [
+        { name: "maNga narratives", role: "A story clip built on the band's archive — edited in our studio", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
+        { name: "Barış Özcan · 111 Hz", role: "A vertical cut carrying the episode's narrative", video: "/media/reels/prod-baris.mp4", image: "/media/reels/prod-baris.webp" },
+      ],
+      note: "The interactions are visible on public posts; the clips are promotional studio productions of ours, and platform and artist names belong to their owners.",
     },
     pathways: {
       kicker: "CHOOSE YOUR PATH", title: "Advertise or earn as a clipper.",
@@ -145,7 +151,7 @@ export const content = {
     hero: {
       kicker: "TÜRKİYE'NİN İLK CLIPPING AJANSI",
       titleA: "İçeriğiniz tek hesapta kalmasın.", titleB: "Clipper ağımızla farklı hesaplarda yayınlansın.",
-      text: "Reklamatic, Türkiye'nin ilk clipping ajansı ve Whop'un resmi partneridir. Marka, uygulama, sanatçı, yayıncı, streamer ve influencer kampanyalarını kısa videolara dönüştürür; onayı yönetir ve aktif clipper ağındaki uygun hesaplarda yayınlatırız. Yayın operasyonumuzun geçmişi 300 milyonun üzerinde platform görüntülenmesi içerir.",
+      text: "Reklamatic, Türkiye'nin ilk clipping ajansı ve Whop'un resmi partneridir. Marka, uygulama, sanatçı, yayıncı, streamer ve influencer kampanyalarını kısa videolara dönüştürür; onayı yönetir ve aktif clipper ağındaki uygun hesaplarda yayınlatırız.",
       primary: "Hemen bugün cliplenmeye başla", secondary: "Clipper ol", primaryHref: "#brand-contact", secondaryHref: "#clipper-contact",
       status: "300 MN+ GEÇMİŞ GÖRÜNTÜLENME · WHOP RESMİ PARTNERİ · TR + EN",
       stats: [["300 Mn+", "geçmiş platform görüntülenmesi"], ["84,4 Mn", "tekil Reels rekoru"], ["WHOP", "resmi partner"]],
@@ -156,7 +162,7 @@ export const content = {
     proof: {
       kicker: "GERÇEK DAĞITIM KANITI", title: "Yayın operasyonumuzda 300 milyonun üzerinde geçmiş görüntülenme.",
       text: "Aşağıdaki gönderiler şu anda Reklamatic yayın hesaplarında canlı. Herhangi bir telefona dokunup orijinal Reels videosunu Instagram'da açın ve sayıları kendiniz kontrol edin. Görüntülenme garantili pakette teslim hedefi ayrıca kampanya sözleşmesine yazılır.",
-      metrics: [["300 Mn+", "yayın operasyonundaki geçmiş toplam görüntülenme"], ["84,4 Mn", "tek bir Reels videosunda herkese açık görüntülenme"], ["20,5 Mn", "ikinci rekor Reels videosundaki görüntülenme"]],
+      metrics: [["84,4 Mn", "tek bir Reels videosunda herkese açık görüntülenme"], ["20,5 Mn", "ikinci rekor Reels videosu"], ["12,7 Mn", "üçüncü rekor Reels videosu"]],
       showcaseKicker: "HESAPLARIMIZDAN CANLI", showcaseTitle: "Aşağıdaki telefonlar gerçek gönderilerimizi oynatıyor.",
       showcaseText: "Her çerçeve, ilgili Reels videosunun kendi görüntüsünü döngüde oynatır ve orijinal gönderiye bağlanır. Instagram'a geçip her sayıyı gerçek hesap bağlamında doğrulayabilirsiniz.",
       reels: [
@@ -177,15 +183,15 @@ export const content = {
     },
     work: {
       kicker: "GLOBAL İŞLER VE PARTNERLER", title: "Türkiye'de ilk. Global kampanyalarda aktif.",
-      text: "Reklamatic clipping'e dün başlamadı. Clipper ağımız Cantina ve Topps gibi global kampanya ekosistemleri için üretim ve dağıtım yürüttü; Lovable gibi ürün platformları çevresinde clipping içerikleri çalışıyoruz. Whop'un resmi partneri olarak kampanya kabulü, uygun view doğrulaması ve clipper ödemeleri Whop altyapısında şeffaf ilerleyebilir.",
+      text: "Reklamatic clipping'e dün başlamadı. Clipper ağımız Cantina ve Topps gibi global kampanya ekosistemleri için üretim ve dağıtım yürüttü; Lovable gibi platformlarla geliştirilen web uygulamalarının tanıtımı için clipping içerikleri üretiyoruz. Whop'un resmi partneri olarak kampanya kabulü, uygun view doğrulaması ve clipper ödemeleri Whop altyapısında şeffaf ilerleyebilir.",
       partnerBadge: "WHOP RESMİ PARTNERİ",
       partnerText: "Whop, modern clipping kampanyalarının fonlandığı, doğrulandığı ve ödendiği pazar yeri altyapısıdır. Reklamatic, resmi partner olarak kampanya gönderimlerini ve clipper ödemelerini Whop üzerinden yürütür.",
       logosLabel: "İçinde çalıştığımız ekosistem",
       projects: [
         { name: "Cantina", role: "Global kampanya operasyonu", text: "Cantina sosyal yapay zekâ ekosisteminin Whop fonlu clipping kampanyaları için sürekli kısa video üretimi ve çoklu hesap dağıtımı; gönderimler kampanya kurallarına göre doğrulanır.", logo: "/media/logos/cantina.png", logoAlt: "Cantina logosu", image: "/media/cases/cantina.webp", tags: ["Whop kampanyası", "Sosyal AI", "Kısa video"] },
         { name: "Topps", role: "Koleksiyon kartı içerik ağı", text: "Koleksiyon kartı nişi için kurulmuş beş kanallı özel YouTube ağı: günlük Topps odaklı kısa videolar ve Whop üzerinden ilerleyen kampanya gönderimleri.", logo: "/media/logos/topps.svg", logoAlt: "Topps logosu", image: "/media/cases/topps.webp", tags: ["5 YouTube kanalı", "Günlük yayın", "Koleksiyoner nişi"] },
-        { name: "Lovable", role: "Ürün clipping'i", text: "Lovable uygulama geliştirme ekosistemi çevresinde clipping tarzı kısa videolar: ürün demoları, geliştirme hikâyeleri ve üretici bakışlı kurgular uygun hesaplarda dağıtılır.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logosu", image: "/media/cases/lovable.webp", tags: ["Ürün demosu", "Üretici bakışı", "Uygulama ekosistemi"] },
-        { name: "Reklamatic Ağı", role: "Kendi yayın ağımız", text: "YouTube, Instagram, TikTok ve Facebook'taki kendi yayın ağımız operasyonu her gün kanıtlıyor: otomatik üretim ve planlamayla 300 milyondan fazla geçmiş platform görüntülenmesi; 84 milyonu aşan tekil Reels videoları dahil.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["300 Mn+ view", "Günlük yayın", "7/24 otomasyon"] },
+        { name: "Lovable", role: "Web uygulama tanıtımı clipping'i", text: "Lovable ile geliştirilen web uygulamalarının tanıtımına yönelik clipping tarzı kısa videolar: uygulama turları, geliştirme hikâyeleri ve üretici bakışlı kurgular uygun hesaplarda dağıtılır.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logosu", image: "/media/cases/lovable.webp", tags: ["Uygulama turu", "Üretici bakışı", "Web uygulamaları"] },
+        { name: "Reklamatic Ağı", role: "Kendi yayın ağımız", text: "YouTube, Instagram, TikTok ve Facebook'taki kendi yayın ağımız operasyonu her gün kanıtlıyor: otomatik üretim ve planlama, tekil videolarda on milyonlarca görüntülenmeye ulaşan yayınlar.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["Rekor Reels'ler", "Günlük yayın", "7/24 otomasyon"] },
       ],
       note: "Logolar ilgili marka sahiplerine aittir; Reklamatic'in bu ekosistemlerde yürüttüğü kampanya ve iş birliklerini belirtir.",
     },
@@ -195,7 +201,13 @@ export const content = {
       cases: [
         { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#ffd166", text: "Stüdyomuzda üretilen Kedi C5 videosu yayına girdikten sonra hızla yayıldı: ikinci gününde Spotify Türkiye gönderiye yorum yaptı, Akdo ve Lvbel C5 videoyu repostladı ve içerik için ayrı bir repost hesabı açıldı. Aynı üretim ve dağıtım sistemi, müzik ve eğlence kampanyalarında markalar için çalışıyor.", highlight: "2. gün: Spotify Türkiye yorumu · Akdo ve Lvbel C5 repostu", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
       ],
-      note: "Etkileşimler herkese açık gönderilerde görülebilir; adı geçen platform ve sanatçı isimleri sahiplerine aittir.",
+      productionsTitle: "Üretim masamızdan",
+      productionsText: "Türk sanatçı ve yayıncı içerikleri için hazırladığımız dikey kesit formatlarından iki örnek. Telefonlar kesitlerin kendisini oynatıyor.",
+      productions: [
+        { name: "maNga anlatıları", role: "Grup arşivinden hikâye kesiti — stüdyomuzda kurgulandı", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
+        { name: "Barış Özcan · 111 Hz", role: "Bölüm anlatısını taşıyan dikey kesit kurgusu", video: "/media/reels/prod-baris.mp4", image: "/media/reels/prod-baris.webp" },
+      ],
+      note: "Etkileşimler herkese açık gönderilerde görülebilir; kesitler tanıtım amaçlı stüdyo üretimlerimizdir, adı geçen platform ve sanatçı isimleri sahiplerine aittir.",
     },
     pathways: {
       kicker: "YOLUNU SEÇ", title: "Reklam ver veya clipper olarak kazan.",
