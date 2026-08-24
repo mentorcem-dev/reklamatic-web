@@ -50,9 +50,8 @@ function HeroVideo({ copy }) {
 }
 
 function Hero({ copy }) {
-  return <section className="hero" id="top"><div className="hero-grid" aria-hidden="true" /><div className="container hero-layout">
+  return <section className="hero" id="top"><div className="hero-visual" aria-hidden="true"><HeroVideo copy={copy} /></div><div className="hero-grid" aria-hidden="true" /><div className="container hero-layout">
     <div className="hero-copy"><p className="claim-badge" data-motion-hero><i aria-hidden="true" />{copy.kicker}</p><h1 data-motion-hero>{copy.titleA}<em>{copy.titleB}</em></h1><p className="hero-text" data-motion-hero>{copy.text}</p><div className="hero-buttons" data-motion-hero><a className="button button-primary" href={copy.primaryHref}>{copy.primary}<span>→</span></a><a className="button button-secondary" href={copy.secondaryHref}>{copy.secondary}<span>→</span></a></div>{copy.stats && <div className="hero-proof" data-motion-hero>{copy.stats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>}{copy.claimHref && <a className="claim-link" data-motion-hero href={copy.claimHref}>{copy.claimText} <b aria-hidden="true">→</b></a>}</div>
-    <div className="hero-visual" data-motion-hero data-parallax><HeroVideo copy={copy} /></div>
   </div></section>;
 }
 

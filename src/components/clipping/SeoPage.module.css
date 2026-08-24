@@ -2,3 +2,47 @@
 .article p+p{margin-top:13px}
 .contentReference .article p+p{margin-top:10px}
 .article>section>p:first-of-type::first-letter{color:var(--blue);font-weight:850}
+
+/* image-led stage + scene (replaces fake-UI panels) */
+.visualStage{min-height:480px}
+.stagePhoto{object-fit:cover;object-position:center;position:absolute;inset:0;opacity:.92}
+.stageShade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,16,30,.55) 0%,rgba(4,16,30,.12) 38%,rgba(4,16,30,.88) 100%)}
+.stageCaption{position:absolute;left:22px;right:22px;bottom:64px;z-index:3}
+.stageCaption small{display:block;color:#8fd0ff;font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.stageCaption strong{display:block;margin-top:9px;font-size:clamp(19px,2vw,26px);line-height:1.2;letter-spacing:-.02em;color:#fff;max-width:400px}
+.visualStage .visualFooter{position:absolute;left:22px;right:22px;bottom:20px}
+.visualStage .visualFooter i,.visualStage:before{--page-accent:#0878ff}
+.visualChrome{position:relative;z-index:3}
+.experienceScene{min-height:480px;padding:24px}
+.scenePhoto{object-fit:cover;object-position:center;position:absolute;inset:0;opacity:.9}
+.sceneShade2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,12,24,.42) 0%,rgba(3,12,24,.1) 40%,rgba(3,12,24,.9) 100%)}
+.sceneCaption{position:absolute;left:26px;right:26px;bottom:78px;z-index:3}
+.sceneCaption small{display:block;color:#8fd0ff;font-size:8px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.sceneCaption strong{display:block;margin-top:10px;font-size:clamp(21px,2.3vw,30px);line-height:1.18;letter-spacing:-.02em;color:#fff;max-width:480px}
+.experienceScene .sceneFlow{position:absolute;left:26px;right:26px;bottom:18px;margin-top:0}
+
+/* compact type scale for subpages */
+.hero h1{font-size:clamp(36px,5.2vw,60px);line-height:1.03;letter-spacing:-.04em;overflow-wrap:break-word;hyphens:auto}
+.heroCopy h1{font-size:clamp(34px,4.6vw,54px)}
+.lead{font-size:15px}
+.article h2{font-size:clamp(26px,3.4vw,40px);line-height:1.12}
+.faq h2,.related h2,.finalCta h2{font-size:clamp(27px,3.6vw,42px)}
+.sources h2{font-size:clamp(26px,3.4vw,38px)}
+.experienceCopy h2{font-size:clamp(30px,3.6vw,48px);line-height:1.05}
+.contentReference .article h2{font-size:clamp(21px,2.4vw,29px)}
+.highlightGrid h2{font-size:19px}
+.hero{padding:74px 0 84px}
+.heroService{padding:72px 0 84px}
+.content{padding:84px 0}
+.pageExperience{padding:84px 0}
+.related{padding:80px 0}
+.faq{padding:80px 0}
+.finalCta{padding:80px 0}
+.methodStrip{padding:64px 0 0}
+
+/* nav polish */
+.navLinks{gap:18px}
+.navLinks a{position:relative;min-height:44px;display:inline-flex;align-items:center;transition:color .18s ease}
+.navLinks a:hover{color:var(--blue)}
+.activeLink{color:var(--blue) !important}
+.activeLink:after{content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;border-radius:2px;background:var(--blue)}

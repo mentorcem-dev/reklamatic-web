@@ -18,34 +18,34 @@ function splitParas(text) {
   return paras;
 }
 
-const visualAccents = ["#0878ff", "#725cff", "#00a986", "#ff7a45", "#db3e76"];
 const scrollVideoPages = new Set(["campaigns"]);
+
+const pageVisualMap = {
+  artist: ["strategy", "choose-agency"],
+  studio: ["about", "agency"],
+  clipperdesk: ["clippers", "contact", "faq"],
+  podcast: ["podcast", "what-is-clipping", "repurposing"],
+  product: ["brands", "clipping-vs-ugc", "reels"],
+  publisher: ["campaigns", "cases", "shorts"],
+  technology: ["blog", "pricing", "tiktok"],
+};
+const pageVisualSrc = { artist: "/media/higgsfield/reklamatic-music-stage.webp", studio: "/media/higgsfield/reklamatic-istanbul-studio.webp", clipperdesk: "/media/higgsfield/reklamatic-clipper-desk.webp", podcast: "/media/higgsfield/reklamatic-clipper-workstation.webp", product: "/media/higgsfield/reklamatic-app-launch.webp", publisher: "/media/higgsfield/reklamatic-campaign-command-center.webp", technology: "/media/higgsfield/reklamatic-editorial-desk.webp" };
+function pageVisual(page) {
+  const group = Object.entries(pageVisualMap).find(([, keys]) => keys.includes(page.key))?.[0] || (page.type === "Article" ? "podcast" : "technology");
+  return { group, src: page.image || pageVisualSrc[group] };
+}
 
 function VisualStage({ page, locale }) {
   const copy = page[locale];
-  const accent = visualAccents[Math.abs(page.key.split("").reduce((total, character) => total + character.charCodeAt(0), 0)) % visualAccents.length];
-  const labels = locale === "tr"
-    ? { source: "MARKA KAMPANYASI", map: "CLIPPER EŞLEŞMESİ", cut: "İÇERİK ONAYI", ready: "YAYINA HAZIR", signal: "SONUÇ TAKİBİ", clips: ["Üret", "Onayla", "Paylaş"] }
-    : { source: "APPROVED SOURCE", map: "MOMENT MAP", cut: "EDITORIAL SELECT", ready: "PLATFORM READY", signal: "LEARNING SIGNAL", clips: ["Hook", "Context", "Pacing"] };
-
-  return <div className={styles.visualStage} style={{ "--page-accent": accent }} role="img" aria-label={copy.headline} data-motion-tilt>
-    {page.image && <Image className={styles.visualPhoto} src={page.image} fill sizes="(max-width: 980px) 500px, 38vw" alt="" priority />}
-    <div className={styles.visualShade} />
-    <div className={styles.visualChrome}><span /><span /><span /><b>REKLAMATIC / CLIP SYSTEM</b></div>
-    <div className={styles.sourcePanel}>
-      <small>{labels.source}</small>
-      <strong>{copy.kicker}</strong>
-      <div className={styles.timeline}><i /><i /><i /><i /><i /></div>
-      <span>16:42</span>
-    </div>
-    <div className={styles.flowArrow}><i /><span>{labels.map}</span></div>
-    <div className={styles.clipDeck}>
-      {labels.clips.map((label, index) => <div className={styles.clipCard} key={label}>
-        <small>0{index + 1}</small><span>{label}</span><i />
-      </div>)}
-    </div>
+  const { src } = pageVisual(page);
+  const labels = locale === "tr" ? ["İÇERİK ONAYI", "YAYINA HAZIR", "SONUÇ TAKİBİ"] : ["CONTENT APPROVAL", "READY TO PUBLISH", "RESULT TRACKING"];
+  return <div className={styles.visualStage} role="img" aria-label={copy.headline} data-motion-tilt>
+    <Image className={styles.stagePhoto} src={src} fill sizes="(max-width: 980px) 500px, 38vw" alt="" priority />
+    <div className={styles.stageShade} />
+    <div className={styles.visualChrome}><span /><span /><span /><b>REKLAMATIC</b></div>
+    <div className={styles.stageCaption}><small>{copy.kicker}</small></div>
     <div className={styles.visualFooter}>
-      <span><i />{labels.cut}</span><span><i />{labels.ready}</span><span><i />{labels.signal}</span>
+      {labels.map((label) => <span key={label}><i />{label}</span>)}
     </div>
   </div>;
 }
@@ -97,10 +97,9 @@ function PageExperience({ page, locale }) {
         <div className={styles.filmCaption}><small>{preset.kicker}</small><strong>{locale === "tr" ? "Kaynak → klip → gerçek hesap → uygun view" : "Source → clip → real account → eligible view"}</strong></div>
         <div className={styles.filmProgress}>{preset.flow.map((item, index) => <span key={item} style={{ "--flow-index": index }}><i />{item}</span>)}</div>
       </div> : <div className={styles.experienceScene} data-motion-item data-motion-tilt role="img" aria-label={preset.title}>
-        {page.image && <Image className={styles.experiencePhoto} src={page.image} fill sizes="(max-width: 980px) 650px, 46vw" alt="" />}
-        <div className={styles.sceneShade} />
-        <div className={styles.sceneGlow} /><div className={styles.sceneSource}><span>REKLAMATIC</span><b>R</b><small>{locale === "tr" ? "KAMPANYA" : "CAMPAIGN"}</small></div>
-        <div className={styles.scenePhones}>{["HOOK", "CONTEXT", "CTA"].map((label, index) => <div key={label}><i>0{index + 1}</i><b>▶</b><span>{label}</span></div>)}</div>
+        <Image className={styles.scenePhoto} src={pageVisual(page).src} fill sizes="(max-width: 980px) 650px, 46vw" alt="" />
+        <div className={styles.sceneShade2} />
+        <div className={styles.sceneCaption}><small>{preset.kicker}</small></div>
         <div className={styles.sceneFlow}>{preset.flow.map((item, index) => <span key={item} style={{ "--flow-index": index }}>{item}</span>)}</div>
       </div>}
     </div>
@@ -108,18 +107,7 @@ function PageExperience({ page, locale }) {
 }
 
 function EditorialMedia({ page, locale }) {
-  const mediaGroups = {
-    artist: ["strategy", "choose-agency"],
-    studio: ["about", "agency"],
-    clipperdesk: ["clippers", "contact", "faq"],
-    podcast: ["podcast", "what-is-clipping", "repurposing"],
-    product: ["brands", "clipping-vs-ugc", "reels"],
-    publisher: ["campaigns", "cases", "shorts"],
-    technology: ["blog", "pricing", "tiktok"],
-  };
-  const group = Object.entries(mediaGroups).find(([, keys]) => keys.includes(page.key))?.[0] || (page.type === "Article" ? "podcast" : "technology");
-  const srcMap = { artist: "/media/higgsfield/reklamatic-music-stage.webp", studio: "/media/higgsfield/reklamatic-istanbul-studio.webp", clipperdesk: "/media/higgsfield/reklamatic-clipper-desk.webp", podcast: "/media/higgsfield/reklamatic-clipper-workstation.webp", product: "/media/higgsfield/reklamatic-app-launch.webp", publisher: "/media/higgsfield/reklamatic-campaign-command-center.webp", technology: "/media/higgsfield/reklamatic-editorial-desk.webp" };
-  const src = page.image || srcMap[group];
+  const { group, src } = pageVisual(page);
   const labelMap = locale === "tr" ? { artist: "Müzik kampanyası", studio: "İstanbul içerik stüdyosu", clipperdesk: "Clipper çalışma alanı", podcast: "Podcast ve kurucu anlatısı", product: "Uygulama kampanyası", publisher: "Yayıncı kampanyası", technology: "Yönetilen clipper dağıtımı" } : { artist: "Music campaign", studio: "Istanbul content studio", clipperdesk: "Clipper workspace", podcast: "Podcast and founder narrative", product: "App campaign", publisher: "Publisher campaign", technology: "Managed clipper distribution" };
   const label = labelMap[group];
   const note = page.type === "Article" ? (locale === "tr" ? "Reklamatic editoryal görseli" : "Reklamatic editorial visual") : page.key === "cases" ? (locale === "tr" ? "Kaynak → içerik yönü → dağıtım → raporlama" : "Source → creative direction → distribution → reporting") : (locale === "tr" ? "Reklamatic kampanya görseli" : "Reklamatic campaign visual");
@@ -169,7 +157,21 @@ export default function SeoPage({ page, locale }) {
   return <div className={styles.page} data-motion-root>
     <MotionLayer />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema(page, locale)).replace(/</g, "\\u003c") }} />
-    <header className={styles.header}><nav aria-label={locale === "tr" ? "Ana navigasyon" : "Main navigation"}><Link href={home(locale)}><Logo /></Link><div className={styles.navLinks}><Link href={localPath(locale, seoPages.find((item) => item.key === "brands").paths[locale])}>{locale === "tr" ? "Markalar için" : "For brands"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "clippers").paths[locale])}>{locale === "tr" ? "Clipper ol" : "For clippers"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "campaigns").paths[locale])}>{locale === "tr" ? "Nasıl çalışır?" : "How it works"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "cases").paths[locale])}>{locale === "tr" ? "Kampanyalar" : "Campaigns"}</Link></div><details className={styles.mobileMenu}><summary aria-label={locale === "tr" ? "Menüyü aç" : "Open menu"}>☰</summary><div><Link href={localPath(locale, seoPages.find((item) => item.key === "brands").paths[locale])}>{locale === "tr" ? "Markalar için" : "For brands"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "clippers").paths[locale])}>{locale === "tr" ? "Clipper ol" : "For clippers"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "campaigns").paths[locale])}>{locale === "tr" ? "Nasıl çalışır?" : "How it works"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "cases").paths[locale])}>{locale === "tr" ? "Kampanyalar" : "Campaigns"}</Link><Link href={localPath(locale, seoPages.find((item) => item.key === "about").paths[locale])}>{locale === "tr" ? "Hakkımızda" : "About"}</Link></div></details><Link className={styles.lang} href={languageUrl} hrefLang={locale === "tr" ? "en" : "tr"}>{locale === "tr" ? "EN" : "TR"}</Link><Link className={styles.navCta} href={localPath(locale, contactPage.paths[locale])}>{locale === "tr" ? "Reklam ver" : "Contact"} ↗</Link></nav></header>
+    <header className={styles.header}><nav aria-label={locale === "tr" ? "Ana navigasyon" : "Main navigation"}><Link href={home(locale)}><Logo /></Link>{(() => {
+      const navItems = [
+        ["brands", locale === "tr" ? "Markalar için" : "For brands"],
+        ["clippers", locale === "tr" ? "Clipper ol" : "For clippers"],
+        ["campaigns", locale === "tr" ? "Nasıl çalışır?" : "How it works"],
+        ["pricing", locale === "tr" ? "Fiyatlandırma" : "Pricing"],
+        ["blog", "Blog"],
+      ];
+      const activeKey = page.type === "Article" ? "blog" : page.key;
+      const link = (key) => localPath(locale, seoPages.find((item) => item.key === key).paths[locale]);
+      return <>
+        <div className={styles.navLinks}>{navItems.map(([key, label]) => <Link key={key} href={link(key)} className={activeKey === key ? styles.activeLink : undefined} aria-current={activeKey === key ? "page" : undefined}>{label}</Link>)}</div>
+        <details className={styles.mobileMenu}><summary aria-label={locale === "tr" ? "Menüyü aç" : "Open menu"}>☰</summary><div>{navItems.map(([key, label]) => <Link key={key} href={link(key)}>{label}</Link>)}<Link href={link("about")}>{locale === "tr" ? "Hakkımızda" : "About"}</Link></div></details>
+      </>;
+    })()}<Link className={styles.lang} href={languageUrl} hrefLang={locale === "tr" ? "en" : "tr"}>{locale === "tr" ? "EN" : "TR"}</Link><Link className={styles.navCta} href={localPath(locale, contactPage.paths[locale])}>{locale === "tr" ? "Reklam ver" : "Contact"} →</Link></nav></header>
     <main>
       <section className={[styles.hero, serviceLayout ? styles.heroService : styles.heroSimple].join(" ")}><div className={styles.orb} /><div className={[styles.container, serviceLayout ? styles.heroGrid : styles.heroSolo].join(" ")}><div className={styles.heroCopy}><nav className={styles.breadcrumb} aria-label="Breadcrumb" data-motion-hero><Link href={home(locale)}>{locale === "tr" ? "Ana sayfa" : "Home"}</Link><span>/</span><span>{copy.kicker}</span></nav><p className={styles.kicker} data-motion-hero>{copy.kicker}</p><h1 data-motion-hero>{copy.headline}</h1><p className={styles.lead} data-motion-hero>{copy.lead}</p>{articleLayout && <div className={styles.articleMeta} data-motion-hero><span>{page.author ? `${page.author.name} · ${page.author.title[locale]}` : "Reklamatic Editorial"}</span><time dateTime={page.updated || page.published || "2026-07-28"}>{locale === "tr" ? "Güncelleme" : "Updated"}: {page.updated || page.published || "2026-07-28"}</time><span>{page.readTime?.[locale] || (locale === "tr" ? "4 dk okuma" : "4 min read")}</span></div>}{!articleLayout && <div className={styles.actions} data-motion-hero><Link className={styles.primary} href={ctaUrl}>{copy.cta} <span>↗</span></Link>{!referenceLayout && <Link className={styles.secondary} href={localPath(locale, seoPages.find((item) => item.key === "faq").paths[locale])}>{locale === "tr" ? "Soruları incele" : "Review common questions"}</Link>}</div>}</div>{serviceLayout && <VisualStage page={page} locale={locale} />}</div></section>
       <PageExperience page={page} locale={locale} />

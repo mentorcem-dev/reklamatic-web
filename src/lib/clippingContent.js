@@ -89,7 +89,7 @@ export const content = {
       productionsTitle: "From our production desk",
       productionsText: "Two of the vertical clip formats we prepare for Turkish artist and publisher content. The phones play the clips themselves.",
       productions: [
-        { name: "maNga narratives", role: "A story clip built on the band's archive — edited in our studio", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
+        { name: "maNga · Eurovision archive", role: "An archive clip we prepared from the 2010 stage", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
         { name: "Barış Özcan · 111 Hz", role: "A vertical cut carrying the episode's narrative", video: "/media/reels/prod-baris.mp4", image: "/media/reels/prod-baris.webp" },
       ],
       note: "The interactions are visible on public posts; the clips are promotional studio productions of ours, and platform and artist names belong to their owners.",
@@ -204,7 +204,7 @@ export const content = {
       productionsTitle: "Üretim masamızdan",
       productionsText: "Türk sanatçı ve yayıncı içerikleri için hazırladığımız dikey kesit formatlarından iki örnek. Telefonlar kesitlerin kendisini oynatıyor.",
       productions: [
-        { name: "maNga anlatıları", role: "Grup arşivinden hikâye kesiti — stüdyomuzda kurgulandı", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
+        { name: "maNga · Eurovision arşivi", role: "2010 sahnesinden hazırladığımız arşiv kesiti", video: "/media/reels/prod-manga.mp4", image: "/media/reels/prod-manga.webp" },
         { name: "Barış Özcan · 111 Hz", role: "Bölüm anlatısını taşıyan dikey kesit kurgusu", video: "/media/reels/prod-baris.mp4", image: "/media/reels/prod-baris.webp" },
       ],
       note: "Etkileşimler herkese açık gönderilerde görülebilir; kesitler tanıtım amaçlı stüdyo üretimlerimizdir, adı geçen platform ve sanatçı isimleri sahiplerine aittir.",
