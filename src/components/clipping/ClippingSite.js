@@ -135,6 +135,7 @@ function TurkiyeWork({ copy }) {
     </div>
     {copy.productions && <div className="turkiye-prods-head" data-motion-item><h3>{copy.productionsTitle}</h3><p>{copy.productionsText}</p></div>}
     {copy.productions && <div className="turkiye-prods">{copy.productions.map((prod) => <ProdCard prod={prod} key={prod.name} />)}</div>}
+    {copy.formats && <div className="turkiye-formats" data-motion-item><span>{copy.formatsTitle}</span><div>{copy.formats.map((format) => <em key={format}>{format}</em>)}</div></div>}
     <p className="proof-note">{copy.note}</p>
   </div></section>;
 }

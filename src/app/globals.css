@@ -428,3 +428,11 @@ html,body{overflow-x:clip}
   .phone-handle{font-size:10px}
   .phone-open{font-size:10.5px}
 }
+
+/* ürettiğimiz kesit türleri */
+.turkiye-formats{margin-top:56px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);text-align:center}
+.turkiye-formats>span{display:block;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+.turkiye-formats>div{margin-top:18px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.turkiye-formats em{font-style:normal;padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#dcebf9;font-size:13px;font-weight:650;transition:border-color .3s,background-color .3s,transform .3s cubic-bezier(.32,.72,0,1)}
+.turkiye-formats em:hover{border-color:rgba(111,200,255,.55);background:rgba(111,200,255,.08);transform:translateY(-2px)}
+@media (max-width:640px){.turkiye-formats em{font-size:12px;padding:8px 14px}}

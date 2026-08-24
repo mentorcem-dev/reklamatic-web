@@ -74,15 +74,17 @@ export const content = {
       logosLabel: "The ecosystem we work in",
       projects: [
         { name: "Cantina", role: "Global campaign operations", text: "Ongoing short-video production and multi-account distribution for the Cantina social-AI ecosystem's Whop-funded clipping campaigns, with submissions verified per campaign rules.", logo: "/media/logos/cantina.png", logoAlt: "Cantina logo", image: "/media/cases/cantina.webp", tags: ["Whop campaign", "Social AI", "Short-form"] },
-        { name: "Topps", role: "Trading-card content network", text: "A dedicated five-channel YouTube network built for the trading-card niche, publishing daily Topps-focused short videos and feeding campaign submissions through Whop.", logo: "/media/logos/topps.svg", logoAlt: "Topps logo", image: "/media/cases/topps.webp", tags: ["5 YouTube channels", "Daily publishing", "Collector niche"] },
+        { name: "Topps", role: "Trading-card content network", text: "A dedicated YouTube network built for the trading-card niche, publishing daily Topps-focused short videos and feeding campaign submissions through Whop.", logo: "/media/logos/topps.svg", logoAlt: "Topps logo", image: "/media/cases/topps.webp", tags: ["Dedicated YouTube network", "Daily publishing", "Collector niche"] },
         { name: "Lovable", role: "Web app promotion clipping", text: "Clipping-style short videos promoting web applications built with Lovable: app walkthroughs, build stories and creator-angle cuts distributed through suitable accounts.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logo", image: "/media/cases/lovable.webp", tags: ["App walkthroughs", "Creator angle", "Web apps"] },
         { name: "Reklamatic Network", role: "Our own publishing network", text: "Our own publishing network across YouTube, Instagram, TikTok and Facebook proves the operation daily: automated production and scheduling, with single Reels reaching tens of millions of views.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["Record Reels", "Daily publishing", "24/7 automation"] },
       ],
       note: "Logos belong to their respective trademark owners and indicate campaigns and collaborations Reklamatic has operated in their ecosystems.",
     },
     turkiye: {
-      kicker: "WORK IN TÜRKİYE", title: "A viral release built in our own studio: Kedi C5.", viewsLabel: "views",
-      text: "Alongside global campaigns we build original formats of our own. Kedi C5 is a viral music character developed in our studio; it reached the radar of platforms and artists on its second day live.",
+      kicker: "WORK IN TÜRKİYE", title: "One of the viral formats built in our studio: Kedi C5.", viewsLabel: "views",
+      text: "Alongside global campaigns we build original viral formats of our own; Kedi C5 is just one of them. It reached the radar of platforms and artists on its second day live.",
+      formatsTitle: "Clip types we produce",
+      formats: ["TV series clips", "Film scenes", "Concerts & festivals", "Video podcasts", "Streamer & gaming", "Sports moments", "Viral AI characters", "Brand & UGC"],
       cases: [
         { name: "Kedi C5", tag: "VIRAL FORMAT", role: "An original viral music character built in-house", accent: "#6fc8ff", text: "On its second day live, Spotify Türkiye commented on the post; the artists Akdo and Lvbel C5 reposted the video, and a dedicated repost account appeared.", comment: { handle: "spotifyturkiye", text: "AI-çerisi şampiyonlar ligi ✨", meta: "Spotify Türkiye's actual comment on the post · December 22, 2025 · TikTok" }, commentImage: "/media/reels/kedic5-spotify-ss.webp", commentAlt: "Spotify Türkiye's comment on the Kedi C5 TikTok video: AI-çerisi şampiyonlar ligi", video: "/media/reels/kedic5.mp4", image: "/media/reels/kedic5.webp", href: "https://www.tiktok.com/@kedi.c5/video/7585265795446361364", handle: "kedi.c5", views: "600K+", linkLabel: "Open on TikTok", tags: ["Original character", "Artist reposts", "Platform engagement"] },
       ],
@@ -189,15 +191,17 @@ export const content = {
       logosLabel: "İçinde çalıştığımız ekosistem",
       projects: [
         { name: "Cantina", role: "Global kampanya operasyonu", text: "Cantina sosyal yapay zekâ ekosisteminin Whop fonlu clipping kampanyaları için sürekli kısa video üretimi ve çoklu hesap dağıtımı; gönderimler kampanya kurallarına göre doğrulanır.", logo: "/media/logos/cantina.png", logoAlt: "Cantina logosu", image: "/media/cases/cantina.webp", tags: ["Whop kampanyası", "Sosyal AI", "Kısa video"] },
-        { name: "Topps", role: "Koleksiyon kartı içerik ağı", text: "Koleksiyon kartı nişi için kurulmuş beş kanallı özel YouTube ağı: günlük Topps odaklı kısa videolar ve Whop üzerinden ilerleyen kampanya gönderimleri.", logo: "/media/logos/topps.svg", logoAlt: "Topps logosu", image: "/media/cases/topps.webp", tags: ["5 YouTube kanalı", "Günlük yayın", "Koleksiyoner nişi"] },
+        { name: "Topps", role: "Koleksiyon kartı içerik ağı", text: "Koleksiyon kartı nişi için kurulmuş özel YouTube yayın ağı: günlük Topps odaklı kısa videolar ve Whop üzerinden ilerleyen kampanya gönderimleri.", logo: "/media/logos/topps.svg", logoAlt: "Topps logosu", image: "/media/cases/topps.webp", tags: ["Özel YouTube ağı", "Günlük yayın", "Koleksiyoner nişi"] },
         { name: "Lovable", role: "Web uygulama tanıtımı clipping'i", text: "Lovable ile geliştirilen web uygulamalarının tanıtımına yönelik clipping tarzı kısa videolar: uygulama turları, geliştirme hikâyeleri ve üretici bakışlı kurgular uygun hesaplarda dağıtılır.", logo: "/media/logos/lovable.png", logoAlt: "Lovable logosu", image: "/media/cases/lovable.webp", tags: ["Uygulama turu", "Üretici bakışı", "Web uygulamaları"] },
         { name: "Reklamatic Ağı", role: "Kendi yayın ağımız", text: "YouTube, Instagram, TikTok ve Facebook'taki kendi yayın ağımız operasyonu her gün kanıtlıyor: otomatik üretim ve planlama, tekil videolarda on milyonlarca görüntülenmeye ulaşan yayınlar.", logo: null, logoAlt: "", image: "/media/reels/reel-84m.webp", tags: ["Rekor Reels'ler", "Günlük yayın", "7/24 otomasyon"] },
       ],
       note: "Logolar ilgili marka sahiplerine aittir; Reklamatic'in bu ekosistemlerde yürüttüğü kampanya ve iş birliklerini belirtir.",
     },
     turkiye: {
-      kicker: "TÜRKİYE İŞLERİ", title: "Kendi stüdyomuzdan çıkan viral iş: Kedi C5.",
-      text: "Küresel kampanyaların yanında kendi orijinal formatlarımızı da üretiyoruz. Kedi C5, stüdyomuzda geliştirilen viral müzik karakteri; yayına girdiği ikinci gün platformların ve sanatçıların radarına girdi.",
+      kicker: "TÜRKİYE İŞLERİ", title: "Stüdyomuzdan çıkan viral formatlardan biri: Kedi C5.",
+      text: "Küresel kampanyaların yanında kendi orijinal viral formatlarımızı da üretiyoruz; Kedi C5 bunlardan yalnızca biri. Yayına girdiği ikinci gün platformların ve sanatçıların radarına girdi.",
+      formatsTitle: "Ürettiğimiz kesit türleri",
+      formats: ["Dizi kesitleri", "Film sahneleri", "Konser ve festival", "Video podcast", "Streamer ve oyun", "Spor anları", "Viral AI karakterleri", "Marka ve UGC"],
       cases: [
         { name: "Kedi C5", tag: "VİRAL FORMAT", role: "Stüdyomuzda geliştirilen orijinal viral müzik karakteri", accent: "#6fc8ff", text: "Yayına girdiği ikinci gün Spotify Türkiye gönderiye yorum bıraktı; Akdo ve Lvbel C5 videoyu repostladı, içerik için ayrı bir repost hesabı açıldı.", comment: { handle: "spotifyturkiye", text: "AI-çerisi şampiyonlar ligi ✨", meta: "Spotify Türkiye'nin gönderideki gerçek yorumu · 22 Aralık 2025 · TikTok" }, commentImage: "/media/reels/kedic5-spotify-ss.webp", commentAlt: "Spotify Türkiye'nin Kedi C5 TikTok videosuna bıraktığı yorum: AI-çerisi şampiyonlar ligi", video: "/media/reels/kedic5.mp4", image: "/media/reels/kedic5.webp", href: "https://www.tiktok.com/@kedi.c5/video/7585265795446361364", handle: "kedi.c5", views: "600B+", linkLabel: "TikTok'ta aç", tags: ["Orijinal karakter", "Sanatçı repostları", "Platform etkileşimi"] },
       ],
