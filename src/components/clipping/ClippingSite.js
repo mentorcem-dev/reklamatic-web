@@ -122,7 +122,7 @@ function TurkiyeWork({ copy }) {
           <p>{item.text}</p>
           {item.highlight && <div className="turkiye-highlight"><i aria-hidden="true">✦</i><span>{item.highlight}</span></div>}
           {item.commentImage && <figure className="turkiye-shot">
-            <Image src={item.commentImage} alt={item.commentAlt} width={900} height={936} sizes="(max-width: 820px) 92vw, 560px" />
+            <Image src={item.commentImage} alt={item.commentAlt} width={866} height={900} sizes="(max-width: 820px) 92vw, 560px" loading="eager" />
             <figcaption>{item.comment?.meta}</figcaption>
           </figure>}
           <div className="work-tags">{item.tags.map((tag) => <em key={tag}>{tag}</em>)}</div>
