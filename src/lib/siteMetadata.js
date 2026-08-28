@@ -20,8 +20,6 @@ export const sharedMetadata = {
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "any" }, { url: "/logo-r.png", type: "image/png" }],
-    shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 };
