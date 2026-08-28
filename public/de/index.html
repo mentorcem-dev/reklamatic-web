@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reklamatic.ai — Digital Exchange Çalışma Teklifi</title>
+<link rel="icon" href="medya/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --zem:#f6f9ff; --hair:rgba(15,35,90,.10);
+  --ink:#0d1b3e; --mut:#5a6a8c; --mavi:#1678ff; --mavik:#0b5ed7; --acik:#e8f1ff;
+  --ez:cubic-bezier(.32,.72,0,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  overflow-x:hidden;line-height:1.7;font-size:15.5px}
+.icerik{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 28px}
+section{padding:64px 0;border-bottom:1px solid rgba(15,35,90,.06)}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink)}
+.no{font-size:11px;letter-spacing:.2em;color:var(--mavik);font-weight:700;text-transform:uppercase;
+  margin-bottom:10px;display:block}
+h2.baslik{font-size:clamp(23px,3.4vw,32px);letter-spacing:-.01em;line-height:1.2;margin-bottom:18px}
+p{color:#33415f;max-width:820px;margin-bottom:14px}
+p b, li b{color:var(--ink)}
+.kabuk{background:var(--zem);border:1px solid var(--hair);border-radius:1.3rem;padding:7px;
+  box-shadow:0 20px 50px -34px rgba(13,27,62,.16);margin:22px 0}
+.cekirdek{background:#fff;border:1px solid rgba(15,35,90,.06);border-radius:calc(1.3rem - 7px);padding:26px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:768px){.g2,.g4{grid-template-columns:1fr}.cekirdek{padding:20px}section{padding:44px 0}}
+.stat .n{font-size:30px;font-weight:700;color:var(--mavi);font-family:'Space Grotesk'}
+.stat .l{font-size:12.5px;color:var(--mut);margin-top:4px}
+video{width:100%;display:block;border-radius:.9rem;background:#0d1b3e}
+.vid-k{position:relative}
+.vid-k .rozet{position:absolute;top:10px;left:10px;z-index:2;background:rgba(255,255,255,.94);
+  border:1px solid var(--hair);border-radius:999px;padding:4px 11px;font-size:10.5px;
+  font-weight:700;color:var(--mavik)}
+.ig-kart .profil{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+.ig-kart .profil img{width:58px;height:58px;border-radius:50%;border:2px solid var(--mavi)}
+.ig-kart .kim b{font-family:'Space Grotesk';font-size:18px}
+.ig-kart .kim span{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ig-grid .h{position:relative;border-radius:9px;overflow:hidden;aspect-ratio:9/14}
+.ig-grid img{width:100%;height:100%;object-fit:cover;display:block}
+.ig-grid .izl{position:absolute;left:7px;bottom:7px;background:rgba(13,27,62,.85);border-radius:999px;
+  padding:3px 9px;font-size:11px;font-weight:700;color:#fff}
+.ig-grid .pin{position:absolute;top:7px;right:7px;background:var(--mavi);color:#fff;
+  border-radius:999px;padding:2px 8px;font-size:9.5px;font-weight:700}
+ol.duz, ul.duz{margin:0 0 14px 20px;color:#33415f}
+ol.duz li, ul.duz li{margin-bottom:10px;max-width:800px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{color:var(--mut);font-weight:700;text-align:left;padding:11px 10px;font-size:11px;
+  letter-spacing:.07em;text-transform:uppercase;border-bottom:2px solid var(--acik)}
+td{padding:12px 10px;border-bottom:1px solid rgba(15,35,90,.07);color:#33415f}
+td:first-child{color:var(--ink);font-weight:600}
+td,th{white-space:nowrap}
+.tablo-sar{overflow-x:auto}
+.link{color:var(--mavik);text-decoration:none;border-bottom:1px dashed rgba(22,120,255,.45);font-weight:600}
+.notk{background:var(--acik);border:1px solid rgba(22,120,255,.22);border-radius:.9rem;
+  padding:14px 18px;font-size:14px;color:#1d3461;margin:14px 0;max-width:820px}
+footer{padding:48px 0 80px}
+.baslik-bar{padding:110px 0 56px;border-bottom:1px solid rgba(15,35,90,.06)}
+.baslik-bar .marka{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+.baslik-bar .marka img{width:30px;height:34px}
+.baslik-bar .marka b{font-family:'Space Grotesk';font-size:17px}
+h1.ana{font-size:clamp(26px,4.4vw,40px);letter-spacing:-.015em;line-height:1.18;max-width:840px}
+.mini{color:var(--mut);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="icerik">
+
+<!-- BASLIK -->
+<div class="baslik-bar">
+  <div class="marka"><img src="medya/logo.png" alt="R"><b>reklamatic.ai</b></div>
+  <span class="no">Çalışma Teklifi · Digital Exchange · Ağustos 2026</span>
+  <h1 class="ana">Kısa video dağıtımı ve clipping kampanyası operasyonu</h1>
+  <p style="margin-top:16px">Bu doküman, Digital Exchange'in elindeki ve üreteceği UGC videoların sosyal medya
+  algoritmalarında izlenmeye dönüştürülmesi için Reklamatic.ai'nin sunduğu iki çalışma modelini, fiyatlarını,
+  süreçlerini ve mevcut işlerimizden doğrulanabilir örnekleri içerir. Görüşmemizdeki konuların tamamı
+  yazılı olarak buradadır.</p>
+  <p class="mini">Hazırlayan: Cem Gülçağ, Kurucu — Reklamatic.ai · +90 530 231 29 47 · info@reklamatic.ai</p>
+</div>
+
+<!-- 1 REKLAMATIC HAKKINDA -->
+<section>
+  <span class="no">01 · Reklamatic.ai hakkında</span>
+  <h2 class="baslik">Kim olduğumuz ve ne yaptığımız</h2>
+  <p>Reklamatic.ai, kısa video (Reels / TikTok / Shorts) üretimini ve dağıtımını uçtan uca otomatikleştirmiş
+  bir clipping ajansıdır. İşimizin özü şudur: bir kaynak içeriği alırız, ondan izlenme potansiyeli yüksek
+  kesitler ve varyantlar üretiriz, bunları yönettiğimiz hesap ağında planlı şekilde yayınlarız ve her yayının
+  sonucunu canlı bağlantısıyla raporlarız.</p>
+  <p>Bu hattı önce kendi kampanyalarımız için kurduk ve bugün üç uluslararası kampanyada aktif olarak
+  çalıştırıyoruz:</p>
+  <ul class="duz">
+    <li><b>Lovable (yazılım, ABD/global):</b> kampanya kuralları gereği içerik başına ödeme 1.000 izlenme
+    başına 1 $, video başına üst limit 1.000 $; içeriklerimiz YouTube, Instagram ve TikTok'ta yayınlanıyor.</li>
+    <li><b>Cantina (AI sosyal platform, ABD):</b> AI karakterli UGC videoları — 15 Instagram hesabından her
+    gece otomatik üretim ve yayın.</li>
+    <li><b>Topps (koleksiyon kartı, ABD):</b> ABD kitlesine yönelik 5 YouTube Shorts kanalı; ABD saatine ve
+    diline göre yayın.</li>
+  </ul>
+  <p>Kendi ağımızda <b>70'ten fazla hesap</b> yönetiyoruz ve bugüne kadar toplamda <b>200 milyonun üzerinde
+  görüntülenme</b> ürettik. Aşağıdaki hesap, tek örnek olarak yeterlidir: sıfırdan açıldı, tek kuruş reklam
+  harcanmadı, tüm içerikleri otomasyon hattımız üretti.</p>
+  <div class="kabuk"><div class="cekirdek ig-kart">
+    <div class="profil">
+      <img src="medya/ig_profil.jpg" alt="bestdiyvide0s">
+      <div class="kim"><b>instagram.com/bestdiyvide0s</b>
+        <span>284 gönderi · <b style="color:var(--ink)">71,3&nbsp;B takipçi</b> · hesap açıktır, kontrol edilebilir</span></div>
+    </div>
+    <div class="ig-grid">
+      <div class="h"><img src="medya/ig_grid_1.jpg" alt=""><span class="pin">SABİT</span><span class="izl">▶ 3,1&nbsp;Mn</span></div>
+      <div class="h"><img src="medya/ig_grid_2.jpg" alt=""><span class="pin">SABİT</span><span class="izl">▶ 84,4&nbsp;Mn</span></div>
+      <div class="h"><img src="medya/ig_grid_3.jpg" alt=""><span class="pin">SABİT</span><span class="izl">▶ 12,7&nbsp;Mn</span></div>
+      <div class="h"><img src="medya/ig_grid_4.jpg" alt=""></div>
+      <div class="h"><img src="medya/ig_grid_5.jpg" alt=""></div>
+      <div class="h"><img src="medya/ig_grid_6.jpg" alt=""></div>
+    </div>
+    <p class="mini" style="margin-top:12px">Sabitlenmiş üç videonun toplam izlenmesi 100 milyonun üzerindedir;
+    tek videoda 84,4 milyon izlenmeye ulaşılmıştır. Tamamı organik dağıtımdır.</p>
+  </div></div>
+  <div class="grid g4">
+    <div class="kabuk" style="margin:0"><div class="cekirdek stat"><div class="n">200 Mn+</div><div class="l">toplam görüntülenme</div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek stat"><div class="n">70+</div><div class="l">aktif yönetilen hesap</div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek stat"><div class="n">3</div><div class="l">aktif uluslararası kampanya</div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek stat"><div class="n">7/24</div><div class="l">otomatik üretim ve yayın</div></div></div>
+  </div>
+</section>
+
+<!-- 2 CLIPPING NEDIR -->
+<section>
+  <span class="no">02 · Modelin tanımı</span>
+  <h2 class="baslik">Clipping kampanyası nedir, para nasıl akar?</h2>
+  <p>Bu modeli hiç duymamış biri için baştan anlatalım. Dünyada markalar, içeriklerini yaymak için son iki
+  yılda şu sistemi kullanıyor (en bilinen örneği Whop platformundaki "content rewards" kampanyalarıdır):</p>
+  <ol class="duz">
+    <li><b>Marka bir kampanya açar.</b> Kampanyada şunlar yazar: tanıtılacak ürün/içerik, kaynak videolar,
+    uyulacak kurallar (açıklamaya yazılacak metin, kullanılacak etiket, konulacak bağlantı), toplam bütçe ve
+    <b>1.000 izlenme başına ödenecek tutar</b>. Örnek: "Bütçe 20.000 $, 1.000 izlenme = 1 $, video başına en
+    fazla 1.000 $ ödenir."</li>
+    <li><b>İçerik üreticiler ("clipper"lar) kampanyaya katılır.</b> Kaynak videolardan kendi kliplerini
+    hazırlar ve <b>kendi sosyal medya hesaplarında</b> yayınlarlar.</li>
+    <li><b>İzlenmeler doğrulanır, ödeme izlenmeye göre yapılır.</b> Her üretici, videolarının ürettiği
+    doğrulanmış izlenme kadar kampanya bütçesinden pay alır. 500.000 izlenme üreten 500 $ alır; 3.000 izlenmede
+    kalan 3 $ alır. <b>Tutmayan içerik markaya maliyet yazmaz.</b></li>
+    <li><b>Bütçe bitince kampanya durur.</b> Marka, bütçesinin tamamının gerçekleşmiş izlenmeye gittiğini
+    raporda görür.</li>
+  </ol>
+  <p>Sistemin markaya sağladığı şey nettir: <b>reklam panelinde tahmini gösterim satın alırsınız; burada
+  gerçekleşmiş izlenme satın alırsınız.</b> Üreticinin kazancı izlenmeye bağlı olduğu için sistemdeki herkes
+  tutan içeriği bulmaya mecburdur — motivasyon markayla aynı yöndedir.</p>
+  <p><b>Reklamatic.ai bu sistemin neresinde?</b> Biz bu kampanyalarda içerik üreten ve izlenme kazanan
+  taraftayız — yukarıda saydığımız Lovable, Cantina ve Topps kampanyalarında halen her gece içerik üretip
+  yayınlıyoruz. Yani modeli dışarıdan anlatan değil, içinde para kazanan bir ekibiz. Size teklifimiz, bu
+  işleyişi <b>aracı platform olmadan, doğrudan sizin kampanyalarınız için</b> işletmemizdir.</p>
+</section>
+
+<!-- 02b YAZILIM NE YAPIYOR -->
+<section>
+  <span class="no">02b · Yazılımımız ne yapıyor</span>
+  <h2 class="baslik">Üç farklı girdi, tek hat</h2>
+  <p>Elinizde hangi tip malzeme varsa hattımızın girdisi o olur. Üç yol da aynı panelden ilerler ve aynı
+  hesap ağında yayınlanır:</p>
+  <ol class="duz">
+    <li><b>Uzun videolarınız varsa → otomatik kesit üretimi.</b> Yayın kaydı, röportaj, vlog, podcast veya
+    kampanya çekimi gibi uzun videoları panele verirsiniz. Yazılım videoyu baştan sona çözümler: konuşma
+    kelime kelime zaman koduyla yazıya dökülür, izlenme potansiyeli yüksek bölümler (ilgi çekici cümle,
+    tepki anı, çarpıcı bilgi) işaretlenir ve her biri dikey kısa videoya dönüştürülür — altyazı ritme
+    oturtulur, açılış cümlesi (hook) eklenir, başlık videonun içine işlenir. Bir saatlik tek kaynaktan
+    onlarca farklı klip çıkar.</li>
+    <li><b>Kampanya kaynakları varsa → kampanya içeriği üretimi.</b> Whop tipi kampanyalarda markanın
+    paylaştığı kaynak videolar ve brief kurallarını sisteme tanımlarız; hat, kurallara uygun (etiket,
+    açıklama, bağlantı) klipleri üretir ve yayınlar. Lovable, Cantina ve Topps'ta bu şekilde çalışıyoruz.</li>
+    <li><b>Hazır UGC videolarınız varsa → çoklu kanal dağıtımı.</b> Kendi çektiğiniz ya da üreticilerinizden
+    gelen videolar panele girer; sistem her hesap için ayrı başlık, ayrı açıklama ve ayrı etiket seti üretip
+    videoyu ağdaki onlarca hesapta yayınlar. Aynı video 30 hesapta 30 farklı anlatımla çıkar; hangi
+    anlatımın tuttuğunu tahmin etmezsiniz, yayın verisi söyler.</li>
+  </ol>
+  <p>Üç yolda da sonrası aynıdır: hesap eşleştirme, yayın takvimi, gece yayın turları, canlı bağlantı kaydı
+  ve rapor.</p>
+  <p><b>Çalıştığımız platformlar:</b> TikTok, Instagram (Reels), YouTube (Shorts) ve talep hâlinde Facebook.
+  UGC dağıtımında ana mecra TikTok ve Instagram'dır; kampanyanın hedef kitlesine göre ağırlık birlikte
+  belirlenir. İçerikler dikey (9:16) formatta üretilir ve her platformun kendi kurallarına (süre, altyazı,
+  etiket) göre uyarlanır.</p>
+</section>
+
+<!-- 3 MODEL 1 -->
+<section>
+  <span class="no">03 · Çalışma Modeli 1</span>
+  <h2 class="baslik">Görüntülenme bazlı kampanya — 1.000 izlenme = 1 $</h2>
+  <p><b>Kimin için:</b> Elinde hazır UGC videoları olan ve bunları hızla izlenmeye dönüştürmek isteyen
+  markalar/ajanslar. İçerik sizden, dağıtım operasyonunun tamamı bizden.</p>
+  <p><b>İşleyiş, adım adım:</b></p>
+  <ol class="duz">
+    <li><b>Brief ve bütçe:</b> Kampanya hedefini, kaynak videoları, açıklama/etiket/bağlantı kurallarınızı ve
+    toplam bütçeyi yazılı iletirsiniz. <b>Minimum kampanya bütçesi 1.000 $'dır</b> (≈ 1 milyon doğrulanmış
+    izlenme). Video başına üst ödeme limiti koyabilirsiniz.</li>
+    <li><b>Üretim ve çoğaltma:</b> Gönderdiğiniz her video olduğu gibi de yayınlanabilir; talep ederseniz
+    otomasyon hattımız her videodan farklı açılış cümlesi, başlık ve altyazıyla birden fazla varyant üretir.
+    Böylece hangi anlatımın tuttuğu tahminle değil yayın verisiyle bulunur — bu, reklamdaki "kreatif testi"nin
+    bütçesiz halidir.</li>
+    <li><b>Yayın:</b> İçerikler iki tip hesapta yayınlanır ve karışım kampanya hedefine göre kurulur:
+    (a) <b>kitlesi hazır niş hesaplar</b> — örneğin bir müzik kampanyasında halihazırda o türün içeriğini
+    paylaşan bir sayfa, videoyu ilk dakikadan doğru kitleye izletir; izlenme hızlı ve öngörülebilir gelir;
+    (b) <b>kampanyaya özel açılan yeni hesaplar</b> — kitlesi olmadığı için algoritması karışık ilerler ama
+    keşfet üzerinden geniş ve taze kitleye ulaşır; yukarıdaki 84,4 milyonluk video bu tip bir hesaptan
+    çıkmıştır. Hedef coğrafya neresiyse (ABD, Avrupa, Körfez) hesap kurulumu oraya göre yapılır.</li>
+    <li><b>Doğrulama ve rapor:</b> İzlenmeler platformun kendi sayacından okunur. Haftalık raporda her yayın
+    için canlı bağlantı, hesap, platform, tarih, izlenme ve erişilebilen coğrafya kırılımı bulunur. Bütçe
+    bittiğinde yayın durur; dilerseniz artırır, dilerseniz kapatırsınız.</li>
+  </ol>
+
+  <div class="kabuk"><div class="cekirdek">
+    <h3 style="margin-bottom:12px;font-size:18px">İzlenme nasıl doğrulanır, faturaya nasıl yansır?</h3>
+    <p style="font-size:14.5px">Bu modelde en kritik soru şudur: izlenmeyi kim sayıyor? Cevabımız, sayımı
+    denetlenebilir hâle getirmektir:</p>
+    <ul class="duz" style="font-size:14.5px">
+      <li><b>Kaynak:</b> Sayı, videonun yayınlandığı platformun kendi sayacıdır (Instagram, TikTok, YouTube
+      Shorts). Bizim ürettiğimiz bir rakam değildir.</li>
+      <li><b>Denetim erişimi:</b> Kampanya boyunca operasyon panelimize <b>salt-okunur erişim</b> veririz.
+      Hangi video, hangi hesapta, ne zaman yayınlandı ve o an kaç izlenmede — canlı görürsünüz. Ayrıca
+      istediğiniz videonun platform istatistik ekranını ekran paylaşımıyla birlikte inceleriz.</li>
+      <li><b>Sayım penceresi:</b> Bir videonun izlenmesi, <b>yayından 30 gün sonra dondurulur</b> ve fatura o
+      rakam üzerinden kesilir. 30 günden sonra gelen izlenmeler ücretsizdir.</li>
+      <li><b>İtiraz hakkı:</b> Raporda şüpheli bulduğunuz herhangi bir yayını işaretlersiniz; birlikte
+      inceleriz ve haklı çıkarsanız o kalem faturadan düşülür.</li>
+      <li><b>Trafik kuralı:</b> Bot, izlenme satın alma ve etkileşim havuzu kullanılmaz. Bunun tespiti için
+      raporda izlenme kaynağı (keşfet/profil/takipçi) ve coğrafya kırılımı paylaşılır — sahte trafik bu iki
+      kırılımda hemen belli olur.</li>
+      <li><b>Ödeme akışı:</b> Bütçe baştan bloke edilmez. Her hafta gerçekleşen izlenme raporlanır, o dönemin
+      faturası kesilir ve ödenir. Kampanyayı istediğiniz hafta durdurabilirsiniz; kalan bütçe için
+      yükümlülüğünüz olmaz.</li>
+    </ul>
+  </div></div>
+
+  <div class="notk"><b>Özet koşullar:</b> 1.000 doğrulanmış izlenme = 1 $ (hedef ülke fark etmeksizin) ·
+  minimum kampanya bütçesi 1.000 $ · mevcut ağda ilk yayınlar 48 saat içinde (kampanyaya özel yeni hesap
+  isteniyorsa 12-15 gün kurulum) · sayım penceresi 30 gün · haftalık canlı bağlantılı rapor + panele
+  salt-okunur erişim · istediğiniz an durdurma/artırma hakkı.</div>
+
+  <p style="margin-top:18px"><b>Pilot paketi:</b> Karar vermeden önce sistemi kendi içeriğinizle görmek için
+  önerimiz: <b>1.000 $ · 1 milyon doğrulanmış izlenme hedefi · yaklaşık 2 hafta · tek başlık, 3 farklı açılış
+  varyantı · haftalık canlı bağlantılı rapor.</b> Pilot sonunda elinizde gerçek rakamlar olur; devam kararını
+  ona göre verirsiniz.</p>
+
+  <p><b>İş sonucuna bağlanması:</b> İzlenme tek başına ölçü değildir. Talep ederseniz her yayına markanızın
+  UTM'li bağlantısı veya profil bio bağlantısı eklenir; böylece kampanyanın site trafiğine ve dönüşüme
+  katkısını kendi analitik panelinizden ölçebilirsiniz.</p>
+</section>
+
+<!-- 4 MODEL 2 -->
+<section>
+  <span class="no">04 · Çalışma Modeli 2</span>
+  <h2 class="baslik">Markaya özel sabit hesap ağı — aylık sabit fiyat</h2>
+  <p><b>Kimin için:</b> Düzenli içerik akışı isteyen, izlenme başına değil öngörülebilir aylık bütçeyle
+  çalışmak isteyen ve hesapların kendisine ait olmasını isteyen markalar. Kampanya modeli "anlık hacim"
+  üretir; bu model markaya <b>kalıcı bir dağıtım varlığı</b> kurar.</p>
+  <p><b>Kapsam:</b> Taban 30 hesap açılır (talep hâlinde 100 hesap ve üzerine çıkılabilir). Her hesaptan günde
+  5 içerik yayınlanır — 30 hesapta ayda 4.500 yayın. Hesap isimleri ve görsel kimlik birlikte belirlenir; her
+  açıklamada markaya yönlendirme ve etiket, her profilde markanın bağlantısı bulunur; içerikler yayına girmeden
+  onaydan geçer; aylık rapor verilir.</p>
+  <p><b>Üç hizmet tipi vardır; fark, hesaplarda yayınlanacak içeriğin nasıl elde edildiğidir.
+  Fiyat hesap başına aylıktır ve içeriğin üretim yüküne göre değişir:</b></p>
+  <ul class="duz">
+    <li><b>1) UGC Repost Ağı — 120 $/hesap/ay:</b> Elinizde hazır UGC videolar varsa (kendi çektikleriniz
+    veya üreticilerinizden gelenler), bu videolar panele yüklenir ve <b>her hesapta farklı başlık, farklı
+    açıklama ve farklı etiket kurgusuyla</b> yayına sokulur. Aynı video 30 ayrı hesapta 30 ayrı anlatımla
+    çıkar; hangi başlığın tuttuğunu yayın verisi gösterir. Yeni içerik üretilmez, mevcut içerik maksimum
+    kanala yayılır — en ekonomik paket budur.</li>
+    <li><b>2) Clipping Paketi — 150 $/hesap/ay:</b> Elinizde uzun videolar varsa (yayın, röportaj, vlog,
+    kampanya çekimi), yazılımımız bu videolardan izlenme potansiyeli yüksek kesitleri çıkarır; her kesite
+    zaman kodlu altyazı, açılış cümlesi (hook) ve video içi başlık işlenir. Bir saatlik tek kaynak, onlarca
+    farklı klibe dönüşür ve ağa dağıtılır.</li>
+    <li><b>3) Özgün Üretim / AI Influencer Paketi — 180 $/hesap/ay:</b> İçerik sıfırdan bizim tarafımızdan
+    üretilir: markaya özel tasarlanan AI karakterlerle UGC videoları (05. bölümdeki Cantina örnekleri gibi)
+    veya markanın konseptine göre üretilen özgün kısa videolar. Kaynak içerik gerektirmez; en yüksek üretim
+    yükü bu pakettedir.</li>
+  </ul>
+  <p>Paketler karıştırılabilir: örneğin 20 hesap repost + 10 hesap AI influencer kurulabilir; her hesap kendi
+  paketinin fiyatından hesaplanır. Bir video birden fazla platformdaki eş hesaplarda da yayınlanabilir
+  (15 Instagram + 15 TikTok gibi) — bu dağılım fiyatı değiştirmez.</p>
+  <div class="kabuk"><div class="cekirdek">
+    <p style="margin-bottom:10px"><b>Hesap başı aylık fiyat — hacim kademeleri</b></p>
+    <div class="tablo-sar"><table>
+      <tr><th>Hizmet tipi</th><th>30 hesap</th><th>40 hesap</th><th>50 hesap</th><th>75 hesap</th><th>100 hesap</th></tr>
+      <tr><td>UGC Repost</td><td>120 $</td><td>115 $</td><td>110 $</td><td>105 $</td><td>100 $</td></tr>
+      <tr><td>Clipping</td><td>150 $</td><td>145 $</td><td>140 $</td><td>135 $</td><td>130 $</td></tr>
+      <tr><td>Özgün Üretim / AI</td><td>180 $</td><td>175 $</td><td>170 $</td><td>165 $</td><td>160 $</td></tr>
+    </table></div>
+    <p style="margin:16px 0 10px"><b>Taahhüt indirimi</b> (hesap başı fiyattan düşülür, taahhüt süresince sabit kalır)</p>
+    <div class="tablo-sar"><table>
+      <tr><th>Süre</th><th>Aylık çalışma</th><th>3 ay taahhüt</th><th>6 ay taahhüt</th><th>12 ay taahhüt</th></tr>
+      <tr><td>İndirim</td><td>—</td><td>−5 $/hesap</td><td>−10 $/hesap</td><td>−20 $/hesap</td></tr>
+      <tr><td>Örnek: 30 hesap Özgün</td><td>5.400 $/ay</td><td>5.250 $/ay</td><td>5.100 $/ay</td><td>4.800 $/ay</td></tr>
+      <tr><td>Örnek: 30 hesap Repost</td><td>3.600 $/ay</td><td>3.450 $/ay</td><td>3.300 $/ay</td><td>3.000 $/ay</td></tr>
+    </table></div>
+    <p class="mini" style="margin-top:12px">Fiyatlara KDV eklenir. Hacim ve taahhüt indirimleri birleşir:
+    örneğin 50 hesap + 12 ay taahhüt, Repost pakette hesap başı 110 − 20 = <b>90 $</b> demektir. 30 hesabın
+    altındaki butik işlerde hizmet tipine göre hesap başı 150 / 185 / 220 $ uygulanır. 100 hesabın üzeri
+    projeler için özel fiyat çalışılır.</p>
+  </div></div>
+
+  <div class="kabuk"><div class="cekirdek">
+    <h3 style="margin-bottom:12px;font-size:18px">Digital Exchange'e özel: bayi (beyaz etiket) koşulları</h3>
+    <p style="font-size:14.5px">Bu hizmetleri kendi müşterilerinize satmak istediğinizde araya girmeyiz:</p>
+    <ul class="duz" style="font-size:14.5px">
+      <li><b>Bayi iskontosu:</b> Yukarıdaki liste fiyatları üzerinden <b>%15 partner iskontosu</b> uygulanır;
+      müşteriye satış fiyatını siz belirlersiniz, aradaki fark sizin marjınızdır.</li>
+      <li><b>Beyaz etiket raporlama:</b> Tüm raporlar Digital Exchange logosu ve kimliğiyle hazırlanır;
+      müşteriyle iletişim tamamen sizde kalır, operasyon bizde.</li>
+      <li><b>Müşteri koruması:</b> Sizin getirdiğiniz müşteriye doğrudan teklif vermeyiz; sözleşme süresince
+      ve sonrasında 12 ay boyunca bu kural geçerlidir.</li>
+      <li><b>Kategori münhasırlığı (opsiyonel):</b> Talep hâlinde, müşterinizin doğrudan rakibi olan bir
+      markayla aynı dönemde çalışmama taahhüdü verilir; koşulları ayrıca belirlenir.</li>
+    </ul>
+  </div></div>
+
+  <div class="kabuk"><div class="cekirdek">
+    <h3 style="margin-bottom:12px;font-size:18px">Riskler ve garantilerimiz</h3>
+    <ul class="duz" style="font-size:14.5px">
+      <li><b>Hesap kapanması bizim riskimizdir.</b> Bu hacimde çalışırken platform kaynaklı hesap kapanmaları
+      olabilir. Kapanan her hesap <b>7 gün içinde ücretsiz olarak yenilenir</b>; yeni hesap yayına girene kadar
+      o hesabın ücreti işlemez. Kapanan hesap sayısı aylık raporda açıkça belirtilir.</li>
+      <li><b>İçerik hakları:</b> Bize verdiğiniz kaynak içeriklerin kullanım haklarının sizde olduğunu kabul
+      ederiz. Üçüncü taraf bir hak sahibinden itiraz gelirse ilgili içerik tüm hesaplardan 24 saat içinde
+      kaldırılır. Müzik kullanımında platformların ticari kütüphaneleri veya sizin sağladığınız lisanslı
+      müzik kullanılır.</li>
+      <li><b>Hesap devri:</b> Sabit ağ modelinde hesaplar markaya aittir. Çalışma sona erdiğinde tüm hesapların
+      erişim bilgileri (mail, şifre, iki adımlı doğrulama) 7 gün içinde size devredilir; takipçileriyle
+      birlikte sizde kalır.</li>
+      <li><b>Erken çıkış:</b> Taahhütlü çalışmada erken çıkış hâlinde ceza uygulanmaz; yalnızca kullandığınız
+      aylar için aylık liste fiyatı ile taahhüt fiyatı arasındaki fark faturalandırılır.</li>
+      <li><b>Reklam mevzuatı:</b> İçeriklerde reklam ilişkisinin belirtilmesi gereken durumlarda (marka
+      sponsorluğu, ürün tanıtımı) ilgili ülkenin kurallarına uygun etiketleme yapılır. Bu konudaki
+      talimatlarınız birebir uygulanır.</li>
+    </ul>
+  </div></div>
+  <p><b>Süreç ve ödeme:</b> Onayla birlikte toplam tutarın %10'u ön ödeme alınır ve hesap açılışları aynı gün
+  başlar. Açılış ve hazırlık 7-10 gün sürer; ardından hesapların platform güvenine oturması için 5 günlük
+  ısınma dönemi uygulanır (spam filtrelerine yakalanmamak için hesaplar bu sürede organik davranışlarla
+  aktifleşir). Fatura dönemi, içeriklerin yayınlanmaya başladığı günden itibaren işler — hazırlık süresi
+  faturalandırılmaz. Kalan ödeme yayın dönemi başında tahsil edilir.</p>
+  <p><b>Beyaz etiket:</b> Digital Exchange'in kendi müşterileri için bu ağlar sizin markanızla raporlanabilir;
+  operasyon bizde kalır, müşteri ilişkisi sizde.</p>
+</section>
+
+<!-- 5 URETIM ORNEKLERI -->
+<section>
+  <span class="no">05 · Üretim örnekleri</span>
+  <h2 class="baslik">Hattımızdan çıkan işler — videolar sunumun içinde oynar</h2>
+  <p>Aşağıdaki sekiz video üretim hattımızdan alınmıştır: AI karakterli UGC (Cantina kampanyası), influencer
+  içeriklerinden clipping (Ebru Önel, IG 49,6B — kendi reels'lerinden hook + altyazı + CTA varyantları),
+  sanatçı ve yayıncı klipleri (maNga, Barış Özcan) ve tamamen otomatik üretilen DIY içeriği.</p>
+  <div class="grid g4">
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">AI UGC · Cantina</span><video src="medya/cantina_1.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">AI UGC · Cantina</span><video src="medya/cantina_2.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">Influencer · Ebru Önel</span><video src="medya/ebru_1.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">Influencer · Ebru Önel</span><video src="medya/ebru_2.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">Sanatçı · maNga</span><video src="medya/manga_1.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">Sanatçı · maNga</span><video src="medya/manga_2.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">Yayıncı · Barış Özcan</span><video src="medya/baris_1.mp4" controls preload="metadata"></video></div></div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek" style="padding:8px">
+      <div class="vid-k"><span class="rozet">Tam otomatik · DIY</span><video src="medya/diy_1.mp4" controls preload="metadata"></video></div></div></div>
+  </div>
+  <p style="margin-top:16px">Canlı yayın örnekleri: Cantina ağından
+  <a class="link" href="https://www.instagram.com/reel/DchdAcyAuBC/">Instagram reel 1</a> ·
+  <a class="link" href="https://www.instagram.com/reel/DchdCpIjzZU/">reel 2</a> ·
+  <a class="link" href="https://www.instagram.com/reel/DchdHUAkcCo/">reel 3</a> —
+  Topps (ABD) kampanyasından <a class="link" href="https://www.youtube.com/watch?v=E33K7oZ4d5c">YouTube Shorts
+  örneği</a>. Talep hâlinde markanıza özel AI karakterler (Cantina'daki gibi) sıfırdan tasarlanır.</p>
+</section>
+
+<!-- 6 COGRAFYA -->
+<section>
+  <span class="no">06 · Coğrafya</span>
+  <h2 class="baslik">Hesaplar hedef pazarınızın içinde açılır</h2>
+  <p>Yurt dışı kampanyalarında sonucu belirleyen şey hesabın kurulumudur: bölge ayarı, yayın saatleri, dil,
+  açıklama ve etiket kurgusu hedef ülkeye göre yapılmazsa algoritma içeriği yanlış kitleye dener. Biz her
+  hesabı istenen ülkenin içinde gösterilecek altyapıyla açarız — ABD, İngiltere, Almanya, Fransa, Körfez veya
+  hedeflediğiniz başka bir pazar. Topps kampanyamız bunun çalışan örneğidir: kanallar ABD saatine, İngilizce
+  içeriğe ve ABD kitlesine göre yayın yapar ve izlenmesini ABD'den alır. Digital Exchange'in yurt dışı UGC
+  kampanyaları için bu kurulum hazırdır.</p>
+</section>
+
+<!-- 7 ALTYAPI -->
+<section>
+  <span class="no">07 · Operasyon altyapısı</span>
+  <h2 class="baslik">6 ayda geliştirilen özel otomasyon hattı</h2>
+  <p>Operasyonun tamamı kendi geliştirdiğimiz panelden yönetilir. Aşağıdaki görüntü canlı sistemden
+  alınmıştır. Görüşmede panelin çalışır hâli ekran paylaşımıyla gösterilecektir.</p>
+  <div class="kabuk"><div class="cekirdek" style="padding:8px">
+    <img src="medya/panel.png" alt="Reklamatic operasyon paneli" style="width:100%;border-radius:.9rem;display:block">
+  </div></div>
+  <div class="grid g2">
+    <div class="kabuk" style="margin:0"><div class="cekirdek">
+      <h3 style="margin-bottom:10px;font-size:17px">İçerik bankası ve üretim</h3>
+      <p style="font-size:14.5px">Çalıştığınız influencer ve markaların içerikleri panele mail veya Drive
+      bağlantısıyla otomatik düşer; her müşterinin kendi içerik bankası olur (kaynaklar, öne çıkan anlar,
+      hesap eşleşmeleri). Üretim beyni bu bankadan yedi adımda insansız üretim yapar: kampanya doğrulama,
+      kaynak analizi, kesit ve varyasyon seçimi, ses-cümle sınırı, kurgu, açıklama ve etiket üretimi, teknik
+      kalite kontrolü. Kurguda konuşma kelime kelime zaman koduyla çözülür, altyazı ritme oturtulur, başlık
+      videonun içine işlenir; Türkçe ve İngilizce çalışır.</p>
+    </div></div>
+    <div class="kabuk" style="margin:0"><div class="cekirdek">
+      <h3 style="margin-bottom:10px;font-size:17px">Onay ve revizyon sistemi</h3>
+      <p style="font-size:14.5px">İçerikler yayına girmeden onayınızdan geçer. Verdiğiniz her revizyon notu
+      ("altyazı stili şöyle olsun", "bu ifade kullanılmasın") ilgili konseptin kaydına işlenir ve o konseptin
+      <b>sonraki tüm üretimleri en son revize kurala göre</b> çıkar — aynı notu iki kez vermezsiniz. Yayın her
+      zaman onaylı son sürümden yapılır; reddedilen içerik arşive düşer. Bugün bu hattan ayda binlerce yayın
+      geçiyor; hesap sayısı arttığında üretim hızı değil yalnızca yayın planı büyür.</p>
+    </div></div>
+  </div>
+  <div class="kabuk"><div class="cekirdek" style="padding:8px">
+    <video id="panelVid" src="medya/panel_kaydi.mp4" controls preload="metadata"></video>
+    <div id="panelYok" style="display:none;padding:40px 20px;text-align:center;color:var(--mut);
+      border:1px dashed rgba(22,120,255,.4);border-radius:.9rem;font-size:14px">
+      Panelin çalışır hâldeki ekran kaydı görüşmede gösterilecektir.</div>
+  </div></div>
+</section>
+
+<!-- 8 OZET -->
+<section style="border-bottom:none">
+  <span class="no">08 · Özet ve başlangıç</span>
+  <h2 class="baslik">Koşulların özeti</h2>
+  <div class="kabuk"><div class="cekirdek">
+    <div class="tablo-sar"><table>
+      <tr><th></th><th>Model 1 · Kampanya</th><th>Model 2 · Sabit Ağ</th></tr>
+      <tr><td>Ödeme</td><td>1.000 doğrulanmış izlenme = 1 $</td><td>Aylık sabit (100-180 $/hesap)</td></tr>
+      <tr><td>Minimum</td><td>1.000 $ kampanya bütçesi</td><td>30 hesap</td></tr>
+      <tr><td>Başlangıç</td><td>Onaydan 48 saat sonra yayın</td><td>%10 ön ödeme, 12-15 günde yayın</td></tr>
+      <tr><td>İçerik</td><td>Sizden (varyantlama bizden)</td><td>Sizden veya bizden (hizmet tipine göre)</td></tr>
+      <tr><td>Rapor</td><td>Haftalık, canlı bağlantılı</td><td>Aylık, hesap bazlı</td></tr>
+      <tr><td>Uygun senaryo</td><td>Anlık hacim, tekil kampanyalar</td><td>Sürekli akış, kalıcı varlık</td></tr>
+    </table></div>
+  </div></div>
+  <p>İki model birlikte de çalışır: kampanya modeliyle hızlı sonuç alınırken, sabit ağ markaya kalıcı dağıtım
+  gücü kurar. Başlamak için tek gereken: seçtiğiniz model, brief ve bütçe onayı. Sorularınız için telefon ve
+  e-posta her zaman açık.</p>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:14px">
+    <img src="medya/logo.png" alt="R" style="width:32px;height:36px">
+    <div>
+      <p style="font-family:'Space Grotesk';font-size:18px;font-weight:700;margin:0">Cem Gülçağ</p>
+      <p class="mini" style="margin:2px 0 0">Kurucu — Reklamatic.ai · +90 530 231 29 47 · info@reklamatic.ai ·
+      <a class="link" href="https://reklamatic.ai">reklamatic.ai</a></p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+const pv = document.getElementById('panelVid');
+pv.addEventListener('error', () => { pv.style.display='none';
+  document.getElementById('panelYok').style.display='block'; });
+</script>
+</body>
+</html>
