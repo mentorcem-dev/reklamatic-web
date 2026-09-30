@@ -1,0 +1,75 @@
+:root{
+  --bg:#ffffff; --zem:#f6f9ff; --hair:rgba(15,35,90,.10);
+  --ink:#0d1b3e; --mut:#5a6a8c; --mavi:#1678ff; --mavik:#0b5ed7; --acik:#e8f1ff;
+  --ez:cubic-bezier(.32,.72,0,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  overflow-x:hidden;line-height:1.7;font-size:15.5px}
+.icerik{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 28px}
+section{padding:64px 0;border-bottom:1px solid rgba(15,35,90,.06)}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink)}
+.no{font-size:11px;letter-spacing:.2em;color:var(--mavik);font-weight:700;text-transform:uppercase;
+  margin-bottom:10px;display:block}
+h2.baslik{font-size:clamp(23px,3.4vw,32px);letter-spacing:-.01em;line-height:1.2;margin-bottom:18px}
+p{color:#33415f;max-width:820px;margin-bottom:14px}
+p b, li b{color:var(--ink)}
+.kabuk{background:var(--zem);border:1px solid var(--hair);border-radius:1.3rem;padding:7px;
+  box-shadow:0 20px 50px -34px rgba(13,27,62,.16);margin:22px 0}
+.cekirdek{background:#fff;border:1px solid rgba(15,35,90,.06);border-radius:calc(1.3rem - 7px);padding:26px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:1fr 1fr}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:768px){.g2,.g4{grid-template-columns:1fr}.cekirdek{padding:20px}section{padding:44px 0}}
+.stat .n{font-size:30px;font-weight:700;color:var(--mavi);font-family:'Space Grotesk'}
+.stat .l{font-size:12.5px;color:var(--mut);margin-top:4px}
+video{width:100%;display:block;border-radius:.9rem;background:#0d1b3e}
+.vid-k{position:relative}
+.vid-k .rozet{position:absolute;top:10px;left:10px;z-index:2;background:rgba(255,255,255,.94);
+  border:1px solid var(--hair);border-radius:999px;padding:4px 11px;font-size:10.5px;
+  font-weight:700;color:var(--mavik)}
+.ig-kart .profil{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+.ig-kart .profil img{width:58px;height:58px;border-radius:50%;border:2px solid var(--mavi)}
+.ig-kart .kim b{font-family:'Space Grotesk';font-size:18px}
+.ig-kart .kim span{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ig-grid .h{position:relative;border-radius:9px;overflow:hidden;aspect-ratio:9/14}
+.ig-grid img{width:100%;height:100%;object-fit:cover;display:block}
+.ig-grid .izl{position:absolute;left:7px;bottom:7px;background:rgba(13,27,62,.85);border-radius:999px;
+  padding:3px 9px;font-size:11px;font-weight:700;color:#fff}
+.ig-grid .pin{position:absolute;top:7px;right:7px;background:var(--mavi);color:#fff;
+  border-radius:999px;padding:2px 8px;font-size:9.5px;font-weight:700}
+ol.duz, ul.duz{margin:0 0 14px 20px;color:#33415f}
+ol.duz li, ul.duz li{margin-bottom:10px;max-width:800px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{color:var(--mut);font-weight:700;text-align:left;padding:11px 10px;font-size:11px;
+  letter-spacing:.07em;text-transform:uppercase;border-bottom:2px solid var(--acik)}
+td{padding:12px 10px;border-bottom:1px solid rgba(15,35,90,.07);color:#33415f}
+td:first-child{color:var(--ink);font-weight:600}
+td,th{white-space:normal}
+.tablo-sar{overflow:visible}
+.link{color:var(--mavik);text-decoration:none;border-bottom:1px dashed rgba(22,120,255,.45);font-weight:600}
+.notk{background:var(--acik);border:1px solid rgba(22,120,255,.22);border-radius:.9rem;
+  padding:14px 18px;font-size:14px;color:#1d3461;margin:14px 0;max-width:820px}
+footer{padding:48px 0 80px}
+.baslik-bar{padding:110px 0 56px;border-bottom:1px solid rgba(15,35,90,.06)}
+.baslik-bar .marka{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+.baslik-bar .marka img{width:30px;height:34px}
+.baslik-bar .marka b{font-family:'Space Grotesk';font-size:17px}
+h1.ana{font-size:clamp(26px,4.4vw,40px);letter-spacing:-.015em;line-height:1.18;max-width:840px}
+.mini{color:var(--mut);font-size:13.5px}
+/* Mobile pricing rows keep every amount visible without horizontal scrolling. */
+@media(max-width:700px){
+  .icerik{padding:0 16px}.baslik-bar{padding:70px 0 36px}
+  .tablo-sar table,.tablo-sar tbody{display:block;width:100%}
+  .tablo-sar tr{display:block;margin:0 0 12px;padding:7px 12px;border:1px solid var(--hair);border-radius:12px;background:#fff}
+  .tablo-sar tr:first-child{display:none}
+  .tablo-sar td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:7px 0;font-size:13px;line-height:1.4;text-align:right}
+  .tablo-sar td:first-child{display:block;font-size:15px;text-align:left;color:var(--ink)}
+  .tablo-sar td:last-child{border-bottom:0}
+  .tablo-sar td:not(:first-child)::before{content:attr(data-label);color:var(--mut);font-weight:600;text-align:left;flex:1}
+  .ornek-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:420px){.ornek-grid{grid-template-columns:1fr!important}}
+.ornek-grid video{aspect-ratio:9/16;object-fit:cover}
+.ornek-kart .mini{padding:9px 3px 0;line-height:1.4}
