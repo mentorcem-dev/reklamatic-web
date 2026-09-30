@@ -71,5 +71,6 @@ h1.ana{font-size:clamp(26px,4.4vw,40px);letter-spacing:-.015em;line-height:1.18;
   .ornek-grid{grid-template-columns:1fr 1fr!important}
 }
 @media(max-width:420px){.ornek-grid{grid-template-columns:1fr!important}}
+.ornek-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .ornek-grid video{aspect-ratio:9/16;object-fit:cover}
 .ornek-kart .mini{padding:9px 3px 0;line-height:1.4}
